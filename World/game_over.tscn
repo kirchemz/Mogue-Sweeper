@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dgh5dusidv0kj"]
+
+[ext_resource type="Script" uid="uid://danh4xvdy7gtq" path="res://World/game_over.gd" id="1_sad6x"]
+[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="2_sad6x"]
+
+[node name="Game Over" type="Node2D" unique_id=841727645]
+script = ExtResource("1_sad6x")
+
+[node name="Label" type="Label" parent="." unique_id=461885291]
+offset_left = -39.0
+offset_top = 120.0
+offset_right = 3507.5884
+offset_bottom = 712.0
+scale = Vector2(0.3248192, 0.3248192)
+theme_override_fonts/font = ExtResource("2_sad6x")
+theme_override_font_sizes/font_size = 546
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1552280901]
+offset_left = 305.0
+offset_top = 364.0
+offset_right = 2599.8179
+offset_bottom = 981.0
+scale = Vector2(0.22659749, 0.22659749)
+theme_override_fonts/font = ExtResource("2_sad6x")
+theme_override_font_sizes/font_size = 561
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

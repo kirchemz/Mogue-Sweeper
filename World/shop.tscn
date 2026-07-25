@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://62n41e7k5asm"]
+
+[ext_resource type="Script" uid="uid://bn4dorke00twm" path="res://World/shop.gd" id="1_2nxxu"]
+[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="1_xxbpy"]
+[ext_resource type="Texture2D" uid="uid://vskmfvrt3gwl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner01a.png" id="2_gqsku"]
+[ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="3_gqsku"]
+[ext_resource type="Texture2D" uid="uid://c5i3jinqs2sn6" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Bar07a.png" id="4_dcrsj"]
+[ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="6_s7atx"]
+
+[node name="Shop" type="Node2D" unique_id=2030919428]
+script = ExtResource("1_2nxxu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1605726257]
+offset_left = 214.0
+offset_top = 43.0
+offset_right = 345.0
+offset_bottom = 69.0
+scale = Vector2(5.5240765, 5.5240765)
+texture = ExtResource("2_gqsku")
+patch_margin_left = 13
+patch_margin_top = 5
+patch_margin_right = 13
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=556533680]
+layout_mode = 0
+offset_left = 46.885654
+offset_top = 1.6292318
+offset_right = 970.8857
+offset_bottom = 637.6292
+scale = Vector2(0.042620424, 0.042620424)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 635
+text = "Shop"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=571123486]
+offset_left = 17.0
+offset_top = 559.0
+offset_right = 86.98043
+offset_bottom = 575.73804
+scale = Vector2(4.4869685, 4.4869685)
+texture = ExtResource("4_dcrsj")
+patch_margin_left = 13
+patch_margin_top = 5
+patch_margin_right = 13
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="NinePatchRect2" unique_id=707301438]
+layout_mode = 0
+offset_left = 1.6198089
+offset_top = 2.4297204
+offset_right = 2888.6199
+offset_bottom = 638.42975
+scale = Vector2(0.018016975, 0.018016975)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 635
+text = "Currency: 9999999"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=36508199]
+offset_left = 1004.00006
+offset_top = 348.99994
+offset_right = 1021.0001
+offset_bottom = 364.99997
+scale = Vector2(7.478242, 7.478242)
+texture_normal = ExtResource("3_gqsku")
+
+[node name="Ability One" type="TextureButton" parent="." unique_id=853133183]
+offset_left = 214.0
+offset_top = 261.0
+offset_right = 246.0
+offset_bottom = 293.0
+scale = Vector2(4.5722837, 4.5722837)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability One" unique_id=836141810]
+layout_mode = 0
+offset_left = -6.123853
+offset_top = 34.0
+offset_right = 3154.8762
+offset_bottom = 645.0
+scale = Vector2(0.01458371, 0.01458371)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 610
+text = "Item 1"
+horizontal_alignment = 1
+
+[node name="Ability 1" type="TextureButton" parent="." unique_id=149004265]
+offset_left = 396.0
+offset_top = 494.00003
+offset_right = 428.0
+offset_bottom = 526.00006
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability 1" unique_id=570458406]
+layout_mode = 0
+offset_left = -32.704918
+offset_top = 29.89159
+offset_right = 4564.9736
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 676
+text = "Ability 1"
+horizontal_alignment = 1
+
+[node name="Ability 2" type="TextureButton" parent="." unique_id=2138932469]
+offset_left = 560.00006
+offset_top = 494.0
+offset_right = 592.00006
+offset_bottom = 526.0
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability 2" unique_id=356654154]
+layout_mode = 0
+offset_left = -36.573227
+offset_top = 29.89159
+offset_right = 4955.1924
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 676
+text = "Ability 2"
+horizontal_alignment = 1
+
+[node name="Ability 3" type="TextureButton" parent="." unique_id=1940929645]
+offset_left = 718.0
+offset_top = 494.00003
+offset_right = 750.0
+offset_bottom = 526.0
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability 3" unique_id=405108533]
+layout_mode = 0
+offset_left = -64.00317
+offset_top = 29.89159
+offset_right = 7456.4863
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 676
+text = "Ability 3"
+horizontal_alignment = 1
+
+[node name="Ability 4" type="TextureButton" parent="." unique_id=567917125]
+offset_left = 875.0
+offset_top = 494.00003
+offset_right = 907.0
+offset_bottom = 526.0
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability 4" unique_id=388867359]
+layout_mode = 0
+offset_left = -51.3432
+offset_top = 29.89159
+offset_right = 6319.725
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 676
+text = "Ability 4"
+horizontal_alignment = 1
+
+[node name="Ability 5" type="TextureButton" parent="." unique_id=543151954]
+offset_left = 1029.0
+offset_top = 493.99997
+offset_right = 1061.0
+offset_bottom = 526.0
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability 5" unique_id=1344563823]
+layout_mode = 0
+offset_left = -81.938126
+offset_top = 29.89159
+offset_right = 9294.042
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 676
+text = "Ability 5"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Ability One" to="." method="_on_ability_one_pressed"]

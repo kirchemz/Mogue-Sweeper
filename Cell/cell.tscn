@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bltv1s14g2yab"]
+
+[ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
+[ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
+size = Vector2(16, 16)
+
+[node name="Cell" type="Area2D" unique_id=1896603475]
+script = ExtResource("1_pf11k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2090554630]
+texture = ExtResource("1_37gha")
+
+[node name="Label" type="Label" parent="." unique_id=1312575531]
+offset_left = -5.0
+offset_top = -11.0
+offset_right = 75.0
+offset_bottom = 181.0
+scale = Vector2(0.10979178, 0.10979178)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 140
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656142916]
+shape = SubResource("RectangleShape2D_0rlat")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

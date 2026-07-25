@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://dbbgr6bb8ak3h"]
+
+[ext_resource type="Script" uid="uid://c1ueffw5xb8q2" path="res://World/world.gd" id="1_62w18"]
+[ext_resource type="Texture2D" uid="uid://qaneuj2ntgke" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="2_3f78f"]
+[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="2_8a836"]
+[ext_resource type="Texture2D" uid="uid://c27vxgaejt3bg" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner04a.png" id="2_j8job"]
+[ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="5_k8do8"]
+
+[node name="World" type="Node2D" unique_id=1230266813]
+script = ExtResource("1_62w18")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=2108120539]
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
+position = Vector2(576, 324)
+
+[node name="Ability 1" type="TextureButton" parent="Camera2D" unique_id=36892986]
+offset_left = -524.0
+offset_top = 170.00003
+offset_right = -492.0
+offset_bottom = 202.00006
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("5_k8do8")
+
+[node name="Label" type="Label" parent="Camera2D/Ability 1" unique_id=855718142]
+layout_mode = 0
+offset_left = -32.704918
+offset_top = 29.89159
+offset_right = 4564.9736
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 676
+text = "Ability 1"
+horizontal_alignment = 1
+
+[node name="Ability 2" type="TextureButton" parent="Camera2D" unique_id=1437667531]
+offset_left = -359.9999
+offset_top = 170.0
+offset_right = -327.9999
+offset_bottom = 202.0
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("5_k8do8")
+
+[node name="Label" type="Label" parent="Camera2D/Ability 2" unique_id=948291959]
+layout_mode = 0
+offset_left = -36.573227
+offset_top = 29.89159
+offset_right = 4955.1924
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 676
+text = "Ability 2"
+horizontal_alignment = 1
+
+[node name="Ability 3" type="TextureButton" parent="Camera2D" unique_id=1613286264]
+offset_left = -201.99997
+offset_top = 170.00003
+offset_right = -169.99997
+offset_bottom = 202.00003
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("5_k8do8")
+
+[node name="Label" type="Label" parent="Camera2D/Ability 3" unique_id=533470652]
+layout_mode = 0
+offset_left = -64.00317
+offset_top = 29.89159
+offset_right = 7456.4863
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 676
+text = "Ability 3"
+horizontal_alignment = 1
+
+[node name="Ability 4" type="TextureButton" parent="Camera2D" unique_id=1303564084]
+offset_left = -45.0
+offset_top = 170.00003
+offset_right = -13.0
+offset_bottom = 202.00003
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("5_k8do8")
+
+[node name="Label" type="Label" parent="Camera2D/Ability 4" unique_id=1581180976]
+layout_mode = 0
+offset_left = -51.3432
+offset_top = 29.89159
+offset_right = 6319.725
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 676
+text = "Ability 4"
+horizontal_alignment = 1
+
+[node name="Ability 5" type="TextureButton" parent="Camera2D" unique_id=1240482026]
+offset_left = 109.0
+offset_top = 169.99997
+offset_right = 141.0
+offset_bottom = 202.0
+scale = Vector2(2.843609, 2.843609)
+texture_normal = ExtResource("5_k8do8")
+
+[node name="Label" type="Label" parent="Camera2D/Ability 5" unique_id=1231627670]
+layout_mode = 0
+offset_left = -81.938126
+offset_top = 29.89159
+offset_right = 9294.042
+offset_bottom = 706.8916
+scale = Vector2(0.021416552, 0.021416552)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 676
+text = "Ability 5"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=2050875328]
+visible = false
+offset_left = 222.0
+offset_top = -300.99994
+offset_right = 286.0
+offset_bottom = -280.99994
+scale = Vector2(5.1859503, 5.1859503)
+texture_normal = ExtResource("2_3f78f")
+
+[node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=634878893]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -1.0000001
+offset_right = 405.0
+offset_bottom = 265.0
+scale = Vector2(0.062534004, 0.062534004)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 265
+text = "Shop"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=674497212]
+offset_left = -560.0
+offset_top = -294.0
+offset_right = 143.0
+offset_bottom = -213.0
+texture = ExtResource("2_j8job")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=1646802078]
+offset_left = -550.00006
+offset_top = -309.00003
+offset_right = -62.00006
+offset_bottom = -61.00003
+scale = Vector2(0.44933593, 0.44933593)
+
+[node name="Label" type="Label" parent="Camera2D/HBoxContainer" unique_id=1776224770]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 247
+text = "60:00"
+visible_characters = 5
+
+[node name="Control" type="Control" parent="Camera2D/HBoxContainer" unique_id=1295151050]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Points" type="Label" parent="Camera2D" unique_id=511125543]
+offset_left = -355.88693
+offset_top = -276.0
+offset_right = 2383.113
+offset_bottom = -28.0
+scale = Vector2(0.17946446, 0.17946446)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 247
+text = "Point Requirements: 50"
+
+[node name="Timer" type="Timer" parent="." unique_id=1810617686]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Camera2D/Ability 1" to="." method="_on_ability_1_pressed"]
+[connection signal="pressed" from="Camera2D/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
