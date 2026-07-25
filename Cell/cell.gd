@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var bomb_tex = preload("res://Sprites/Bomb.png")
 @onready var normal_tex = preload("res://Sprites/Cell.png")
-@onready var flag_tex = preload("res://Sprites/Flag.png")
+@onready var flag_tex = preload("res://Sprites/Red Flag.png")
 
 var is_bomb : bool = false
 var bombs_around : int = 0
@@ -11,9 +11,11 @@ var mouse_in : bool = false
 var unhide_neighbors : bool = false
 var can_be_bomb : bool = true
 var flagged : bool = false
+var flag_type : String = "Red"
 var world
 var flags_around : int = 0
 var unflagged_bombs_around : bool = false
+var mult : float = 1
 
 func bomb():
 	is_bomb = true
@@ -41,7 +43,6 @@ func _process(delta: float) -> void:
 		if is_instance_valid($Label):
 			$Label.visible = true
 		if is_bomb:
-			print(":P")
 			$Sprite2D.texture = bomb_tex
 		if bombs_around == 1:
 			modulate = Color(0.0, 0.851, 0.157, 1.0)
@@ -126,7 +127,6 @@ func flag_around():
 
 func flagged_bombs_around():
 	var cell_instance = self
-	cell_instance.is_hidden = false
 	
 	var xc = -1
 	var yc = -1
@@ -147,4 +147,8 @@ func flagged_bombs_around():
 				var neighbor = world.map[check_x][check_y]
 				if is_instance_valid(neighbor):
 					if neighbor.is_bomb and neighbor.flagged:
-						Globals.points += 1
+						if neighbor.flag_type == "Blue":
+							mult += 1
+						if neighbor.flag_type == "Purple":
+							Globals.point_mult += 1
+						Globals.points += (1 * mult)

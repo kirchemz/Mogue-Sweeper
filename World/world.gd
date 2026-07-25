@@ -40,10 +40,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
 func _process(delta: float) -> void:
+	$Camera2D/Mult2.text = str(Globals.points)
+	$"Camera2D/Point Requirement".text = "Point Requirement: " + str(Globals.level_requirement)
+	$Camera2D/Mult.text = "Mult: " + str(Globals.mult)
 	if level_over:
-		$Camera2D/Points.text = "Points: " + str(Globals.points)
-	else:
-		$Camera2D/Points.text = "Points Required: " + str(Globals.level_requirement)
+		$Camera2D/Points.visible = true
 	$"Camera2D/Ability 1/Label".text = Abilities.ability_one.name
 	$"Camera2D/Ability 1".texture_normal = Abilities.ability_one.img
 	$"Camera2D/Ability 2/Label".text = Abilities.ability_two.name
@@ -84,6 +85,15 @@ func _process(delta: float) -> void:
 					game_over()
 	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig"):
 		if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
+			if Globals.red_flag_active:
+				target_cell.flag_type = "Red"
+				target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
+			if Globals.blue_flag_active:
+				target_cell.flag_type = "Blue"
+				target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
+			if Globals.purple_flag_active:
+				target_cell.flag_type = "Purple"
+				target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
 			target_cell.flagged = true
 			flags_remaining -= 1
 			if Abilities.auto_chord_active:
@@ -221,11 +231,15 @@ func point_count():
 		for x in y:
 			if is_instance_valid(x):
 				x.flagged_bombs_around()
+	Globals.points *= Globals.point_mult
+	Globals.total_points = Globals.points * (Globals.mult + 1)
+	$Camera2D/Points.text = "Points: " + str(Globals.points) + " X " + "Mult: " + str(Globals.mult + 1) + " = " + str(Globals.total_points)
+	$Camera2D/NinePatchRect.size.x += ($Camera2D/Points.get_total_character_count() * 22)
 
 func _on_timer_timeout() -> void:
 	point_count()
 	level_over = true
-	if Globals.points < Globals.level_requirement:
+	if Globals.total_points < Globals.level_requirement:
 		await get_tree().create_timer(4).timeout
 		game_over()
 	else:
