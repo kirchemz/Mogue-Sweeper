@@ -13,9 +13,18 @@ var target_cell
 var flags_remaining : int = bombs
 var level_over : bool = false
 var mouse_over_menu : bool = false
+var hide_menu : bool = false
 
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
+
+func _on_button_pressed() -> void:
+	mouse_over_menu = true
+	if not hide_menu:
+		hide_menu = true
+		return
+	if hide_menu:
+		hide_menu = false
 
 func _ready() -> void:
 	start_map()
@@ -41,11 +50,70 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
 func _process(delta: float) -> void:
+	if hide_menu:
+		$"Camera2D/Ability 1".visible = false
+		$"Camera2D/Ability 2".visible = false
+		$"Camera2D/Ability 3".visible = false
+		$"Camera2D/Ability 4".visible = false
+		$"Camera2D/Ability 5".visible = false
+		$"Camera2D/Point Requirement".visible = false
+		$Camera2D/Mult.visible = false
+		$"Camera2D/Flag 1".position = Vector2(-537, -12)
+		$"Camera2D/Flag 2".position = Vector2(-446, -12)
+		$"Camera2D/Flag 3".position = Vector2(-537, -91)
+		$"Camera2D/Flag 4".position = Vector2(-537, 69)
+		$"Camera2D/Flag 5".position = Vector2(-446, 69)
+		$"Camera2D/Flag 6".position = Vector2(-446, -91)
+		$"Camera2D/Flag 7".position = Vector2(-537, 147)
+		$"Camera2D/Flag 8".position = Vector2(-446, 147)
+		$"Camera2D/Flag 9".position = Vector2(-537, -170)
+		$"Camera2D/Flag 10".position = Vector2(-537, 228)
+		$"Camera2D/Flag 11".position = Vector2(-446, 228)
+		$"Camera2D/Flag 12".position = Vector2(-446, -170)
+		$Camera2D/NinePatchRect.position = Vector2(-556, -297)
+		$Camera2D/Label.position = Vector2(-546, -310)
+		$"Camera2D/Main Menu".size.x = 70
+		$"Camera2D/Main Menu/Sprite2D".flip_h = true
+		$"Camera2D/Main Menu/Button".position = Vector2(70, 2)
+		$"Camera2D/Main Menu/Sprite2D".position = Vector2(79, 104)
+		$Camera2D/Area2D/CollisionShape2D.scale.x = 0.5
+		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-453, -0.5)
+	else:
+		$"Camera2D/Ability 1".visible = true
+		$"Camera2D/Ability 2".visible = true
+		$"Camera2D/Ability 3".visible = true
+		$"Camera2D/Ability 4".visible = true
+		$"Camera2D/Ability 5".visible = true
+		$"Camera2D/Point Requirement".visible = true
+		$Camera2D/Mult.visible = true
+		$"Camera2D/Flag 1".position = Vector2(-537, -12)
+		$"Camera2D/Flag 2".position = Vector2(-446, -12)
+		$"Camera2D/Flag 3".position = Vector2(-358, -12)
+		$"Camera2D/Flag 4".position = Vector2(-537, 69)
+		$"Camera2D/Flag 5".position = Vector2(-446, 69)
+		$"Camera2D/Flag 6".position = Vector2(-358, 69)
+		$"Camera2D/Flag 7".position = Vector2(-537, 147)
+		$"Camera2D/Flag 8".position = Vector2(-446, 147)
+		$"Camera2D/Flag 9".position = Vector2(-358, 147)
+		$"Camera2D/Flag 10".position = Vector2(-537, 228)
+		$"Camera2D/Flag 11".position = Vector2(-446, 228)
+		$"Camera2D/Flag 12".position = Vector2(-358, 228)
+		$Camera2D/NinePatchRect.position = Vector2(-522, -280)
+		$Camera2D/Label.position = Vector2(-512, -295)
+		$"Camera2D/Main Menu".size.x = 140
+		$"Camera2D/Main Menu/Button".position = Vector2(140, 2)
+		$"Camera2D/Main Menu/Sprite2D".position = Vector2(148, 104)
+		$"Camera2D/Main Menu/Sprite2D".flip_h = false
+		$Camera2D/Area2D/CollisionShape2D.scale.x = 1
+		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-331, -0.5)
 	$"Camera2D/Point Requirement".text = "Point Requirement: " + "
 	" + str(Globals.level_requirement)
 	$Camera2D/Mult.text = "Mult: " + "
 	" + str(Globals.mult)
 	if level_over:
+		hide_menu = false
+		$"Camera2D/Main Menu/Button".visible = false
+		$"Camera2D/Main Menu/Sprite2D".visible = false
 		$Camera2D/Points.visible = true
 		$"Camera2D/Flag 1".visible = false
 		$"Camera2D/Flag 2".visible = false
@@ -252,6 +320,7 @@ func point_count():
 	" + "Mult:" + str(Globals.mult + 1) + "
 	" + "=" + "
 	" + str(Globals.total_points)
+	Globals.currency += round(Globals.total_points)
 
 func _on_main_menu_mouse_entered() -> void:
 	mouse_over_menu = true
@@ -287,3 +356,11 @@ func _on_flag_2_pressed() -> void:
 
 func _on_flag_3_pressed() -> void:
 	Globals.activate_violet()
+
+
+func _on_button_mouse_entered() -> void:
+	mouse_over_menu = true
+
+
+func _on_button_mouse_exited() -> void:
+	mouse_over_menu = false

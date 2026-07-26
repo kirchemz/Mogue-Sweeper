@@ -62,7 +62,9 @@ func _process(delta: float) -> void:
 
 
 func _on_mouse_entered() -> void:
-	mouse_in = true
+	if is_instance_valid(world):
+		if not world.mouse_over_menu:
+			mouse_in = true
 
 
 func _on_mouse_exited() -> void:

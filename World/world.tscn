@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qaneuj2ntgke" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="2_3f78f"]
 [ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="2_8a836"]
 [ext_resource type="Texture2D" uid="uid://c27vxgaejt3bg" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner04a.png" id="2_j8job"]
+[ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="5_k8do8"]
 [ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
@@ -20,13 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Pink Flag.png" id="15_yfuda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
-size = Vector2(401, 634)
+size = Vector2(474, 633)
 
 [node name="World" type="Node2D" unique_id=1230266813]
 script = ExtResource("1_62w18")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=2108120539]
 scale = Vector2(2, 2)
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
 position = Vector2(576, 324)
@@ -34,13 +36,13 @@ position = Vector2(576, 324)
 [node name="Area2D" type="Area2D" parent="Camera2D" unique_id=798329352]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1794008072]
-position = Vector2(-367.5, 0)
+position = Vector2(-331, -0.5)
 shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="Main Menu" type="NinePatchRect" parent="Camera2D" unique_id=2080969595]
 offset_left = -568.0
 offset_top = -317.0
-offset_right = -434.2943
+offset_right = -427.62573
 offset_bottom = -105.604996
 scale = Vector2(2.9991248, 2.9991248)
 texture = ExtResource("6_bkhv4")
@@ -48,6 +50,20 @@ patch_margin_left = 3
 patch_margin_top = 5
 patch_margin_right = 3
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Camera2D/Main Menu" unique_id=39069645]
+layout_mode = 0
+offset_left = 139.70743
+offset_top = 2.0005836
+offset_right = 156.04552
+offset_bottom = 209.39442
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Main Menu" unique_id=1486716039]
+position = Vector2(148.37662, 103.69692)
+scale = Vector2(0.844035, 0.844035)
+texture = ExtResource("3_xw5lg")
 
 [node name="Flag 1" type="TextureButton" parent="Camera2D" unique_id=864618710]
 offset_left = -537.0
@@ -56,6 +72,7 @@ offset_right = -521.0
 offset_bottom = 4.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("3_yf0ba")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 1" unique_id=1291048954]
 layout_mode = 0
@@ -69,6 +86,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Red Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 2" type="TextureButton" parent="Camera2D" unique_id=1551062251]
 offset_left = -446.0
@@ -77,6 +95,7 @@ offset_right = -430.0
 offset_bottom = 4.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("5_oe8m4")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 2" unique_id=1951801237]
 layout_mode = 0
@@ -90,6 +109,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Blue Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 3" type="TextureButton" parent="Camera2D" unique_id=1684395051]
 offset_left = -358.0
@@ -98,6 +118,7 @@ offset_right = -342.0
 offset_bottom = 4.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("6_w47uh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 3" unique_id=442120244]
 layout_mode = 0
@@ -111,6 +132,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Violet Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 4" type="TextureButton" parent="Camera2D" unique_id=2059032593]
 offset_left = -537.0
@@ -119,6 +141,7 @@ offset_right = -521.0
 offset_bottom = 85.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_kcyjf")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 4" unique_id=1054746687]
 layout_mode = 0
@@ -132,6 +155,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Orange Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 5" type="TextureButton" parent="Camera2D" unique_id=1953755850]
 offset_left = -446.0
@@ -140,6 +164,7 @@ offset_right = -430.0
 offset_bottom = 85.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("8_xw5lg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 5" unique_id=953338764]
 layout_mode = 0
@@ -153,6 +178,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Yellow Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 6" type="TextureButton" parent="Camera2D" unique_id=380903669]
 offset_left = -358.0
@@ -161,6 +187,7 @@ offset_right = -342.0
 offset_bottom = 85.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("9_0lysu")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 6" unique_id=550620446]
 layout_mode = 0
@@ -174,6 +201,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Green Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 7" type="TextureButton" parent="Camera2D" unique_id=94062139]
 offset_left = -537.0
@@ -182,6 +210,7 @@ offset_right = -521.0
 offset_bottom = 163.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("10_26uyv")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 7" unique_id=124279044]
 layout_mode = 0
@@ -195,6 +224,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Black Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 8" type="TextureButton" parent="Camera2D" unique_id=1962417059]
 offset_left = -446.0
@@ -203,6 +233,7 @@ offset_right = -430.0
 offset_bottom = 163.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("11_dqu5g")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 8" unique_id=431028872]
 layout_mode = 0
@@ -216,6 +247,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "White Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 9" type="TextureButton" parent="Camera2D" unique_id=251214670]
 offset_left = -358.0
@@ -224,6 +256,7 @@ offset_right = -342.0
 offset_bottom = 163.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("12_o6lw0")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 9" unique_id=1130691490]
 layout_mode = 0
@@ -237,6 +270,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Grey Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 10" type="TextureButton" parent="Camera2D" unique_id=1512744981]
 offset_left = -537.0
@@ -245,6 +279,7 @@ offset_right = -521.0
 offset_bottom = 244.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("13_x0pyu")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 10" unique_id=1299739723]
 layout_mode = 0
@@ -258,6 +293,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Brown Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 11" type="TextureButton" parent="Camera2D" unique_id=795749589]
 offset_left = -446.0
@@ -266,6 +302,7 @@ offset_right = -430.0
 offset_bottom = 244.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("14_dg1ng")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 11" unique_id=549990866]
 layout_mode = 0
@@ -279,6 +316,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Magenta Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Flag 12" type="TextureButton" parent="Camera2D" unique_id=1281441729]
 offset_left = -358.0
@@ -287,6 +325,7 @@ offset_right = -342.0
 offset_bottom = 244.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("15_yfuda")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 12" unique_id=1504186339]
 layout_mode = 0
@@ -300,6 +339,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Pink Flag"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ability 1" type="TextureButton" parent="Camera2D" unique_id=36892986]
 offset_left = -265.99997
@@ -308,6 +348,7 @@ offset_right = -233.99997
 offset_bottom = 226.00009
 scale = Vector2(2.0058956, 2.0058956)
 texture_normal = ExtResource("5_k8do8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 1" unique_id=855718142]
 layout_mode = 0
@@ -321,6 +362,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Ability 1"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="Camera2D" unique_id=1437667531]
 offset_left = -266.0
@@ -329,6 +371,7 @@ offset_right = -234.0
 offset_bottom = 110.00001
 scale = Vector2(2.0058956, 2.0058956)
 texture_normal = ExtResource("5_k8do8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 2" unique_id=948291959]
 layout_mode = 0
@@ -342,6 +385,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Ability 2"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ability 3" type="TextureButton" parent="Camera2D" unique_id=1613286264]
 offset_left = -265.9999
@@ -350,6 +394,7 @@ offset_right = -233.99991
 offset_bottom = -4.999977
 scale = Vector2(2.0058956, 2.0058956)
 texture_normal = ExtResource("5_k8do8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 3" unique_id=533470652]
 layout_mode = 0
@@ -363,6 +408,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Ability 3"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="Camera2D" unique_id=1303564084]
 offset_left = -266.0
@@ -371,6 +417,7 @@ offset_right = -234.0
 offset_bottom = -120.000015
 scale = Vector2(2.0058956, 2.0058956)
 texture_normal = ExtResource("5_k8do8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 4" unique_id=1581180976]
 layout_mode = 0
@@ -384,6 +431,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Ability 4"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="Camera2D" unique_id=1240482026]
 offset_left = -266.0
@@ -392,6 +440,7 @@ offset_right = -234.0
 offset_bottom = -236.99997
 scale = Vector2(2.0058954, 2.0058954)
 texture_normal = ExtResource("5_k8do8")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 5" unique_id=1231627670]
 layout_mode = 0
@@ -405,6 +454,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
 text = "Ability 5"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=2050875328]
 visible = false
@@ -437,6 +487,7 @@ patch_margin_left = 4
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D" unique_id=1776224770]
 self_modulate = Color(1, 0, 0, 1)
@@ -449,6 +500,7 @@ theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 247
 text = "60:00"
 visible_characters = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Points" type="Label" parent="Camera2D" unique_id=511125543]
 visible = false
@@ -479,6 +531,7 @@ theme_override_font_sizes/font_size = 247
 text = "Point Requirement:
 999999999"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Mult" type="Label" parent="Camera2D" unique_id=932083504]
 offset_left = -560.0
@@ -492,6 +545,7 @@ theme_override_font_sizes/font_size = 247
 text = "Mult:
 9999999999"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1810617686]
 wait_time = 60.0
@@ -500,18 +554,55 @@ autostart = true
 
 [connection signal="mouse_entered" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/Main Menu/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Main Menu/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Main Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 1" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 1" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 1" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 2" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 2" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 2" to="." method="_on_flag_2_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 3" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 3" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 3" to="." method="_on_flag_3_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 4" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 4" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 4" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 5" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 5" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 5" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 6" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 6" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 6" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 7" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 7" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 7" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 8" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 8" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 8" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 9" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 9" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 9" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 10" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 10" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 10" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 11" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 11" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 11" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Flag 12" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Flag 12" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 12" to="." method="_on_flag_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Ability 1" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Ability 1" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Ability 1" to="." method="_on_ability_1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Ability 2" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Ability 2" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/Ability 3" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Ability 3" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/Ability 4" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Ability 4" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/Ability 5" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Ability 5" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
