@@ -60,16 +60,16 @@ text = "Currency: 9999999"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=36508199]
 offset_left = 1004.00006
-offset_top = 348.99994
+offset_top = 41.99994
 offset_right = 1021.0001
-offset_bottom = 364.99997
+offset_bottom = 57.99997
 scale = Vector2(7.478242, 7.478242)
 texture_normal = ExtResource("3_gqsku")
 
 [node name="Ability One" type="TextureButton" parent="." unique_id=853133183]
-offset_left = 214.0
+offset_left = 36.0
 offset_top = 261.0
-offset_right = 246.0
+offset_right = 68.0
 offset_bottom = 293.0
 scale = Vector2(4.5722837, 4.5722837)
 texture_normal = ExtResource("6_s7atx")
@@ -84,6 +84,107 @@ scale = Vector2(0.01458371, 0.01458371)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 610
 text = "Item 1"
+horizontal_alignment = 1
+
+[node name="Ability Two" type="TextureButton" parent="." unique_id=652905932]
+offset_left = 195.0
+offset_top = 261.0
+offset_right = 227.0
+offset_bottom = 293.0
+scale = Vector2(4.5722837, 4.5722837)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability Two" unique_id=1271819118]
+layout_mode = 0
+offset_left = -6.123853
+offset_top = 34.0
+offset_right = 3154.8762
+offset_bottom = 645.0
+scale = Vector2(0.01458371, 0.01458371)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 610
+text = "Item 2"
+horizontal_alignment = 1
+
+[node name="Ability Three" type="TextureButton" parent="." unique_id=2028428542]
+offset_left = 354.0
+offset_top = 261.0
+offset_right = 386.0
+offset_bottom = 293.0
+scale = Vector2(4.5722837, 4.5722837)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Ability Three" unique_id=1862695716]
+layout_mode = 0
+offset_left = -6.123853
+offset_top = 34.0
+offset_right = 3154.8762
+offset_bottom = 645.0
+scale = Vector2(0.01458371, 0.01458371)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 610
+text = "Item 3"
+horizontal_alignment = 1
+
+[node name="Flag One" type="TextureButton" parent="." unique_id=878077255]
+offset_left = 641.0
+offset_top = 261.0
+offset_right = 673.0
+offset_bottom = 293.0
+scale = Vector2(4.5722837, 4.5722837)
+offset_transform_enabled = true
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Flag One" unique_id=1234541919]
+layout_mode = 0
+offset_left = -18.15285
+offset_top = 34.0
+offset_right = 4825.816
+offset_bottom = 645.0
+scale = Vector2(0.01458371, 0.01458371)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 610
+text = "Flag 1"
+horizontal_alignment = 1
+
+[node name="Flag Two" type="TextureButton" parent="." unique_id=501843390]
+offset_left = 800.0
+offset_top = 261.0
+offset_right = 832.0
+offset_bottom = 293.0
+scale = Vector2(4.5722837, 4.5722837)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Flag Two" unique_id=2147469479]
+layout_mode = 0
+offset_left = -18.152864
+offset_top = 34.0
+offset_right = 4825.817
+offset_bottom = 645.0
+scale = Vector2(0.01458371, 0.01458371)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 610
+text = "Flag 2"
+horizontal_alignment = 1
+
+[node name="Flag Three" type="TextureButton" parent="." unique_id=593985820]
+offset_left = 959.0
+offset_top = 261.0
+offset_right = 991.0
+offset_bottom = 293.0
+scale = Vector2(4.5722837, 4.5722837)
+texture_normal = ExtResource("6_s7atx")
+
+[node name="Label" type="Label" parent="Flag Three" unique_id=1968691791]
+layout_mode = 0
+offset_left = -20.996075
+offset_top = 34.0
+offset_right = 5227.8877
+offset_bottom = 645.0
+scale = Vector2(0.01458371, 0.01458371)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 610
+text = "Flag 3"
 horizontal_alignment = 1
 
 [node name="Ability 1" type="TextureButton" parent="." unique_id=149004265]
@@ -188,3 +289,8 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Ability One" to="." method="_on_ability_one_pressed"]
+[connection signal="pressed" from="Ability Two" to="." method="_on_ability_one_pressed"]
+[connection signal="pressed" from="Ability Three" to="." method="_on_ability_one_pressed"]
+[connection signal="pressed" from="Flag One" to="." method="_on_flag_one_pressed"]
+[connection signal="pressed" from="Flag Two" to="." method="_on_ability_one_pressed"]
+[connection signal="pressed" from="Flag Three" to="." method="_on_ability_one_pressed"]

@@ -12,6 +12,7 @@ var cells_set : bool = false
 var target_cell
 var flags_remaining : int = bombs
 var level_over : bool = false
+var mouse_over_menu : bool = false
 
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
@@ -40,11 +41,24 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
 func _process(delta: float) -> void:
-	$Camera2D/Mult2.text = str(Globals.points)
-	$"Camera2D/Point Requirement".text = "Point Requirement: " + str(Globals.level_requirement)
-	$Camera2D/Mult.text = "Mult: " + str(Globals.mult)
+	$"Camera2D/Point Requirement".text = "Point Requirement: " + "
+	" + str(Globals.level_requirement)
+	$Camera2D/Mult.text = "Mult: " + "
+	" + str(Globals.mult)
 	if level_over:
 		$Camera2D/Points.visible = true
+		$"Camera2D/Flag 1".visible = false
+		$"Camera2D/Flag 2".visible = false
+		$"Camera2D/Flag 3".visible = false
+		$"Camera2D/Flag 4".visible = false
+		$"Camera2D/Flag 5".visible = false
+		$"Camera2D/Flag 6".visible = false
+		$"Camera2D/Flag 7".visible = false
+		$"Camera2D/Flag 8".visible = false
+		$"Camera2D/Flag 9".visible = false
+		$"Camera2D/Flag 10".visible = false
+		$"Camera2D/Flag 11".visible = false
+		$"Camera2D/Flag 12".visible = false
 	$"Camera2D/Ability 1/Label".text = Abilities.ability_one.name
 	$"Camera2D/Ability 1".texture_normal = Abilities.ability_one.img
 	$"Camera2D/Ability 2/Label".text = Abilities.ability_two.name
@@ -55,7 +69,7 @@ func _process(delta: float) -> void:
 	$"Camera2D/Ability 4".texture_normal = Abilities.ability_four.img
 	$"Camera2D/Ability 5/Label".text = Abilities.ability_five.name
 	$"Camera2D/Ability 5".texture_normal = Abilities.ability_five.img
-	$Camera2D/HBoxContainer/Label.text = str($Timer.time_left)
+	$Camera2D/Label.text = str($Timer.time_left)
 	if Input.is_action_just_pressed("Zoom In") and $Camera2D.zoom < Vector2(5, 5):
 		$Camera2D.zoom += Vector2(0.1, 0.1)
 	if Input.is_action_just_pressed("Zoom Out") and $Camera2D.zoom > Vector2(0.5, 0.5):
@@ -67,7 +81,7 @@ func _process(delta: float) -> void:
 		else:
 			if not cells_set:
 				set_cells()
-	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and Input.is_action_pressed("Flag"):
+	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and Input.is_action_pressed("Flag") and not mouse_over_menu:
 		if not target_cell.is_hidden:
 			if target_cell.flag_around() == target_cell.bombs_around:
 				if target_cell.unflagged_bomb_around():
@@ -75,7 +89,7 @@ func _process(delta: float) -> void:
 				target_cell.unhide_neighbors = false
 				unhide_cells(target_cell)
 				target_cell.unhide_neighbors = false
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag"):
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu:
 		if target_cell.bombs_around == 0 and not target_cell.is_bomb:
 			unhide_cells(target_cell)
 		if target_cell.bombs_around != 0 or target_cell.is_bomb:
@@ -83,7 +97,7 @@ func _process(delta: float) -> void:
 				target_cell.is_hidden = false
 				if target_cell.is_bomb:
 					game_over()
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig"):
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig") and not mouse_over_menu:
 		if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
 			if Globals.red_flag_active:
 				target_cell.flag_type = "Red"
@@ -91,7 +105,7 @@ func _process(delta: float) -> void:
 			if Globals.blue_flag_active:
 				target_cell.flag_type = "Blue"
 				target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
-			if Globals.purple_flag_active:
+			if Globals.violet_flag_active:
 				target_cell.flag_type = "Purple"
 				target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
 			target_cell.flagged = true
@@ -103,7 +117,7 @@ func _process(delta: float) -> void:
 			flags_remaining += 1
 			target_cell.flagged = false
 	
-	$Camera2D/HBoxContainer/Label.self_modulate.h = $Timer.time_left * 0.01666
+	$Camera2D/Label.self_modulate.h = $Timer.time_left * 0.01666
 
 func set_bombs():
 	for x in map:
@@ -233,8 +247,17 @@ func point_count():
 				x.flagged_bombs_around()
 	Globals.points *= Globals.point_mult
 	Globals.total_points = Globals.points * (Globals.mult + 1)
-	$Camera2D/Points.text = "Points: " + str(Globals.points) + " X " + "Mult: " + str(Globals.mult + 1) + " = " + str(Globals.total_points)
-	$Camera2D/NinePatchRect.size.x += ($Camera2D/Points.get_total_character_count() * 22)
+	$Camera2D/Points.text = "Points: " + str(Globals.points) + "
+	" + "X" + "
+	" + "Mult:" + str(Globals.mult + 1) + "
+	" + "=" + "
+	" + str(Globals.total_points)
+
+func _on_main_menu_mouse_entered() -> void:
+	mouse_over_menu = true
+
+func _on_main_menu_mouse_exited() -> void:
+	mouse_over_menu = false
 
 func _on_timer_timeout() -> void:
 	point_count()
@@ -244,7 +267,6 @@ func _on_timer_timeout() -> void:
 		game_over()
 	else:
 		$Camera2D/TextureButton.visible = true
-		Globals.currency += Globals.points
 		Globals.points = 0
 
 func _on_texture_button_pressed() -> void:
@@ -253,3 +275,15 @@ func _on_texture_button_pressed() -> void:
 func _on_ability_1_pressed() -> void:
 	if Abilities.ability_one.name == "Auto Chord":
 		Abilities.auto_chord_active = true
+
+
+func _on_flag_1_pressed() -> void:
+	Globals.activate_red()
+
+
+func _on_flag_2_pressed() -> void:
+	Globals.activate_blue()
+
+
+func _on_flag_3_pressed() -> void:
+	Globals.activate_violet()
