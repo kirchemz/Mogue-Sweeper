@@ -31,7 +31,7 @@ func _ready() -> void:
 
 func start_map():
 	for x in map_width:
-		var row := []
+		var row : Array = []
 		for y in map_height:
 			row.append(0)
 		map.append(row)
@@ -171,11 +171,46 @@ func _process(delta: float) -> void:
 				target_cell.flag_type = "Red"
 				target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
 			if Globals.blue_flag_active:
-				target_cell.flag_type = "Blue"
-				target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
+				if Globals.blue_flags > 0:
+					target_cell.flag_type = "Blue"
+					target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
+					Globals.blue_flags -= 1
+				else:
+					Globals.activate_red()
 			if Globals.violet_flag_active:
 				target_cell.flag_type = "Purple"
 				target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
+			if Globals.pink_flag_active:
+				target_cell.flag_type = "Pink"
+				target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
+			if Globals.green_flag_active:
+				target_cell.flag_type = "Green"
+				target_cell.flag_tex = preload("res://Sprites/Green Flag.png")
+			if Globals.yellow_flag_active:
+				if Globals.yellow_flags > 0:
+					Globals.mult += 1
+					target_cell.flag_type = "Yellow"
+					target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
+				else:
+					Globals.activate_red()
+			if Globals.orange_flag_active:
+				target_cell.flag_type = "Orange"
+				target_cell.flag_tex = preload("res://Sprites/Orange Flag.png")
+			if Globals.magenta_flag_active:
+				target_cell.flag_type = "Magenta"
+				target_cell.flag_tex = preload("res://Sprites/Magenta Flag.png")
+			if Globals.black_flag_active:
+				target_cell.flag_type = "Black"
+				target_cell.flag_tex = preload("res://Sprites/Black Flag.png")
+			if Globals.white_flag_active:
+				target_cell.flag_type = "White"
+				target_cell.flag_tex = preload("res://Sprites/White Flag.png")
+			if Globals.grey_flag_active:
+				target_cell.flag_type = "Grey"
+				target_cell.flag_tex = preload("res://Sprites/Grey Flag.png")
+			if Globals.brown_flag_active:
+				target_cell.flag_type = "Brown"
+				target_cell.flag_tex = preload("res://Sprites/Brown Flag.png")
 			target_cell.flagged = true
 			flags_remaining -= 1
 			if Abilities.auto_chord_active:
@@ -351,7 +386,8 @@ func _on_flag_1_pressed() -> void:
 
 
 func _on_flag_2_pressed() -> void:
-	Globals.activate_blue()
+	if Globals.blue_flags > 0:
+		Globals.activate_blue()
 
 
 func _on_flag_3_pressed() -> void:
@@ -364,3 +400,39 @@ func _on_button_mouse_entered() -> void:
 
 func _on_button_mouse_exited() -> void:
 	mouse_over_menu = false
+
+
+func _on_flag_12_pressed() -> void:
+	Globals.activate_pink()
+
+
+func _on_flag_6_pressed() -> void:
+	Globals.activate_green()
+
+
+func _on_flag_5_pressed() -> void:
+	Globals.activate_yellow()
+
+
+func _on_flag_4_pressed() -> void:
+	Globals.activate_orange()
+
+
+func _on_flag_11_pressed() -> void:
+	Globals.activate_magenta()
+
+
+func _on_flag_7_pressed() -> void:
+	Globals.activate_black()
+
+
+func _on_flag_8_pressed() -> void:
+	Globals.activate_white()
+
+
+func _on_flag_9_pressed() -> void:
+	Globals.activate_grey()
+
+
+func _on_flag_10_pressed() -> void:
+	Globals.activate_brown()

@@ -3,10 +3,17 @@ extends Node2D
 var ability_one : Dictionary
 var ability_two : Dictionary
 var ability_three : Dictionary
-
 var flag_one : Dictionary
 var flag_two : Dictionary
 var flag_three : Dictionary
+var flag_options : Array
+var opening_pack : bool = false
+
+var rock_stock : Dictionary = {
+	"granite" : {
+		"name" : "Granite"
+	}
+}
 
 var ability_stock : Dictionary = {
 	"auto_chord" : {
@@ -19,14 +26,92 @@ var ability_stock : Dictionary = {
 var flag_stock : Dictionary = {
 	"blue_flag" : {
 		"name" : "Blue Flag",
+		"price" : 10,
+		"img" : preload("res://Sprites/Blue Flag.png"),
+		"rarity" : 50,
+		"amount" : Globals.blue_flags
+	},
+	"violet_flag" : {
+		"name" : "Violet Flag",
+		"price" : 1000,
+		"img" : preload("res://Sprites/Purple Flag.png"),
+		"rarity" : 15,
+		"amount" : Globals.violet_flags
+	},
+	"orange_flag" : {
+		"name" : "Orange Flag",
 		"price" : 100,
-		"img" : preload("res://Sprites/Blue Flag.png")
+		"img" : preload("res://Sprites/Orange Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.orange_flags
+	},
+	"green_flag" : {
+		"name" : "Green Flag",
+		"price" : 1000,
+		"img" : preload("res://Sprites/Green Flag.png"),
+		"rarity" : 2,
+		"amount" : Globals.green_flags
+	},
+	"yellow_flag" : {
+		"name" : "Yellow Flag",
+		"price" : 100,
+		"img" : preload("res://Sprites/Yellow Flag.png"),
+		"rarity" : 25,
+		"amount" : Globals.yellow_flags
+	},
+	"pink_flag" : {
+		"name" : "Pink Flag",
+		"price" : 1000,
+		"img" : preload("res://Sprites/Pink Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.pink_flags
+	},
+	"magenta_flag" : {
+		"name" : "Magenta Flag",
+		"price" : 100,
+		"img" : preload("res://Sprites/Magenta Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.magenta_flags
+	},
+	"black_flag" : {
+		"name" : "Black Flag",
+		"price" : 1000,
+		"img" : preload("res://Sprites/Black Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.black_flags
+	},
+	"white_flag" : {
+		"name" : "White Flag",
+		"price" : 100,
+		"img" : preload("res://Sprites/White Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.white_flags
+	},
+	"grey_flag" : {
+		"name" : "Grey Flag",
+		"price" : 1000,
+		"img" : preload("res://Sprites/Grey Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.grey_flags
+	},
+	"brown_flag" : {
+		"name" : "Brown Flag",
+		"price" : 100,
+		"img" : preload("res://Sprites/Brown Flag.png"),
+		"rarity" : 1,
+		"amount" : Globals.brown_flags
 	}
 }
 
 func _ready() -> void:
+	flag_options = [flag_stock.blue_flag, flag_stock.violet_flag, flag_stock.yellow_flag, flag_stock.orange_flag, flag_stock.magenta_flag, flag_stock.pink_flag, flag_stock.black_flag, flag_stock.brown_flag, flag_stock.white_flag, flag_stock.grey_flag]
 	ability_one = ability_stock.auto_chord
-	flag_one = flag_stock.blue_flag
+	flag_one = choose_flag()
+	flag_options.erase(flag_one)
+	flag_two = choose_flag()
+	flag_options.erase(flag_two)
+	flag_three = choose_flag()
+	flag_options.erase(flag_three)
 
 func _process(delta: float) -> void:
 	$"Ability 1".texture_normal = Abilities.ability_one.img
@@ -46,6 +131,10 @@ func _process(delta: float) -> void:
 	$"Ability One/Label".text = ability_one.name + ": " + str(ability_one.price)
 	$"Flag One".texture_normal = flag_one.img
 	$"Flag One/Label".text = flag_one.name + ": " + str(flag_one.price)
+	$"Flag Two".texture_normal = flag_two.img
+	$"Flag Two/Label".text = flag_two.name + ": " + str(flag_two.price)
+	$"Flag Three".texture_normal = flag_three.img
+	$"Flag Three/Label".text = flag_three.name + ": " + str(flag_three.price)
 
 func _on_texture_button_pressed() -> void:
 	Globals.level_requirement += 50
@@ -59,7 +148,40 @@ func _on_ability_one_pressed() -> void:
 			Abilities.ability_one = ability_one
 
 func _on_flag_one_pressed() -> void:
-	if Globals.currency >= ability_one.price:
-		Globals.currency -= ability_one.price
-		if flag_one == flag_stock.blue_flag:
-			Globals.blue_flags += 1
+	if Globals.currency >= flag_one.price:
+		Globals.currency -= flag_one.price
+		flag_one.amount += 1
+
+func _on_flag_two_pressed() -> void:
+	if Globals.currency >= flag_two.price:
+		Globals.currency -= flag_two.price
+		flag_two.amount += 1
+
+func _on_flag_three_pressed() -> void:
+	if Globals.currency >= flag_three.price:
+		Globals.currency -= flag_three.price
+		flag_three.amount += 1
+
+func choose_flag():
+	var total_weight : int = 0
+	
+	for flag in flag_options:
+		total_weight += flag.rarity
+	
+	var chosen_flag : float = randf() * total_weight
+	
+	for flag in flag_options:
+		if chosen_flag < flag.rarity:
+			return flag
+		chosen_flag -= flag.rarity
+	
+	return flag_options[-1] # fallback
+
+
+func _on_texture_button_2_pressed() -> void:
+	opening_pack = true
+	var camera_drag = create_tween()
+	camera_drag.set_ease(Tween.EASE_IN)
+	camera_drag.set_trans(Tween.TRANS_BACK)
+	camera_drag.tween_property($Camera2D, "position", Vector2(1728, 324), 1)
+	camera_drag.play()

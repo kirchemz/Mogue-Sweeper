@@ -136,9 +136,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Flag 4" type="TextureButton" parent="Camera2D" unique_id=2059032593]
 offset_left = -537.0
-offset_top = 69.0
+offset_top = 68.0
 offset_right = -521.0
-offset_bottom = 85.0
+offset_bottom = 84.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_kcyjf")
 metadata/_edit_use_anchors_ = true
@@ -568,31 +568,31 @@ autostart = true
 [connection signal="pressed" from="Camera2D/Flag 3" to="." method="_on_flag_3_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 4" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 4" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 4" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 4" to="." method="_on_flag_4_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 5" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 5" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 5" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 5" to="." method="_on_flag_5_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 6" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 6" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 6" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 6" to="." method="_on_flag_6_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 7" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 7" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 7" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 7" to="." method="_on_flag_7_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 8" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 8" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 8" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 8" to="." method="_on_flag_8_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 9" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 9" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 9" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 9" to="." method="_on_flag_9_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 10" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 10" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 10" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 10" to="." method="_on_flag_10_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 11" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 11" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 11" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 11" to="." method="_on_flag_11_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Flag 12" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 12" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Flag 12" to="." method="_on_flag_1_pressed"]
+[connection signal="pressed" from="Camera2D/Flag 12" to="." method="_on_flag_12_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Ability 1" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Ability 1" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Ability 1" to="." method="_on_ability_1_pressed"]

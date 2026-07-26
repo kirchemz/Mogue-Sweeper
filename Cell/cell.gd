@@ -16,12 +16,41 @@ var world
 var flags_around : int = 0
 var unflagged_bombs_around : bool = false
 var mult : float = 1
+var point_bonus : int = 0
 
 func bomb():
 	is_bomb = true
 	$Sprite2D.texture = bomb_tex
 
 func _process(delta: float) -> void:
+	if is_instance_valid(bombs_around):
+		if bombs_around == 1:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.ones_points.mult
+		if bombs_around == 2:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.twos_points.mult
+		if bombs_around == 3:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.threes_points.mult
+		if bombs_around == 4:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.fours_points.mult
+		if bombs_around == 5:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.fives_points.mult
+		if bombs_around == 6:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.sixes_points.mult
+		if bombs_around == 7:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.sevens_points.mult
+		if bombs_around == 8:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.eights_points.mult
+		if bombs_around == 9:
+			point_bonus += Globals.ones_points.points
+			mult += Globals.nines_points.mult
 	world = get_parent().get_parent()
 	if mouse_in:
 		world.target_cell = self
@@ -49,7 +78,7 @@ func _process(delta: float) -> void:
 		elif bombs_around == 2:
 			modulate = Color(0.0, 0.553, 1.0, 1.0)
 		elif bombs_around == 3:
-			modulate = Color(0.84, 0.0, 0.0, 1.0)
+			modulate = Color(0.839, 0.0, 0.0, 1.0)
 		elif bombs_around == 4:
 			modulate = Color(0.812, 0.0, 0.84, 1.0)
 		elif bombs_around == 5:
@@ -153,4 +182,4 @@ func flagged_bombs_around():
 							mult += 1
 						if neighbor.flag_type == "Purple":
 							Globals.point_mult += 1
-						Globals.points += (1 * mult)
+						Globals.points += (point_bonus * mult)

@@ -1,11 +1,48 @@
 extends Node
 
+var ones_points : Dictionary = {
+	"points" : 1,
+	"mult" : 0
+}
+var twos_points : Dictionary = {
+	"points" : 2,
+	"mult" : 0
+}
+var threes_points : Dictionary = {
+	"points" : 3,
+	"mult" : 0
+}
+var fours_points : Dictionary = {
+	"points" : 4,
+	"mult" : 0
+}
+var fives_points : Dictionary = {
+	"points" : 5,
+	"mult" : 1
+}
+var sixes_points : Dictionary = {
+	"points" : 6,
+	"mult" : 3
+}
+var sevens_points : Dictionary = {
+	"points" : 7,
+	"mult" : 5
+}
+var eights_points : Dictionary = {
+	"points" : 8,
+	"mult" : 7
+}
+var nines_points : Dictionary = {
+	"points" : 9,
+	"mult" : 9
+}
+
 var points : float = 0.0
 var point_mult : float = 1.0
 var mult : float = 0.0
 var total_points : float = 0.0
 var level_requirement : int = 50
-var currency : int = 0.0
+var currency : int = 100
 
 var red_flag_active: bool = true
 var blue_flags : int = false
@@ -69,6 +106,132 @@ func activate_violet():
 	white_flag_active = false
 	grey_flag_active = false
 	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_pink():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = true
+
+func activate_green():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = true
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_yellow():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = true
+	pink_flag_active = false
+
+func activate_orange():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = true
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_magenta():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = true
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_black():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = true
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_white():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = true
+	grey_flag_active = false
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_grey():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = true
+	brown_flag_active = false
+	magenta_flag_active = false
+	yellow_flag_active = false
+	pink_flag_active = false
+
+func activate_brown():
+	red_flag_active = false
+	blue_flag_active = false
+	violet_flag_active = false
+	orange_flag_active = false
+	green_flag_active = false
+	black_flag_active = false
+	white_flag_active = false
+	grey_flag_active = false
+	brown_flag_active = true
 	magenta_flag_active = false
 	yellow_flag_active = false
 	pink_flag_active = false
