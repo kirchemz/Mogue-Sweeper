@@ -28,78 +28,67 @@ var flag_stock : Dictionary = {
 		"name" : "Blue Flag",
 		"price" : 10,
 		"img" : preload("res://Sprites/Blue Flag.png"),
-		"rarity" : 50,
-		"amount" : Globals.blue_flags
+		"rarity" : 50
 	},
 	"violet_flag" : {
 		"name" : "Violet Flag",
 		"price" : 1000,
 		"img" : preload("res://Sprites/Purple Flag.png"),
-		"rarity" : 15,
-		"amount" : Globals.violet_flags
+		"rarity" : 15
 	},
 	"orange_flag" : {
 		"name" : "Orange Flag",
 		"price" : 100,
 		"img" : preload("res://Sprites/Orange Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.orange_flags
+		"rarity" : 1
 	},
 	"green_flag" : {
 		"name" : "Green Flag",
 		"price" : 1000,
 		"img" : preload("res://Sprites/Green Flag.png"),
-		"rarity" : 2,
-		"amount" : Globals.green_flags
+		"rarity" : 2
 	},
 	"yellow_flag" : {
 		"name" : "Yellow Flag",
 		"price" : 100,
 		"img" : preload("res://Sprites/Yellow Flag.png"),
-		"rarity" : 25,
-		"amount" : Globals.yellow_flags
+		"rarity" : 25
 	},
 	"pink_flag" : {
 		"name" : "Pink Flag",
 		"price" : 1000,
 		"img" : preload("res://Sprites/Pink Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.pink_flags
+		"rarity" : 1
 	},
 	"magenta_flag" : {
 		"name" : "Magenta Flag",
 		"price" : 100,
 		"img" : preload("res://Sprites/Magenta Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.magenta_flags
+		"rarity" : 1
 	},
 	"black_flag" : {
 		"name" : "Black Flag",
 		"price" : 1000,
 		"img" : preload("res://Sprites/Black Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.black_flags
+		"rarity" : 1
 	},
 	"white_flag" : {
 		"name" : "White Flag",
 		"price" : 100,
 		"img" : preload("res://Sprites/White Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.white_flags
+		"rarity" : 1
 	},
 	"grey_flag" : {
 		"name" : "Grey Flag",
 		"price" : 1000,
 		"img" : preload("res://Sprites/Grey Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.grey_flags
+		"rarity" : 1
 	},
 	"brown_flag" : {
 		"name" : "Brown Flag",
 		"price" : 100,
 		"img" : preload("res://Sprites/Brown Flag.png"),
-		"rarity" : 1,
-		"amount" : Globals.brown_flags
+		"rarity" : 1
 	}
 }
 
@@ -150,17 +139,80 @@ func _on_ability_one_pressed() -> void:
 func _on_flag_one_pressed() -> void:
 	if Globals.currency >= flag_one.price:
 		Globals.currency -= flag_one.price
-		flag_one.amount += 1
+		if flag_one == flag_stock.blue_flag:
+			Globals.blue_flags += 1
+		if flag_one == flag_stock.violet_flag:
+			Globals.violet_flags += 1
+		if flag_one == flag_stock.green_flag:
+			Globals.green_flags += 1
+		if flag_one == flag_stock.orange_flag:
+			Globals.orange_flags += 1
+		if flag_one == flag_stock.yellow_flag:
+			Globals.yellow_flags += 1
+		if flag_one == flag_stock.magenta_flag:
+			Globals.magenta_flags += 1
+		if flag_one == flag_stock.pink_flag:
+			Globals.pink_flags += 1
+		if flag_one == flag_stock.black_flag:
+			Globals.black_flags += 1
+		if flag_one == flag_stock.white_flag:
+			Globals.white_flags += 1
+		if flag_one == flag_stock.grey_flag:
+			Globals.grey_flags += 1
+		if flag_one == flag_stock.brown_flag:
+			Globals.brown_flags += 1
 
 func _on_flag_two_pressed() -> void:
 	if Globals.currency >= flag_two.price:
 		Globals.currency -= flag_two.price
-		flag_two.amount += 1
+		if flag_two == flag_stock.blue_flag:
+			Globals.blue_flags += 1
+		if flag_two == flag_stock.violet_flag:
+			Globals.violet_flags += 1
+		if flag_two == flag_stock.green_flag:
+			Globals.green_flags += 1
+		if flag_two == flag_stock.orange_flag:
+			Globals.orange_flags += 1
+		if flag_two == flag_stock.yellow_flag:
+			Globals.yellow_flags += 1
+		if flag_two == flag_stock.magenta_flag:
+			Globals.magenta_flags += 1
+		if flag_two == flag_stock.pink_flag:
+			Globals.pink_flags += 1
+		if flag_two == flag_stock.black_flag:
+			Globals.black_flags += 1
+		if flag_two == flag_stock.white_flag:
+			Globals.white_flags += 1
+		if flag_two == flag_stock.grey_flag:
+			Globals.grey_flags += 1
+		if flag_two == flag_stock.brown_flag:
+			Globals.brown_flags += 1
 
 func _on_flag_three_pressed() -> void:
 	if Globals.currency >= flag_three.price:
 		Globals.currency -= flag_three.price
-		flag_three.amount += 1
+		if flag_three == flag_stock.blue_flag:
+			Globals.blue_flags += 1
+		if flag_three == flag_stock.violet_flag:
+			Globals.violet_flags += 1
+		if flag_three == flag_stock.green_flag:
+			Globals.green_flags += 1
+		if flag_three == flag_stock.orange_flag:
+			Globals.orange_flags += 1
+		if flag_three == flag_stock.yellow_flag:
+			Globals.yellow_flags += 1
+		if flag_three == flag_stock.magenta_flag:
+			Globals.magenta_flags += 1
+		if flag_three == flag_stock.pink_flag:
+			Globals.pink_flags += 1
+		if flag_three == flag_stock.black_flag:
+			Globals.black_flags += 1
+		if flag_three == flag_stock.white_flag:
+			Globals.white_flags += 1
+		if flag_three == flag_stock.grey_flag:
+			Globals.grey_flags += 1
+		if flag_three == flag_stock.brown_flag:
+			Globals.brown_flags += 1
 
 func choose_flag():
 	var total_weight : int = 0

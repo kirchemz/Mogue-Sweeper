@@ -38,10 +38,10 @@ text = "Shop"
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=571123486]
-offset_left = -466.0
-offset_top = 155.0
-offset_right = -396.01956
-offset_bottom = 171.73804
+offset_left = 26.99997
+offset_top = 167.00002
+offset_right = 96.98041
+offset_bottom = 183.73805
 scale = Vector2(4.4869685, 4.4869685)
 texture = ExtResource("4_dcrsj")
 patch_margin_left = 13

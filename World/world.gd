@@ -58,18 +58,18 @@ func _process(delta: float) -> void:
 		$"Camera2D/Ability 5".visible = false
 		$"Camera2D/Point Requirement".visible = false
 		$Camera2D/Mult.visible = false
-		$"Camera2D/Flag 1".position = Vector2(-537, -12)
-		$"Camera2D/Flag 2".position = Vector2(-446, -12)
-		$"Camera2D/Flag 3".position = Vector2(-537, -91)
-		$"Camera2D/Flag 4".position = Vector2(-537, 69)
-		$"Camera2D/Flag 5".position = Vector2(-446, 69)
-		$"Camera2D/Flag 6".position = Vector2(-446, -91)
-		$"Camera2D/Flag 7".position = Vector2(-537, 147)
-		$"Camera2D/Flag 8".position = Vector2(-446, 147)
-		$"Camera2D/Flag 9".position = Vector2(-537, -170)
-		$"Camera2D/Flag 10".position = Vector2(-537, 228)
-		$"Camera2D/Flag 11".position = Vector2(-446, 228)
-		$"Camera2D/Flag 12".position = Vector2(-446, -170)
+		$"Camera2D/Flag 1".position = Vector2(-537 + 16, -12)
+		$"Camera2D/Flag 2".position = Vector2(-446 + 16, -12)
+		$"Camera2D/Flag 3".position = Vector2(-537 + 16, -91)
+		$"Camera2D/Flag 4".position = Vector2(-537 + 16, 69)
+		$"Camera2D/Flag 5".position = Vector2(-446 + 16, 69)
+		$"Camera2D/Flag 6".position = Vector2(-446 + 16, -91)
+		$"Camera2D/Flag 7".position = Vector2(-537 + 16, 147)
+		$"Camera2D/Flag 8".position = Vector2(-446 + 16, 147)
+		$"Camera2D/Flag 9".position = Vector2(-537 + 16, -170)
+		$"Camera2D/Flag 10".position = Vector2(-537 + 16, 228)
+		$"Camera2D/Flag 11".position = Vector2(-446 + 16, 228)
+		$"Camera2D/Flag 12".position = Vector2(-446 + 16, -170)
 		$Camera2D/NinePatchRect.position = Vector2(-556, -297)
 		$Camera2D/Label.position = Vector2(-546, -310)
 		$"Camera2D/Main Menu".size.x = 70
@@ -86,18 +86,18 @@ func _process(delta: float) -> void:
 		$"Camera2D/Ability 5".visible = true
 		$"Camera2D/Point Requirement".visible = true
 		$Camera2D/Mult.visible = true
-		$"Camera2D/Flag 1".position = Vector2(-537, -12)
-		$"Camera2D/Flag 2".position = Vector2(-446, -12)
-		$"Camera2D/Flag 3".position = Vector2(-358, -12)
-		$"Camera2D/Flag 4".position = Vector2(-537, 69)
-		$"Camera2D/Flag 5".position = Vector2(-446, 69)
-		$"Camera2D/Flag 6".position = Vector2(-358, 69)
-		$"Camera2D/Flag 7".position = Vector2(-537, 147)
-		$"Camera2D/Flag 8".position = Vector2(-446, 147)
-		$"Camera2D/Flag 9".position = Vector2(-358, 147)
-		$"Camera2D/Flag 10".position = Vector2(-537, 228)
-		$"Camera2D/Flag 11".position = Vector2(-446, 228)
-		$"Camera2D/Flag 12".position = Vector2(-358, 228)
+		$"Camera2D/Flag 1".position = Vector2(-521, 5)
+		$"Camera2D/Flag 2".position = Vector2(-430, 5)
+		$"Camera2D/Flag 3".position = Vector2(-342, 5)
+		$"Camera2D/Flag 4".position = Vector2(-521, 85)
+		$"Camera2D/Flag 5".position = Vector2(-430, 85)
+		$"Camera2D/Flag 6".position = Vector2(-342, 85)
+		$"Camera2D/Flag 7".position = Vector2(-521, 163)
+		$"Camera2D/Flag 8".position = Vector2(-430, 163)
+		$"Camera2D/Flag 9".position = Vector2(-342, 163)
+		$"Camera2D/Flag 10".position = Vector2(-521, 244)
+		$"Camera2D/Flag 11".position = Vector2(-430, 244)
+		$"Camera2D/Flag 12".position = Vector2(-342, 244)
 		$Camera2D/NinePatchRect.position = Vector2(-522, -280)
 		$Camera2D/Label.position = Vector2(-512, -295)
 		$"Camera2D/Main Menu".size.x = 140
@@ -180,6 +180,7 @@ func _process(delta: float) -> void:
 			if Globals.violet_flag_active:
 				target_cell.flag_type = "Purple"
 				target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
+				Globals.violet_flags -= 1
 			if Globals.pink_flag_active:
 				target_cell.flag_type = "Pink"
 				target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
@@ -191,6 +192,7 @@ func _process(delta: float) -> void:
 					Globals.mult += 1
 					target_cell.flag_type = "Yellow"
 					target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
+					Globals.yellow_flags -= 1
 				else:
 					Globals.activate_red()
 			if Globals.orange_flag_active:
@@ -248,6 +250,7 @@ func set_cells():
 					if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
 						if map[check_x][check_y].is_bomb:
 							cell_instance.bombs_around += 1
+			cell_instance.bombs_around_set = true
 	cells_set = true
 
 func unhide_cells(cell_instance):

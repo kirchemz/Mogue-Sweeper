@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c27vxgaejt3bg" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner04a.png" id="2_j8job"]
 [ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://button.gd" id="5_0lysu"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="5_k8do8"]
 [ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
 [ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="6_bkhv4"]
@@ -66,12 +67,14 @@ scale = Vector2(0.844035, 0.844035)
 texture = ExtResource("3_xw5lg")
 
 [node name="Flag 1" type="TextureButton" parent="Camera2D" unique_id=864618710]
-offset_left = -537.0
-offset_top = -12.0
-offset_right = -521.0
-offset_bottom = 4.0
+offset_left = -521.0
+offset_top = 4.0
+offset_right = -505.0
+offset_bottom = 20.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("3_yf0ba")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 1" unique_id=1291048954]
@@ -94,7 +97,9 @@ offset_top = -12.0
 offset_right = -430.0
 offset_bottom = 4.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("5_oe8m4")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 2" unique_id=1951801237]
@@ -117,7 +122,9 @@ offset_top = -12.0
 offset_right = -342.0
 offset_bottom = 4.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("6_w47uh")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 3" unique_id=442120244]
@@ -140,7 +147,9 @@ offset_top = 68.0
 offset_right = -521.0
 offset_bottom = 84.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("7_kcyjf")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 4" unique_id=1054746687]
@@ -163,7 +172,9 @@ offset_top = 69.0
 offset_right = -430.0
 offset_bottom = 85.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("8_xw5lg")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 5" unique_id=953338764]
@@ -186,7 +197,9 @@ offset_top = 69.0
 offset_right = -342.0
 offset_bottom = 85.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("9_0lysu")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 6" unique_id=550620446]
@@ -209,7 +222,9 @@ offset_top = 147.0
 offset_right = -521.0
 offset_bottom = 163.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("10_26uyv")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 7" unique_id=124279044]
@@ -232,7 +247,9 @@ offset_top = 147.0
 offset_right = -430.0
 offset_bottom = 163.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("11_dqu5g")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 8" unique_id=431028872]
@@ -255,7 +272,9 @@ offset_top = 147.0
 offset_right = -342.0
 offset_bottom = 163.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("12_o6lw0")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 9" unique_id=1130691490]
@@ -278,7 +297,9 @@ offset_top = 228.0
 offset_right = -521.0
 offset_bottom = 244.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("13_x0pyu")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 10" unique_id=1299739723]
@@ -301,7 +322,9 @@ offset_top = 228.0
 offset_right = -430.0
 offset_bottom = 244.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("14_dg1ng")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 11" unique_id=549990866]
@@ -324,7 +347,9 @@ offset_top = 228.0
 offset_right = -342.0
 offset_bottom = 244.0
 scale = Vector2(3, 3)
+pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("15_yfuda")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 12" unique_id=1504186339]
@@ -342,12 +367,14 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 1" type="TextureButton" parent="Camera2D" unique_id=36892986]
-offset_left = -265.99997
+offset_left = -234.0
 offset_top = 194.00006
-offset_right = -233.99997
+offset_right = -202.0
 offset_bottom = 226.00009
 scale = Vector2(2.0058956, 2.0058956)
+pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 1" unique_id=855718142]
@@ -365,12 +392,14 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="Camera2D" unique_id=1437667531]
-offset_left = -266.0
+offset_left = -234.0
 offset_top = 78.00001
-offset_right = -234.0
+offset_right = -202.0
 offset_bottom = 110.00001
 scale = Vector2(2.0058956, 2.0058956)
+pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 2" unique_id=948291959]
@@ -388,12 +417,14 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 3" type="TextureButton" parent="Camera2D" unique_id=1613286264]
-offset_left = -265.9999
+offset_left = -234.0
 offset_top = -36.999977
-offset_right = -233.99991
+offset_right = -202.0
 offset_bottom = -4.999977
 scale = Vector2(2.0058956, 2.0058956)
+pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 3" unique_id=533470652]
@@ -411,12 +442,14 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="Camera2D" unique_id=1303564084]
-offset_left = -266.0
+offset_left = -234.0
 offset_top = -152.00002
-offset_right = -234.0
+offset_right = -202.0
 offset_bottom = -120.000015
 scale = Vector2(2.0058956, 2.0058956)
+pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 4" unique_id=1581180976]
@@ -434,12 +467,14 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="Camera2D" unique_id=1240482026]
-offset_left = -266.0
+offset_left = -234.0
 offset_top = -269.0
-offset_right = -234.0
+offset_right = -202.0
 offset_bottom = -236.99997
 scale = Vector2(2.0058954, 2.0058954)
+pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
+script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 5" unique_id=1231627670]
@@ -458,12 +493,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=2050875328]
 visible = false
-offset_left = -552.0
-offset_top = 212.99998
-offset_right = -488.0
-offset_bottom = 232.99998
+offset_left = -461.0
+offset_top = 239.0
+offset_right = -397.0
+offset_bottom = 259.0
 scale = Vector2(3.8176887, 3.8176887)
+pivot_offset = Vector2(32, 8)
 texture_normal = ExtResource("2_3f78f")
+script = ExtResource("5_0lysu")
 
 [node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=634878893]
 layout_mode = 0
@@ -557,52 +594,88 @@ autostart = true
 [connection signal="mouse_entered" from="Camera2D/Main Menu/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Main Menu/Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Main Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 1" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 1" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 1" to="." method="_on_flag_1_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 2" to="Camera2D/Flag 2" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 2" to="Camera2D/Flag 2" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 2" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 2" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 2" to="." method="_on_flag_2_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 3" to="Camera2D/Flag 3" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 3" to="Camera2D/Flag 3" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 3" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 3" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 3" to="." method="_on_flag_3_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 4" to="Camera2D/Flag 4" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 4" to="Camera2D/Flag 4" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 4" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 4" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 4" to="." method="_on_flag_4_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 5" to="Camera2D/Flag 5" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 5" to="Camera2D/Flag 5" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 5" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 5" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 5" to="." method="_on_flag_5_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 6" to="Camera2D/Flag 6" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 6" to="Camera2D/Flag 6" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 6" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 6" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 6" to="." method="_on_flag_6_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 7" to="Camera2D/Flag 7" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 7" to="Camera2D/Flag 7" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 7" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 7" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 7" to="." method="_on_flag_7_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 8" to="Camera2D/Flag 8" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 8" to="Camera2D/Flag 8" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 8" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 8" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 8" to="." method="_on_flag_8_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 9" to="Camera2D/Flag 9" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 9" to="Camera2D/Flag 9" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 9" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 9" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 9" to="." method="_on_flag_9_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 10" to="Camera2D/Flag 10" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 10" to="Camera2D/Flag 10" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 10" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 10" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 10" to="." method="_on_flag_10_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 11" to="Camera2D/Flag 11" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 11" to="Camera2D/Flag 11" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 11" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 11" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 11" to="." method="_on_flag_11_pressed"]
+[connection signal="button_down" from="Camera2D/Flag 12" to="Camera2D/Flag 12" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Flag 12" to="Camera2D/Flag 12" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 12" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Flag 12" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Flag 12" to="." method="_on_flag_12_pressed"]
+[connection signal="button_down" from="Camera2D/Ability 1" to="Camera2D/Ability 1" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Ability 1" to="Camera2D/Ability 1" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Ability 1" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Ability 1" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Ability 1" to="." method="_on_ability_1_pressed"]
+[connection signal="button_down" from="Camera2D/Ability 2" to="Camera2D/Ability 2" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Ability 2" to="Camera2D/Ability 2" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Ability 2" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Ability 2" to="." method="_on_button_mouse_exited"]
+[connection signal="button_down" from="Camera2D/Ability 3" to="Camera2D/Ability 3" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Ability 3" to="Camera2D/Ability 3" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Ability 3" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Ability 3" to="." method="_on_button_mouse_exited"]
+[connection signal="button_down" from="Camera2D/Ability 4" to="Camera2D/Ability 4" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Ability 4" to="Camera2D/Ability 4" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Ability 4" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Ability 4" to="." method="_on_button_mouse_exited"]
+[connection signal="button_down" from="Camera2D/Ability 5" to="Camera2D/Ability 5" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Ability 5" to="Camera2D/Ability 5" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Ability 5" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Ability 5" to="." method="_on_button_mouse_exited"]
+[connection signal="button_down" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_up"]
 [connection signal="pressed" from="Camera2D/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
