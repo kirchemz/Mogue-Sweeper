@@ -1,5 +1,15 @@
 extends Node
 
+var one_level : int = 1
+var two_level : int = 1
+var three_level : int = 1
+var four_level : int = 1
+var five_level : int = 1
+var six_level : int = 1
+var seven_level : int = 1
+var eight_level : int = 1
+var nine_level : int = 1
+
 var ones_points : Dictionary = {
 	"points" : 1,
 	"mult" : 0
@@ -235,3 +245,8 @@ func activate_brown():
 	magenta_flag_active = false
 	yellow_flag_active = false
 	pink_flag_active = false
+
+
+func upgrade_ones():
+	ones_points.points += 1 * one_level
+	one_level += 1

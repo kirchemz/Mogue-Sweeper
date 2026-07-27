@@ -5,19 +5,33 @@
 [ext_resource type="Texture2D" uid="uid://vskmfvrt3gwl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner01a.png" id="2_gqsku"]
 [ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="3_gqsku"]
 [ext_resource type="Texture2D" uid="uid://c5i3jinqs2sn6" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Bar07a.png" id="4_dcrsj"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://button.gd" id="6_fi1uk"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="6_fi1uk"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="6_s7atx"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
+[ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
+[ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://button.gd" id="10_8m5wk"]
 
 [node name="Shop" type="Node2D" unique_id=2030919428]
 script = ExtResource("1_2nxxu")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1992850780]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("9_ty2y0")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=895600081]
+visible = false
+offset_left = 1152.0
+offset_right = 2304.0
+offset_bottom = 648.0
+texture = ExtResource("9_ty2y0")
+
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1605726257]
-offset_left = 17.000015
-offset_top = 11.000004
-offset_right = 151.32112
-offset_bottom = 37.000004
-scale = Vector2(5.5240765, 5.5240765)
+offset_left = 62.0
+offset_top = 56.0
+offset_right = 262.6216
+offset_bottom = 82.0
+scale = Vector2(3.4542642, 3.4542642)
 texture = ExtResource("2_gqsku")
 patch_margin_left = 13
 patch_margin_top = 5
@@ -25,7 +39,10 @@ patch_margin_right = 13
 patch_margin_bottom = 6
 
 [node name="Label" type="Label" parent="NinePatchRect" unique_id=556533680]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.23081587
+anchor_right = 18.389427
 offset_left = 46.885654
 offset_top = 1.6292318
 offset_right = 970.8857
@@ -35,12 +52,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 635
 text = "Shop"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=571123486]
-offset_left = 26.99997
+offset_left = 74.0
 offset_top = 167.00002
-offset_right = 96.98041
+offset_right = 143.98044
 offset_bottom = 183.73805
 scale = Vector2(4.4869685, 4.4869685)
 texture = ExtResource("4_dcrsj")
@@ -64,10 +82,10 @@ text = "Currency: 9999999"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=36508199]
-offset_left = 1004.00006
-offset_top = 13.999992
-offset_right = 1021.0001
-offset_bottom = 30.000023
+offset_left = 964.9999
+offset_top = 62.000008
+offset_right = 981.99994
+offset_bottom = 78.00004
 scale = Vector2(7.478242, 7.478242)
 texture_normal = ExtResource("3_gqsku")
 script = ExtResource("6_fi1uk")
@@ -86,7 +104,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Ability One" unique_id=836141810]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19820507
+anchor_left = 0.19820404
 anchor_right = 0.19820404
 offset_left = -6.123853
 offset_top = 34.0
@@ -112,7 +130,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Ability Two" unique_id=1271819118]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19820504
+anchor_left = 0.19820404
 anchor_right = 0.19820404
 offset_left = -6.123853
 offset_top = 34.0
@@ -138,7 +156,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Ability Three" unique_id=1862695716]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19820507
+anchor_left = 0.19820404
 anchor_right = 0.19820404
 offset_left = -6.123853
 offset_top = 34.0
@@ -233,19 +251,20 @@ text = "Flag 3"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Flag One2" type="TextureButton" parent="." unique_id=1647375030]
-offset_left = 1214.0
-offset_top = 121.0
-offset_right = 1246.0
-offset_bottom = 153.0
+[node name="Rock One" type="TextureButton" parent="." unique_id=1647375030]
+offset_left = 1340.0518
+offset_top = 275.05176
+offset_right = 1372.0518
+offset_bottom = 307.05176
 scale = Vector2(8.753236, 8.753236)
+pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("6_s7atx")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Flag One2" unique_id=815261953]
+[node name="Label" type="Label" parent="Rock One" unique_id=815261953]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12815318
@@ -261,19 +280,20 @@ text = "ROCKS"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Flag One3" type="TextureButton" parent="." unique_id=564356476]
-offset_left = 1584.0
-offset_top = 121.0
-offset_right = 1616.0
-offset_bottom = 153.0
+[node name="Rock Two" type="TextureButton" parent="." unique_id=564356476]
+offset_left = 1710.0518
+offset_top = 275.05176
+offset_right = 1742.0518
+offset_bottom = 307.05176
 scale = Vector2(8.753236, 8.753236)
+pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("6_s7atx")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Flag One3" unique_id=1418108818]
+[node name="Label" type="Label" parent="Rock Two" unique_id=1418108818]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12815318
@@ -289,19 +309,20 @@ text = "ROCKS"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Flag One4" type="TextureButton" parent="." unique_id=768282453]
-offset_left = 1962.0
-offset_top = 121.0
-offset_right = 1994.0
-offset_bottom = 153.0
+[node name="Rock Three" type="TextureButton" parent="." unique_id=768282453]
+offset_left = 2088.0518
+offset_top = 275.05176
+offset_right = 2120.0518
+offset_bottom = 307.05176
 scale = Vector2(8.753236, 8.753236)
+pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("6_s7atx")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Flag One4" unique_id=2122483387]
+[node name="Label" type="Label" parent="Rock Three" unique_id=2122483387]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12815318
@@ -340,9 +361,9 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="." unique_id=2138932469]
-offset_left = 1021.0
+offset_left = 994.99994
 offset_top = 224.0
-offset_right = 1053.0
+offset_right = 1027.0
 offset_bottom = 256.0
 scale = Vector2(2.843609, 2.843609)
 texture_normal = ExtResource("6_s7atx")
@@ -384,9 +405,9 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="." unique_id=567917125]
-offset_left = 1021.0
+offset_left = 994.99994
 offset_top = 360.99997
-offset_right = 1053.0
+offset_right = 1027.0
 offset_bottom = 392.99997
 scale = Vector2(2.843609, 2.843609)
 texture_normal = ExtResource("6_s7atx")
@@ -406,10 +427,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="." unique_id=543151954]
-offset_left = 939.00006
-offset_top = 497.0
-offset_right = 971.00006
-offset_bottom = 529.0
+offset_left = 913.0
+offset_top = 481.00003
+offset_right = 945.0
+offset_bottom = 513.0
 scale = Vector2(2.843609, 2.843609)
 texture_normal = ExtResource("6_s7atx")
 metadata/_edit_use_anchors_ = true
@@ -428,12 +449,37 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=1673046791]
-offset_left = 542.99994
-offset_top = 258.0
-offset_right = 590.99994
-offset_bottom = 322.0
+offset_left = 658.0
+offset_top = 305.0
+offset_right = 754.0
+offset_bottom = 369.0
 scale = Vector2(5.2794566, 5.2794566)
+pivot_offset = Vector2(24, 32)
+offset_transform_enabled = true
 texture_normal = ExtResource("8_ghprd")
+script = ExtResource("6_fi1uk")
+
+[node name="Button" type="Button" parent="TextureButton2" unique_id=369209368]
+layout_mode = 0
+offset_left = 4.167107
+offset_top = 64.779396
+offset_right = 44.167107
+offset_bottom = 80.779396
+pivot_offset = Vector2(20, 8)
+offset_transform_enabled = true
+script = ExtResource("10_8m5wk")
+
+[node name="Label" type="Label" parent="TextureButton2/Button" unique_id=2042840645]
+layout_mode = 0
+offset_left = 4.9247494
+offset_top = -3.2200286
+offset_right = 1256.9248
+offset_bottom = 858.77997
+scale = Vector2(0.02502384, 0.02502384)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 861
+text = "OPEN"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1725712666]
 position = Vector2(576, 324)
@@ -459,13 +505,18 @@ position = Vector2(576, 324)
 [connection signal="button_down" from="Flag Three" to="Flag Three" method="_on_button_down"]
 [connection signal="button_up" from="Flag Three" to="Flag Three" method="_on_button_up"]
 [connection signal="pressed" from="Flag Three" to="." method="_on_flag_three_pressed"]
-[connection signal="button_down" from="Flag One2" to="Flag One2" method="_on_button_down"]
-[connection signal="button_up" from="Flag One2" to="Flag One2" method="_on_button_up"]
-[connection signal="pressed" from="Flag One2" to="." method="_on_flag_one_pressed"]
-[connection signal="button_down" from="Flag One3" to="Flag One3" method="_on_button_down"]
-[connection signal="button_up" from="Flag One3" to="Flag One3" method="_on_button_up"]
-[connection signal="pressed" from="Flag One3" to="." method="_on_flag_one_pressed"]
-[connection signal="button_down" from="Flag One4" to="Flag One4" method="_on_button_down"]
-[connection signal="button_up" from="Flag One4" to="Flag One4" method="_on_button_up"]
-[connection signal="pressed" from="Flag One4" to="." method="_on_flag_one_pressed"]
+[connection signal="button_down" from="Rock One" to="Rock One" method="_on_button_down"]
+[connection signal="button_up" from="Rock One" to="Rock One" method="_on_button_up"]
+[connection signal="pressed" from="Rock One" to="." method="_on_rock_one_pressed"]
+[connection signal="button_down" from="Rock Two" to="Rock Two" method="_on_button_down"]
+[connection signal="button_up" from="Rock Two" to="Rock Two" method="_on_button_up"]
+[connection signal="pressed" from="Rock Two" to="." method="_on_rock_two_pressed"]
+[connection signal="button_down" from="Rock Three" to="Rock Three" method="_on_button_down"]
+[connection signal="button_up" from="Rock Three" to="Rock Three" method="_on_button_up"]
+[connection signal="pressed" from="Rock Three" to="." method="_on_rock_three_pressed"]
+[connection signal="button_down" from="TextureButton2" to="TextureButton2" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton2" to="TextureButton2" method="_on_button_up"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="button_down" from="TextureButton2/Button" to="TextureButton2/Button" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton2/Button" to="TextureButton2/Button" method="_on_button_up"]
+[connection signal="pressed" from="TextureButton2/Button" to="." method="_on_button_pressed"]

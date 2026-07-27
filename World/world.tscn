@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c27vxgaejt3bg" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner04a.png" id="2_j8job"]
 [ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://button.gd" id="5_0lysu"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="5_0lysu"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="5_k8do8"]
 [ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
 [ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="6_bkhv4"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bs8cji5cpcejr" path="res://Sprites/Brown Flag.png" id="13_x0pyu"]
 [ext_resource type="Texture2D" uid="uid://c0lm77tkj8ygj" path="res://Sprites/Magenta Flag.png" id="14_dg1ng"]
 [ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Pink Flag.png" id="15_yfuda"]
+[ext_resource type="Texture2D" uid="uid://c7g1bbx3mc14y" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="21_26uyv"]
+[ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://button.gd" id="21_dqu5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(474, 633)
@@ -93,9 +95,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Flag 2" type="TextureButton" parent="Camera2D" unique_id=1551062251]
 offset_left = -446.0
-offset_top = -12.0
+offset_top = 3.0
 offset_right = -430.0
-offset_bottom = 4.0
+offset_bottom = 19.0
 scale = Vector2(3, 3)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("5_oe8m4")
@@ -118,9 +120,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Flag 3" type="TextureButton" parent="Camera2D" unique_id=1684395051]
 offset_left = -358.0
-offset_top = -12.0
+offset_top = 3.0
 offset_right = -342.0
-offset_bottom = 4.0
+offset_bottom = 19.0
 scale = Vector2(3, 3)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("6_w47uh")
@@ -368,9 +370,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ability 1" type="TextureButton" parent="Camera2D" unique_id=36892986]
 offset_left = -234.0
-offset_top = 194.00006
+offset_top = 72.377304
 offset_right = -202.0
-offset_bottom = 226.00009
+offset_bottom = 104.377335
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
@@ -393,9 +395,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="Camera2D" unique_id=1437667531]
 offset_left = -234.0
-offset_top = 78.00001
+offset_top = -19.622688
 offset_right = -202.0
-offset_bottom = 110.00001
+offset_bottom = 12.377312
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
@@ -418,9 +420,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ability 3" type="TextureButton" parent="Camera2D" unique_id=1613286264]
 offset_left = -234.0
-offset_top = -36.999977
+offset_top = -109.717
 offset_right = -202.0
-offset_bottom = -4.999977
+offset_bottom = -77.717
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
@@ -443,9 +445,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="Camera2D" unique_id=1303564084]
 offset_left = -234.0
-offset_top = -152.00002
+offset_top = -198.81134
 offset_right = -202.0
-offset_bottom = -120.000015
+offset_bottom = -166.81134
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
@@ -468,9 +470,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="Camera2D" unique_id=1240482026]
 offset_left = -234.0
-offset_top = -269.0
+offset_top = -283.90567
 offset_right = -202.0
-offset_bottom = -236.99997
+offset_bottom = -251.90564
 scale = Vector2(2.0058954, 2.0058954)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("5_k8do8")
@@ -584,6 +586,41 @@ text = "Mult:
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Button" type="Button" parent="Camera2D" unique_id=1484588879]
+offset_left = -263.0
+offset_top = 195.0
+offset_right = -199.0
+offset_bottom = 259.0
+scale = Vector2(1.8282888, 1.8282888)
+pivot_offset = Vector2(32, 32)
+script = ExtResource("21_dqu5g")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Button" unique_id=714665560]
+layout_mode = 0
+offset_left = -0.27060127
+offset_top = 0.27635074
+offset_right = 63.7294
+offset_bottom = 64.27635
+texture = ExtResource("21_26uyv")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Camera2D/Button/NinePatchRect" unique_id=261635607]
+layout_mode = 0
+offset_left = 0.54696083
+offset_right = 1585.1415
+offset_bottom = 1486.3442
+scale = Vector2(0.03952414, 0.03952414)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8a836")
+theme_override_font_sizes/font_size = 505
+text = "Number
+Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Timer" type="Timer" parent="." unique_id=1810617686]
 wait_time = 60.0
 one_shot = true
@@ -678,4 +715,8 @@ autostart = true
 [connection signal="button_down" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_up"]
 [connection signal="pressed" from="Camera2D/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="button_down" from="Camera2D/Button" to="Camera2D/Button" method="_on_button_down"]
+[connection signal="button_up" from="Camera2D/Button" to="Camera2D/Button" method="_on_button_up"]
+[connection signal="mouse_entered" from="Camera2D/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Button" to="." method="_on_button_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

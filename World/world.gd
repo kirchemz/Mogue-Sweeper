@@ -27,6 +27,7 @@ func _on_button_pressed() -> void:
 		hide_menu = false
 
 func _ready() -> void:
+	RenderingServer.set_default_clear_color(Color(0.298, 0.298, 0.298, 1.0))
 	start_map()
 
 func start_map():
