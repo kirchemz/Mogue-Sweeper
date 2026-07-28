@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Rogue Sweeper"
+config/description="A Minesweeper rogue-lite"
 run/main_scene="uid://dbbgr6bb8ak3h"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dqnx3g6e6hrhe"
 
 [autoload]
 
@@ -70,3 +71,4 @@ pointing/emulate_touch_from_mouse=true
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.25490198, 0.57254905, 0.7647059, 1)

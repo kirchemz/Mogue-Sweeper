@@ -24,7 +24,7 @@ var last_cam_pos = Vector2.ZERO
 # Runs once as soon as the scene starts
 func _ready() -> void:
 	# Sets BG color
-	RenderingServer.set_default_clear_color(Color(0.298, 0.298, 0.298, 1.0))
+	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
 	
 	# Creates the map
 	start_map()
