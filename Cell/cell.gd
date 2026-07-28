@@ -4,8 +4,6 @@ extends Area2D
 @onready var normal_tex = preload("res://Sprites/Cell.png")
 @onready var flag_tex = preload("res://Sprites/Red Flag.png")
 
-var pressed : bool = false
-
 var is_bomb : bool = false
 var bombs_around : int = 0
 var is_hidden : bool = true
@@ -242,11 +240,3 @@ func flagged_bombs_around():
 							Globals.point_mult += 1
 						Globals.points += (point_bonus * self_mult)
 						Globals.mult += mult
-
-
-func _on_touch_screen_button_pressed() -> void:
-	pressed = true
-
-
-func _on_touch_screen_button_released() -> void:
-	pressed = false
