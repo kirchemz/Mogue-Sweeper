@@ -35,6 +35,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
 position = Vector2(576, 324)
+zoom = Vector2(0.9, 0.9)
 
 [node name="Area2D" type="Area2D" parent="Camera2D" unique_id=798329352]
 
@@ -46,7 +47,7 @@ shape = SubResource("RectangleShape2D_0rlat")
 offset_left = -568.0
 offset_top = -317.0
 offset_right = -427.62573
-offset_bottom = -105.604996
+offset_bottom = -105.60498
 scale = Vector2(2.9991248, 2.9991248)
 texture = ExtResource("6_bkhv4")
 patch_margin_left = 3
@@ -334,8 +335,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Camera2D/Flag 10" unique_id=1299739723]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6458333
-anchor_right = 0.6458435
+anchor_left = 0.7083333
+anchor_right = 0.7083435
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656

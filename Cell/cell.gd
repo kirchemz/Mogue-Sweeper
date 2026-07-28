@@ -21,11 +21,14 @@ var point_bonus : int = 0
 var find_points : bool = false
 var bombs_around_set : bool = false
 
+# Funtion to set the cell as a bomb
 func bomb():
 	is_bomb = true
 	$Sprite2D.texture = bomb_tex
 
+# Runs every frame
 func _process(delta: float) -> void:
+	# Tells the cell how many points it earns
 	if bombs_around_set:
 		if not find_points:
 			if bombs_around == 1:
@@ -56,9 +59,14 @@ func _process(delta: float) -> void:
 				point_bonus += Globals.ones_points.points
 				mult += Globals.nines_points.mult
 			find_points = true
+	# Sets the world
 	world = get_parent().get_parent()
+	
+	# Tells the world scene if the mouse is over it or not
 	if mouse_in:
 		world.target_cell = self
+	
+	# Turns the cell into a basic cell with no special appearence if hidden
 	if is_hidden:
 		if flagged:
 			$Sprite2D.texture = flag_tex
@@ -68,15 +76,23 @@ func _process(delta: float) -> void:
 			$Sprite2D.texture = normal_tex
 		if is_instance_valid($Label):
 			$Label.visible = false
+	
+	# Sets the number in the cell
 	if not is_hidden and not is_bomb:
 		if is_instance_valid($Label):
 			$Label.text = str(bombs_around)
+	
+	# Deletes the number if the cell is a bomb
 	if is_bomb:
 		if is_instance_valid($Label):
 			$Label.queue_free()
+	
+	# Gives the cell its image and number if unhidden
 	if not is_hidden:
 		if is_bomb:
 			$Sprite2D.texture = bomb_tex
+		
+		# Gives the cell the animation of the color filling in when unhidden
 		if bombs_around == 1:
 			var color_growth = create_tween()
 			color_growth.tween_property($"1", "scale", Vector2(1, 1), 0.5)
@@ -115,8 +131,11 @@ func _process(delta: float) -> void:
 			$Label.visible = true
 		elif bombs_around == 0:
 			if world.cells_set and not is_bomb:
+				# Deletes the number if there aren't any bombs around
 				if is_instance_valid($Label):
 					$Label.queue_free()
+				
+				# Makes the cell shrink down and then destroys itself
 				var destroy_tween = create_tween()
 				destroy_tween.set_ease(Tween.EASE_IN)
 				destroy_tween.tween_property(self, "scale", Vector2(0.01, 0.01), 0.75)
@@ -124,16 +143,16 @@ func _process(delta: float) -> void:
 				await destroy_tween.finished
 				queue_free()
 
-
+# Finds if the mouse is on this cell or not
 func _on_mouse_entered() -> void:
 	if is_instance_valid(world):
 		if not world.mouse_over_menu:
 			mouse_in = true
 
-
 func _on_mouse_exited() -> void:
 	mouse_in = false
 
+# Funtion to find out if there is a bomb around the cell that wasn't flagged - used when chording
 func unflagged_bomb_around():
 	var cell_instance = self
 	cell_instance.is_hidden = false
@@ -161,6 +180,7 @@ func unflagged_bomb_around():
 	
 	return unflagged_bombs_around
 
+# Funtion to find out how many flags there are around the cell
 func flag_around():
 	var cell_instance = self
 	if cell_instance.unhide_neighbors:
@@ -191,6 +211,7 @@ func flag_around():
 	
 	return flags_around
 
+# Funtion to find out how many bombs around the cell were flagged - used in point count()
 func flagged_bombs_around():
 	var cell_instance = self
 	

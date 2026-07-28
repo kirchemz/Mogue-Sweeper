@@ -1,7 +1,9 @@
 extends Node
 
+# Holds all current abilities in an array for clean access
 var current_abilities : Array = []
 
+# Finds all abilities available for purchase or packs
 var ability_stock : Dictionary = {
 	"auto_chord" : {
 		"name" : "Auto Chord",
@@ -10,6 +12,7 @@ var ability_stock : Dictionary = {
 	}
 }
 
+# Holds all data about current abilities
 var ability_one : Dictionary = {
 	"img" : preload("res://Sprites/Ability Base.png"),
 	"name" : "Ability One"
@@ -31,5 +34,6 @@ var ability_five : Dictionary = {
 	"name" : "Ability Five"
 }
 
+# All variables relating to abilites
 var auto_chord : bool = false
 var auto_chord_active : bool = false

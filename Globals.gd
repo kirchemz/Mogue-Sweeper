@@ -1,5 +1,6 @@
 extends Node
 
+# Each numbers current level
 var one_level : int = 1
 var two_level : int = 1
 var three_level : int = 1
@@ -10,6 +11,7 @@ var seven_level : int = 1
 var eight_level : int = 1
 var nine_level : int = 1
 
+# Dictionaries to hold the amount of points each number earns
 var ones_points : Dictionary = {
 	"points" : 1,
 	"mult" : 0
@@ -47,6 +49,7 @@ var nines_points : Dictionary = {
 	"mult" : 9
 }
 
+# General global variables
 var points : float = 0.0
 var point_mult : float = 1.0
 var mult : float = 0.0
@@ -54,6 +57,7 @@ var total_points : float = 0.0
 var level_requirement : int = 50
 var currency : int = 0
 
+# All flag variables
 var red_flag_active: bool = true
 var blue_flags : int = false
 var blue_flag_active : bool = false
@@ -78,6 +82,7 @@ var pink_flag_active : bool = false
 var magenta_flags : int = false
 var magenta_flag_active : bool = false
 
+# Funtions for activating one flag and disabling all others
 func activate_red():
 	red_flag_active = true
 	blue_flag_active = false
@@ -246,7 +251,7 @@ func activate_brown():
 	yellow_flag_active = false
 	pink_flag_active = false
 
-
+# Funtions for upgrading numbers
 func upgrade_ones():
 	ones_points.points += 1 * one_level
 	one_level += 1
@@ -300,7 +305,7 @@ func upgrade_eights():
 	if two_level_float / 5 == round(two_level_float / 5):
 		twos_points.mult += 1
 
-func upgrade_nines1():
+func upgrade_nines():
 	twos_points.points += 1 * two_level
 	two_level += 1
 	var two_level_float : float = two_level

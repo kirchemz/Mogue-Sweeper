@@ -21,6 +21,7 @@ var extra_options : Array
 var extra_pack_opened : bool = false
 var extra_pack_option_chosen : bool = false
 
+# All rocks available for packs
 var rock_stock : Dictionary = {
 	"granite" : {
 		"name" : "Granite",
@@ -69,6 +70,7 @@ var rock_stock : Dictionary = {
 	}
 }
 
+# All flags available for purchase and packs
 var flag_stock : Dictionary = {
 	"blue_flag" : {
 		"name" : "Blue Flag",
@@ -138,12 +140,19 @@ var flag_stock : Dictionary = {
 	}
 }
 
+# Runs once as soon as the scene is played
 func _ready() -> void:
+	# Sets the background color
 	RenderingServer.set_default_clear_color(Color(0.475, 0.255, 0.0, 1.0))
+	
+	# Sets flag and ability options and rock and extra pack options
 	flag_options = [flag_stock.blue_flag, flag_stock.violet_flag, flag_stock.yellow_flag, flag_stock.orange_flag, flag_stock.magenta_flag, flag_stock.pink_flag, flag_stock.black_flag, flag_stock.brown_flag, flag_stock.white_flag, flag_stock.grey_flag]
 	extra_options = [flag_stock.blue_flag, flag_stock.violet_flag, flag_stock.yellow_flag, flag_stock.orange_flag, flag_stock.magenta_flag, flag_stock.pink_flag, flag_stock.black_flag, flag_stock.brown_flag, flag_stock.white_flag, flag_stock.grey_flag]
 	rock_options = [rock_stock.granite, rock_stock.quartz, rock_stock.basalt, rock_stock.obsidian, rock_stock.fluorite, rock_stock.diamond, rock_stock.emerald, rock_stock.black_opal, rock_stock.red_diamond]
+	
 	ability_one = Abilities.ability_stock.auto_chord
+	
+	# Picks what flags, abilities, and rocks that show up for purchase and in packs
 	flag_one = choose_flag(flag_options)
 	flag_options.erase(flag_one)
 	flag_two = choose_flag(flag_options)

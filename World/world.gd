@@ -18,18 +18,15 @@ var hide_menu : bool = false
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
 
-func _on_button_pressed() -> void:
-	mouse_over_menu = true
-	if not hide_menu:
-		hide_menu = true
-		return
-	if hide_menu:
-		hide_menu = false
-
+# Runs once as soon as the scene starts
 func _ready() -> void:
+	# Sets BG color
 	RenderingServer.set_default_clear_color(Color(0.298, 0.298, 0.298, 1.0))
+	
+	# Creates the map
 	start_map()
 
+# Makes the map and puts a cell in each cordinate of the map
 func start_map():
 	for x in map_width:
 		var row : Array = []
@@ -45,12 +42,15 @@ func start_map():
 			map[x][y] = cell_instance
 	map_made = true
 
+# Camera panning
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_MASK_MIDDLE:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
+# Runs every frame
 func _process(delta: float) -> void:
+	# Update Flag Counts
 	$"Camera2D/Flag 1/Label".text = "Red FLag"
 	$"Camera2D/Flag 2/Label".text = "Blue FLag: " + str(Globals.blue_flags)
 	$"Camera2D/Flag 3/Label".text = "Violet FLag: " + str(Globals.violet_flags)
@@ -63,6 +63,8 @@ func _process(delta: float) -> void:
 	$"Camera2D/Flag 10/Label".text = "Brown FLag: " + str(Globals.brown_flags)
 	$"Camera2D/Flag 11/Label".text = "Magenta FLag: " + str(Globals.magenta_flags)
 	$"Camera2D/Flag 12/Label".text = "Pink FLag: " + str(Globals.pink_flags)
+	
+	# Change the position and visibility for all UI elements in the menu when condencing it
 	if hide_menu:
 		$"Camera2D/Ability 1".visible = false
 		$"Camera2D/Ability 2".visible = false
@@ -119,10 +121,14 @@ func _process(delta: float) -> void:
 		$"Camera2D/Main Menu/Sprite2D".flip_h = false
 		$Camera2D/Area2D/CollisionShape2D.scale.x = 1
 		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-331, -0.5)
+	
+	# Update other UI elements
 	$"Camera2D/Point Requirement".text = "Point Requirement: " + "
 	" + str(Globals.level_requirement)
 	$Camera2D/Mult.text = "Mult: " + "
 	" + str(Globals.mult)
+	
+	# Hide specific UI elements when the game ends
 	if level_over:
 		hide_menu = false
 		$"Camera2D/Main Menu/Button".visible = false
@@ -140,6 +146,8 @@ func _process(delta: float) -> void:
 		$"Camera2D/Flag 10".visible = false
 		$"Camera2D/Flag 11".visible = false
 		$"Camera2D/Flag 12".visible = false
+	
+	# Update the name and image of ability buttons
 	$"Camera2D/Ability 1/Label".text = Abilities.ability_one.name
 	$"Camera2D/Ability 1".texture_normal = Abilities.ability_one.img
 	$"Camera2D/Ability 2/Label".text = Abilities.ability_two.name
@@ -150,18 +158,44 @@ func _process(delta: float) -> void:
 	$"Camera2D/Ability 4".texture_normal = Abilities.ability_four.img
 	$"Camera2D/Ability 5/Label".text = Abilities.ability_five.name
 	$"Camera2D/Ability 5".texture_normal = Abilities.ability_five.img
+	
+	# Update clock
 	$Camera2D/Label.text = str($Timer.time_left)
-	if Input.is_action_just_pressed("Zoom In") and $Camera2D.zoom < Vector2(5, 5):
+	
+	# Zoom in and out
+	if Input.is_action_just_pressed("Zoom In") and $Camera2D.zoom < Vector2(2, 2):
 		$Camera2D.zoom += Vector2(0.1, 0.1)
+		$Camera2D.scale -= Vector2(0.1, 0.1)
+		if snapped($Camera2D.zoom.x, 0.1) == 0.9:
+			$Camera2D.scale -= Vector2(0.025, 0.025)
+		if $Camera2D.zoom.x - 0.8 < 0.0000000000001:
+			$Camera2D.scale -= Vector2(0.0575, 0.0575)
+		if $Camera2D.zoom.x - 0.7 < 0.0000000000001:
+			$Camera2D.scale -= Vector2(0.055, 0.055)
+		if snapped($Camera2D.zoom.x, 0.1) == 0.6:
+			$Camera2D.scale -= Vector2(0.08, 0.08)
 	if Input.is_action_just_pressed("Zoom Out") and $Camera2D.zoom > Vector2(0.5, 0.5):
 		$Camera2D.zoom -= Vector2(0.1, 0.1)
+		$Camera2D.scale += Vector2(0.1, 0.1)
+		print(snapped($Camera2D.zoom.x, 0.1))
+		if snapped($Camera2D.zoom.x, 0.1) == 0.8:
+			$Camera2D.scale += Vector2(0.025, 0.025)
+		if $Camera2D.zoom.x - 0.7 < 0.0000000000001:
+			$Camera2D.scale += Vector2(0.0575, 0.0575)
+		if $Camera2D.zoom.x - 0.6 < 0.0000000000001:
+			$Camera2D.scale += Vector2(0.055, 0.055)
+		if snapped($Camera2D.zoom.x, 0.1) == 0.5:
+			$Camera2D.scale += Vector2(0.08, 0.08)
 	
+	# Setting up the cells and bombs
 	if map_made:
 		if bombs_made < bombs:
 			set_bombs()
 		else:
 			if not cells_set:
 				set_cells()
+	
+	# Digging, Flagging, and Chording Inputs
 	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and Input.is_action_pressed("Flag") and not mouse_over_menu:
 		if not target_cell.is_hidden:
 			if target_cell.flag_around() == target_cell.bombs_around:
@@ -235,8 +269,10 @@ func _process(delta: float) -> void:
 			flags_remaining += 1
 			target_cell.flagged = false
 	
+	# Making the clock change colors as it goes down
 	$Camera2D/Label.self_modulate.h = $Timer.time_left * 0.01666
 
+# Function to place bombs throughout the cell grid
 func set_bombs():
 	for x in map:
 		for y in x:
@@ -245,6 +281,7 @@ func set_bombs():
 					bombs_made += 1
 					y.bomb()
 
+# Function to tell each cell how many bombs are around it
 func set_cells():
 	for y in range(map_height):
 		for x in range(map_width):
@@ -266,6 +303,7 @@ func set_cells():
 			cell_instance.bombs_around_set = true
 	cells_set = true
 
+# Funtion to unhide the cells around a specific cell (cell instance)
 func unhide_cells(cell_instance):
 	if cell_instance.unhide_neighbors:
 		return
@@ -298,6 +336,7 @@ func unhide_cells(cell_instance):
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
 						unhide_cells(neighbor)
 
+# Function to use the ability "Auto Chording"
 func auto_chord(cell_instance):
 	if not cell_instance.is_bomb:
 		game_over()
@@ -327,6 +366,7 @@ func auto_chord(cell_instance):
 					if not neighbor.is_hidden and not neighbor.is_bomb:
 						unhide_flag_neighbors(neighbor)
 
+# Funtion to automatically unhide all cells around a flag - used in auto chording
 func unhide_flag_neighbors(cell_instance):
 	if cell_instance.unhide_neighbors:
 		return
@@ -355,10 +395,12 @@ func unhide_flag_neighbors(cell_instance):
 						neighbor.is_hidden = false
 						neighbor.flagged = false
 
+# Funtion to end the game and change the current scene to the game over scene
 func game_over():
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://World/game_over.tscn")
 
+# Function to tally up all of the points and updates the total points and the UI elements accordingly
 func point_count():
 	for y in map:
 		for x in y:
@@ -373,12 +415,28 @@ func point_count():
 	" + str(Globals.total_points)
 	Globals.currency += round(Globals.total_points)
 
+# Makes it so when you click in the menu it doesn't dig up any cells behind the menu
 func _on_main_menu_mouse_entered() -> void:
 	mouse_over_menu = true
 
 func _on_main_menu_mouse_exited() -> void:
 	mouse_over_menu = false
 
+func _on_button_mouse_entered() -> void:
+	mouse_over_menu = true
+
+func _on_button_mouse_exited() -> void:
+	mouse_over_menu = false
+
+func _on_button_pressed() -> void:
+	mouse_over_menu = true
+	if not hide_menu:
+		hide_menu = true
+		return
+	if hide_menu:
+		hide_menu = false
+
+# When the timer ends it counts up the points and figures out if you won or lost
 func _on_timer_timeout() -> void:
 	point_count()
 	level_over = true
@@ -389,66 +447,49 @@ func _on_timer_timeout() -> void:
 		$Camera2D/TextureButton.visible = true
 		Globals.points = 0
 
+# Takes you to the shop when pressing the shop button
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://World/shop.tscn")
 
+# Toggles the first ability
 func _on_ability_1_pressed() -> void:
 	if Abilities.ability_one.name == "Auto Chord":
 		Abilities.auto_chord_active = true
 
-
+# Changes which flag you are currently using
 func _on_flag_1_pressed() -> void:
 	Globals.activate_red()
-
 
 func _on_flag_2_pressed() -> void:
 	if Globals.blue_flags > 0:
 		Globals.activate_blue()
 
-
 func _on_flag_3_pressed() -> void:
 	Globals.activate_violet()
-
-
-func _on_button_mouse_entered() -> void:
-	mouse_over_menu = true
-
-
-func _on_button_mouse_exited() -> void:
-	mouse_over_menu = false
-
 
 func _on_flag_12_pressed() -> void:
 	Globals.activate_pink()
 
-
 func _on_flag_6_pressed() -> void:
 	Globals.activate_green()
-
 
 func _on_flag_5_pressed() -> void:
 	Globals.activate_yellow()
 
-
 func _on_flag_4_pressed() -> void:
 	Globals.activate_orange()
-
 
 func _on_flag_11_pressed() -> void:
 	Globals.activate_magenta()
 
-
 func _on_flag_7_pressed() -> void:
 	Globals.activate_black()
-
 
 func _on_flag_8_pressed() -> void:
 	Globals.activate_white()
 
-
 func _on_flag_9_pressed() -> void:
 	Globals.activate_grey()
-
 
 func _on_flag_10_pressed() -> void:
 	Globals.activate_brown()
