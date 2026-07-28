@@ -2,9 +2,6 @@ extends Node2D
 
 @onready var cell = preload("res://Cell/cell.tscn")
 
-var flag_mode : bool = false
-var dig_mode : bool = false
-
 var map : Array = []
 var map_width : int = 40
 var map_height : int = 40
@@ -50,12 +47,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_MASK_MIDDLE:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventPanGesture:
-		var pan_event = event as InputEventPanGesture
-		$Camera2D.position -= pan_event.delta
-		print("Pan delta: ", pan_event.delta)
 
 # Runs every frame
 func _process(delta: float) -> void:
@@ -213,68 +204,66 @@ func _process(delta: float) -> void:
 				target_cell.unhide_neighbors = false
 				unhide_cells(target_cell)
 				target_cell.unhide_neighbors = false
-	if is_instance_valid(target_cell):
-		if Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu or not mouse_over_menu and target_cell.pressed and dig_mode:
-			if target_cell.bombs_around == 0 and not target_cell.is_bomb:
-				unhide_cells(target_cell)
-			if target_cell.bombs_around != 0 or target_cell.is_bomb:
-				if not target_cell.flagged:
-					target_cell.is_hidden = false
-					if target_cell.is_bomb:
-						game_over()
-	if is_instance_valid(target_cell):
-		if Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig") and not mouse_over_menu or target_cell.pressed and not mouse_over_menu and flag_mode:
-			if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
-				if Globals.red_flag_active:
-					target_cell.flag_type = "Red"
-					target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
-				if Globals.blue_flag_active:
-					if Globals.blue_flags > 0:
-						target_cell.flag_type = "Blue"
-						target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
-						Globals.blue_flags -= 1
-					else:
-						Globals.activate_red()
-				if Globals.violet_flag_active:
-					target_cell.flag_type = "Purple"
-					target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
-					Globals.violet_flags -= 1
-				if Globals.pink_flag_active:
-					target_cell.flag_type = "Pink"
-					target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
-				if Globals.green_flag_active:
-					target_cell.flag_type = "Green"
-					target_cell.flag_tex = preload("res://Sprites/Green Flag.png")
-				if Globals.yellow_flag_active:
-					if Globals.yellow_flags > 0:
-						Globals.mult += 1
-						target_cell.flag_type = "Yellow"
-						target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
-						Globals.yellow_flags -= 1
-					else:
-						Globals.activate_red()
-				if Globals.orange_flag_active:
-					target_cell.flag_type = "Orange"
-					target_cell.flag_tex = preload("res://Sprites/Orange Flag.png")
-				if Globals.magenta_flag_active:
-					target_cell.flag_type = "Magenta"
-					target_cell.flag_tex = preload("res://Sprites/Magenta Flag.png")
-				if Globals.black_flag_active:
-					target_cell.flag_type = "Black"
-					target_cell.flag_tex = preload("res://Sprites/Black Flag.png")
-				if Globals.white_flag_active:
-					target_cell.flag_type = "White"
-					target_cell.flag_tex = preload("res://Sprites/White Flag.png")
-				if Globals.grey_flag_active:
-					target_cell.flag_type = "Grey"
-					target_cell.flag_tex = preload("res://Sprites/Grey Flag.png")
-				if Globals.brown_flag_active:
-					target_cell.flag_type = "Brown"
-					target_cell.flag_tex = preload("res://Sprites/Brown Flag.png")
-				target_cell.flagged = true
-				flags_remaining -= 1
-				if Abilities.auto_chord_active:
-					auto_chord(target_cell)
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu or target_cell.pressed:
+		if target_cell.bombs_around == 0 and not target_cell.is_bomb:
+			unhide_cells(target_cell)
+		if target_cell.bombs_around != 0 or target_cell.is_bomb:
+			if not target_cell.flagged:
+				target_cell.is_hidden = false
+				if target_cell.is_bomb:
+					game_over()
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig") and not mouse_over_menu:
+		if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
+			if Globals.red_flag_active:
+				target_cell.flag_type = "Red"
+				target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
+			if Globals.blue_flag_active:
+				if Globals.blue_flags > 0:
+					target_cell.flag_type = "Blue"
+					target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
+					Globals.blue_flags -= 1
+				else:
+					Globals.activate_red()
+			if Globals.violet_flag_active:
+				target_cell.flag_type = "Purple"
+				target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
+				Globals.violet_flags -= 1
+			if Globals.pink_flag_active:
+				target_cell.flag_type = "Pink"
+				target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
+			if Globals.green_flag_active:
+				target_cell.flag_type = "Green"
+				target_cell.flag_tex = preload("res://Sprites/Green Flag.png")
+			if Globals.yellow_flag_active:
+				if Globals.yellow_flags > 0:
+					Globals.mult += 1
+					target_cell.flag_type = "Yellow"
+					target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
+					Globals.yellow_flags -= 1
+				else:
+					Globals.activate_red()
+			if Globals.orange_flag_active:
+				target_cell.flag_type = "Orange"
+				target_cell.flag_tex = preload("res://Sprites/Orange Flag.png")
+			if Globals.magenta_flag_active:
+				target_cell.flag_type = "Magenta"
+				target_cell.flag_tex = preload("res://Sprites/Magenta Flag.png")
+			if Globals.black_flag_active:
+				target_cell.flag_type = "Black"
+				target_cell.flag_tex = preload("res://Sprites/Black Flag.png")
+			if Globals.white_flag_active:
+				target_cell.flag_type = "White"
+				target_cell.flag_tex = preload("res://Sprites/White Flag.png")
+			if Globals.grey_flag_active:
+				target_cell.flag_type = "Grey"
+				target_cell.flag_tex = preload("res://Sprites/Grey Flag.png")
+			if Globals.brown_flag_active:
+				target_cell.flag_type = "Brown"
+				target_cell.flag_tex = preload("res://Sprites/Brown Flag.png")
+			target_cell.flagged = true
+			flags_remaining -= 1
+			if Abilities.auto_chord_active:
+				auto_chord(target_cell)
 			return
 		if target_cell.is_hidden and target_cell.flagged:
 			flags_remaining += 1
