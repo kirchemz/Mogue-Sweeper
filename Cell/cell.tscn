@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
+[ext_resource type="Texture2D" uid="uid://c8y0x6xp005ps" path="res://Sprites/Ability Base.png" id="2_wh31u"]
 [ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="3_ycduu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
@@ -9,6 +10,11 @@ size = Vector2(16, 16)
 
 [node name="Cell" type="Area2D" unique_id=1896603475]
 script = ExtResource("1_pf11k")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1536594742]
+position = Vector2(-8, -8)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_wh31u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2090554630]
 texture = ExtResource("1_37gha")
@@ -59,3 +65,5 @@ shape = SubResource("RectangleShape2D_0rlat")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]

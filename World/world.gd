@@ -204,7 +204,7 @@ func _process(delta: float) -> void:
 				target_cell.unhide_neighbors = false
 				unhide_cells(target_cell)
 				target_cell.unhide_neighbors = false
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu:
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu or target_cell.pressed:
 		if target_cell.bombs_around == 0 and not target_cell.is_bomb:
 			unhide_cells(target_cell)
 		if target_cell.bombs_around != 0 or target_cell.is_bomb:

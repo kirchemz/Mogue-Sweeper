@@ -35,7 +35,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
 position = Vector2(576, 324)
-zoom = Vector2(0.9, 0.9)
 
 [node name="Area2D" type="Area2D" parent="Camera2D" unique_id=798329352]
 
@@ -83,7 +82,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Camera2D/Flag 1" unique_id=1291048954]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.37500012
+anchor_left = 0.375
 anchor_right = 0.375
 offset_left = -23.0
 offset_top = 16.666666
@@ -139,7 +138,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Camera2D/Flag 3" unique_id=442120244]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.16666675
+anchor_left = 0.1666565
 anchor_right = 0.1666565
 offset_left = -23.0
 offset_top = 16.666666
@@ -223,7 +222,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Camera2D/Flag 6" unique_id=550620446]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29166663
+anchor_left = 0.2916565
 anchor_right = 0.2916565
 offset_left = -18.666666
 offset_top = 16.666666
@@ -251,7 +250,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Camera2D/Flag 7" unique_id=124279044]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.31250012
+anchor_left = 0.3125
 anchor_right = 0.3125
 offset_left = -23.0
 offset_top = 16.666666
