@@ -80,12 +80,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 1" unique_id=1291048954]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37500012
+anchor_right = 0.375
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.010244623, 0.010244623)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -105,12 +108,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 2" unique_id=1951801237]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18749988
+anchor_right = 0.1875
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.009797682, 0.009797682)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -130,12 +136,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 3" unique_id=442120244]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16666675
+anchor_right = 0.1666565
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.008816327, 0.008816327)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -155,12 +164,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 4" unique_id=1054746687]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375
+anchor_right = 0.375
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012280027, 0.012280027)
+scale = Vector2(0.0097484235, 0.0097484235)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -180,12 +192,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 5" unique_id=953338764]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37499994
+anchor_right = 0.375
 offset_left = -20.333334
 offset_top = 16.666666
 offset_right = 4971.432
 offset_bottom = 693.6667
-scale = Vector2(0.0118216425, 0.0118216425)
+scale = Vector2(0.008902188, 0.008902188)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -205,12 +220,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 6" unique_id=550620446]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29166663
+anchor_right = 0.2916565
 offset_left = -18.666666
 offset_top = 16.666666
 offset_right = 4973.099
 offset_bottom = 693.6667
-scale = Vector2(0.011164656, 0.011164656)
+scale = Vector2(0.0075583626, 0.0075583626)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -230,12 +248,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 7" unique_id=124279044]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31250012
+anchor_right = 0.3125
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.00955525, 0.00955525)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -255,12 +276,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 8" unique_id=431028872]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39583325
+anchor_right = 0.3958435
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.009057969, 0.009057969)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -280,12 +304,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 9" unique_id=1130691490]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5208334
+anchor_right = 0.5208435
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.008124248, 0.008124248)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -305,12 +332,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 10" unique_id=1299739723]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6458333
+anchor_right = 0.6458435
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.0074888403, 0.0074888403)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -330,12 +360,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 11" unique_id=549990866]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47916663
+anchor_right = 0.479187
 offset_left = -16.333334
 offset_top = 17.666666
 offset_right = 4975.432
 offset_bottom = 694.6667
-scale = Vector2(0.010179875, 0.010179875)
+scale = Vector2(0.0056511615, 0.0056511615)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676
@@ -355,12 +388,15 @@ script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 12" unique_id=1504186339]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8333334
+anchor_right = 0.8333435
 offset_left = -23.0
 offset_top = 16.666666
 offset_right = 4968.7656
 offset_bottom = 693.6667
-scale = Vector2(0.012721638, 0.012721638)
+scale = Vector2(0.0062657665, 0.0062657665)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_8a836")
 theme_override_font_sizes/font_size = 676

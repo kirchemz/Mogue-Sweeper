@@ -52,7 +52,7 @@ var point_mult : float = 1.0
 var mult : float = 0.0
 var total_points : float = 0.0
 var level_requirement : int = 50
-var currency : int = 100
+var currency : int = 0
 
 var red_flag_active: bool = true
 var blue_flags : int = false
@@ -250,3 +250,59 @@ func activate_brown():
 func upgrade_ones():
 	ones_points.points += 1 * one_level
 	one_level += 1
+
+func upgrade_twos():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_threes():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_fours():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_fives():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_sixes():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_sevens():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_eights():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1
+
+func upgrade_nines1():
+	twos_points.points += 1 * two_level
+	two_level += 1
+	var two_level_float : float = two_level
+	if two_level_float / 5 == round(two_level_float / 5):
+		twos_points.mult += 1

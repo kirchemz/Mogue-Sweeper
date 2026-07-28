@@ -12,71 +12,60 @@ var rock_two : Dictionary
 var rock_three : Dictionary
 var rock_options : Array
 var opening_pack : bool = false
-var pack_opened : bool = false
-var pack_option_chosen : bool = false
+var rock_pack_opened : bool = false
+var rock_pack_option_chosen : bool = false
+var extra_one : Dictionary
+var extra_two : Dictionary
+var extra_three : Dictionary
+var extra_options : Array
+var extra_pack_opened : bool = false
+var extra_pack_option_chosen : bool = false
 
 var rock_stock : Dictionary = {
 	"granite" : {
 		"name" : "Granite",
 		"img" : preload("res://Sprites/Granite.png"),
-		"rarity" : 30,
-		"price" : 100
+		"rarity" : 30
 	},
 	"quartz" : {
 		"name" : "Quartz",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 30,
-		"price" : 100
+		"rarity" : 3000
 	},
 	"basalt" : {
 		"name" : "Basalt",
 		"img" : preload("res://Sprites/Basalt.png"),
-		"rarity" : 20,
-		"price" : 100
+		"rarity" : 20
 	},
 	"obsidian" : {
 		"name" : "Obsidian",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 10,
-		"price" : 100
+		"rarity" : 10
 	},
 	"fluorite" : {
 		"name" : "Fluorite",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 10,
-		"price" : 100
+		"rarity" : 10
 	},
 	"diamond" : {
 		"name" : "Diamond",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 5,
-		"price" : 100
+		"rarity" : 5
 	},
 	"emerald" : {
 		"name" : "Emerald",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 5,
-		"price" : 100
+		"rarity" : 5
 	},
 	"black_opal" : {
 		"name" : "Black Opal",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 1,
-		"price" : 100
+		"rarity" : 1
 	},
 	"red_diamond" : {
 		"name" : "Red Diamond",
 		"img" : preload("res://Sprites/Cell.png"),
-		"rarity" : 1,
-		"price" : 100
-	}
-}
-
-var ability_stock : Dictionary = {
-	"auto_chord" : {
-		"name" : "Auto Chord",
-		"price" : 100,
-		"img" : preload("res://Sprites/Auto Chord.png")
+		"rarity" : 1
 	}
 }
 
@@ -152,13 +141,14 @@ var flag_stock : Dictionary = {
 func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color(0.475, 0.255, 0.0, 1.0))
 	flag_options = [flag_stock.blue_flag, flag_stock.violet_flag, flag_stock.yellow_flag, flag_stock.orange_flag, flag_stock.magenta_flag, flag_stock.pink_flag, flag_stock.black_flag, flag_stock.brown_flag, flag_stock.white_flag, flag_stock.grey_flag]
+	extra_options = [flag_stock.blue_flag, flag_stock.violet_flag, flag_stock.yellow_flag, flag_stock.orange_flag, flag_stock.magenta_flag, flag_stock.pink_flag, flag_stock.black_flag, flag_stock.brown_flag, flag_stock.white_flag, flag_stock.grey_flag]
 	rock_options = [rock_stock.granite, rock_stock.quartz, rock_stock.basalt, rock_stock.obsidian, rock_stock.fluorite, rock_stock.diamond, rock_stock.emerald, rock_stock.black_opal, rock_stock.red_diamond]
-	ability_one = ability_stock.auto_chord
-	flag_one = choose_flag()
+	ability_one = Abilities.ability_stock.auto_chord
+	flag_one = choose_flag(flag_options)
 	flag_options.erase(flag_one)
-	flag_two = choose_flag()
+	flag_two = choose_flag(flag_options)
 	flag_options.erase(flag_two)
-	flag_three = choose_flag()
+	flag_three = choose_flag(flag_options)
 	flag_options.erase(flag_three)
 	rock_one = choose_rock()
 	rock_options.erase(rock_one)
@@ -166,15 +156,34 @@ func _ready() -> void:
 	rock_options.erase(rock_two)
 	rock_three = choose_rock()
 	rock_options.erase(rock_three)
+	extra_one = choose_flag(extra_options)
+	extra_options.erase(extra_one)
+	extra_two = choose_flag(extra_options)
+	extra_options.erase(extra_two)
+	extra_three = choose_flag(extra_options)
+	extra_options.erase(extra_three)
 
 func _process(delta: float) -> void:
-	if pack_option_chosen:
+	if rock_pack_option_chosen:
 		var camera_drag = create_tween()
-		await get_tree().create_timer(0.25).timeout
 		camera_drag.set_ease(Tween.EASE_IN_OUT)
 		camera_drag.set_trans(Tween.TRANS_BACK)
 		camera_drag.tween_property($Camera2D, "position", Vector2(576, 324), 1)
 		camera_drag.play()
+		rock_pack_option_chosen = false
+		$"Rock Pack".queue_free()
+		await camera_drag.finished
+		rock_pack_opened = true
+	if extra_pack_option_chosen:
+		var camera_drag = create_tween()
+		camera_drag.set_ease(Tween.EASE_IN_OUT)
+		camera_drag.set_trans(Tween.TRANS_BACK)
+		camera_drag.tween_property($Camera2D, "position", Vector2(576, 324), 1)
+		camera_drag.play()
+		extra_pack_option_chosen = false
+		$"Extra Pack".queue_free()
+		await camera_drag.finished
+		extra_pack_opened = true
 	$"Ability 1".texture_normal = Abilities.ability_one.img
 	$"Ability 1/Label".text = Abilities.ability_one.name
 	$"Ability 2".texture_normal = Abilities.ability_two.img
@@ -185,23 +194,33 @@ func _process(delta: float) -> void:
 	$"Ability 4/Label".text = Abilities.ability_four.name
 	$"Ability 5".texture_normal = Abilities.ability_five.img
 	$"Ability 5/Label".text = Abilities.ability_five.name
-	$NinePatchRect2/Label.text = str(Globals.currency)
-	if ability_one == ability_stock.auto_chord:
+	$NinePatchRect2/Label.text = "$"  + str(Globals.currency)
+	if ability_one == Abilities.ability_stock.auto_chord:
 		Abilities.auto_chord = true
-	$"Ability One".texture_normal = ability_one.img
-	$"Ability One/Label".text = ability_one.name + ": " + str(ability_one.price)
-	$"Flag One".texture_normal = flag_one.img
-	$"Flag One/Label".text = flag_one.name + ": " + str(flag_one.price)
-	$"Flag Two".texture_normal = flag_two.img
-	$"Flag Two/Label".text = flag_two.name + ": " + str(flag_two.price)
-	$"Flag Three".texture_normal = flag_three.img
-	$"Flag Three/Label".text = flag_three.name + ": " + str(flag_three.price)
+	if is_instance_valid($"Ability One"):
+		$"Ability One".texture_normal = ability_one.img
+		$"Ability One/Label".text = ability_one.name + ": " + str(ability_one.price)
+	if is_instance_valid($"Flag One"):
+		$"Flag One".texture_normal = flag_one.img
+		$"Flag One/Label".text = flag_one.name + ": " + str(flag_one.price)
+	if is_instance_valid($"Flag Two"):
+		$"Flag Two".texture_normal = flag_two.img
+		$"Flag Two/Label".text = flag_two.name + ": " + str(flag_two.price)
+	if is_instance_valid($"Flag Three"):
+		$"Flag Three".texture_normal = flag_three.img
+		$"Flag Three/Label".text = flag_three.name + ": " + str(flag_three.price)
 	$"Rock One".texture_normal = rock_one.img
-	$"Rock One/Label".text = rock_one.name + ": " + str(rock_one.price)
+	$"Rock One/Label".text = rock_one.name
 	$"Rock Two".texture_normal = rock_two.img
-	$"Rock Two/Label".text = rock_two.name + ": " + str(rock_two.price)
+	$"Rock Two/Label".text = rock_two.name
 	$"Rock Three".texture_normal = rock_three.img
-	$"Rock Three/Label".text = rock_three.name + ": " + str(rock_three.price)
+	$"Rock Three/Label".text = rock_three.name
+	$"Extra One".texture_normal = extra_one.img
+	$"Extra One/Label".text = extra_one.name
+	$"Extra Two".texture_normal = extra_two.img
+	$"Extra Two/Label".text = extra_two.name
+	$"Extra Three".texture_normal = extra_three.img
+	$"Extra Three/Label".text = extra_three.name
 
 func _on_texture_button_pressed() -> void:
 	Globals.level_requirement += 50
@@ -210,9 +229,11 @@ func _on_texture_button_pressed() -> void:
 func _on_ability_one_pressed() -> void:
 	if Globals.currency >= ability_one.price:
 		Globals.currency -= ability_one.price
-		if ability_one == ability_stock.auto_chord:
+		if ability_one == Abilities.ability_stock.auto_chord:
 			Abilities.auto_chord = true
-			Abilities.ability_one = ability_one
+		Abilities.ability_one = ability_one
+		Abilities.current_abilities.append(ability_one)
+		$"Ability One".queue_free()
 
 func _on_flag_one_pressed() -> void:
 	if Globals.currency >= flag_one.price:
@@ -292,20 +313,20 @@ func _on_flag_three_pressed() -> void:
 		if flag_three == flag_stock.brown_flag:
 			Globals.brown_flags += 1
 
-func choose_flag():
+func choose_flag(pack : Array):
 	var total_weight : int = 0
 	
-	for flag in flag_options:
+	for flag in pack:
 		total_weight += flag.rarity
 	
 	var chosen_flag : float = randf() * total_weight
 	
-	for flag in flag_options:
+	for flag in pack:
 		if chosen_flag < flag.rarity:
 			return flag
 		chosen_flag -= flag.rarity
 	
-	return flag_options[-1]
+	return pack[-1]
 
 func choose_rock():
 	var total_weight : int = 0
@@ -323,44 +344,137 @@ func choose_rock():
 	return rock_options[-1]
 
 func _on_texture_button_2_pressed() -> void:
-	opening_pack = true
-	$TextureButton2.texture_normal = preload("res://Sprites/Rock Pack Opened.png")
-	$TextureButton2.offset_transform_position.x = -48
-	$TextureButton2/Button.offset_transform_position.x = 48
-	await get_tree().create_timer(0.25).timeout
-	var camera_drag = create_tween()
-	camera_drag.set_ease(Tween.EASE_IN_OUT)
-	camera_drag.set_trans(Tween.TRANS_BACK)
-	camera_drag.tween_property($Camera2D, "position", Vector2(1728, 324), 1)
-	camera_drag.play()
-
+	if Globals.currency >= 500:
+		opening_pack = true
+		$"Rock Pack".texture_normal = preload("res://Sprites/Rock Pack Opened.png")
+		$"Rock Pack".offset_transform_position.x = -48
+		$"Rock Pack"/Button.offset_transform_position.x = 48
+		await get_tree().create_timer(0.25).timeout
+		var camera_drag = create_tween()
+		camera_drag.set_ease(Tween.EASE_IN_OUT)
+		camera_drag.set_trans(Tween.TRANS_BACK)
+		camera_drag.tween_property($Camera2D, "position", Vector2(1728, 324), 1)
+		camera_drag.play()
+		Globals.currency -= 500
 
 func _on_button_pressed() -> void:
 	opening_pack = true
-	$TextureButton2.texture_normal = preload("res://Sprites/Rock Pack Opened.png")
-	$TextureButton2.offset_transform_position.x = -48
-	$TextureButton2/Button.offset_transform_position.x = 48
+	$"Rock Pack".texture_normal = preload("res://Sprites/Rock Pack Opened.png")
+	$"Rock Pack".offset_transform_position.x = -48
+	$"Rock Pack"/Button.offset_transform_position.x = 48
 	await get_tree().create_timer(0.25).timeout
 	var camera_drag = create_tween()
 	camera_drag.set_ease(Tween.EASE_IN_OUT)
 	camera_drag.set_trans(Tween.TRANS_BACK)
 	camera_drag.tween_property($Camera2D, "position", Vector2(1728, 324), 1)
 	camera_drag.play()
-
 
 func _on_rock_one_pressed() -> void:
 	if rock_one == rock_stock.granite:
 		Globals.upgrade_ones()
-		pack_option_chosen = true
-
+	if rock_one == rock_stock.quartz:
+		Globals.upgrade_twos()
+	rock_pack_option_chosen = true
 
 func _on_rock_two_pressed() -> void:
-	if rock_one == rock_stock.granite:
+	if rock_two == rock_stock.granite:
 		Globals.upgrade_ones()
-		pack_option_chosen = true
-
+	if rock_two == rock_stock.quartz:
+		Globals.upgrade_twos()
+	rock_pack_option_chosen = true
 
 func _on_rock_three_pressed() -> void:
-	if rock_one == rock_stock.granite:
+	if rock_three == rock_stock.granite:
 		Globals.upgrade_ones()
-		pack_option_chosen = true
+	if rock_three == rock_stock.quartz:
+		Globals.upgrade_twos()
+	rock_pack_option_chosen = true
+
+func _on_extra_pack_pressed() -> void:
+	if Globals.currency >= 500:
+		opening_pack = true
+		$"Extra Pack".texture_normal = preload("res://Sprites/Flag Pack Opened.png")
+		$"Extra Pack".offset_transform_position.x = -48
+		$"Extra Pack"/Button.offset_transform_position.x = 48
+		await get_tree().create_timer(0.25).timeout
+		var camera_drag = create_tween()
+		camera_drag.set_ease(Tween.EASE_IN_OUT)
+		camera_drag.set_trans(Tween.TRANS_BACK)
+		camera_drag.tween_property($Camera2D, "position", Vector2(-576, 324), 1)
+		camera_drag.play()
+		Globals.currency -= 500
+
+func _on_extra_one_pressed() -> void:
+	if extra_one == flag_stock.blue_flag:
+		Globals.blue_flags += 5
+	if extra_one == flag_stock.violet_flag:
+		Globals.violet_flags += 5
+	if extra_one == flag_stock.orange_flag:
+		Globals.orange_flags += 5
+	if extra_one == flag_stock.green_flag:
+		Globals.green_flags += 5
+	if extra_one == flag_stock.magenta_flag:
+		Globals.magenta_flags += 5
+	if extra_one == flag_stock.pink_flag:
+		Globals.pink_flags += 5
+	if extra_one == flag_stock.white_flag:
+		Globals.white_flags += 5
+	if extra_one == flag_stock.black_flag:
+		Globals.black_flags += 5
+	if extra_one == flag_stock.grey_flag:
+		Globals.grey_flags += 5
+	if extra_one == flag_stock.brown_flag:
+		Globals.brown_flags += 5
+	if extra_one == flag_stock.yellow_flag:
+		Globals.yellow_flags += 5
+	extra_pack_option_chosen = true
+
+func _on_extra_two_pressed() -> void:
+	if extra_two == flag_stock.blue_flag:
+		Globals.blue_flags += 5
+	if extra_two == flag_stock.violet_flag:
+		Globals.violet_flags += 5
+	if extra_two == flag_stock.orange_flag:
+		Globals.orange_flags += 5
+	if extra_two == flag_stock.green_flag:
+		Globals.green_flags += 5
+	if extra_two == flag_stock.magenta_flag:
+		Globals.magenta_flags += 5
+	if extra_two == flag_stock.pink_flag:
+		Globals.pink_flags += 5
+	if extra_two == flag_stock.white_flag:
+		Globals.white_flags += 5
+	if extra_two == flag_stock.black_flag:
+		Globals.black_flags += 5
+	if extra_two == flag_stock.grey_flag:
+		Globals.grey_flags += 5
+	if extra_two == flag_stock.brown_flag:
+		Globals.brown_flags += 5
+	if extra_two == flag_stock.yellow_flag:
+		Globals.yellow_flags += 5
+	extra_pack_option_chosen = true
+
+func _on_extra_three_pressed() -> void:
+	if extra_three == flag_stock.blue_flag:
+		Globals.blue_flags += 5
+	if extra_three == flag_stock.violet_flag:
+		Globals.violet_flags += 5
+	if extra_three == flag_stock.orange_flag:
+		Globals.orange_flags += 5
+	if extra_three == flag_stock.green_flag:
+		Globals.green_flags += 5
+	if extra_three == flag_stock.magenta_flag:
+		Globals.magenta_flags += 5
+	if extra_three == flag_stock.pink_flag:
+		Globals.pink_flags += 5
+	if extra_three == flag_stock.white_flag:
+		Globals.white_flags += 5
+	if extra_three == flag_stock.black_flag:
+		Globals.black_flags += 5
+	if extra_three == flag_stock.grey_flag:
+		Globals.grey_flags += 5
+	if extra_three == flag_stock.brown_flag:
+		Globals.brown_flags += 5
+	if extra_three == flag_stock.yellow_flag:
+		Globals.yellow_flags += 5
+	extra_pack_option_chosen = true

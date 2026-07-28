@@ -15,7 +15,8 @@ var flag_type : String = "Red"
 var world
 var flags_around : int = 0
 var unflagged_bombs_around : bool = false
-var mult : float = 1
+var mult : float = 0
+var self_mult : float = 1
 var point_bonus : int = 0
 var find_points : bool = false
 var bombs_around_set : bool = false
@@ -213,7 +214,8 @@ func flagged_bombs_around():
 				if is_instance_valid(neighbor):
 					if neighbor.is_bomb and neighbor.flagged:
 						if neighbor.flag_type == "Blue":
-							mult += 1
+							self_mult += 1
 						if neighbor.flag_type == "Purple":
 							Globals.point_mult += 1
-						Globals.points += (point_bonus * mult)
+						Globals.points += (point_bonus * self_mult)
+						Globals.mult += mult

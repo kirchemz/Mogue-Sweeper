@@ -51,6 +51,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
 func _process(delta: float) -> void:
+	$"Camera2D/Flag 1/Label".text = "Red FLag"
+	$"Camera2D/Flag 2/Label".text = "Blue FLag: " + str(Globals.blue_flags)
+	$"Camera2D/Flag 3/Label".text = "Violet FLag: " + str(Globals.violet_flags)
+	$"Camera2D/Flag 4/Label".text = "Orange FLag: " + str(Globals.orange_flags)
+	$"Camera2D/Flag 5/Label".text = "Yellow FLag: " + str(Globals.yellow_flags)
+	$"Camera2D/Flag 6/Label".text = "Green FLag: " + str(Globals.green_flags)
+	$"Camera2D/Flag 7/Label".text = "Black FLag: " + str(Globals.black_flags)
+	$"Camera2D/Flag 8/Label".text = "White FLag: " + str(Globals.white_flags)
+	$"Camera2D/Flag 9/Label".text = "Grey FLag: " + str(Globals.grey_flags)
+	$"Camera2D/Flag 10/Label".text = "Brown FLag: " + str(Globals.brown_flags)
+	$"Camera2D/Flag 11/Label".text = "Magenta FLag: " + str(Globals.magenta_flags)
+	$"Camera2D/Flag 12/Label".text = "Pink FLag: " + str(Globals.pink_flags)
 	if hide_menu:
 		$"Camera2D/Ability 1".visible = false
 		$"Camera2D/Ability 2".visible = false
