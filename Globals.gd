@@ -45,8 +45,8 @@ var eights_points : Dictionary = {
 	"mult" : 7
 }
 var nines_points : Dictionary = {
-	"points" : 9,
-	"mult" : 9
+	"points" : 100,
+	"mult" : 100
 }
 
 # General global variables
@@ -55,7 +55,7 @@ var point_mult : float = 1.0
 var mult : float = 0.0
 var total_points : float = 0.0
 var level_requirement : int = 50
-var currency : int = 0
+var currency : int = 500
 
 # All flag variables
 var red_flag_active: bool = true

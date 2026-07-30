@@ -150,26 +150,30 @@ func _ready() -> void:
 	extra_options = [flag_stock.blue_flag, flag_stock.violet_flag, flag_stock.yellow_flag, flag_stock.orange_flag, flag_stock.magenta_flag, flag_stock.pink_flag, flag_stock.black_flag, flag_stock.brown_flag, flag_stock.white_flag, flag_stock.grey_flag]
 	rock_options = [rock_stock.granite, rock_stock.quartz, rock_stock.basalt, rock_stock.obsidian, rock_stock.fluorite, rock_stock.diamond, rock_stock.emerald, rock_stock.black_opal, rock_stock.red_diamond]
 	
-	ability_one = Abilities.ability_stock.auto_chord
-	
 	# Picks what flags, abilities, and rocks that show up for purchase and in packs
-	flag_one = choose_flag(flag_options)
+	ability_one = choose_item(Abilities.ability_options)
+	Abilities.ability_options.erase(ability_one)
+	ability_two = choose_item(Abilities.ability_options)
+	Abilities.ability_options.erase(ability_two)
+	ability_three = choose_item(Abilities.ability_options)
+	Abilities.ability_options.erase(ability_three)
+	flag_one = choose_item(flag_options)
 	flag_options.erase(flag_one)
-	flag_two = choose_flag(flag_options)
+	flag_two = choose_item(flag_options)
 	flag_options.erase(flag_two)
-	flag_three = choose_flag(flag_options)
+	flag_three = choose_item(flag_options)
 	flag_options.erase(flag_three)
-	rock_one = choose_rock()
+	rock_one = choose_item(rock_options)
 	rock_options.erase(rock_one)
-	rock_two = choose_rock()
+	rock_two = choose_item(rock_options)
 	rock_options.erase(rock_two)
-	rock_three = choose_rock()
+	rock_three = choose_item(rock_options)
 	rock_options.erase(rock_three)
-	extra_one = choose_flag(extra_options)
+	extra_one = choose_item(extra_options)
 	extra_options.erase(extra_one)
-	extra_two = choose_flag(extra_options)
+	extra_two = choose_item(extra_options)
 	extra_options.erase(extra_two)
-	extra_three = choose_flag(extra_options)
+	extra_three = choose_item(extra_options)
 	extra_options.erase(extra_three)
 
 func _process(delta: float) -> void:
@@ -209,6 +213,12 @@ func _process(delta: float) -> void:
 	if is_instance_valid($"Ability One"):
 		$"Ability One".texture_normal = ability_one.img
 		$"Ability One/Label".text = ability_one.name + ": " + str(ability_one.price)
+	if is_instance_valid($"Ability Two"):
+		$"Ability Two".texture_normal = ability_two.img
+		$"Ability Two/Label".text = ability_two.name + ": " + str(ability_two.price)
+	if is_instance_valid($"Ability Three"):
+		$"Ability Three".texture_normal = ability_three.img
+		$"Ability Three/Label".text = ability_three.name + ": " + str(ability_three.price)
 	if is_instance_valid($"Flag One"):
 		$"Flag One".texture_normal = flag_one.img
 		$"Flag One/Label".text = flag_one.name + ": " + str(flag_one.price)
@@ -237,12 +247,87 @@ func _on_texture_button_pressed() -> void:
 
 func _on_ability_one_pressed() -> void:
 	if Globals.currency >= ability_one.price:
-		Globals.currency -= ability_one.price
-		if ability_one == Abilities.ability_stock.auto_chord:
-			Abilities.auto_chord = true
-		Abilities.ability_one = ability_one
-		Abilities.current_abilities.append(ability_one)
-		$"Ability One".queue_free()
+		var have_space : bool = true
+		if Abilities.current_abilities.size() == 0:
+			Abilities.ability_one = ability_one
+		elif Abilities.current_abilities.size() == 1:
+			Abilities.ability_two = ability_one
+		elif Abilities.current_abilities.size() == 2:
+			Abilities.ability_three = ability_one
+		elif Abilities.current_abilities.size() == 3:
+			Abilities.ability_four = ability_one
+		elif Abilities.current_abilities.size() == 4:
+			Abilities.ability_five = ability_one
+		else:
+			have_space = false
+		if have_space:
+			Globals.currency -= ability_one.price
+			if ability_one == Abilities.ability_stock.auto_chord:
+				Abilities.auto_chord = true
+			if ability_one == Abilities.ability_stock.time_bonus:
+				Abilities.time_bonus = true
+			if ability_one == Abilities.ability_stock.flag_generator:
+				Abilities.flag_generator = true
+			if ability_one == Abilities.ability_stock.number_upgrader:
+				Abilities.number_upgrader = true
+			Abilities.current_abilities.append(ability_one)
+			$"Ability One".queue_free()
+
+func _on_ability_two_pressed() -> void:
+	if Globals.currency >= ability_two.price:
+		var have_space : bool = true
+		if Abilities.current_abilities.size() == 0:
+			Abilities.ability_one = ability_two
+		elif Abilities.current_abilities.size() == 1:
+			Abilities.ability_two = ability_two
+		elif Abilities.current_abilities.size() == 2:
+			Abilities.ability_three = ability_two
+		elif Abilities.current_abilities.size() == 3:
+			Abilities.ability_four = ability_two
+		elif Abilities.current_abilities.size() == 4:
+			Abilities.ability_five = ability_two
+		else:
+			have_space = false
+		if have_space:
+			Globals.currency -= ability_two.price
+			if ability_two == Abilities.ability_stock.auto_chord:
+				Abilities.auto_chord = true
+			if ability_two == Abilities.ability_stock.time_bonus:
+				Abilities.time_bonus = true
+			if ability_two == Abilities.ability_stock.flag_generator:
+				Abilities.flag_generator = true
+			if ability_two == Abilities.ability_stock.number_upgrader:
+				Abilities.number_upgrader = true
+			Abilities.current_abilities.append(ability_two)
+			$"Ability Two".queue_free()
+
+func _on_ability_three_pressed() -> void:
+	if Globals.currency >= ability_three.price:
+		var have_space : bool = true
+		if Abilities.current_abilities.size() == 0:
+			Abilities.ability_one = ability_three
+		elif Abilities.current_abilities.size() == 1:
+			Abilities.ability_two = ability_three
+		elif Abilities.current_abilities.size() == 2:
+			Abilities.ability_three = ability_three
+		elif Abilities.current_abilities.size() == 3:
+			Abilities.ability_four = ability_three
+		elif Abilities.current_abilities.size() == 4:
+			Abilities.ability_five = ability_three
+		else:
+			have_space = false
+		if have_space:
+			Globals.currency -= ability_three.price
+			if ability_three == Abilities.ability_stock.auto_chord:
+				Abilities.auto_chord = true
+			if ability_three == Abilities.ability_stock.time_bonus:
+				Abilities.time_bonus = true
+			if ability_three == Abilities.ability_stock.flag_generator:
+				Abilities.flag_generator = true
+			if ability_three == Abilities.ability_stock.number_upgrader:
+				Abilities.number_upgrader = true
+			Abilities.current_abilities.append(ability_three)
+			$"Ability Three".queue_free()
 
 func _on_flag_one_pressed() -> void:
 	if Globals.currency >= flag_one.price:
@@ -322,35 +407,23 @@ func _on_flag_three_pressed() -> void:
 		if flag_three == flag_stock.brown_flag:
 			Globals.brown_flags += 1
 
-func choose_flag(pack : Array):
-	var total_weight : int = 0
-	
-	for flag in pack:
-		total_weight += flag.rarity
-	
-	var chosen_flag : float = randf() * total_weight
-	
-	for flag in pack:
-		if chosen_flag < flag.rarity:
-			return flag
-		chosen_flag -= flag.rarity
-	
-	return pack[-1]
+func choose_item(pack: Array):
+	if pack.is_empty():
+		return null
 
-func choose_rock():
-	var total_weight : int = 0
-	
-	for rock in rock_options:
-		total_weight += rock.rarity
-	
-	var chosen_rock : float = randf() * total_weight
-	
-	for rock in rock_options:
-		if chosen_rock < rock.rarity:
-			return rock
-		chosen_rock -= rock.rarity
-	
-	return rock_options[-1]
+	var total_weight := 0
+	for item in pack:
+		total_weight += item.rarity
+
+	var chosen_item := randf() * total_weight
+
+	for item in pack:
+		if chosen_item < item.rarity:
+			return item
+		chosen_item -= item.rarity
+
+	return pack[pack.size() - 1]
+
 
 func _on_texture_button_2_pressed() -> void:
 	if Globals.currency >= 500:
@@ -383,6 +456,20 @@ func _on_rock_one_pressed() -> void:
 		Globals.upgrade_ones()
 	if rock_one == rock_stock.quartz:
 		Globals.upgrade_twos()
+	if rock_one == rock_stock.basalt:
+		Globals.upgrade_threes()
+	if rock_one == rock_stock.obsidian:
+		Globals.upgrade_fours()
+	if rock_one == rock_stock.fluorite:
+		Globals.upgrade_fives()
+	if rock_one == rock_stock.diamond:
+		Globals.upgrade_sixes()
+	if rock_one == rock_stock.emerald:
+		Globals.upgrade_sevens()
+	if rock_one == rock_stock.black_opal:
+		Globals.upgrade_eights()
+	if rock_one == rock_stock.red_diamond:
+		Globals.upgrade_nines()
 	rock_pack_option_chosen = true
 
 func _on_rock_two_pressed() -> void:
@@ -390,6 +477,20 @@ func _on_rock_two_pressed() -> void:
 		Globals.upgrade_ones()
 	if rock_two == rock_stock.quartz:
 		Globals.upgrade_twos()
+	if rock_two == rock_stock.basalt:
+		Globals.upgrade_threes()
+	if rock_two == rock_stock.obsidian:
+		Globals.upgrade_fours()
+	if rock_two == rock_stock.fluorite:
+		Globals.upgrade_fives()
+	if rock_two == rock_stock.diamond:
+		Globals.upgrade_sixes()
+	if rock_two == rock_stock.emerald:
+		Globals.upgrade_sevens()
+	if rock_two == rock_stock.black_opal:
+		Globals.upgrade_eights()
+	if rock_two == rock_stock.red_diamond:
+		Globals.upgrade_nines()
 	rock_pack_option_chosen = true
 
 func _on_rock_three_pressed() -> void:
@@ -397,6 +498,20 @@ func _on_rock_three_pressed() -> void:
 		Globals.upgrade_ones()
 	if rock_three == rock_stock.quartz:
 		Globals.upgrade_twos()
+	if rock_three == rock_stock.basalt:
+		Globals.upgrade_threes()
+	if rock_three == rock_stock.obsidian:
+		Globals.upgrade_fours()
+	if rock_three == rock_stock.fluorite:
+		Globals.upgrade_fives()
+	if rock_three == rock_stock.diamond:
+		Globals.upgrade_sixes()
+	if rock_three == rock_stock.emerald:
+		Globals.upgrade_sevens()
+	if rock_three == rock_stock.black_opal:
+		Globals.upgrade_eights()
+	if rock_three == rock_stock.red_diamond:
+		Globals.upgrade_nines()
 	rock_pack_option_chosen = true
 
 func _on_extra_pack_pressed() -> void:

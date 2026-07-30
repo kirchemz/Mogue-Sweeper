@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Rogue Sweeper"
 config/description="A Minesweeper rogue-lite"
-run/main_scene="uid://dbbgr6bb8ak3h"
+run/main_scene="uid://c6k7anaruwjh2"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dqnx3g6e6hrhe"
 

@@ -20,3 +20,7 @@ func _process(delta: float) -> void:
 		logo_rot_down = create_tween()
 		logo_rot_down.tween_property($TextureRect, "rotation_degrees", -3, 2.5)
 		logo_rot_down.play()
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://World/world.tscn")

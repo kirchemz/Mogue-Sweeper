@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqnx3g6e6hrhe" path="res://Sprites/LOGO.png" id="2_nm8xh"]
 [ext_resource type="Texture2D" uid="uid://ex6q0owr0qk4" path="res://Sprites/Button.png" id="3_hwc51"]
 [ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="4_e01e3"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="4_nm8xh"]
 
 [node name="Title Screen" type="Node2D" unique_id=295365305]
 script = ExtResource("1_h4hme")
@@ -16,13 +17,14 @@ pivot_offset = Vector2(242.5, 210)
 texture = ExtResource("2_nm8xh")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=663108231]
-offset_left = 585.0
+offset_left = 600.0
 offset_top = 510.0
-offset_right = 617.0
-offset_bottom = 522.0
-scale = Vector2(9.472489, 9.472489)
+offset_right = 630.0
+offset_bottom = 530.0
+scale = Vector2(8.286854, 7.987634)
 pivot_offset = Vector2(16, 6)
 texture_normal = ExtResource("3_hwc51")
+script = ExtResource("4_nm8xh")
 
 [node name="Label" type="Label" parent="TextureButton" unique_id=1346027928]
 layout_mode = 0
@@ -34,3 +36,7 @@ theme_override_font_sizes/font_size = 528
 text = "Start"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

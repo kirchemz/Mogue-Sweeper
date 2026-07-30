@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var cell = preload("res://Cell/cell.tscn")
+@onready var mine_scanner = preload("res://Placables/mine_scanner.tscn")
 
 var map : Array = []
 var map_width : int = 40
@@ -14,12 +15,23 @@ var flags_remaining : int = bombs
 var level_over : bool = false
 var mouse_over_menu : bool = false
 var hide_menu : bool = false
+var ui_shown : bool = false
+var mine_scanner_made : bool = false
+var mine_scanner_placed : bool = false
+var mine_scanner_clicked : bool = false
+var mine_scanner_instance
 
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
 
+var time_bonus : int = 0
+
 # Runs once as soon as the scene starts
 func _ready() -> void:
+	# Time Bonus
+	if Abilities.time_bonus:
+		time_bonus += Abilities.ability_stock.time_bonus.time
+	$Timer.start($Timer.wait_time + time_bonus)
 	# Sets BG color
 	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
 	
@@ -50,6 +62,25 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	if is_instance_valid(mine_scanner_instance):
+		if mine_scanner_placed:
+			mine_scanner_instance.global_position = closest_cell_to_scanner().global_position
+			mine_scan(closest_cell_to_scanner())
+			mine_scanner_instance.queue_free()
+	if mine_scanner_made and not mine_scanner_placed:
+		mine_scanner_instance.global_position = get_global_mouse_position()
+		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			mine_scanner_placed = true
+	if mine_scanner_clicked:
+		mine_scanner_clicked = false
+		mine_scanner_made = true
+		mine_scanner_instance = mine_scanner.instantiate()
+		add_child(mine_scanner_instance)
+		mine_scanner_instance.global_position = get_global_mouse_position()
+	# Makes sure the player can't click through the UI
+	if ui_shown:
+		mouse_over_menu = true
+	
 	# Update Flag Counts
 	$"Camera2D/Flag 1/Label".text = "Red FLag"
 	$"Camera2D/Flag 2/Label".text = "Blue FLag: " + str(Globals.blue_flags)
@@ -66,6 +97,7 @@ func _process(delta: float) -> void:
 	
 	# Change the position and visibility for all UI elements in the menu when condencing it
 	if hide_menu:
+		$"Camera2D/Number Points".visible = false
 		$"Camera2D/Ability 1".visible = false
 		$"Camera2D/Ability 2".visible = false
 		$"Camera2D/Ability 3".visible = false
@@ -94,6 +126,7 @@ func _process(delta: float) -> void:
 		$Camera2D/Area2D/CollisionShape2D.scale.x = 0.5
 		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-453, -0.5)
 	else:
+		$"Camera2D/Number Points".visible = true
 		$"Camera2D/Ability 1".visible = true
 		$"Camera2D/Ability 2".visible = true
 		$"Camera2D/Ability 3".visible = true
@@ -172,12 +205,11 @@ func _process(delta: float) -> void:
 			$Camera2D.scale -= Vector2(0.0575, 0.0575)
 		if $Camera2D.zoom.x - 0.7 < 0.0000000000001:
 			$Camera2D.scale -= Vector2(0.055, 0.055)
-		if snapped($Camera2D.zoom.x, 0.1) == 0.6:
+		if $Camera2D.zoom.x - 0.6 < 0.0000000000001:
 			$Camera2D.scale -= Vector2(0.08, 0.08)
 	if Input.is_action_just_pressed("Zoom Out") and $Camera2D.zoom > Vector2(0.5, 0.5):
 		$Camera2D.zoom -= Vector2(0.1, 0.1)
 		$Camera2D.scale += Vector2(0.1, 0.1)
-		print(snapped($Camera2D.zoom.x, 0.1))
 		if snapped($Camera2D.zoom.x, 0.1) == 0.8:
 			$Camera2D.scale += Vector2(0.025, 0.025)
 		if $Camera2D.zoom.x - 0.7 < 0.0000000000001:
@@ -336,6 +368,79 @@ func unhide_cells(cell_instance):
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
 						unhide_cells(neighbor)
 
+# Mine Scanner
+func mine_scan(cell_instance):
+	var repeats = Abilities.mine_scanner_level
+	if cell_instance.unhide_neighbors:
+		return
+	cell_instance.unhide_neighbors = true
+	cell_instance.is_hidden = false
+	
+	var xc = -1
+	var yc = -1
+	for y in range(map_height):
+		for x in range(map_width):
+			if map[x][y] == cell_instance:
+				xc = x
+				yc = y
+	
+	if xc == -1 or yc == -1:
+		return
+	
+	for ay in range(-1, 2):
+		for ax in range(-1, 2):
+			var check_x = xc + ax
+			var check_y = yc + ay
+			if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
+				var neighbor = map[check_x][check_y]
+				if is_instance_valid(neighbor) and neighbor.is_hidden:
+					neighbor.is_hidden = false
+					if neighbor.is_bomb:
+						neighbor.flag_type = "Red"
+						neighbor.flag_tex = preload("res://Sprites/Red Flag.png")
+						neighbor.is_hidden = true
+						neighbor.flagged = true
+					if repeats > 0:
+						repeats -= 1
+						unhide_scan_neighbors(neighbor, repeats)
+					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
+						unhide_cells(neighbor)
+
+func unhide_scan_neighbors(cell_instance, repeats):
+	if cell_instance.unhide_neighbors:
+		return
+	cell_instance.unhide_neighbors = true
+	cell_instance.is_hidden = false
+	
+	var xc = -1
+	var yc = -1
+	for y in range(map_height):
+		for x in range(map_width):
+			if map[x][y] == cell_instance:
+				xc = x
+				yc = y
+	
+	if xc == -1 or yc == -1:
+		return
+	
+	for ay in range(-1, 2):
+		for ax in range(-1, 2):
+			var check_x = xc + ax
+			var check_y = yc + ay
+			if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
+				var neighbor = map[check_x][check_y]
+				if is_instance_valid(neighbor) and neighbor.is_hidden:
+					neighbor.is_hidden = false
+					if neighbor.is_bomb:
+						neighbor.flag_type = "Red"
+						neighbor.flag_tex = preload("res://Sprites/Red Flag.png")
+						neighbor.is_hidden = true
+						neighbor.flagged = true
+					if repeats > 0:
+						repeats -= 1
+						unhide_scan_neighbors(neighbor, repeats)
+					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
+						unhide_cells(neighbor)
 # Function to use the ability "Auto Chording"
 func auto_chord(cell_instance):
 	if not cell_instance.is_bomb:
@@ -456,6 +561,22 @@ func _on_ability_1_pressed() -> void:
 	if Abilities.ability_one.name == "Auto Chord":
 		Abilities.auto_chord_active = true
 
+func _on_ability_2_pressed() -> void:
+	if Abilities.ability_two.name == "Auto Chord":
+		Abilities.auto_chord_active = true
+
+func _on_ability_3_pressed() -> void:
+	if Abilities.ability_three.name == "Auto Chord":
+		Abilities.auto_chord_active = true
+
+func _on_ability_4_pressed() -> void:
+	if Abilities.ability_four.name == "Auto Chord":
+		Abilities.auto_chord_active = true
+
+func _on_ability_5_pressed() -> void:
+	if Abilities.ability_five.name == "Auto Chord":
+		Abilities.auto_chord_active = true
+
 # Changes which flag you are currently using
 func _on_flag_1_pressed() -> void:
 	Globals.activate_red()
@@ -493,3 +614,31 @@ func _on_flag_9_pressed() -> void:
 
 func _on_flag_10_pressed() -> void:
 	Globals.activate_brown()
+
+func _on_number_points_pressed() -> void:
+	ui_shown = true
+	$Timer.paused = true
+	$"Camera2D/Number Points UI".visible = true
+	mouse_over_menu = true
+	hide_menu = false
+
+
+func _on_ability_1_button_down() -> void:
+	if not mine_scanner_made:
+		mouse_over_menu = true
+		mine_scanner_clicked = true
+
+
+func _on_ability_1_button_up() -> void:
+	mouse_over_menu = false
+	mine_scanner_placed = true
+
+func closest_cell_to_scanner():
+	var closest
+	var dist = INF
+	for child in $BoxContainer.get_children():
+		if mine_scanner_instance.global_position.distance_to(child.global_position) < dist:
+			dist = mine_scanner_instance.global_position.distance_to(child.global_position)
+			closest = child
+	
+	return closest

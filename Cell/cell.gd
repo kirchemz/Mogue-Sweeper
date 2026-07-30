@@ -240,3 +240,61 @@ func flagged_bombs_around():
 							Globals.point_mult += 1
 						Globals.points += (point_bonus * self_mult)
 						Globals.mult += mult
+	if not unflagged_bomb_around() and flag_around() == bombs_around:
+		if Abilities.flag_generator:
+			if bombs_around == 2:
+				Globals.blue_flags += 1
+			if bombs_around == 3:
+				Globals.yellow_flags += 1
+			if bombs_around == 4:
+				Globals.violet_flags += 1
+			if bombs_around == 5:
+				Globals.green_flags += 1
+			if bombs_around == 6:
+				Globals.black_flags += 1
+		if Abilities.number_upgrader:
+			if bombs_around == 1:
+				Abilities.ones_cleared += 1
+				if Abilities.ones_cleared >= 100:
+					Abilities.ones_cleared = 0
+					Globals.upgrade_ones()
+			if bombs_around == 2:
+				Abilities.twos_cleared += 1
+				if Abilities.twos_cleared >= 80:
+					Abilities.twos_cleared = 0
+					Globals.upgrade_twos()
+			if bombs_around == 3:
+				Abilities.threes_cleared += 1
+				if Abilities.threes_cleared >= 10:
+					Abilities.threes_cleared = 0
+					Globals.upgrade_threes()
+			if bombs_around == 4:
+				Abilities.fours_cleared += 1
+				if Abilities.fours_cleared >= 5:
+					Abilities.fours_cleared = 0
+					Globals.upgrade_fours()
+			if bombs_around == 5:
+				Abilities.fives_cleared += 1
+				if Abilities.fives_cleared >= 2:
+					Abilities.fives_cleared = 0
+					Globals.upgrade_fives()
+			if bombs_around == 6:
+				Abilities.sixes_cleared += 1
+				if Abilities.sixes_cleared >= 1:
+					Abilities.sixes_cleared = 0
+					Globals.upgrade_sixes()
+			if bombs_around == 7:
+				Abilities.sevens_cleared += 1
+				if Abilities.sevens_cleared >= 1:
+					Abilities.sevens_cleared = 0
+					Globals.upgrade_sevens()
+			if bombs_around == 8:
+				Abilities.eights_cleared += 1
+				if Abilities.eights_cleared >= 1:
+					Abilities.eights_cleared = 0
+					Globals.upgrade_eights()
+			if bombs_around == 9:
+				Abilities.nines_cleared += 1
+				if Abilities.nines_cleared >= 1:
+					Abilities.nines_cleared = 0
+					Globals.upgrade_nines()

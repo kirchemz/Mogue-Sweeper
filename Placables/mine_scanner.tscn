@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://jarm0ohadlny"]
+
+[ext_resource type="Texture2D" uid="uid://c6muo46gw5u8h" path="res://Sprites/Mine Scanner.png" id="1_1fq30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
+size = Vector2(32, 32)
+
+[node name="Mine Scanner" type="Area2D" unique_id=377700028]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1603902151]
+shape = SubResource("RectangleShape2D_0rlat")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1349141386]
+texture = ExtResource("1_1fq30")

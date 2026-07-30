@@ -1,0 +1,702 @@
+[gd_scene format=3 uid="uid://6nk83vdjmefb"]
+
+[ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_iuev5"]
+[ext_resource type="Script" uid="uid://c13eqpkrk8kj2" path="res://UI/number_points_ui.gd" id="1_mgfu4"]
+[ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="1_ul4ap"]
+[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="2_ul4ap"]
+[ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="4_kugnm"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="5_i2g1e"]
+
+[node name="Number Points UI" type="Control" unique_id=463320316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgfu4")
+
+[node name="Panel" type="Panel" parent="." unique_id=1637281770]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 1145.0
+offset_bottom = 642.0
+
+[node name="1" type="NinePatchRect" parent="." unique_id=1698006665]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 40.0
+offset_right = 331.14944
+offset_bottom = 176.74092
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="1" unique_id=1565821892]
+self_modulate = Color(0, 0.8509804, 0.15686275, 1)
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="1/TextureRect" unique_id=2111050359]
+layout_mode = 0
+offset_left = 13.999999
+offset_top = -9.999999
+offset_right = 247.0
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "1"
+
+[node name="Label" type="Label" parent="1" unique_id=1891937057]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="1" unique_id=967859538]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="1" unique_id=874139251]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+value = 100.0
+
+[node name="2" type="NinePatchRect" parent="." unique_id=715118101]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 40.0
+offset_right = 572.1494
+offset_bottom = 176.74092
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="2" unique_id=249179570]
+self_modulate = Color(0, 0.5529412, 1, 1)
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="2/TextureRect" unique_id=463605842]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "2"
+
+[node name="Label" type="Label" parent="2" unique_id=1110355589]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="2" unique_id=165059443]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="2" unique_id=954365341]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 80.0
+value = 80.0
+
+[node name="3" type="NinePatchRect" parent="." unique_id=637820728]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 40.0
+offset_right = 804.1494
+offset_bottom = 176.74092
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="3" unique_id=539274401]
+self_modulate = Color(0.8392157, 0, 0, 1)
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="3/TextureRect" unique_id=1501647098]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "3"
+
+[node name="Label" type="Label" parent="3" unique_id=1282976450]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="3" unique_id=2037870462]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="3" unique_id=461991246]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 10.0
+value = 10.0
+
+[node name="4" type="NinePatchRect" parent="." unique_id=1280334371]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 40.0
+offset_right = 1033.1494
+offset_bottom = 176.74092
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="4" unique_id=1425903273]
+self_modulate = Color(0.8117647, 0, 0.8392157, 1)
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="4/TextureRect" unique_id=1137288759]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "4"
+
+[node name="Label" type="Label" parent="4" unique_id=889397765]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="4" unique_id=1674993897]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="4" unique_id=799984674]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 5.0
+value = 5.0
+
+[node name="5" type="NinePatchRect" parent="." unique_id=859378652]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 358.0
+offset_right = 107.149445
+offset_bottom = 494.7409
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="5" unique_id=1839830583]
+self_modulate = Color(0.76862746, 0.8392157, 0, 1)
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="5/TextureRect" unique_id=2015574590]
+layout_mode = 0
+offset_left = 10.442034
+offset_top = -9.999999
+offset_right = 321.44205
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "5"
+
+[node name="Label" type="Label" parent="5" unique_id=1411271539]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="5" unique_id=1635863703]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="5" unique_id=1918869117]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 1.0
+value = 1.0
+
+[node name="6" type="NinePatchRect" parent="." unique_id=79078350]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 358.0
+offset_right = 331.14944
+offset_bottom = 494.7409
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="6" unique_id=2145789343]
+self_modulate = Color(0.8392157, 0.57254905, 0, 1)
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="6/TextureRect" unique_id=2004819481]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "6"
+
+[node name="Label" type="Label" parent="6" unique_id=234585128]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="6" unique_id=912799886]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="6" unique_id=2020989603]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 1.0
+value = 1.0
+
+[node name="7" type="NinePatchRect" parent="." unique_id=2145176149]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 358.0
+offset_right = 572.1494
+offset_bottom = 494.7409
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="7" unique_id=615337804]
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="7/TextureRect" unique_id=1796587981]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "7"
+
+[node name="Label" type="Label" parent="7" unique_id=1927076695]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="7" unique_id=1820078265]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="7" unique_id=402500055]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 1.0
+value = 1.0
+
+[node name="8" type="NinePatchRect" parent="." unique_id=1140752770]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 358.0
+offset_right = 804.1494
+offset_bottom = 494.7409
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="8" unique_id=212625599]
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="8/TextureRect" unique_id=141800347]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "8"
+
+[node name="Label" type="Label" parent="8" unique_id=382366334]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="8" unique_id=2123882013]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="8" unique_id=913322529]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 1.0
+value = 1.0
+
+[node name="9" type="NinePatchRect" parent="." unique_id=1091161821]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 358.0
+offset_right = 1033.1494
+offset_bottom = 494.7409
+scale = Vector2(2.0111024, 2.0111024)
+texture = ExtResource("1_ul4ap")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="9" unique_id=409917232]
+layout_mode = 0
+offset_left = 10.939272
+offset_top = 9.944794
+offset_right = 50.93927
+offset_bottom = 49.944798
+texture = ExtResource("1_iuev5")
+
+[node name="Label" type="Label" parent="9/TextureRect" unique_id=690996670]
+layout_mode = 0
+offset_left = 10.939278
+offset_top = -9.999999
+offset_right = 321.93927
+offset_bottom = 846.0
+scale = Vector2(0.07176024, 0.07176024)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 855
+text = "9"
+
+[node name="Label" type="Label" parent="9" unique_id=915647179]
+layout_mode = 0
+offset_left = 2.9834375
+offset_top = 49.723972
+offset_right = 1910.2925
+offset_bottom = 1394.724
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Mult:
+9999"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="9" unique_id=1800341498]
+layout_mode = 0
+offset_left = 0.9944792
+offset_top = 89.005905
+offset_right = 1972.9581
+offset_bottom = 1434.0059
+scale = Vector2(0.030762857, 0.030762857)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 670
+text = "Points:
+9999"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="9" unique_id=852858090]
+layout_mode = 0
+offset_left = -0.9944794
+offset_top = -15.911671
+offset_right = 130.77406
+offset_bottom = 12.088329
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_font_sizes/font_size = 23
+max_value = 1.0
+value = 1.0
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=2120847354]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 196.0
+offset_right = 62.0
+offset_bottom = 212.0
+scale = Vector2(7.437291, 7.437291)
+texture_normal = ExtResource("4_kugnm")
+flip_h = true
+script = ExtResource("5_i2g1e")
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

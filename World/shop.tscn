@@ -161,7 +161,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="NinePatchRect5" unique_id=114679056]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.2166172
+anchor_top = 0.21661697
 anchor_bottom = 0.21661697
 offset_left = 0.5952873
 offset_right = 9377.836
@@ -295,8 +295,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Ability One" unique_id=836141810]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19820404
-anchor_right = 0.19820404
+anchor_left = -4.5222726
+anchor_right = 829.691
 offset_left = -6.123853
 offset_top = 34.0
 offset_right = 3154.8762
@@ -321,8 +321,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Ability Two" unique_id=1271819118]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19820404
-anchor_right = 0.19820404
+anchor_left = -2.3530583
+anchor_right = 439.61124
 offset_left = -6.123853
 offset_top = 34.0
 offset_right = 3154.8762
@@ -347,8 +347,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Ability Three" unique_id=1862695716]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19820404
-anchor_right = 0.19820404
+anchor_left = -1.5791768
+anchor_right = 320.67392
 offset_left = -6.123853
 offset_top = 34.0
 offset_right = 3154.8762
@@ -941,10 +941,10 @@ position = Vector2(576, 324)
 [connection signal="pressed" from="Ability One" to="." method="_on_ability_one_pressed"]
 [connection signal="button_down" from="Ability Two" to="Ability Two" method="_on_button_down"]
 [connection signal="button_up" from="Ability Two" to="Ability Two" method="_on_button_up"]
-[connection signal="pressed" from="Ability Two" to="." method="_on_ability_one_pressed"]
+[connection signal="pressed" from="Ability Two" to="." method="_on_ability_two_pressed"]
 [connection signal="button_down" from="Ability Three" to="Ability Three" method="_on_button_down"]
 [connection signal="button_up" from="Ability Three" to="Ability Three" method="_on_button_up"]
-[connection signal="pressed" from="Ability Three" to="." method="_on_ability_one_pressed"]
+[connection signal="pressed" from="Ability Three" to="." method="_on_ability_three_pressed"]
 [connection signal="button_down" from="Flag One" to="Flag One" method="_on_button_down"]
 [connection signal="button_up" from="Flag One" to="Flag One" method="_on_button_up"]
 [connection signal="pressed" from="Flag One" to="." method="_on_flag_one_pressed"]
