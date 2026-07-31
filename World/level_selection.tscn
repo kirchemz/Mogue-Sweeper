@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dkv3nmf74smar"]
+
+[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="1_dfuv8"]
+[ext_resource type="Script" uid="uid://c0410f2mgqjke" path="res://World/level_selection.gd" id="1_rrkg4"]
+
+[node name="Level Selection" type="Node2D" unique_id=101460984]
+script = ExtResource("1_rrkg4")
+
+[node name="Label" type="Label" parent="." unique_id=264821934]
+offset_right = 5434.0107
+offset_bottom = 597.0
+scale = Vector2(0.2119981, 0.21107033)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dfuv8")
+theme_override_font_sizes/font_size = 596
+text = "Point Debuff"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1255276944]
+offset_top = 170.0
+offset_right = 12286.766
+offset_bottom = 767.0
+scale = Vector2(0.09375943, 0.09334911)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dfuv8")
+theme_override_font_sizes/font_size = 596
+text = "Total Points are multiplied by 0.5"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1007748860]
+offset_top = 255.0
+offset_right = 12286.766
+offset_bottom = 852.0
+scale = Vector2(0.09375943, 0.09334911)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dfuv8")
+theme_override_font_sizes/font_size = 596
+text = "Points Required 50"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1702463655]
+offset_left = 457.99997
+offset_top = 394.00006
+offset_right = 1915.7102
+offset_bottom = 1172.0
+scale = Vector2(0.16738583, 0.16738583)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dfuv8")
+theme_override_font_sizes/font_size = 769
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

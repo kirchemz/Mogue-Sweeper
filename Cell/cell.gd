@@ -20,6 +20,8 @@ var self_mult : float = 1
 var point_bonus : int = 0
 var find_points : bool = false
 var bombs_around_set : bool = false
+var scanned : bool = false
+var got_points : bool = false
 
 # Funtion to set the cell as a bomb
 func bomb():
@@ -28,6 +30,15 @@ func bomb():
 
 # Runs every frame
 func _process(delta: float) -> void:
+	# Mine Scanner
+	if scanned:
+		if is_bomb:
+			bomb_tex = flag_tex
+			flagged = true
+			is_hidden = true
+		else:
+			flagged = false
+			is_hidden = false
 	# Tells the cell how many points it earns
 	if bombs_around_set:
 		if not find_points:
@@ -35,28 +46,28 @@ func _process(delta: float) -> void:
 				point_bonus += Globals.ones_points.points
 				mult += Globals.ones_points.mult
 			if bombs_around == 2:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.twos_points.points
 				mult += Globals.twos_points.mult
 			if bombs_around == 3:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.threes_points.points
 				mult += Globals.threes_points.mult
 			if bombs_around == 4:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.fours_points.points
 				mult += Globals.fours_points.mult
 			if bombs_around == 5:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.fives_points.points
 				mult += Globals.fives_points.mult
 			if bombs_around == 6:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.sixes_points.points
 				mult += Globals.sixes_points.mult
 			if bombs_around == 7:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.sevens_points.points
 				mult += Globals.sevens_points.mult
 			if bombs_around == 8:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.eights_points.points
 				mult += Globals.eights_points.mult
 			if bombs_around == 9:
-				point_bonus += Globals.ones_points.points
+				point_bonus += Globals.nines_points.points
 				mult += Globals.nines_points.mult
 			find_points = true
 	# Sets the world
@@ -214,6 +225,7 @@ func flag_around():
 # Funtion to find out how many bombs around the cell were flagged - used in point count()
 func flagged_bombs_around():
 	var cell_instance = self
+	scanned = false
 	
 	var xc = -1
 	var yc = -1
@@ -240,6 +252,7 @@ func flagged_bombs_around():
 							Globals.point_mult += 1
 						Globals.points += (point_bonus * self_mult)
 						Globals.mult += mult
+						got_points = true
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
 		if Abilities.flag_generator:
 			if bombs_around == 2:
@@ -298,3 +311,12 @@ func flagged_bombs_around():
 				if Abilities.nines_cleared >= 1:
 					Abilities.nines_cleared = 0
 					Globals.upgrade_nines()
+
+func white_out():
+	var white_out_tween = create_tween()
+	white_out_tween.tween_property($Sprite2D2, "modulate:a", 1, 0.4)
+	white_out_tween.play()
+	await white_out_tween.finished
+	var white_out_reverse = create_tween()
+	white_out_reverse.tween_property($Sprite2D2, "modulate:a", 0, 0.4)
+	white_out_reverse.play()

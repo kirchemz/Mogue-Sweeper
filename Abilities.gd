@@ -36,6 +36,18 @@ var ability_stock : Dictionary = {
 		"price" : 100,
 		"img" : preload("res://Sprites/Mine Scanner.png"),
 		"rarity" : 20
+	},
+	"double_trouble" : {
+		"name" : "Double Trouble",
+		"price" : 100,
+		"img" : preload("res://Sprites/Double Trouble.png"),
+		"rarity" : 20
+	},
+	"money_sweeper" : {
+		"name" : "Money Sweeper",
+		"price" : 100,
+		"img" : preload("res://Sprites/Ability Base.png"),
+		"rarity" : 20
 	}
 }
 
@@ -62,11 +74,11 @@ var ability_five : Dictionary = {
 }
 
 # All variables relating to abilites
-var auto_chord : bool = true
+var auto_chord : bool = false
 var auto_chord_active : bool = false
-var time_bonus : bool = true
-var flag_generator : bool = true
-var number_upgrader : bool = true
+var time_bonus : bool = false
+var flag_generator : bool = false
+var number_upgrader : bool = false
 var ones_cleared : int = 0
 var twos_cleared : int = 0
 var threes_cleared : int = 0
@@ -76,15 +88,14 @@ var sixes_cleared : int = 0
 var sevens_cleared : int = 0
 var eights_cleared : int = 0
 var nines_cleared : int = 0
-var mine_scanner : bool = true
-var mine_scanner_level : int = 100
+var mine_scanner : bool = false
+var mine_scanner_level : int = 1
 var mine_lure : bool = false
+var double_trouble : bool = false
+var safe_start : bool = false
+var money_sweeper : bool = false
+var casecade_count : int = 0
 
 func _ready() -> void:
-	ability_one = ability_stock.mine_scanner
-	ability_two = ability_stock.time_bonus
-	ability_three = ability_stock.number_upgrader
-	ability_four = ability_stock.flag_generator
-	ability_five = ability_stock.auto_chord
 	for ability in ability_stock.values():
 		ability_options.append(ability)

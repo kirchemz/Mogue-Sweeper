@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
 [ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="3_ycduu"]
+[ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/White Out Cell.png" id="4_wh31u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(16, 16)
@@ -56,6 +57,10 @@ text = "1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656142916]
 shape = SubResource("RectangleShape2D_0rlat")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=919471134]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_wh31u")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -28,12 +28,13 @@ var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
+	# Sets BG color
+	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
+	
 	# Time Bonus
 	if Abilities.time_bonus:
 		time_bonus += Abilities.ability_stock.time_bonus.time
 	$Timer.start($Timer.wait_time + time_bonus)
-	# Sets BG color
-	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
 	
 	# Creates the map
 	start_map()
@@ -179,6 +180,12 @@ func _process(delta: float) -> void:
 		$"Camera2D/Flag 10".visible = false
 		$"Camera2D/Flag 11".visible = false
 		$"Camera2D/Flag 12".visible = false
+		for y in map:
+			for x in y:
+				if is_instance_valid(x):
+					if x.got_points:
+						x.white_out()
+		await get_tree().create_timer(2).timeout
 	
 	# Update the name and image of ability buttons
 	$"Camera2D/Ability 1/Label".text = Abilities.ability_one.name
@@ -226,6 +233,10 @@ func _process(delta: float) -> void:
 		else:
 			if not cells_set:
 				set_cells()
+	# Mine Scanner Input
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Mine Scanner") and Abilities.mine_scanner:
+		mine_scanner_clicked = true
+		mine_scanner_placed = true
 	
 	# Digging, Flagging, and Chording Inputs
 	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and Input.is_action_pressed("Flag") and not mouse_over_menu:
@@ -246,52 +257,53 @@ func _process(delta: float) -> void:
 					game_over()
 	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig") and not mouse_over_menu:
 		if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
-			if Globals.red_flag_active:
-				target_cell.flag_type = "Red"
-				target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
-			if Globals.blue_flag_active:
-				if Globals.blue_flags > 0:
-					target_cell.flag_type = "Blue"
-					target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
-					Globals.blue_flags -= 1
-				else:
-					Globals.activate_red()
-			if Globals.violet_flag_active:
-				target_cell.flag_type = "Purple"
-				target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
-				Globals.violet_flags -= 1
-			if Globals.pink_flag_active:
-				target_cell.flag_type = "Pink"
-				target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
-			if Globals.green_flag_active:
-				target_cell.flag_type = "Green"
-				target_cell.flag_tex = preload("res://Sprites/Green Flag.png")
-			if Globals.yellow_flag_active:
-				if Globals.yellow_flags > 0:
-					Globals.mult += 1
-					target_cell.flag_type = "Yellow"
-					target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
-					Globals.yellow_flags -= 1
-				else:
-					Globals.activate_red()
-			if Globals.orange_flag_active:
-				target_cell.flag_type = "Orange"
-				target_cell.flag_tex = preload("res://Sprites/Orange Flag.png")
-			if Globals.magenta_flag_active:
-				target_cell.flag_type = "Magenta"
-				target_cell.flag_tex = preload("res://Sprites/Magenta Flag.png")
-			if Globals.black_flag_active:
-				target_cell.flag_type = "Black"
-				target_cell.flag_tex = preload("res://Sprites/Black Flag.png")
-			if Globals.white_flag_active:
-				target_cell.flag_type = "White"
-				target_cell.flag_tex = preload("res://Sprites/White Flag.png")
-			if Globals.grey_flag_active:
-				target_cell.flag_type = "Grey"
-				target_cell.flag_tex = preload("res://Sprites/Grey Flag.png")
-			if Globals.brown_flag_active:
-				target_cell.flag_type = "Brown"
-				target_cell.flag_tex = preload("res://Sprites/Brown Flag.png")
+			if Levels.flags_active:
+				if Globals.red_flag_active:
+					target_cell.flag_type = "Red"
+					target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
+				if Globals.blue_flag_active:
+					if Globals.blue_flags > 0:
+						target_cell.flag_type = "Blue"
+						target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
+						Globals.blue_flags -= 1
+					else:
+						Globals.activate_red()
+				if Globals.violet_flag_active:
+					target_cell.flag_type = "Purple"
+					target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
+					Globals.violet_flags -= 1
+				if Globals.pink_flag_active:
+					target_cell.flag_type = "Pink"
+					target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
+				if Globals.green_flag_active: 
+					target_cell.flag_type = "Green"
+					target_cell.flag_tex = preload("res://Sprites/Green Flag.png")
+				if Globals.yellow_flag_active:
+					if Globals.yellow_flags > 0:
+						Globals.mult += 1
+						target_cell.flag_type = "Yellow"
+						target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
+						Globals.yellow_flags -= 1
+					else:
+						Globals.activate_red()
+				if Globals.orange_flag_active:
+					target_cell.flag_type = "Orange"
+					target_cell.flag_tex = preload("res://Sprites/Orange Flag.png")
+				if Globals.magenta_flag_active:
+					target_cell.flag_type = "Magenta"
+					target_cell.flag_tex = preload("res://Sprites/Magenta Flag.png")
+				if Globals.black_flag_active:
+					target_cell.flag_type = "Black"
+					target_cell.flag_tex = preload("res://Sprites/Black Flag.png")
+				if Globals.white_flag_active:
+					target_cell.flag_type = "White"
+					target_cell.flag_tex = preload("res://Sprites/White Flag.png")
+				if Globals.grey_flag_active:
+					target_cell.flag_type = "Grey"
+					target_cell.flag_tex = preload("res://Sprites/Grey Flag.png")
+				if Globals.brown_flag_active:
+					target_cell.flag_type = "Brown"
+					target_cell.flag_tex = preload("res://Sprites/Brown Flag.png")
 			target_cell.flagged = true
 			flags_remaining -= 1
 			if Abilities.auto_chord_active:
@@ -366,6 +378,11 @@ func unhide_cells(cell_instance):
 					if not cell_instance.unflagged_bomb_around() and neighbor.is_bomb:
 						neighbor.is_hidden = true
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
+						if Abilities.money_sweeper:
+							Abilities.casecade_count += 1
+							if Abilities.casecade_count >= 4:
+								Abilities.casecade_count = 0
+								Globals.currency +=1
 						unhide_cells(neighbor)
 
 # Mine Scanner
@@ -374,7 +391,7 @@ func mine_scan(cell_instance):
 	if cell_instance.unhide_neighbors:
 		return
 	cell_instance.unhide_neighbors = true
-	cell_instance.is_hidden = false
+	cell_instance.scanned = true
 	
 	var xc = -1
 	var yc = -1
@@ -394,15 +411,14 @@ func mine_scan(cell_instance):
 			if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
 				var neighbor = map[check_x][check_y]
 				if is_instance_valid(neighbor) and neighbor.is_hidden:
-					neighbor.is_hidden = false
+					neighbor.scanned = true
 					if neighbor.is_bomb:
 						neighbor.flag_type = "Red"
 						neighbor.flag_tex = preload("res://Sprites/Red Flag.png")
 						neighbor.is_hidden = true
 						neighbor.flagged = true
 					if repeats > 0:
-						repeats -= 1
-						unhide_scan_neighbors(neighbor, repeats)
+						unhide_scan_neighbors(neighbor, repeats - 1)
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
 						unhide_cells(neighbor)
 
@@ -430,17 +446,17 @@ func unhide_scan_neighbors(cell_instance, repeats):
 			if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
 				var neighbor = map[check_x][check_y]
 				if is_instance_valid(neighbor) and neighbor.is_hidden:
-					neighbor.is_hidden = false
+					neighbor.scanned = true
 					if neighbor.is_bomb:
 						neighbor.flag_type = "Red"
 						neighbor.flag_tex = preload("res://Sprites/Red Flag.png")
 						neighbor.is_hidden = true
 						neighbor.flagged = true
 					if repeats > 0:
-						repeats -= 1
-						unhide_scan_neighbors(neighbor, repeats)
+						unhide_scan_neighbors(neighbor, repeats - 1)
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
 						unhide_cells(neighbor)
+
 # Function to use the ability "Auto Chording"
 func auto_chord(cell_instance):
 	if not cell_instance.is_bomb:
@@ -511,14 +527,18 @@ func point_count():
 		for x in y:
 			if is_instance_valid(x):
 				x.flagged_bombs_around()
+				if Abilities.double_trouble:
+					if x.bombs_around == 2:
+						x.flagged_bombs_around()
 	Globals.points *= Globals.point_mult
 	Globals.total_points = Globals.points * (Globals.mult + 1)
+	Globals.currency += round(Globals.total_points * Levels.money_mult)
+	Globals.total_points *= Levels.points_mult
 	$Camera2D/Points.text = "Points: " + str(Globals.points) + "
 	" + "X" + "
 	" + "Mult:" + str(Globals.mult + 1) + "
 	" + "=" + "
 	" + str(Globals.total_points)
-	Globals.currency += round(Globals.total_points)
 
 # Makes it so when you click in the menu it doesn't dig up any cells behind the menu
 func _on_main_menu_mouse_entered() -> void:

@@ -242,8 +242,8 @@ func _process(delta: float) -> void:
 	$"Extra Three/Label".text = extra_three.name
 
 func _on_texture_button_pressed() -> void:
-	Globals.level_requirement += 50
-	get_tree().change_scene_to_file("res://World/world.tscn")
+	Globals.level_requirement *= 2
+	get_tree().change_scene_to_file("res://World/level_selection.tscn")
 
 func _on_ability_one_pressed() -> void:
 	if Globals.currency >= ability_one.price:
@@ -270,6 +270,12 @@ func _on_ability_one_pressed() -> void:
 				Abilities.flag_generator = true
 			if ability_one == Abilities.ability_stock.number_upgrader:
 				Abilities.number_upgrader = true
+			if ability_one == Abilities.ability_stock.mine_scanner:
+				Abilities.mine_scanner = true
+			if ability_one == Abilities.ability_stock.double_trouble:
+				Abilities.double_trouble = true
+			if ability_one == Abilities.ability_stock.money_sweeper:
+				Abilities.money_sweeper = true
 			Abilities.current_abilities.append(ability_one)
 			$"Ability One".queue_free()
 
@@ -298,6 +304,12 @@ func _on_ability_two_pressed() -> void:
 				Abilities.flag_generator = true
 			if ability_two == Abilities.ability_stock.number_upgrader:
 				Abilities.number_upgrader = true
+			if ability_two == Abilities.ability_stock.mine_scanner:
+				Abilities.mine_scanner = true
+			if ability_two == Abilities.ability_stock.double_trouble:
+				Abilities.double_trouble = true
+			if ability_two == Abilities.ability_stock.money_sweeper:
+				Abilities.money_sweeper = true
 			Abilities.current_abilities.append(ability_two)
 			$"Ability Two".queue_free()
 
@@ -326,6 +338,12 @@ func _on_ability_three_pressed() -> void:
 				Abilities.flag_generator = true
 			if ability_three == Abilities.ability_stock.number_upgrader:
 				Abilities.number_upgrader = true
+			if ability_three == Abilities.ability_stock.mine_scanner:
+				Abilities.mine_scanner = true
+			if ability_three == Abilities.ability_stock.double_trouble:
+				Abilities.double_trouble = true
+			if ability_three == Abilities.ability_stock.money_sweeper:
+				Abilities.money_sweeper = true
 			Abilities.current_abilities.append(ability_three)
 			$"Ability Three".queue_free()
 
