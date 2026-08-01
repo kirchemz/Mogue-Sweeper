@@ -670,7 +670,7 @@ offset_right = -576.0
 offset_bottom = -324.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1810617686]
-wait_time = 60.0
+wait_time = 20.0
 one_shot = true
 
 [connection signal="mouse_entered" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_entered"]
@@ -772,6 +772,6 @@ one_shot = true
 [connection signal="button_up" from="Camera2D/Number Points" to="Camera2D/Number Points" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Number Points" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Number Points" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_number_points_pressed"]
+[connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

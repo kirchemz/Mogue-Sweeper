@@ -94,16 +94,22 @@ patch_margin_bottom = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect2" unique_id=707301438]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.023146577
+anchor_top = 0.09450884
+anchor_right = 31.842266
+anchor_bottom = 0.09450619
 offset_left = 1.6198089
 offset_top = 2.4297204
 offset_right = 2888.6199
 offset_bottom = 638.42975
-scale = Vector2(0.018016975, 0.018016975)
+scale = Vector2(0.013545522, 0.013545522)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 635
-text = "Currency: 9999999"
+text = "Supa Money: 9999999"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1767505114]

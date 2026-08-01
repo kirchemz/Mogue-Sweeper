@@ -208,7 +208,7 @@ func _process(delta: float) -> void:
 	$"Ability 4/Label".text = Abilities.ability_four.name
 	$"Ability 5".texture_normal = Abilities.ability_five.img
 	$"Ability 5/Label".text = Abilities.ability_five.name
-	$NinePatchRect2/Label.text = "$"  + str(Globals.currency)
+	$NinePatchRect2/Label.text = "Supa Money: "  + str(Globals.currency)
 	if ability_one == Abilities.ability_stock.auto_chord:
 		Abilities.auto_chord = true
 	if is_instance_valid($"Ability One"):
@@ -277,6 +277,24 @@ func _on_ability_one_pressed() -> void:
 				Abilities.greedy_mowl = true
 			if ability_one == Abilities.ability_stock.mowl_cascade:
 				Abilities.mowl_cascade = true
+			if ability_one == Abilities.ability_stock.mowl_flags_again:
+				Abilities.mowl_flags_again = true
+			if ability_one == Abilities.ability_stock.supa_flags:
+				Abilities.supa_flags = true
+			if ability_one == Abilities.ability_stock.even_pi:
+				Abilities.even_pi = true
+			if ability_one == Abilities.ability_stock.low_scorer:
+				Abilities.low_scorer = true
+			if ability_one == Abilities.ability_stock.high_scorer:
+				Abilities.high_scorer = true
+			if ability_one == Abilities.ability_stock.even_pi:
+				Abilities.active_bomb = true
+			if ability_one == Abilities.ability_stock.first_try:
+				Abilities.first_try = true
+			if ability_one == Abilities.ability_stock.one_mowl:
+				Abilities.one_mowl = true
+			if ability_one == Abilities.ability_stock.slow_mowl:
+				Abilities.slow_mowl = true
 			Abilities.current_abilities.append(ability_one)
 			$"Ability One".queue_free()
 
@@ -311,6 +329,24 @@ func _on_ability_two_pressed() -> void:
 				Abilities.greedy_mowl = true
 			if ability_two == Abilities.ability_stock.mowl_cascade:
 				Abilities.mowl_cascade = true
+			if ability_two == Abilities.ability_stock.mowl_flags_again:
+				Abilities.mowl_flags_again = true
+			if ability_two == Abilities.ability_stock.supa_flags:
+				Abilities.supa_flags = true
+			if ability_two == Abilities.ability_stock.even_pi:
+				Abilities.even_pi = true
+			if ability_two == Abilities.ability_stock.low_scorer:
+				Abilities.low_scorer = true
+			if ability_two == Abilities.ability_stock.high_scorer:
+				Abilities.high_scorer = true
+			if ability_two == Abilities.ability_stock.even_pi:
+				Abilities.active_bomb = true
+			if ability_two == Abilities.ability_stock.first_try:
+				Abilities.first_try = true
+			if ability_two == Abilities.ability_stock.one_mowl:
+				Abilities.one_mowl = true
+			if ability_two == Abilities.ability_stock.slow_mowl:
+				Abilities.slow_mowl = true
 			Abilities.current_abilities.append(ability_two)
 			$"Ability Two".queue_free()
 
@@ -345,6 +381,24 @@ func _on_ability_three_pressed() -> void:
 				Abilities.greedy_mowl = true
 			if ability_three == Abilities.ability_stock.mowl_cascade:
 				Abilities.mowl_cascade = true
+			if ability_three == Abilities.ability_stock.mowl_flags_again:
+				Abilities.mowl_flags_again = true
+			if ability_three == Abilities.ability_stock.supa_flags:
+				Abilities.supa_flags = true
+			if ability_three == Abilities.ability_stock.even_pi:
+				Abilities.even_pi = true
+			if ability_three == Abilities.ability_stock.low_scorer:
+				Abilities.low_scorer = true
+			if ability_three == Abilities.ability_stock.high_scorer:
+				Abilities.high_scorer = true
+			if ability_three == Abilities.ability_stock.even_pi:
+				Abilities.active_bomb = true
+			if ability_three == Abilities.ability_stock.first_try:
+				Abilities.first_try = true
+			if ability_three == Abilities.ability_stock.one_mowl:
+				Abilities.one_mowl = true
+			if ability_three == Abilities.ability_stock.slow_mowl:
+				Abilities.slow_mowl = true
 			Abilities.current_abilities.append(ability_three)
 			$"Ability Three".queue_free()
 

@@ -79,12 +79,75 @@ var ability_stock : Dictionary = {
 		"description" : "Retriggers all flags"
 	},
 	"even_pi" : {
-		"name" : "Even Numbers",
+		"name" : "Even Pi",
 		"price" : 100,
 		"img" : preload("res://Sprites/Even Numbers.png"),
 		"rarity" : 100,
 		"description" : "Every even number gets 3.14 times their points"
+	},
+	"one_mowl" : {
+		"name" : "One Mowl",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 10,
+		"description" : "Every number acts like the number 1 greater than what it is currently acting as"
+	},
+	"idk" : {
+		"name" : "idk",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 100,
+		"description" : "Every number gets a 1 in 8 chance to get double points. Chance multiplies by the number."
+	},
+	"low_scorer" : {
+		"name" : "Low Scorer",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 10,
+		"description" : "If the only numbers that scored are twos and below get 2X mult.",
+	},
+	"high_scorer" : {
+		"name" : "High Scorer",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 30,
+		"description" : "If the only numbers that scored are threes and above, get 4X total score."
+	},
+	"first_try" : {
+		"name" : "First Try",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 100,
+		"description" : "If the fist click is a cascade earn 100 supa money."
+	},
+	"active_bomb" : {
+		"name" : "Active Bomb",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 100,
+		"description" : "Gives 5X mult but after every round it has a 1 in 5 chance to self-destruct and destroy the two abilities to its sides."
 	}
+}
+
+var empty_ability_one : Dictionary = {
+	"img" : preload("res://Sprites/Ability Base.png"),
+	"name" : "Ability One"
+}
+var empty_ability_two : Dictionary = {
+	"img" : preload("res://Sprites/Ability Base.png"),
+	"name" : "Ability Two"
+}
+var empty_ability_three : Dictionary = {
+	"img" : preload("res://Sprites/Ability Base.png"),
+	"name" : "Ability Three"
+}
+var empty_ability_four : Dictionary = {
+	"img" : preload("res://Sprites/Ability Base.png"),
+	"name" : "Ability Four"
+}
+var empty_ability_five : Dictionary = {
+	"img" : preload("res://Sprites/Ability Base.png"),
+	"name" : "Ability Five"
 }
 
 # Holds all data about current abilities
@@ -133,8 +196,45 @@ var mowl_cascade : bool = false
 var casecade_count : int = 0
 var mowl_flags_again : bool = false
 var supa_flags : bool = false
+var special_flag_count : int = 0
 var even_pi : bool = false
+var one_mowl : bool = false
+var high_scorer : bool = false
+var low_scorer : bool = false
+var numbers_used : Array = []
+var first_try : bool = false
+var first_click : bool = true
+var active_bomb : bool = false
+var slow_mowl : bool = false
 
 func _ready() -> void:
 	for ability in ability_stock.values():
 		ability_options.append(ability)
+
+func _process(delta: float) -> void:
+	if ability_one == ability_stock.supa_flags:
+		current_abilities = [ability_stock.supa_flags]
+		ability_two = empty_ability_two
+		ability_three = empty_ability_three
+		ability_four = empty_ability_four
+		ability_five = empty_ability_five
+
+func self_destruct(ability_number : int):
+	if ability_number == 1:
+		ability_one = empty_ability_one
+		ability_two = empty_ability_two
+	if ability_number == 2:
+		ability_one = empty_ability_one
+		ability_two = empty_ability_two
+		ability_three = empty_ability_three
+	if ability_number == 3:
+		ability_two = empty_ability_two
+		ability_three = empty_ability_three
+		ability_four = empty_ability_four
+	if ability_number == 4:
+		ability_three = empty_ability_three
+		ability_four = empty_ability_four
+		ability_five = empty_ability_five
+	if ability_number == 5:
+		ability_four = empty_ability_four
+		ability_five = empty_ability_five

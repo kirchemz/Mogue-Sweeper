@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bwudscemw7lkh"]
+
+[ext_resource type="Texture2D" uid="uid://bo884ksif3jf2" path="res://Sprites/Explosion.png" id="1_j03ip"]
+[ext_resource type="Script" uid="uid://dw5kcfvnuwxwd" path="res://Misc/explosion.gd" id="2_x37r6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4ibr"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jnmd"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ht22"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyqs8"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y46pd"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn4au"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e47ig"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bljb1"]
+atlas = ExtResource("1_j03ip")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4ibr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jnmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ht22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyqs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y46pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn4au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e47ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bljb1")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D" unique_id=1705781867]
+scale = Vector2(3.3557596, 3.3557596)
+sprite_frames = SubResource("SpriteFrames_0rlat")
+autoplay = "default"
+script = ExtResource("2_x37r6")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var cell = preload("res://Cell/cell.tscn")
 @onready var mine_scanner = preload("res://Placables/mine_scanner.tscn")
+@onready var explosion = preload("res://Misc/explosion.tscn")
 
 var map : Array = []
 var map_width : int = 40
@@ -234,7 +235,7 @@ func _process(delta: float) -> void:
 			if not cells_set:
 				set_cells()
 	# Mine Scanner Input
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Mine Scanner") and Abilities.mine_scanner:
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Mine Scanner") and Abilities.lawn_mowler:
 		mine_scanner_clicked = true
 		mine_scanner_placed = true
 	
@@ -281,6 +282,8 @@ func _process(delta: float) -> void:
 				if Globals.yellow_flag_active:
 					if Globals.yellow_flags > 0:
 						Globals.mult += 1
+						if Abilities.mowl_flags_again:
+							Globals.mult += 1
 						target_cell.flag_type = "Yellow"
 						target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
 						Globals.yellow_flags -= 1
@@ -345,6 +348,8 @@ func set_cells():
 						if map[check_x][check_y].is_bomb:
 							cell_instance.bombs_around += 1
 			cell_instance.bombs_around_set = true
+			if Abilities.one_mowl:
+				cell_instance.acting_number_bonus += 1
 	cells_set = true
 
 # Funtion to unhide the cells around a specific cell (cell instance)
@@ -378,16 +383,19 @@ func unhide_cells(cell_instance):
 					if not cell_instance.unflagged_bomb_around() and neighbor.is_bomb:
 						neighbor.is_hidden = true
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
+						if Abilities.first_try and Abilities.first_click:
+							Globals.currency += 100
 						if Abilities.mowl_cascade:
 							Abilities.casecade_count += 1
 							if Abilities.casecade_count >= 4:
 								Abilities.casecade_count = 0
 								Globals.currency +=1
+						Abilities.first_click = false
 						unhide_cells(neighbor)
 
 # Mine Scanner
 func mine_scan(cell_instance):
-	var repeats = Abilities.mine_scanner_level
+	var repeats = Abilities.lawn_mowler_level
 	if cell_instance.unhide_neighbors:
 		return
 	cell_instance.unhide_neighbors = true
@@ -530,13 +538,22 @@ func point_count():
 				if Abilities.greedy_mowl:
 					if x.bombs_around == 2:
 						x.flagged_bombs_around()
+	if Abilities.low_scorer:
+		if not 3 in Abilities.numbers_used and not 4 in Abilities.numbers_used and not 5 in Abilities.numbers_used and not 6 in Abilities.numbers_used and not 7 in Abilities.numbers_used and not 8 in Abilities.numbers_used and not 9 in Abilities.numbers_used:
+			Globals.mult *= 2
 	Globals.points *= Globals.point_mult
-	Globals.total_points = Globals.points * (Globals.mult + 1)
+	Globals.mult *= Abilities.special_flag_count + 1
 	Globals.currency += round(Globals.total_points * Levels.money_mult)
-	Globals.total_points *= Levels.points_mult
+	Globals.total_points = Globals.points * (Globals.mult)
+	if Abilities.high_scorer:
+		if not 1 in Abilities.numbers_used and not 2 in Abilities.numbers_used:
+			Globals.total_points *= 4
+			print("Boom shakalaka")
+		else:
+			print(Abilities.numbers_used)
 	$Camera2D/Points.text = "Points: " + str(Globals.points) + "
 	" + "X" + "
-	" + "Mult:" + str(Globals.mult + 1) + "
+	" + "Mult:" + str(Globals.mult) + "
 	" + "=" + "
 	" + str(Globals.total_points)
 
@@ -571,6 +588,34 @@ func _on_timer_timeout() -> void:
 	else:
 		$Camera2D/TextureButton.visible = true
 		Globals.points = 0
+	if Abilities.active_bomb:
+		await get_tree().create_timer(2).timeout
+		if randi() % 1 == 0:
+			if Abilities.ability_one == Abilities.ability_stock.active_bomb:
+				Abilities.self_destruct(1)
+				var explosion_instance = explosion.instantiate()
+				explosion_instance.global_position = $"Camera2D/Ability 1".global_position
+				add_child(explosion_instance)
+			if Abilities.ability_two == Abilities.ability_stock.active_bomb:
+				Abilities.self_destruct(2)
+				var explosion_instance = explosion.instantiate()
+				explosion_instance.global_position = $"Camera2D/Ability 2".global_position + Vector2(32, 32)
+				add_child(explosion_instance)
+			if Abilities.ability_three == Abilities.ability_stock.active_bomb:
+				Abilities.self_destruct(3)
+				var explosion_instance = explosion.instantiate()
+				explosion_instance.global_position = $"Camera2D/Ability 3".global_position + Vector2(32, 32)
+				add_child(explosion_instance)
+			if Abilities.ability_four == Abilities.ability_stock.active_bomb:
+				Abilities.self_destruct(4)
+				var explosion_instance = explosion.instantiate()
+				explosion_instance.global_position = $"Camera2D/Ability 4".global_position + Vector2(32, 32)
+				add_child(explosion_instance)
+			if Abilities.ability_five == Abilities.ability_stock.active_bomb:
+				Abilities.self_destruct(5)
+				var explosion_instance = explosion.instantiate()
+				explosion_instance.global_position = $"Camera2D/Ability 5".global_position + Vector2(32, 32)
+				add_child(explosion_instance)
 
 # Takes you to the shop when pressing the shop button
 func _on_texture_button_pressed() -> void:
@@ -644,14 +689,16 @@ func _on_number_points_pressed() -> void:
 
 
 func _on_ability_1_button_down() -> void:
-	if not mine_scanner_made:
-		mouse_over_menu = true
-		mine_scanner_clicked = true
+	if Abilities.lawn_mowler:
+		if not mine_scanner_made:
+			mouse_over_menu = true
+			mine_scanner_clicked = true
 
 
 func _on_ability_1_button_up() -> void:
-	mouse_over_menu = false
-	mine_scanner_placed = true
+	if Abilities.lawn_mowler:
+		mouse_over_menu = false
+		mine_scanner_placed = true
 
 func closest_cell_to_scanner():
 	var closest

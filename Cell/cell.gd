@@ -6,6 +6,8 @@ extends Area2D
 
 var is_bomb : bool = false
 var bombs_around : int = 0
+var acting_number : int = 0
+var acting_number_bonus : int = 0
 var is_hidden : bool = true
 var mouse_in : bool = false
 var unhide_neighbors : bool = false
@@ -18,7 +20,6 @@ var unflagged_bombs_around : bool = false
 var mult : float = 0
 var self_mult : float = 1
 var point_bonus : int = 0
-var find_points : bool = false
 var bombs_around_set : bool = false
 var scanned : bool = false
 var got_points : bool = false
@@ -39,37 +40,37 @@ func _process(delta: float) -> void:
 		else:
 			flagged = false
 			is_hidden = false
+	
 	# Tells the cell how many points it earns
 	if bombs_around_set:
-		if not find_points:
-			if bombs_around == 1:
-				point_bonus += Globals.ones_points.points
-				mult += Globals.ones_points.mult
-			if bombs_around == 2:
-				point_bonus += Globals.twos_points.points
-				mult += Globals.twos_points.mult
-			if bombs_around == 3:
-				point_bonus += Globals.threes_points.points
-				mult += Globals.threes_points.mult
-			if bombs_around == 4:
-				point_bonus += Globals.fours_points.points
-				mult += Globals.fours_points.mult
-			if bombs_around == 5:
-				point_bonus += Globals.fives_points.points
-				mult += Globals.fives_points.mult
-			if bombs_around == 6:
-				point_bonus += Globals.sixes_points.points
-				mult += Globals.sixes_points.mult
-			if bombs_around == 7:
-				point_bonus += Globals.sevens_points.points
-				mult += Globals.sevens_points.mult
-			if bombs_around == 8:
-				point_bonus += Globals.eights_points.points
-				mult += Globals.eights_points.mult
-			if bombs_around == 9:
-				point_bonus += Globals.nines_points.points
-				mult += Globals.nines_points.mult
-			find_points = true
+		acting_number = bombs_around + acting_number_bonus
+		if acting_number == 1:
+			point_bonus = Globals.ones_points.points
+			mult = Globals.ones_points.mult
+		if acting_number == 2:
+			point_bonus = Globals.twos_points.points
+			mult = Globals.twos_points.mult
+		if acting_number == 3:
+			point_bonus = Globals.threes_points.points
+			mult = Globals.threes_points.mult
+		if acting_number == 4:
+			point_bonus = Globals.fours_points.points
+			mult = Globals.fours_points.mult
+		if acting_number == 5:
+			point_bonus = Globals.fives_points.points
+			mult = Globals.fives_points.mult
+		if acting_number == 6:
+			point_bonus = Globals.sixes_points.points
+			mult = Globals.sixes_points.mult
+		if acting_number == 7:
+			point_bonus = Globals.sevens_points.points
+			mult = Globals.sevens_points.mult
+		if acting_number == 8:
+			point_bonus = Globals.eights_points.points
+			mult = Globals.eights_points.mult
+		if acting_number == 9:
+			point_bonus = Globals.nines_points.points
+			mult = Globals.nines_points.mult
 	# Sets the world
 	world = get_parent().get_parent()
 	
@@ -104,43 +105,43 @@ func _process(delta: float) -> void:
 			$Sprite2D.texture = bomb_tex
 		
 		# Gives the cell the animation of the color filling in when unhidden
-		if bombs_around == 1:
+		if acting_number == 1 and not bombs_around == 0:
 			var color_growth = create_tween()
 			color_growth.tween_property($"1", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
 			await color_growth.finished
 			$Label.visible = true
-		elif bombs_around == 2:
+		elif acting_number == 2:
 			var color_growth = create_tween()
 			color_growth.tween_property($"2", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
 			await color_growth.finished
 			$Label.visible = true
-		elif bombs_around == 3:
+		elif acting_number == 3:
 			var color_growth = create_tween()
 			color_growth.tween_property($"3", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
 			await color_growth.finished
 			$Label.visible = true
-		elif bombs_around == 4:
+		elif acting_number == 4:
 			var color_growth = create_tween()
 			color_growth.tween_property($"4", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
 			await color_growth.finished
 			$Label.visible = true
-		elif bombs_around == 5:
+		elif acting_number == 5:
 			var color_growth = create_tween()
 			color_growth.tween_property($"5", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
 			await color_growth.finished
 			$Label.visible = true
-		elif bombs_around == 6:
+		elif acting_number == 6:
 			var color_growth = create_tween()
 			color_growth.tween_property($"6", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
 			await color_growth.finished
 			$Label.visible = true
-		elif bombs_around == 0:
+		if bombs_around == 0:
 			if world.cells_set and not is_bomb:
 				# Deletes the number if there aren't any bombs around
 				if is_instance_valid($Label):
@@ -250,66 +251,76 @@ func flagged_bombs_around():
 							self_mult += 1
 						if neighbor.flag_type == "Purple":
 							Globals.point_mult += 1
+						if Abilities.mowl_flags_again:
+							if neighbor.flag_type == "Blue":
+								self_mult += 1
+							if neighbor.flag_type == "Purple":
+								Globals.point_mult += 1
+						if Abilities.supa_flags:
+							if not flag_type == "Red" and not flag_type == "Blue":
+								Abilities.special_flag_count += 1
 						if Abilities.even_pi:
-							if bombs_around == 2 or bombs_around == 4 or bombs_around == 6 or bombs_around == 8:
+							if acting_number == 2 or acting_number == 4 or acting_number == 6 or acting_number == 8:
 								self_mult += point_bonus * 3.14
 						Globals.points += (point_bonus * self_mult)
 						Globals.mult += mult
 						got_points = true
+						if not acting_number in Abilities.numbers_used:
+							Abilities.numbers_used.append(acting_number)
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
 		if Abilities.mowl_flags:
-			if bombs_around == 2:
+			if acting_number == 2:
 				Globals.blue_flags += 1
-			if bombs_around == 3:
+			if acting_number == 3:
 				Globals.yellow_flags += 1
-			if bombs_around == 4:
+			if acting_number == 4:
 				Globals.violet_flags += 1
-			if bombs_around == 5:
+			if acting_number == 5:
 				Globals.green_flags += 1
-			if bombs_around == 6:
+			if acting_number >= 6:
 				Globals.black_flags += 1
 		if Abilities.the_mowl_the_marrier:
-			if bombs_around == 1:
+			if acting_number == 1:
 				Abilities.ones_cleared += 1
 				if Abilities.ones_cleared >= 100:
 					Abilities.ones_cleared = 0
 					Globals.upgrade_ones()
-			if bombs_around == 2:
+			if acting_number == 2:
 				Abilities.twos_cleared += 1
 				if Abilities.twos_cleared >= 80:
 					Abilities.twos_cleared = 0
 					Globals.upgrade_twos()
-			if bombs_around == 3:
+			if acting_number == 3:
 				Abilities.threes_cleared += 1
 				if Abilities.threes_cleared >= 10:
 					Abilities.threes_cleared = 0
 					Globals.upgrade_threes()
-			if bombs_around == 4:
+			if acting_number == 4:
 				Abilities.fours_cleared += 1
 				if Abilities.fours_cleared >= 5:
 					Abilities.fours_cleared = 0
 					Globals.upgrade_fours()
-			if bombs_around == 5:
+			if acting_number == 5:
 				Abilities.fives_cleared += 1
 				if Abilities.fives_cleared >= 2:
 					Abilities.fives_cleared = 0
 					Globals.upgrade_fives()
-			if bombs_around == 6:
+			if acting_number == 6:
 				Abilities.sixes_cleared += 1
 				if Abilities.sixes_cleared >= 1:
 					Abilities.sixes_cleared = 0
 					Globals.upgrade_sixes()
-			if bombs_around == 7:
+			if acting_number == 7:
 				Abilities.sevens_cleared += 1
 				if Abilities.sevens_cleared >= 1:
 					Abilities.sevens_cleared = 0
 					Globals.upgrade_sevens()
-			if bombs_around == 8:
+			if acting_number == 8:
 				Abilities.eights_cleared += 1
 				if Abilities.eights_cleared >= 1:
 					Abilities.eights_cleared = 0
 					Globals.upgrade_eights()
-			if bombs_around == 9:
+			if acting_number == 9:
 				Abilities.nines_cleared += 1
 				if Abilities.nines_cleared >= 1:
 					Abilities.nines_cleared = 0

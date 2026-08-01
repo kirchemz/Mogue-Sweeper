@@ -21,11 +21,16 @@ config/icon="uid://dqnx3g6e6hrhe"
 Globals="*uid://cdxnn7k5uickl"
 Abilities="*uid://bejto0pb45xai"
 Levels="*uid://cxx01spdoybrq"
+Profily="*uid://qmnu1ehm866e"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/calcunow/plugin.cfg", "res://addons/profily/plugin.cfg", "res://addons/project_statistics/plugin.cfg")
 
 [input]
 
