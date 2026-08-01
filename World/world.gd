@@ -32,7 +32,7 @@ func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
 	
 	# Time Bonus
-	if Abilities.time_bonus:
+	if Abilities.mowl_time:
 		time_bonus += Abilities.ability_stock.time_bonus.time
 	$Timer.start($Timer.wait_time + time_bonus)
 	
@@ -378,7 +378,7 @@ func unhide_cells(cell_instance):
 					if not cell_instance.unflagged_bomb_around() and neighbor.is_bomb:
 						neighbor.is_hidden = true
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
-						if Abilities.money_sweeper:
+						if Abilities.mowl_cascade:
 							Abilities.casecade_count += 1
 							if Abilities.casecade_count >= 4:
 								Abilities.casecade_count = 0
@@ -527,7 +527,7 @@ func point_count():
 		for x in y:
 			if is_instance_valid(x):
 				x.flagged_bombs_around()
-				if Abilities.double_trouble:
+				if Abilities.greedy_mowl:
 					if x.bombs_around == 2:
 						x.flagged_bombs_around()
 	Globals.points *= Globals.point_mult

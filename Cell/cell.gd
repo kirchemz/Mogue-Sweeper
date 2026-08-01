@@ -250,11 +250,14 @@ func flagged_bombs_around():
 							self_mult += 1
 						if neighbor.flag_type == "Purple":
 							Globals.point_mult += 1
+						if Abilities.even_pi:
+							if bombs_around == 2 or bombs_around == 4 or bombs_around == 6 or bombs_around == 8:
+								self_mult += point_bonus * 3.14
 						Globals.points += (point_bonus * self_mult)
 						Globals.mult += mult
 						got_points = true
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
-		if Abilities.flag_generator:
+		if Abilities.mowl_flags:
 			if bombs_around == 2:
 				Globals.blue_flags += 1
 			if bombs_around == 3:
@@ -265,7 +268,7 @@ func flagged_bombs_around():
 				Globals.green_flags += 1
 			if bombs_around == 6:
 				Globals.black_flags += 1
-		if Abilities.number_upgrader:
+		if Abilities.the_mowl_the_marrier:
 			if bombs_around == 1:
 				Abilities.ones_cleared += 1
 				if Abilities.ones_cleared >= 100:

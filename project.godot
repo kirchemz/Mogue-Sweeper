@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rogue Sweeper"
+config/name="Mogue Sweeper"
 config/description="A Minesweeper rogue-lite"
 run/main_scene="uid://c6k7anaruwjh2"
 config/features=PackedStringArray("4.7", "Forward Plus")

@@ -10,44 +10,80 @@ var ability_stock : Dictionary = {
 		"name" : "Auto Chord",
 		"price" : 100,
 		"img" : preload("res://Sprites/Auto Chord.png"),
-		"rarity" : 20
+		"rarity" : 1,
+		"description" : "Automatically chords whenevery you flag a cell"
 	},
-	"time_bonus" : {
-		"name" : "Time Bonus",
+	"mowl_time" : {
+		"name" : "Mowl Time",
 		"price" : 100,
 		"time" : 10,
 		"img" : preload("res://Sprites/Time Bonus.png"),
-		"rarity" : 20
+		"rarity" : 100,
+		"description" : "Adds 10 seconds to the clock at the start",
 	},
-	"flag_generator" : {
-		"name" : "Flag Generator",
+	"slow_mowl" : {
+		"name" : "SLow Mowl",
+		"price" : 100,
+		"time" : 10,
+		"img" : preload("res://Sprites/Time Bonus.png"),
+		"rarity" : 100,
+		"description" : "Adds 10 seconds to the clock at the start. mowl time"
+	},
+	"mowl_flags" : {
+		"name" : "Mowl Flags",
 		"price" : 100,
 		"img" : preload("res://Sprites/Flag Generator.png"),
-		"rarity" : 20
+		"rarity" : 100,
+		"description" : "Every 2 you get you get a blue flag, every three a yellow flag, every four a violet flag, every five a green flag, and every six a black flag"
 	},
-	"number_upgrader" : {
-		"name" : "Number Upgrader",
+	"the_mowl_the_merrier" : {
+		"name" : "The Mowl the Merrier",
 		"price" : 100,
 		"img" : preload("res://Sprites/Number Upgrader.png"),
-		"rarity" : 20
+		"rarity" : 100,
+		"description" : "Every 100 ones, 80 twos, 10 threes, 5 fours, or 1 five through 8 you get an upgrade for that number"
 	},
-	"mine_scanner" : {
-		"name" : "Mine Scanner",
+	"lawn_mowler" : {
+		"name" : "Lawn Mowler",
 		"price" : 100,
 		"img" : preload("res://Sprites/Mine Scanner.png"),
-		"rarity" : 20
+		"rarity" : 30,
+		"description" : "Reveals every cell within a 5 by 5 radius of where you put it. Press space or drag to place"
 	},
-	"double_trouble" : {
-		"name" : "Double Trouble",
+	"greedy_mowl" : {
+		"name" : "Greedy Mowl",
 		"price" : 100,
 		"img" : preload("res://Sprites/Double Trouble.png"),
-		"rarity" : 20
+		"rarity" : 100,
+		"description" : "Retriggers twos"
 	},
-	"money_sweeper" : {
-		"name" : "Money Sweeper",
+	"mowl_cascade" : {
+		"name" : "Mowl Cascade",
 		"price" : 100,
 		"img" : preload("res://Sprites/Ability Base.png"),
-		"rarity" : 20
+		"rarity" : 30,
+		"description" : "For every 4 cells revealed by the cascade earn 1 supa money"
+	},
+	"supa_flags" : {
+		"name" : "Supa Flags",
+		"price" : 100,
+		"img" : preload("res://Sprites/Ability Base.png"),
+		"rarity" : 30,
+		"description" : "Destroys all other abilities and gives 1X mult for every flag placed other then blue and red. Given to you by Supa Evil Man"
+	},
+	"mowl_flags_again" : {
+		"name" : "Mowl Flags, Again",
+		"price" : 100,
+		"img" : preload("res://Sprites/Flag Retriggers.png"),
+		"rarity" : 1,
+		"description" : "Retriggers all flags"
+	},
+	"even_pi" : {
+		"name" : "Even Numbers",
+		"price" : 100,
+		"img" : preload("res://Sprites/Even Numbers.png"),
+		"rarity" : 100,
+		"description" : "Every even number gets 3.14 times their points"
 	}
 }
 
@@ -76,9 +112,9 @@ var ability_five : Dictionary = {
 # All variables relating to abilites
 var auto_chord : bool = false
 var auto_chord_active : bool = false
-var time_bonus : bool = false
-var flag_generator : bool = false
-var number_upgrader : bool = false
+var mowl_time : bool = false
+var mowl_flags : bool = false
+var the_mowl_the_marrier : bool = false
 var ones_cleared : int = 0
 var twos_cleared : int = 0
 var threes_cleared : int = 0
@@ -88,13 +124,16 @@ var sixes_cleared : int = 0
 var sevens_cleared : int = 0
 var eights_cleared : int = 0
 var nines_cleared : int = 0
-var mine_scanner : bool = false
-var mine_scanner_level : int = 1
+var lawn_mowler : bool = false
+var lawn_mowler_level : int = 1
 var mine_lure : bool = false
-var double_trouble : bool = false
+var greedy_mowl : bool = false
 var safe_start : bool = false
-var money_sweeper : bool = false
+var mowl_cascade : bool = false
 var casecade_count : int = 0
+var mowl_flags_again : bool = false
+var supa_flags : bool = false
+var even_pi : bool = false
 
 func _ready() -> void:
 	for ability in ability_stock.values():

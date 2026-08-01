@@ -7,7 +7,7 @@ func _on_texture_button_pressed() -> void:
 	get_parent().get_parent().ui_shown = false
 
 func _process(delta: float) -> void:
-	if Abilities.number_upgrader:
+	if Abilities.the_mowl_the_marrier:
 		$"1/ProgressBar".visible = true
 		$"2/ProgressBar".visible = true
 		$"3/ProgressBar".visible = true

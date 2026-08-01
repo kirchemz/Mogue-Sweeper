@@ -199,6 +199,7 @@ func _process(delta: float) -> void:
 		extra_pack_opened = true
 	$"Ability 1".texture_normal = Abilities.ability_one.img
 	$"Ability 1/Label".text = Abilities.ability_one.name
+	$"Ability 1/Label".scale = $"Ability 1/Label".get_total_character_count() * (Vector2(0.002, 0.002) / ($"Ability 1/Label".get_total_character_count() / 9))
 	$"Ability 2".texture_normal = Abilities.ability_two.img
 	$"Ability 2/Label".text = Abilities.ability_two.name
 	$"Ability 3".texture_normal = Abilities.ability_three.img
@@ -264,18 +265,18 @@ func _on_ability_one_pressed() -> void:
 			Globals.currency -= ability_one.price
 			if ability_one == Abilities.ability_stock.auto_chord:
 				Abilities.auto_chord = true
-			if ability_one == Abilities.ability_stock.time_bonus:
-				Abilities.time_bonus = true
-			if ability_one == Abilities.ability_stock.flag_generator:
-				Abilities.flag_generator = true
-			if ability_one == Abilities.ability_stock.number_upgrader:
-				Abilities.number_upgrader = true
-			if ability_one == Abilities.ability_stock.mine_scanner:
-				Abilities.mine_scanner = true
-			if ability_one == Abilities.ability_stock.double_trouble:
-				Abilities.double_trouble = true
-			if ability_one == Abilities.ability_stock.money_sweeper:
-				Abilities.money_sweeper = true
+			if ability_one == Abilities.ability_stock.mowl_time:
+				Abilities.mowl_time = true
+			if ability_one == Abilities.ability_stock.mowl_flags:
+				Abilities.mowl_flags = true
+			if ability_one == Abilities.ability_stock.the_mowl_the_merrier:
+				Abilities.the_mowl_the_marrier = true
+			if ability_one == Abilities.ability_stock.lawn_mowler:
+				Abilities.lawn_mowler = true
+			if ability_one == Abilities.ability_stock.greedy_mowl:
+				Abilities.greedy_mowl = true
+			if ability_one == Abilities.ability_stock.mowl_cascade:
+				Abilities.mowl_cascade = true
 			Abilities.current_abilities.append(ability_one)
 			$"Ability One".queue_free()
 
@@ -298,18 +299,18 @@ func _on_ability_two_pressed() -> void:
 			Globals.currency -= ability_two.price
 			if ability_two == Abilities.ability_stock.auto_chord:
 				Abilities.auto_chord = true
-			if ability_two == Abilities.ability_stock.time_bonus:
-				Abilities.time_bonus = true
-			if ability_two == Abilities.ability_stock.flag_generator:
-				Abilities.flag_generator = true
-			if ability_two == Abilities.ability_stock.number_upgrader:
-				Abilities.number_upgrader = true
-			if ability_two == Abilities.ability_stock.mine_scanner:
-				Abilities.mine_scanner = true
-			if ability_two == Abilities.ability_stock.double_trouble:
-				Abilities.double_trouble = true
-			if ability_two == Abilities.ability_stock.money_sweeper:
-				Abilities.money_sweeper = true
+			if ability_two == Abilities.ability_stock.mowl_time:
+				Abilities.mowl_time = true
+			if ability_two == Abilities.ability_stock.mowl_flags:
+				Abilities.mowl_flags = true
+			if ability_two == Abilities.ability_stock.the_mowl_the_merrier:
+				Abilities.the_mowl_the_marrier = true
+			if ability_two == Abilities.ability_stock.lawn_mowler:
+				Abilities.lawn_mowler = true
+			if ability_two == Abilities.ability_stock.greedy_mowl:
+				Abilities.greedy_mowl = true
+			if ability_two == Abilities.ability_stock.mowl_cascade:
+				Abilities.mowl_cascade = true
 			Abilities.current_abilities.append(ability_two)
 			$"Ability Two".queue_free()
 
@@ -332,18 +333,18 @@ func _on_ability_three_pressed() -> void:
 			Globals.currency -= ability_three.price
 			if ability_three == Abilities.ability_stock.auto_chord:
 				Abilities.auto_chord = true
-			if ability_three == Abilities.ability_stock.time_bonus:
-				Abilities.time_bonus = true
-			if ability_three == Abilities.ability_stock.flag_generator:
-				Abilities.flag_generator = true
-			if ability_three == Abilities.ability_stock.number_upgrader:
-				Abilities.number_upgrader = true
-			if ability_three == Abilities.ability_stock.mine_scanner:
-				Abilities.mine_scanner = true
-			if ability_three == Abilities.ability_stock.double_trouble:
-				Abilities.double_trouble = true
-			if ability_three == Abilities.ability_stock.money_sweeper:
-				Abilities.money_sweeper = true
+			if ability_three == Abilities.ability_stock.mowl_time:
+				Abilities.mowl_time = true
+			if ability_three == Abilities.ability_stock.mowl_flags:
+				Abilities.mowl_flags = true
+			if ability_three == Abilities.ability_stock.the_mowl_the_merrier:
+				Abilities.the_mowl_the_marrier = true
+			if ability_three == Abilities.ability_stock.lawn_mowler:
+				Abilities.lawn_mowler = true
+			if ability_three == Abilities.ability_stock.greedy_mowl:
+				Abilities.greedy_mowl = true
+			if ability_three == Abilities.ability_stock.mowl_cascade:
+				Abilities.mowl_cascade = true
 			Abilities.current_abilities.append(ability_three)
 			$"Ability Three".queue_free()
 
