@@ -20,6 +20,8 @@ var extra_three : Dictionary
 var extra_options : Array
 var extra_pack_opened : bool = false
 var extra_pack_option_chosen : bool = false
+var dialogue_section : int = 1
+var dialogue_open : bool = false
 
 # All rocks available for packs
 var rock_stock : Dictionary = {
@@ -177,6 +179,12 @@ func _ready() -> void:
 	extra_options.erase(extra_three)
 
 func _process(delta: float) -> void:
+	if dialogue_open:
+		if not $"Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
+			$"Dialogue Box/NinePatchRect/Label".visible_characters += 1
+			$"Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Talking")
+		else:
+			$"Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Idle")
 	if rock_pack_option_chosen:
 		var camera_drag = create_tween()
 		camera_drag.set_ease(Tween.EASE_IN_OUT)
@@ -713,3 +721,33 @@ func _on_extra_three_pressed() -> void:
 	if extra_three == flag_stock.yellow_flag:
 		Globals.yellow_flags += 5
 	extra_pack_option_chosen = true
+
+
+func _on_mista_mowl_pressed() -> void:
+	if dialogue_section == 1:
+		dialogue_open = true
+		$"Dialogue Box".visible = true
+		$"Dialogue Box/NinePatchRect/Label".text = "Welcome to da mowl shop! We 
+got some abilities you can buy
+that can help you in your 
+travels."
+		dialogue_section += 1
+		return
+	if dialogue_section == 2:
+		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Dialogue Box/NinePatchRect/Label".text = "You look like a supa serious
+buisness man so I'm gonna let
+you buy mowl abilities even
+though you ain't a mowl."
+		dialogue_section += 1
+		return
+	if dialogue_section == 3:
+		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Dialogue Box/NinePatchRect/Label".text = "See ya later!"
+		dialogue_section += 1
+		return
+	if dialogue_section == 4:
+		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		dialogue_section = 1
+		dialogue_open = false
+		$"Dialogue Box".visible = false

@@ -13,6 +13,74 @@
 [ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="11_d1iyv"]
 [ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
 [ext_resource type="Texture2D" uid="uid://dvgsdlkg3248o" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01a.png" id="13_nws7c"]
+[ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
+[ext_resource type="Texture2D" uid="uid://bfggduciqjkoa" path="res://Sprites/Mista_Mowl_Talking.png" id="15_2u4ug"]
+[ext_resource type="Texture2D" uid="uid://bko56ymvjeign" path="res://Sprites/Shop Desk.png" id="15_5yg78"]
+[ext_resource type="Texture2D" uid="uid://n74vlux0enov" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot03a.png" id="16_2u4ug"]
+[ext_resource type="Texture2D" uid="uid://c7g1bbx3mc14y" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="18_x8l2j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
+atlas = ExtResource("14_5yg78")
+region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8l2j")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kkpg"]
+atlas = ExtResource("15_2u4ug")
+region = Rect2(0, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erba8"]
+atlas = ExtResource("15_2u4ug")
+region = Rect2(0, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vwke"]
+atlas = ExtResource("15_2u4ug")
+region = Rect2(576, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w6cm"]
+atlas = ExtResource("15_2u4ug")
+region = Rect2(1152, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbbt6"]
+atlas = ExtResource("15_2u4ug")
+region = Rect2(1728, 0, 576, 576)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yg78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kkpg")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erba8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vwke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w6cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbbt6")
+}],
+"loop": 1,
+"name": &"Talking",
+"speed": 5.0
+}]
 
 [node name="Shop" type="Node2D" unique_id=2030919428]
 script = ExtResource("1_2nxxu")
@@ -97,7 +165,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.023146577
-anchor_top = 0.09450884
+anchor_top = 0.09450619
 anchor_right = 31.842266
 anchor_bottom = 0.09450619
 offset_left = 1.6198089
@@ -112,106 +180,85 @@ text = "Supa Money: 9999999"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1767505114]
-offset_left = 56.0
-offset_top = 257.0
-offset_right = 209.8805
-offset_bottom = 306.40845
-scale = Vector2(3.3597498, 3.3597498)
-texture = ExtResource("11_d1iyv")
-patch_margin_left = 3
-patch_margin_top = 5
-patch_margin_right = 3
-patch_margin_bottom = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="NinePatchRect3" unique_id=1795539061]
-layout_mode = 0
-offset_left = 0.5952873
-offset_right = 9377.836
-offset_bottom = 1067.0
-scale = Vector2(0.016283035, 0.016283035)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
-theme_override_font_sizes/font_size = 1066
-text = "Flags"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=1832679023]
-offset_left = 581.0
-offset_top = 257.0
-offset_right = 734.8805
-offset_bottom = 357.30508
-scale = Vector2(3.3597498, 3.3597498)
+offset_left = 508.0
+offset_top = 265.0
+offset_right = 610.6862
+offset_bottom = 365.30508
+scale = Vector2(3.1809366, 3.1809366)
 texture = ExtResource("11_d1iyv")
 patch_margin_left = 3
 patch_margin_top = 5
 patch_margin_right = 3
 patch_margin_bottom = 5
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect5" unique_id=1571024310]
 layout_mode = 0
 offset_left = 0.5952873
-offset_right = 9377.836
+offset_right = 6233.81
 offset_bottom = 1067.0
 scale = Vector2(0.016283035, 0.016283035)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1066
-text = "Packs"
+text = "Packs: $500"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="NinePatchRect5" unique_id=114679056]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.21661697
-anchor_bottom = 0.21661697
-offset_left = 0.5952873
-offset_right = 9377.836
-offset_bottom = 1067.0
-scale = Vector2(0.016283035, 0.016283035)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
-theme_override_font_sizes/font_size = 1066
-text = "$500"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=521339773]
 offset_left = 56.0
-offset_top = 428.0
-offset_right = 209.8805
-offset_bottom = 477.40845
-scale = Vector2(3.3597498, 3.3597498)
+offset_top = 436.0
+offset_right = 188.74797
+offset_bottom = 485.40845
+scale = Vector2(3.1809366, 3.1809366)
 texture = ExtResource("11_d1iyv")
 patch_margin_left = 3
 patch_margin_top = 5
 patch_margin_right = 3
 patch_margin_bottom = 5
-metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="NinePatchRect4" unique_id=1497691829]
+[node name="Label" type="Label" parent="NinePatchRect4" unique_id=1965026485]
 layout_mode = 0
-offset_left = 1.190567
-offset_right = 9341.872
-offset_bottom = 1067.0
-scale = Vector2(0.016283035, 0.016283035)
+offset_left = 0.5952835
+offset_right = 957.82794
+offset_bottom = 115.0
+scale = Vector2(0.13805702, 0.13805702)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
-theme_override_font_sizes/font_size = 1066
+theme_override_font_sizes/font_size = 114
 text = "Abilities"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1767505114]
+offset_left = 56.0
+offset_top = 265.0
+offset_right = 188.74797
+offset_bottom = 314.40845
+scale = Vector2(3.1809366, 3.1809366)
+texture = ExtResource("11_d1iyv")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect3" unique_id=279259037]
+layout_mode = 0
+offset_left = 0.5952835
+offset_top = 0.5952797
+offset_right = 1053.106
+offset_bottom = 115.595276
+scale = Vector2(0.124145545, 0.124145545)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 114
+text = "Flags"
+horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="." unique_id=1655991608]
 offset_left = 82.0
-offset_top = 333.0
+offset_top = 341.0
 offset_right = 3058.0
-offset_bottom = 1425.0
-scale = Vector2(0.023719197, 0.023719197)
+offset_bottom = 1433.0
+scale = Vector2(0.02245681, 0.02245681)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
@@ -219,11 +266,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label6" type="Label" parent="." unique_id=439199562]
-offset_left = 281.0
-offset_top = 333.0
-offset_right = 3257.0
-offset_bottom = 1425.0
-scale = Vector2(0.023719197, 0.023719197)
+offset_left = 234.00002
+offset_top = 341.0
+offset_right = 3210.0
+offset_bottom = 1433.0
+scale = Vector2(0.02245681, 0.02245681)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
@@ -231,11 +278,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label7" type="Label" parent="." unique_id=533061581]
-offset_left = 476.0
-offset_top = 333.0
-offset_right = 3452.0
-offset_bottom = 1425.0
-scale = Vector2(0.023719197, 0.023719197)
+offset_left = 383.0
+offset_top = 341.0
+offset_right = 3359.0
+offset_bottom = 1433.0
+scale = Vector2(0.02245681, 0.02245681)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
@@ -243,11 +290,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label8" type="Label" parent="." unique_id=482590177]
-offset_left = 476.0
-offset_top = 503.00003
-offset_right = 3452.0
-offset_bottom = 1595.0
-scale = Vector2(0.023719197, 0.023719197)
+offset_left = 384.0
+offset_top = 511.00003
+offset_right = 3360.0
+offset_bottom = 1603.0
+scale = Vector2(0.02245681, 0.02245681)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
@@ -255,28 +302,26 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label9" type="Label" parent="." unique_id=774353489]
-offset_left = 281.0
-offset_top = 503.00003
-offset_right = 3257.0
-offset_bottom = 1595.0
-scale = Vector2(0.023719197, 0.023719197)
+offset_left = 233.0
+offset_top = 511.00003
+offset_right = 3209.0
+offset_bottom = 1603.0
+scale = Vector2(0.02245681, 0.02245681)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label10" type="Label" parent="." unique_id=806698197]
-offset_left = 81.0
-offset_top = 503.00003
-offset_right = 3057.0
-offset_bottom = 1595.0
-scale = Vector2(0.023719197, 0.023719197)
+offset_left = 79.0
+offset_top = 511.00003
+offset_right = 3055.0
+offset_bottom = 1603.0
+scale = Vector2(0.02245681, 0.02245681)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=36508199]
 offset_left = 1008.00006
@@ -289,11 +334,11 @@ script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability One" type="TextureButton" parent="." unique_id=853133183]
-offset_left = 75.0
-offset_top = 471.0
-offset_right = 107.0
-offset_bottom = 503.0
-scale = Vector2(2.6651363, 2.6651363)
+offset_left = 73.0
+offset_top = 482.0
+offset_right = 105.0
+offset_bottom = 514.0
+scale = Vector2(2.523292, 2.523292)
 texture_normal = ExtResource("6_s7atx")
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -315,11 +360,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability Two" type="TextureButton" parent="." unique_id=652905932]
-offset_left = 274.0
-offset_top = 471.0
-offset_right = 306.0
-offset_bottom = 503.0
-scale = Vector2(2.6651363, 2.6651363)
+offset_left = 227.00002
+offset_top = 482.0
+offset_right = 259.0
+offset_bottom = 514.0
+scale = Vector2(2.523292, 2.523292)
 texture_normal = ExtResource("6_s7atx")
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -341,11 +386,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability Three" type="TextureButton" parent="." unique_id=2028428542]
-offset_left = 469.0
-offset_top = 471.0
-offset_right = 501.0
-offset_bottom = 503.0
-scale = Vector2(2.6651363, 2.6651363)
+offset_left = 377.0
+offset_top = 482.0
+offset_right = 409.0
+offset_bottom = 514.0
+scale = Vector2(2.523292, 2.523292)
 texture_normal = ExtResource("6_s7atx")
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -368,10 +413,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Flag One" type="TextureButton" parent="." unique_id=878077255]
 offset_left = 75.0
-offset_top = 303.0
+offset_top = 311.0
 offset_right = 107.0
-offset_bottom = 335.0
-scale = Vector2(2.6651363, 2.6651363)
+offset_bottom = 343.0
+scale = Vector2(2.523292, 2.523292)
 offset_transform_enabled = true
 texture_normal = ExtResource("6_s7atx")
 stretch_mode = 0
@@ -395,11 +440,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag Two" type="TextureButton" parent="." unique_id=501843390]
-offset_left = 274.0
-offset_top = 303.0
-offset_right = 306.0
-offset_bottom = 335.0
-scale = Vector2(2.6651363, 2.6651363)
+offset_left = 226.00002
+offset_top = 311.0
+offset_right = 258.00003
+offset_bottom = 343.0
+scale = Vector2(2.523292, 2.523292)
 texture_normal = ExtResource("6_s7atx")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
@@ -422,11 +467,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag Three" type="TextureButton" parent="." unique_id=593985820]
-offset_left = 469.0
-offset_top = 303.0
-offset_right = 501.0
-offset_bottom = 335.0
-scale = Vector2(2.6651366, 2.6651366)
+offset_left = 375.0
+offset_top = 311.0
+offset_right = 407.0
+offset_bottom = 343.0
+scale = Vector2(2.5232923, 2.5232923)
 texture_normal = ExtResource("6_s7atx")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
@@ -448,11 +493,36 @@ text = "Flag 3"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect10" type="NinePatchRect" parent="." unique_id=15563526]
+offset_left = 1383.0
+offset_top = 63.0
+offset_right = 1655.4215
+offset_bottom = 106.056274
+scale = Vector2(2.4851198, 2.4851198)
+texture = ExtResource("9_ty2y0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="." unique_id=1028485349]
+offset_left = 1418.0
+offset_top = 50.000008
+offset_right = 6536.0
+offset_bottom = 1224.0
+scale = Vector2(0.12071284, 0.12071284)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 1173
+text = "CHOOSE A ROCK"
+metadata/_edit_use_anchors_ = true
+
 [node name="Rock One" type="TextureButton" parent="." unique_id=1647375030]
 offset_left = 1340.0518
-offset_top = 275.05176
+offset_top = 364.05176
 offset_right = 1372.0518
-offset_bottom = 307.05176
+offset_bottom = 396.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
@@ -479,9 +549,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Rock Two" type="TextureButton" parent="." unique_id=564356476]
 offset_left = 1710.0518
-offset_top = 275.05176
+offset_top = 364.05176
 offset_right = 1742.0518
-offset_bottom = 307.05176
+offset_bottom = 396.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
@@ -508,9 +578,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Rock Three" type="TextureButton" parent="." unique_id=768282453]
 offset_left = 2088.0518
-offset_top = 275.05176
+offset_top = 364.05176
 offset_right = 2120.0518
-offset_bottom = 307.05176
+offset_bottom = 396.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
@@ -554,19 +624,6 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect10" type="NinePatchRect" parent="." unique_id=15563526]
-offset_left = 1383.0
-offset_top = 63.0
-offset_right = 1655.4215
-offset_bottom = 106.056274
-scale = Vector2(2.4851198, 2.4851198)
-texture = ExtResource("9_ty2y0")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-metadata/_edit_use_anchors_ = true
-
 [node name="Label3" type="Label" parent="." unique_id=2018391308]
 offset_left = -905.0
 offset_top = 50.000008
@@ -577,18 +634,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1173
 text = "CHOOSE A FLAG"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label4" type="Label" parent="." unique_id=1028485349]
-offset_left = 1418.0
-offset_top = 50.000008
-offset_right = 6536.0
-offset_bottom = 1224.0
-scale = Vector2(0.12071284, 0.12071284)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
-theme_override_font_sizes/font_size = 1173
-text = "CHOOSE A ROCK"
 metadata/_edit_use_anchors_ = true
 
 [node name="Extra One" type="TextureButton" parent="." unique_id=1034222299]
@@ -789,11 +834,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=818081273]
-offset_left = 629.0
-offset_top = 376.00006
-offset_right = 3605.0
-offset_bottom = 1468.0
-scale = Vector2(0.036540836, 0.036540836)
+offset_left = 556.0
+offset_top = 384.00006
+offset_right = 3532.0
+offset_bottom = 1476.0
+scale = Vector2(0.034596052, 0.034596052)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
@@ -801,11 +846,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="." unique_id=1463668229]
-offset_left = 942.99994
-offset_top = 376.00006
-offset_right = 3919.0
-offset_bottom = 1468.0
-scale = Vector2(0.036540836, 0.036540836)
+offset_left = 714.72766
+offset_top = 384.00006
+offset_right = 3690.7275
+offset_bottom = 1476.0
+scale = Vector2(0.034596052, 0.034596052)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_xxbpy")
 theme_override_font_sizes/font_size = 1091
@@ -813,16 +858,15 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Rock Pack" type="TextureButton" parent="." unique_id=1673046791]
-offset_left = 971.0
-offset_top = 393.0
-offset_right = 1067.0
-offset_bottom = 457.0
-scale = Vector2(3.1553223, 3.1553223)
+offset_left = 725.42505
+offset_top = 389.59644
+offset_right = 773.42505
+offset_bottom = 453.59644
+scale = Vector2(2.987389, 2.987389)
 pivot_offset = Vector2(24, 32)
 offset_transform_enabled = true
 texture_normal = ExtResource("8_ghprd")
 script = ExtResource("6_fi1uk")
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Rock Pack" unique_id=369209368]
 layout_mode = 0
@@ -849,16 +893,15 @@ text = "OPEN"
 metadata/_edit_use_anchors_ = true
 
 [node name="Extra Pack" type="TextureButton" parent="." unique_id=410524825]
-offset_left = 658.0
-offset_top = 393.0
-offset_right = 754.0
-offset_bottom = 457.0
-scale = Vector2(3.1553223, 3.1553223)
+offset_left = 567.6973
+offset_top = 389.59644
+offset_right = 615.6973
+offset_bottom = 453.59644
+scale = Vector2(2.987389, 2.987389)
 pivot_offset = Vector2(24, 32)
 offset_transform_enabled = true
 texture_normal = ExtResource("12_5coi5")
 script = ExtResource("6_fi1uk")
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Extra Pack" unique_id=1174925539]
 layout_mode = 0
@@ -937,7 +980,96 @@ point bonus"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1725712666]
-position = Vector2(576, 324)
+position = Vector2(576, 332)
+scale = Vector2(0.9467778, 0.9467778)
+
+[node name="Mista Mowl" type="Button" parent="." unique_id=1423249159]
+modulate = Color(1, 1, 1, 0)
+offset_left = 891.99994
+offset_top = 352.0
+offset_right = 915.0384
+offset_bottom = 386.19998
+scale = Vector2(6.988307, 6.988307)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624735375]
+position = Vector2(973, 445.00003)
+scale = Vector2(4.8550215, 4.8550215)
+sprite_frames = SubResource("SpriteFrames_0rlat")
+animation = &"Idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1354400583]
+position = Vector2(975, 505)
+scale = Vector2(5.9375134, 5.9375134)
+texture = ExtResource("15_5yg78")
+
+[node name="Dialogue Box" type="NinePatchRect" parent="." unique_id=1204832429]
+visible = false
+offset_left = 56.0
+offset_top = 280.00003
+offset_right = 382.00458
+offset_bottom = 381.2281
+scale = Vector2(3.1809366, 3.1809366)
+texture = ExtResource("11_d1iyv")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="Dialogue Box" unique_id=638563721]
+layout_mode = 0
+offset_left = 240.49522
+offset_top = 11.317408
+offset_right = 283.3389
+offset_bottom = 54.161087
+scale = Vector2(1.8376273, 1.8376273)
+texture = ExtResource("16_2u4ug")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Mista Mowl" type="Button" parent="Dialogue Box/NinePatchRect11" unique_id=1872635111]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0264416
+offset_top = 1.3686016
+offset_right = 14.335474
+offset_bottom = 20.314857
+scale = Vector2(3.0721252, 2.1309643)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Dialogue Box/NinePatchRect11" unique_id=654250915]
+position = Vector2(21.42186, 22.672745)
+scale = Vector2(0.062723115, 0.062723115)
+sprite_frames = SubResource("SpriteFrames_5yg78")
+animation = &"Idle"
+autoplay = "Talking"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue Box" unique_id=2006988760]
+layout_mode = 0
+offset_left = 6.9162025
+offset_top = 7.230566
+offset_right = 212.06538
+offset_bottom = 85.355865
+scale = Vector2(1.11866, 1.11866)
+texture = ExtResource("18_x8l2j")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Dialogue Box/NinePatchRect" unique_id=1737790297]
+layout_mode = 0
+offset_left = 3.0912886
+offset_top = -0.28102636
+offset_right = 2019.0913
+offset_bottom = 620.719
+scale = Vector2(0.1275501, 0.1275501)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_font_sizes/font_size = 152
+text = "See ya later!"
+visible_characters = 0
+visible_ratio = 0.0
 
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
@@ -989,3 +1121,5 @@ position = Vector2(576, 324)
 [connection signal="pressed" from="Extra Pack" to="." method="_on_extra_pack_pressed"]
 [connection signal="button_down" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_down"]
 [connection signal="button_up" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_up"]
+[connection signal="pressed" from="Mista Mowl" to="." method="_on_mista_mowl_pressed"]
+[connection signal="pressed" from="Dialogue Box/NinePatchRect11/Mista Mowl" to="." method="_on_mista_mowl_pressed"]
