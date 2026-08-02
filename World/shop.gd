@@ -295,12 +295,18 @@ func _on_ability_one_pressed() -> void:
 				Abilities.one_mowl = true
 			if ability_one == Abilities.ability_stock.slow_mowl:
 				Abilities.slow_mowl = true
+			if ability_one == Abilities.ability_stock.fast_mowl:
+				Abilities.fast_mowl = true
 			if ability_one == Abilities.ability_stock.double_odds:
 				Abilities.double_odds = true
 			if ability_one == Abilities.ability_stock.halved_odds:
 				Abilities.halved_odds = true
 			if ability_one == Abilities.ability_stock.threes:
 				Abilities.threes = true
+			if ability_one == Abilities.ability_stock.mowl_abilities:
+				Abilities.mowl_abilities = true
+			if ability_one == Abilities.ability_stock.one_two_three_four_five:
+				Abilities.one_two_three_four_five = true
 			Abilities.current_abilities.append(ability_one)
 			$"Ability One".queue_free()
 
@@ -353,6 +359,8 @@ func _on_ability_two_pressed() -> void:
 				Abilities.one_mowl = true
 			if ability_two == Abilities.ability_stock.slow_mowl:
 				Abilities.slow_mowl = true
+			if ability_two == Abilities.ability_stock.fast_mowl:
+				Abilities.fast_mowl = true
 			if ability_two == Abilities.ability_stock.double_odds:
 				Abilities.double_odds = true
 				Levels.probability_mult /= 2
@@ -361,6 +369,10 @@ func _on_ability_two_pressed() -> void:
 				Levels.probability_mult *= 2
 			if ability_two == Abilities.ability_stock.threes:
 				Abilities.threes = true
+			if ability_two == Abilities.ability_stock.mowl_abilities:
+				Abilities.mowl_abilities = true
+			if ability_two == Abilities.ability_stock.one_two_three_four_five:
+				Abilities.one_two_three_four_five = true
 			Abilities.current_abilities.append(ability_two)
 			$"Ability Two".queue_free()
 
@@ -413,6 +425,8 @@ func _on_ability_three_pressed() -> void:
 				Abilities.one_mowl = true
 			if ability_three == Abilities.ability_stock.slow_mowl:
 				Abilities.slow_mowl = true
+			if ability_three == Abilities.ability_stock.fast_mowl:
+				Abilities.fast_mowl = true
 			if ability_three == Abilities.ability_stock.double_odds:
 				Abilities.double_odds = true
 			if ability_three == Abilities.ability_stock.halved_odds:

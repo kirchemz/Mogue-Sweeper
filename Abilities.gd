@@ -26,10 +26,17 @@ var ability_stock : Dictionary = {
 	"slow_mowl" : {
 		"name" : "SLow Mowl",
 		"price" : 100,
-		"time" : 10,
-		"img" : preload("res://Sprites/Time Bonus.png"),
+		"img" : preload("res://Sprites/Snail.png"),
 		"rarity" : 100,
-		"description" : "Adds 10 seconds to the clock at the start. mowl time",
+		"description" : "Makes EVERYTHING go half as fast for 5 seconds",
+		"type" : "MOWL"
+	},
+	"fast_mowl" : {
+		"name" : "Fast Mowl",
+		"price" : 100,
+		"img" : preload("res://Sprites/Fast Snail.png"),
+		"rarity" : 100,
+		"description" : "Makes EVERYTHING go twice as fast for 5 seconds",
 		"type" : "MOWL"
 	},
 	"mowl_flags" : {
@@ -262,7 +269,8 @@ var numbers_used : Array = []
 var first_try : bool = false
 var first_click : bool = true
 var active_bomb : bool = false
-var slow_mowl : bool = false
+var slow_mowl : bool = true
+var fast_mowl : bool = false
 var double_odds : bool = false
 var halved_odds : bool = false
 var threes : bool = false

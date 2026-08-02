@@ -67,6 +67,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	if Abilities.slow_mowl:
+		slow_mode()
+	if Abilities.fast_mowl:
+		fast_mode()
 	if is_instance_valid(mine_scanner_instance):
 		if mine_scanner_placed:
 			mine_scanner_instance.global_position = closest_cell_to_scanner().global_position
@@ -728,3 +732,17 @@ func closest_cell_to_scanner():
 			closest = child
 	
 	return closest
+
+func slow_mode():
+	$Camera2D/Label.text = str($Timer.time_left)
+	Engine.time_scale = 0.5
+	await get_tree().create_timer(5).timeout
+	Abilities.slow_mowl = false
+	Engine.time_scale = 1
+
+func fast_mode():
+	$Camera2D/Label.text = str($Timer.time_left)
+	Engine.time_scale = 2
+	await get_tree().create_timer(5).timeout
+	Abilities.fast_mowl = false
+	Engine.time_scale = 1
