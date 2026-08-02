@@ -262,6 +262,9 @@ func flagged_bombs_around():
 						if Abilities.even_pi:
 							if acting_number == 2 or acting_number == 4 or acting_number == 6 or acting_number == 8:
 								self_mult += point_bonus * 3.14
+						if Abilities.threes:
+							if acting_number == 3:
+								Abilities.three_mult += 1
 						Globals.points += (point_bonus * self_mult)
 						Globals.mult += mult
 						got_points = true

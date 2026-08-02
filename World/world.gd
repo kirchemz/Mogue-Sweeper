@@ -29,12 +29,15 @@ var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
+	$Timer.wait_time = 60 * Levels.time_mult
+	print($Timer.wait_time)
+	
 	# Sets BG color
 	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
 	
 	# Time Bonus
 	if Abilities.mowl_time:
-		time_bonus += Abilities.ability_stock.time_bonus.time
+		time_bonus += Abilities.ability_stock.mowl_time.time
 	$Timer.start($Timer.wait_time + time_bonus)
 	
 	# Creates the map
@@ -541,6 +544,15 @@ func point_count():
 	if Abilities.low_scorer:
 		if not 3 in Abilities.numbers_used and not 4 in Abilities.numbers_used and not 5 in Abilities.numbers_used and not 6 in Abilities.numbers_used and not 7 in Abilities.numbers_used and not 8 in Abilities.numbers_used and not 9 in Abilities.numbers_used:
 			Globals.mult *= 2
+	if Abilities.one_two_three_four_five:
+		if 1 in Abilities.numbers_used and 2 in Abilities.numbers_used and 3 in Abilities.numbers_used and 4 in Abilities.numbers_used and 5 in Abilities.numbers_used:
+			Globals.mult *= 5
+	if Abilities.mowl_abilities:
+		for ability in Abilities.current_abilities:
+			if "type" in ability:
+				if ability.type == "MOWL":
+					Globals.mult *= 1.5
+	Globals.mult *= Abilities.three_mult
 	Globals.points *= Globals.point_mult
 	Globals.mult *= Abilities.special_flag_count + 1
 	Globals.currency += round(Globals.total_points * Levels.money_mult)
@@ -590,7 +602,14 @@ func _on_timer_timeout() -> void:
 		Globals.points = 0
 	if Abilities.active_bomb:
 		await get_tree().create_timer(2).timeout
-		if randi() % 1 == 0:
+		var probabilities : Array = []
+		for one in Levels.probability_mult:
+			if probabilities.count("Explode") < Levels.probability_mult:
+				probabilities.append("Explode")
+		while probabilities.size() < 50:
+			probabilities.append("Nothing")
+		randomize()
+		if probabilities[randi() % probabilities.size()] == "Explode":
 			if Abilities.ability_one == Abilities.ability_stock.active_bomb:
 				Abilities.self_destruct(1)
 				var explosion_instance = explosion.instantiate()
