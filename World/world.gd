@@ -33,7 +33,7 @@ func _ready() -> void:
 	print($Timer.wait_time)
 	
 	# Sets BG color
-	RenderingServer.set_default_clear_color(Color(0.255, 0.573, 0.765, 1.0))
+	RenderingServer.set_default_clear_color(Color(0.561, 0.592, 0.29, 1.0))
 	
 	# Time Bonus
 	if Abilities.mowl_time:
@@ -53,8 +53,8 @@ func start_map():
 	for x in map_width:
 		for y in map_height:
 			var cell_instance = cell.instantiate()
-			cell_instance.global_position.y = y * 16
-			cell_instance.global_position.x = x * 16
+			cell_instance.global_position.y = y * 32
+			cell_instance.global_position.x = x * 32
 			$BoxContainer.add_child(cell_instance)
 			map[x][y] = cell_instance
 	map_made = true

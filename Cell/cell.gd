@@ -82,22 +82,14 @@ func _process(delta: float) -> void:
 	if is_hidden:
 		if flagged:
 			$Sprite2D.texture = flag_tex
+			$Sprite2D.scale = Vector2(0.001, 0.001)
+			var color_growth = create_tween()
+			color_growth.tween_property($Sprite2D, "scale", Vector2(1, 1), 0.5)
+			color_growth.play()
 		elif is_bomb and not flagged:
 			$Sprite2D.texture = normal_tex
 		else:
 			$Sprite2D.texture = normal_tex
-		if is_instance_valid($Label):
-			$Label.visible = false
-	
-	# Sets the number in the cell
-	if not is_hidden and not is_bomb:
-		if is_instance_valid($Label):
-			$Label.text = str(bombs_around)
-	
-	# Deletes the number if the cell is a bomb
-	if is_bomb:
-		if is_instance_valid($Label):
-			$Label.queue_free()
 	
 	# Gives the cell its image and number if unhidden
 	if not is_hidden:
@@ -109,44 +101,28 @@ func _process(delta: float) -> void:
 			var color_growth = create_tween()
 			color_growth.tween_property($"1", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
-			await color_growth.finished
-			$Label.visible = true
 		elif acting_number == 2:
 			var color_growth = create_tween()
 			color_growth.tween_property($"2", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
-			await color_growth.finished
-			$Label.visible = true
 		elif acting_number == 3:
 			var color_growth = create_tween()
 			color_growth.tween_property($"3", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
-			await color_growth.finished
-			$Label.visible = true
 		elif acting_number == 4:
 			var color_growth = create_tween()
 			color_growth.tween_property($"4", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
-			await color_growth.finished
-			$Label.visible = true
 		elif acting_number == 5:
 			var color_growth = create_tween()
 			color_growth.tween_property($"5", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
-			await color_growth.finished
-			$Label.visible = true
 		elif acting_number == 6:
 			var color_growth = create_tween()
 			color_growth.tween_property($"6", "scale", Vector2(1, 1), 0.5)
 			color_growth.play()
-			await color_growth.finished
-			$Label.visible = true
 		if bombs_around == 0:
 			if world.cells_set and not is_bomb:
-				# Deletes the number if there aren't any bombs around
-				if is_instance_valid($Label):
-					$Label.queue_free()
-				
 				# Makes the cell shrink down and then destroys itself
 				var destroy_tween = create_tween()
 				destroy_tween.set_ease(Tween.EASE_IN)
