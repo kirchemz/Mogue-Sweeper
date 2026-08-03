@@ -727,15 +727,15 @@ func _on_mista_mowl_pressed() -> void:
 	if dialogue_section == 1:
 		dialogue_open = true
 		$"Dialogue Box".visible = true
-		$"Dialogue Box/NinePatchRect/Label".text = "Welcome to da mowl shop! We 
-got some abilities you can buy
-that can help you in your 
-travels."
+		$"Dialogue Box/NinePatchRect/Label".text = "Hello I'm Mista Mowl! Welcome
+to da mowl shop! We  got some
+abilities you can buy that can
+help you in your travels."
 		dialogue_section += 1
 		return
 	if dialogue_section == 2:
 		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Dialogue Box/NinePatchRect/Label".text = "You look like a supa serious
+		$"Dialogue Box/NinePatchRect/Label".text = "You look like a supa sewious
 buisness man so I'm gonna let
 you buy mowl abilities even
 though you ain't a mowl."
@@ -743,7 +743,7 @@ though you ain't a mowl."
 		return
 	if dialogue_section == 3:
 		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Dialogue Box/NinePatchRect/Label".text = "See ya later!"
+		$"Dialogue Box/NinePatchRect/Label".text = "See ya waiter!"
 		dialogue_section += 1
 		return
 	if dialogue_section == 4:

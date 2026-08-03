@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://62n41e7k5asm"]
 
 [ext_resource type="Script" uid="uid://bn4dorke00twm" path="res://World/shop.gd" id="1_2nxxu"]
-[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="1_xxbpy"]
 [ext_resource type="Texture2D" uid="uid://vskmfvrt3gwl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner01a.png" id="2_gqsku"]
 [ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="3_gqsku"]
 [ext_resource type="Texture2D" uid="uid://c5i3jinqs2sn6" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Bar07a.png" id="4_dcrsj"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="6_fi1uk"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="6_s7atx"]
+[ext_resource type="FontFile" uid="uid://bp3w8i3r8x5eg" path="res://Misc/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="6_x8l2j"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
 [ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://button.gd" id="10_8m5wk"]
@@ -142,11 +142,10 @@ offset_right = 970.8857
 offset_bottom = 637.6292
 scale = Vector2(0.042620424, 0.042620424)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 635
 text = "Shop"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=571123486]
 offset_left = 74.0
@@ -164,21 +163,20 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="NinePatchRect2" unique_id=707301438]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.023146577
-anchor_top = 0.09450619
-anchor_right = 31.842266
-anchor_bottom = 0.09450619
+anchor_left = -0.004038323
+anchor_top = 0.13445397
+anchor_right = 62.184776
+anchor_bottom = 7.721962
 offset_left = 1.6198089
 offset_top = 2.4297204
 offset_right = 2888.6199
 offset_bottom = 638.42975
-scale = Vector2(0.013545522, 0.013545522)
+scale = Vector2(0.009216956, 0.009216956)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 635
 text = "Supa Money: 9999999"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=1832679023]
 offset_left = 508.0
@@ -194,12 +192,13 @@ patch_margin_bottom = 5
 
 [node name="Label" type="Label" parent="NinePatchRect5" unique_id=1571024310]
 layout_mode = 0
-offset_left = 0.5952873
-offset_right = 6233.81
-offset_bottom = 1067.0
-scale = Vector2(0.016283035, 0.016283035)
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.012426159, 0.012426159)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1066
 text = "Packs: $500"
 horizontal_alignment = 1
@@ -223,7 +222,7 @@ offset_right = 957.82794
 offset_bottom = 115.0
 scale = Vector2(0.13805702, 0.13805702)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 114
 text = "Abilities"
 horizontal_alignment = 1
@@ -248,7 +247,7 @@ offset_right = 1053.106
 offset_bottom = 115.595276
 scale = Vector2(0.124145545, 0.124145545)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 114
 text = "Flags"
 horizontal_alignment = 1
@@ -258,57 +257,53 @@ offset_left = 82.0
 offset_top = 341.0
 offset_right = 3058.0
 offset_bottom = 1433.0
-scale = Vector2(0.02245681, 0.02245681)
+scale = Vector2(0.012961756, 0.012961756)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label6" type="Label" parent="." unique_id=439199562]
 offset_left = 234.00002
 offset_top = 341.0
 offset_right = 3210.0
 offset_bottom = 1433.0
-scale = Vector2(0.02245681, 0.02245681)
+scale = Vector2(0.012961756, 0.012961756)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label7" type="Label" parent="." unique_id=533061581]
 offset_left = 383.0
 offset_top = 341.0
 offset_right = 3359.0
 offset_bottom = 1433.0
-scale = Vector2(0.02245681, 0.02245681)
+scale = Vector2(0.012961756, 0.012961756)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label8" type="Label" parent="." unique_id=482590177]
 offset_left = 384.0
 offset_top = 511.00003
 offset_right = 3360.0
 offset_bottom = 1603.0
-scale = Vector2(0.02245681, 0.02245681)
+scale = Vector2(0.012961756, 0.012961756)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label9" type="Label" parent="." unique_id=774353489]
 offset_left = 233.0
 offset_top = 511.00003
 offset_right = 3209.0
 offset_bottom = 1603.0
-scale = Vector2(0.02245681, 0.02245681)
+scale = Vector2(0.012961756, 0.012961756)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
 
@@ -317,9 +312,9 @@ offset_left = 79.0
 offset_top = 511.00003
 offset_right = 3055.0
 offset_bottom = 1603.0
-scale = Vector2(0.02245681, 0.02245681)
+scale = Vector2(0.012961756, 0.012961756)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
 
@@ -353,11 +348,10 @@ offset_top = 34.0
 offset_right = 3154.8762
 offset_bottom = 645.0
 scale = Vector2(0.01124798, 0.01124798)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Ability 1"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability Two" type="TextureButton" parent="." unique_id=652905932]
 offset_left = 227.00002
@@ -379,11 +373,10 @@ offset_top = 34.0
 offset_right = 3154.8762
 offset_bottom = 645.0
 scale = Vector2(0.01114553, 0.01114553)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Ability 2"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability Three" type="TextureButton" parent="." unique_id=2028428542]
 offset_left = 377.0
@@ -405,11 +398,10 @@ offset_top = 34.0
 offset_right = 3154.8762
 offset_bottom = 645.0
 scale = Vector2(0.011000444, 0.011000444)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Ability 3"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag One" type="TextureButton" parent="." unique_id=878077255]
 offset_left = 75.0
@@ -433,11 +425,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.010489374, 0.010489374)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Flag 1"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag Two" type="TextureButton" parent="." unique_id=501843390]
 offset_left = 226.00002
@@ -460,11 +451,10 @@ offset_top = 34.0
 offset_right = 4825.817
 offset_bottom = 645.0
 scale = Vector2(0.009781468, 0.009781468)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Flag 2"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag Three" type="TextureButton" parent="." unique_id=593985820]
 offset_left = 375.0
@@ -487,11 +477,10 @@ offset_top = 34.0
 offset_right = 5227.8877
 offset_bottom = 645.0
 scale = Vector2(0.009690697, 0.009690697)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Flag 3"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect10" type="NinePatchRect" parent="." unique_id=15563526]
 offset_left = 1383.0
@@ -508,15 +497,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="." unique_id=1028485349]
 offset_left = 1418.0
-offset_top = 50.000008
-offset_right = 6536.0
-offset_bottom = 1224.0
-scale = Vector2(0.12071284, 0.12071284)
+offset_top = 71.0
+offset_right = 10568.0
+offset_bottom = 1480.0
+scale = Vector2(0.066317245, 0.066317245)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1173
 text = "CHOOSE A ROCK"
-metadata/_edit_use_anchors_ = true
 
 [node name="Rock One" type="TextureButton" parent="." unique_id=1647375030]
 offset_left = 1340.0518
@@ -541,11 +529,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.012159181, 0.012159181)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "ROCKS"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Rock Two" type="TextureButton" parent="." unique_id=564356476]
 offset_left = 1710.0518
@@ -570,11 +557,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.012159181, 0.012159181)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "ROCKS"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Rock Three" type="TextureButton" parent="." unique_id=768282453]
 offset_left = 2088.0518
@@ -599,11 +585,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.012159181, 0.012159181)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "ROCKS"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=1985125066]
 offset_left = -1152.0
@@ -625,16 +610,15 @@ patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="." unique_id=2018391308]
-offset_left = -905.0
-offset_top = 50.000008
-offset_right = 4213.0
-offset_bottom = 1224.0
-scale = Vector2(0.12071284, 0.12071284)
+offset_left = -922.0
+offset_top = 66.0
+offset_right = 8228.0
+offset_bottom = 1475.0
+scale = Vector2(0.069811895, 0.069811895)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1173
 text = "CHOOSE A FLAG"
-metadata/_edit_use_anchors_ = true
 
 [node name="Extra One" type="TextureButton" parent="." unique_id=1034222299]
 offset_left = -963.948
@@ -659,11 +643,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.012159181, 0.012159181)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "FLAGS"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Extra Two" type="TextureButton" parent="." unique_id=1644646514]
 offset_left = -593.948
@@ -688,11 +671,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.012159181, 0.012159181)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "FLAGS"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Extra Three" type="TextureButton" parent="." unique_id=1003581859]
 offset_left = -215.948
@@ -717,11 +699,10 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.012159181, 0.012159181)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "FLAGS"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability 1" type="TextureButton" parent="." unique_id=149004265]
 offset_left = 412.00003
@@ -733,17 +714,21 @@ texture_normal = ExtResource("6_s7atx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 1" unique_id=570458406]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.59100056
+anchor_top = 0.09274688
+anchor_right = 132.52866
+anchor_bottom = 4.3114924
 offset_left = -32.704918
 offset_top = 29.89159
 offset_right = 4564.9736
 offset_bottom = 706.8916
-scale = Vector2(0.021416552, 0.021416552)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+scale = Vector2(0.0068534496, 0.0068534496)
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 676
 text = "Ability 1"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="." unique_id=2138932469]
 offset_left = 550.0
@@ -755,17 +740,21 @@ texture_normal = ExtResource("6_s7atx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 2" unique_id=356654154]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.61046636
+anchor_top = 0.14345634
+anchor_right = 140.199
+anchor_bottom = 4.3622055
 offset_left = -36.573227
 offset_top = 29.89159
 offset_right = 4955.1924
 offset_bottom = 706.8916
-scale = Vector2(0.021416552, 0.021416552)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+scale = Vector2(0.0068193963, 0.0068193963)
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 676
 text = "Ability 2"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability 3" type="TextureButton" parent="." unique_id=1940929645]
 offset_left = 688.0
@@ -777,17 +766,21 @@ texture_normal = ExtResource("6_s7atx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 3" unique_id=405108533]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.4422994
+anchor_top = 0.13077915
+anchor_right = 58.220215
+anchor_bottom = 4.3495293
 offset_left = -64.00317
 offset_top = 29.89159
 offset_right = 7456.4863
 offset_bottom = 706.8916
-scale = Vector2(0.021416552, 0.021416552)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+scale = Vector2(0.0071251574, 0.0071251574)
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 676
 text = "Ability 3"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="." unique_id=567917125]
 offset_left = 825.99994
@@ -799,17 +792,21 @@ texture_normal = ExtResource("6_s7atx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 4" unique_id=388867359]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.1480923
+anchor_top = 0.13077915
+anchor_right = 44.691414
+anchor_bottom = 4.3495293
 offset_left = -51.3432
 offset_top = 29.89159
 offset_right = 6319.725
 offset_bottom = 706.8916
-scale = Vector2(0.021416552, 0.021416552)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+scale = Vector2(0.007941609, 0.007941609)
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 676
 text = "Ability 4"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="." unique_id=543151954]
 offset_left = 963.0
@@ -821,41 +818,43 @@ texture_normal = ExtResource("6_s7atx")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 5" unique_id=1344563823]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.9140251
+anchor_top = 0.14345634
+anchor_right = 1.914032
+anchor_bottom = 4.3622055
 offset_left = -81.938126
 offset_top = 29.89159
 offset_right = 9294.042
 offset_bottom = 706.8916
-scale = Vector2(0.021416552, 0.021416552)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+scale = Vector2(0.008107934, 0.008107934)
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 676
 text = "Ability 5"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=818081273]
-offset_left = 556.0
+offset_left = 533.0
 offset_top = 384.00006
-offset_right = 3532.0
-offset_bottom = 1476.0
-scale = Vector2(0.034596052, 0.034596052)
+offset_right = 5769.0
+offset_bottom = 1694.0
+scale = Vector2(0.022544276, 0.022544276)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="." unique_id=1463668229]
-offset_left = 714.72766
+offset_left = 691.0
 offset_top = 384.00006
-offset_right = 3690.7275
-offset_bottom = 1476.0
-scale = Vector2(0.034596052, 0.034596052)
+offset_right = 5927.0
+offset_bottom = 1694.0
+scale = Vector2(0.022784855, 0.022784855)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
-metadata/_edit_use_anchors_ = true
 
 [node name="Rock Pack" type="TextureButton" parent="." unique_id=1673046791]
 offset_left = 725.42505
@@ -887,10 +886,9 @@ offset_right = 1256.9248
 offset_bottom = 858.77997
 scale = Vector2(0.02502384, 0.02502384)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 861
 text = "OPEN"
-metadata/_edit_use_anchors_ = true
 
 [node name="Extra Pack" type="TextureButton" parent="." unique_id=410524825]
 offset_left = 567.6973
@@ -922,10 +920,9 @@ offset_right = 1256.9248
 offset_bottom = 858.77997
 scale = Vector2(0.02502384, 0.02502384)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 861
 text = "OPEN"
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="." unique_id=850184005]
 visible = false
@@ -947,7 +944,7 @@ offset_right = 7492.114
 offset_bottom = 801.0
 scale = Vector2(0.022120446, 0.022120446)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 800
 text = "Chose 1 of 3
 flags to get 5 of"
@@ -972,7 +969,7 @@ offset_right = 5530.3823
 offset_bottom = 2409.0
 scale = Vector2(0.022120446, 0.022120446)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 800
 text = "Chose 1 rock or gem
 to upgrade a numbers
@@ -1060,16 +1057,17 @@ patch_margin_bottom = 4
 [node name="Label" type="Label" parent="Dialogue Box/NinePatchRect" unique_id=1737790297]
 layout_mode = 0
 offset_left = 3.0912886
-offset_top = -0.28102636
-offset_right = 2019.0913
-offset_bottom = 620.719
-scale = Vector2(0.1275501, 0.1275501)
+offset_top = 11.8031025
+offset_right = 2740.0913
+offset_bottom = 752.8031
+scale = Vector2(0.07266844, 0.07266844)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xxbpy")
+theme_override_fonts/font = ExtResource("6_x8l2j")
 theme_override_font_sizes/font_size = 152
-text = "See ya later!"
-visible_characters = 0
-visible_ratio = 0.0
+text = "Hello I'm Mista Mowl! Welcome
+to da mowl shop! We  got some
+abilities you can buy that can
+help you in your travels."
 
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_iuev5"]
 [ext_resource type="Script" uid="uid://c13eqpkrk8kj2" path="res://UI/number_points_ui.gd" id="1_mgfu4"]
 [ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="1_ul4ap"]
-[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="2_ul4ap"]
+[ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_yyppd"]
 [ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="4_kugnm"]
+[ext_resource type="FontFile" uid="uid://bp3w8i3r8x5eg" path="res://Misc/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="4_ourx0"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="5_i2g1e"]
 
 [node name="Number Points UI" type="Control" unique_id=463320316]
@@ -43,29 +44,17 @@ offset_left = 10.939272
 offset_top = 9.944794
 offset_right = 50.93927
 offset_bottom = 49.944798
-texture = ExtResource("1_iuev5")
-
-[node name="Label" type="Label" parent="1/TextureRect" unique_id=2111050359]
-layout_mode = 0
-offset_left = 13.999999
-offset_top = -9.999999
-offset_right = 247.0
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "1"
+texture = ExtResource("3_yyppd")
 
 [node name="Label" type="Label" parent="1" unique_id=1891937057]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 8.950314
+offset_top = 53.70189
+offset_right = 2018.9503
+offset_bottom = 1666.7019
+scale = Vector2(0.021496804, 0.021496804)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -73,13 +62,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="1" unique_id=967859538]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 3.9779172
+offset_top = 98.45346
+offset_right = 2817.978
+offset_bottom = 1711.4535
+scale = Vector2(0.01938403, 0.01938403)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -87,13 +76,13 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="1" unique_id=874139251]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.44435176, 0.44435176)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 value = 100.0
 
@@ -119,27 +108,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="2/TextureRect" unique_id=463605842]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "2"
-
 [node name="Label" type="Label" parent="2" unique_id=1110355589]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 10.939274
+offset_top = 54.69637
+offset_right = 2020.9393
+offset_bottom = 1667.6964
+scale = Vector2(0.020416135, 0.020416135)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -147,13 +124,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="2" unique_id=165059443]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 4.475157
+offset_top = 96.4645
+offset_right = 2818.475
+offset_bottom = 1709.4645
+scale = Vector2(0.019298835, 0.019298835)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -161,12 +138,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="2" unique_id=954365341]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.44382268, 0.44382268)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 80.0
 value = 80.0
@@ -193,27 +170,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="3/TextureRect" unique_id=1501647098]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "3"
-
 [node name="Label" type="Label" parent="3" unique_id=1282976450]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 9.944793
+offset_top = 53.701893
+offset_right = 2019.9448
+offset_bottom = 1666.7019
+scale = Vector2(0.021010851, 0.021010851)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -221,13 +186,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="3" unique_id=2037870462]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 3.9779172
+offset_top = 95.96726
+offset_right = 2817.978
+offset_bottom = 1708.9673
+scale = Vector2(0.019427646, 0.019427646)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -235,12 +200,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="3" unique_id=461991246]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.44329727, 0.44329727)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 10.0
 value = 10.0
@@ -267,27 +232,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="4/TextureRect" unique_id=1137288759]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "4"
-
 [node name="Label" type="Label" parent="4" unique_id=889397765]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 9.944794
+offset_top = 54.19913
+offset_right = 2019.9448
+offset_bottom = 1667.1991
+scale = Vector2(0.021000335, 0.021000335)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -295,13 +248,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="4" unique_id=1674993897]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 3.4806776
+offset_top = 95.470024
+offset_right = 2817.4807
+offset_bottom = 1708.47
+scale = Vector2(0.01965702, 0.01965702)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -309,12 +262,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="4" unique_id=799984674]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.44276237, 0.44276237)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 5.0
 value = 5.0
@@ -341,27 +294,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="5/TextureRect" unique_id=2015574590]
-layout_mode = 0
-offset_left = 10.442034
-offset_top = -9.999999
-offset_right = 321.44205
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "5"
-
 [node name="Label" type="Label" parent="5" unique_id=1411271539]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 11.436514
+offset_top = 57.182568
+offset_right = 2021.4365
+offset_bottom = 1670.1826
+scale = Vector2(0.019815577, 0.019815577)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -369,13 +310,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="5" unique_id=1635863703]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 4.972397
+offset_top = 97.458984
+offset_right = 2818.9724
+offset_bottom = 1710.459
+scale = Vector2(0.019278128, 0.019278128)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -383,12 +324,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="5" unique_id=1918869117]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.444251, 0.444251)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -415,27 +356,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="6/TextureRect" unique_id=2004819481]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "6"
-
 [node name="Label" type="Label" parent="6" unique_id=234585128]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 11.436513
+offset_top = 58.177048
+offset_right = 2021.4365
+offset_bottom = 1671.177
+scale = Vector2(0.019557199, 0.019557199)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -443,13 +372,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="6" unique_id=912799886]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 3.9779177
+offset_top = 94.972786
+offset_right = 2817.978
+offset_bottom = 1707.9728
+scale = Vector2(0.019421505, 0.019421505)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -457,12 +386,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="6" unique_id=2020989603]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.4437739, 0.4437739)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -488,27 +417,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="7/TextureRect" unique_id=1796587981]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "7"
-
 [node name="Label" type="Label" parent="7" unique_id=1927076695]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 11.933753
+offset_top = 55.69085
+offset_right = 2021.9337
+offset_bottom = 1668.6908
+scale = Vector2(0.020923778, 0.020923778)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -516,13 +433,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="7" unique_id=1820078265]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 6.464116
+offset_top = 96.4645
+offset_right = 2820.464
+offset_bottom = 1709.4645
+scale = Vector2(0.01837008, 0.01837008)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -530,12 +447,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="7" unique_id=402500055]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.4432448, 0.4432448)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -561,27 +478,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="8/TextureRect" unique_id=141800347]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "8"
-
 [node name="Label" type="Label" parent="8" unique_id=382366334]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 9.944794
+offset_top = 56.68533
+offset_right = 2019.9448
+offset_bottom = 1669.6853
+scale = Vector2(0.020373302, 0.020373302)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -589,13 +494,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="8" unique_id=2123882013]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 6.4641156
+offset_top = 94.97278
+offset_right = 2820.464
+offset_bottom = 1707.9728
+scale = Vector2(0.017987961, 0.017987961)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -603,12 +508,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="8" unique_id=913322529]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861987
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25475
+offset_bottom = 17.08833
+scale = Vector2(0.4427194, 0.4427194)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -634,27 +539,15 @@ offset_right = 50.93927
 offset_bottom = 49.944798
 texture = ExtResource("1_iuev5")
 
-[node name="Label" type="Label" parent="9/TextureRect" unique_id=690996670]
-layout_mode = 0
-offset_left = 10.939278
-offset_top = -9.999999
-offset_right = 321.93927
-offset_bottom = 846.0
-scale = Vector2(0.07176024, 0.07176024)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
-theme_override_font_sizes/font_size = 855
-text = "9"
-
 [node name="Label" type="Label" parent="9" unique_id=915647179]
 layout_mode = 0
-offset_left = 2.9834375
-offset_top = 49.723972
-offset_right = 1910.2925
-offset_bottom = 1394.724
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 9.944794
+offset_top = 54.69637
+offset_right = 2019.9448
+offset_bottom = 1667.6964
+scale = Vector2(0.020317579, 0.020317579)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -662,13 +555,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="9" unique_id=1800341498]
 layout_mode = 0
-offset_left = 0.9944792
-offset_top = 89.005905
-offset_right = 1972.9581
-offset_bottom = 1434.0059
-scale = Vector2(0.030762857, 0.030762857)
+offset_left = 6.464116
+offset_top = 94.47554
+offset_right = 2820.464
+offset_bottom = 1707.4756
+scale = Vector2(0.018196862, 0.018196862)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -676,12 +569,12 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="9" unique_id=852858090]
 layout_mode = 0
-offset_left = -0.9944794
+offset_left = 2.4861982
 offset_top = -15.911671
-offset_right = 130.77406
-offset_bottom = 12.088329
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("2_ul4ap")
+offset_right = 134.25473
+offset_bottom = 17.08833
+scale = Vector2(0.4421845, 0.4421845)
+theme_override_fonts/font = ExtResource("4_ourx0")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0

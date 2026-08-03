@@ -281,6 +281,10 @@ var mowl_abilities : bool = false
 func _ready() -> void:
 	for ability in ability_stock.values():
 		ability_options.append(ability)
+	ability_one = ability_stock.mowl_time
+	ability_two = ability_stock.active_bomb
+	ability_three = ability_stock.slow_mowl
+	active_bomb = true
 
 func _process(delta: float) -> void:
 	if ability_one == ability_stock.supa_flags:

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://0vjhpaedikvh"
-path="res://.godot/imported/Micro5-Regular.ttf-f476c43151afb24f2472bd60f68714c1.fontdata"
+uid="uid://bp3w8i3r8x5eg"
+path="res://.godot/imported/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf-20e6afa561ab943884bb23224309a7f5.fontdata"
 
 [deps]
 
-source_file="res://Misc/Micro5-Regular.ttf"
-dest_files=["res://.godot/imported/Micro5-Regular.ttf-f476c43151afb24f2472bd60f68714c1.fontdata"]
+source_file="res://Misc/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf"
+dest_files=["res://.godot/imported/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf-20e6afa561ab943884bb23224309a7f5.fontdata"]
 
 [params]
 

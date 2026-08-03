@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://ckn55dg3hm1pt" path="res://World/title_screen.gd" id="1_h4hme"]
 [ext_resource type="Texture2D" uid="uid://dqnx3g6e6hrhe" path="res://Sprites/LOGO.png" id="2_nm8xh"]
 [ext_resource type="Texture2D" uid="uid://ex6q0owr0qk4" path="res://Sprites/Button.png" id="3_hwc51"]
-[ext_resource type="FontFile" uid="uid://0vjhpaedikvh" path="res://Misc/Micro5-Regular.ttf" id="4_e01e3"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="4_nm8xh"]
+[ext_resource type="FontFile" uid="uid://bp3w8i3r8x5eg" path="res://Misc/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="5_nm8xh"]
 
 [node name="Title Screen" type="Node2D" unique_id=295365305]
 script = ExtResource("1_h4hme")
@@ -28,10 +28,12 @@ script = ExtResource("4_nm8xh")
 
 [node name="Label" type="Label" parent="TextureButton" unique_id=1346027928]
 layout_mode = 0
-offset_right = 1318.3711
-offset_bottom = 877.96094
-scale = Vector2(0.022706121, 0.022706121)
-theme_override_fonts/font = ExtResource("4_e01e3")
+offset_left = 1.881252
+offset_top = 3.1205502
+offset_right = 1585.8812
+offset_bottom = 881.0815
+scale = Vector2(0.016269865, 0.016269865)
+theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 528
 text = "Start"
 horizontal_alignment = 1

@@ -1,8 +1,6 @@
 extends Area2D
 
-@onready var bomb_tex = preload("res://Sprites/Bomb.png")
-@onready var normal_tex = preload("res://Sprites/Cell.png")
-@onready var flag_tex = preload("res://Sprites/Red Flag.png")
+@onready var anim = $AnimatedSprite2D
 
 var is_bomb : bool = false
 var bombs_around : int = 0
@@ -23,20 +21,21 @@ var point_bonus : int = 0
 var bombs_around_set : bool = false
 var scanned : bool = false
 var got_points : bool = false
+var dug_up : bool = false
 
 # Funtion to set the cell as a bomb
 func bomb():
 	is_bomb = true
-	$Sprite2D.texture = bomb_tex
 
 # Runs every frame
 func _process(delta: float) -> void:
 	# Mine Scanner
 	if scanned:
 		if is_bomb:
-			bomb_tex = flag_tex
 			flagged = true
 			is_hidden = true
+			if not dug_up:
+				dig()
 		else:
 			flagged = false
 			is_hidden = false
@@ -81,20 +80,18 @@ func _process(delta: float) -> void:
 	# Turns the cell into a basic cell with no special appearence if hidden
 	if is_hidden:
 		if flagged:
-			$Sprite2D.texture = flag_tex
-			$Sprite2D.scale = Vector2(0.001, 0.001)
-			var color_growth = create_tween()
-			color_growth.tween_property($Sprite2D, "scale", Vector2(1, 1), 0.5)
-			color_growth.play()
+			if not dug_up:
+				dig()
 		elif is_bomb and not flagged:
-			$Sprite2D.texture = normal_tex
+			anim.play("Cell")
 		else:
-			$Sprite2D.texture = normal_tex
+			if not dug_up:
+				anim.play("Cell")
 	
 	# Gives the cell its image and number if unhidden
 	if not is_hidden:
 		if is_bomb:
-			$Sprite2D.texture = bomb_tex
+			anim.play("Bomb")
 		
 		# Gives the cell the animation of the color filling in when unhidden
 		if acting_number == 1 and not bombs_around == 0:
@@ -313,3 +310,11 @@ func white_out():
 	var white_out_reverse = create_tween()
 	white_out_reverse.tween_property($Sprite2D2, "modulate:a", 0, 0.4)
 	white_out_reverse.play()
+
+func dig():
+	dug_up = true
+	if flag_type == "Red":
+		anim.play("Red Dig")
+	await anim.animation_finished
+	if flag_type == "Red":
+		anim.play("Red Idle")

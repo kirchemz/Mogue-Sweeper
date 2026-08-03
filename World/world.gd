@@ -30,7 +30,6 @@ var time_bonus : int = 0
 # Runs once as soon as the scene starts
 func _ready() -> void:
 	$Timer.wait_time = 60 * Levels.time_mult
-	print($Timer.wait_time)
 	
 	# Sets BG color
 	RenderingServer.set_default_clear_color(Color(0.561, 0.592, 0.29, 1.0))
@@ -127,7 +126,7 @@ func _process(delta: float) -> void:
 		$"Camera2D/Flag 11".position = Vector2(-446 + 16, 228)
 		$"Camera2D/Flag 12".position = Vector2(-446 + 16, -170)
 		$Camera2D/NinePatchRect.position = Vector2(-556, -297)
-		$Camera2D/Label.position = Vector2(-546, -310)
+		$Camera2D/Label.position = Vector2(-546, -288)
 		$"Camera2D/Main Menu".size.x = 70
 		$"Camera2D/Main Menu/Sprite2D".flip_h = true
 		$"Camera2D/Main Menu/Button".position = Vector2(70, 2)
@@ -156,7 +155,7 @@ func _process(delta: float) -> void:
 		$"Camera2D/Flag 11".position = Vector2(-430, 244)
 		$"Camera2D/Flag 12".position = Vector2(-342, 244)
 		$Camera2D/NinePatchRect.position = Vector2(-522, -280)
-		$Camera2D/Label.position = Vector2(-512, -295)
+		$Camera2D/Label.position = Vector2(-512, -273)
 		$"Camera2D/Main Menu".size.x = 140
 		$"Camera2D/Main Menu/Button".position = Vector2(140, 2)
 		$"Camera2D/Main Menu/Sprite2D".position = Vector2(148, 104)
@@ -209,6 +208,7 @@ func _process(delta: float) -> void:
 	
 	# Update clock
 	$Camera2D/Label.text = str($Timer.time_left)
+	$Camera2D/Label.visible_characters = 2
 	
 	# Zoom in and out
 	if Input.is_action_just_pressed("Zoom In") and $Camera2D.zoom < Vector2(2, 2):
@@ -268,58 +268,47 @@ func _process(delta: float) -> void:
 			if Levels.flags_active:
 				if Globals.red_flag_active:
 					target_cell.flag_type = "Red"
-					target_cell.flag_tex = preload("res://Sprites/Red Flag.png")
 				if Globals.blue_flag_active:
 					if Globals.blue_flags > 0:
 						target_cell.flag_type = "Blue"
-						target_cell.flag_tex = preload("res://Sprites/Blue Flag.png")
 						Globals.blue_flags -= 1
 					else:
 						Globals.activate_red()
 				if Globals.violet_flag_active:
 					target_cell.flag_type = "Purple"
-					target_cell.flag_tex = preload("res://Sprites/Purple Flag.png")
 					Globals.violet_flags -= 1
 				if Globals.pink_flag_active:
 					target_cell.flag_type = "Pink"
-					target_cell.flag_tex = preload("res://Sprites/Pink Flag.png")
 				if Globals.green_flag_active: 
 					target_cell.flag_type = "Green"
-					target_cell.flag_tex = preload("res://Sprites/Green Flag.png")
 				if Globals.yellow_flag_active:
 					if Globals.yellow_flags > 0:
 						Globals.mult += 1
 						if Abilities.mowl_flags_again:
 							Globals.mult += 1
 						target_cell.flag_type = "Yellow"
-						target_cell.flag_tex = preload("res://Sprites/Yellow Flag.png")
 						Globals.yellow_flags -= 1
 					else:
 						Globals.activate_red()
 				if Globals.orange_flag_active:
 					target_cell.flag_type = "Orange"
-					target_cell.flag_tex = preload("res://Sprites/Orange Flag.png")
 				if Globals.magenta_flag_active:
 					target_cell.flag_type = "Magenta"
-					target_cell.flag_tex = preload("res://Sprites/Magenta Flag.png")
 				if Globals.black_flag_active:
 					target_cell.flag_type = "Black"
-					target_cell.flag_tex = preload("res://Sprites/Black Flag.png")
 				if Globals.white_flag_active:
 					target_cell.flag_type = "White"
-					target_cell.flag_tex = preload("res://Sprites/White Flag.png")
 				if Globals.grey_flag_active:
 					target_cell.flag_type = "Grey"
-					target_cell.flag_tex = preload("res://Sprites/Grey Flag.png")
 				if Globals.brown_flag_active:
 					target_cell.flag_type = "Brown"
-					target_cell.flag_tex = preload("res://Sprites/Brown Flag.png")
 			target_cell.flagged = true
 			flags_remaining -= 1
 			if Abilities.auto_chord_active:
 				auto_chord(target_cell)
 			return
 		if target_cell.is_hidden and target_cell.flagged:
+			target_cell.dug_up = false
 			flags_remaining += 1
 			target_cell.flagged = false
 	
@@ -608,8 +597,7 @@ func _on_timer_timeout() -> void:
 		await get_tree().create_timer(2).timeout
 		var probabilities : Array = []
 		for one in Levels.probability_mult:
-			if probabilities.count("Explode") < Levels.probability_mult:
-				probabilities.append("Explode")
+			probabilities.append("Explode")
 		while probabilities.size() < 50:
 			probabilities.append("Nothing")
 		randomize()

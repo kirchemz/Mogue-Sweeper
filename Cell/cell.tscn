@@ -2,9 +2,74 @@
 
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
-[ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="2_oqa08"]
+[ext_resource type="Texture2D" uid="uid://bbkuxaubljcgg" path="res://Sprites/Bomb.png" id="3_f1fy1"]
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_pyb8k"]
+[ext_resource type="Texture2D" uid="uid://bua7c7tk66oq7" path="res://Sprites/Red Flag Dig.png" id="3_u2y83"]
 [ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/White Out Cell.png" id="4_wh31u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyb8k"]
+atlas = ExtResource("3_u2y83")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2y83"]
+atlas = ExtResource("3_u2y83")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1fy1"]
+atlas = ExtResource("3_u2y83")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pke3"]
+atlas = ExtResource("3_u2y83")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qwlb"]
+atlas = ExtResource("3_u2y83")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f1fy1")
+}],
+"loop": 1,
+"name": &"Bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_37gha")
+}],
+"loop": 1,
+"name": &"Cell",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyb8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2y83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1fy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pke3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qwlb")
+}],
+"loop": 0,
+"name": &"Red Dig",
+"speed": 2.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Red Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(32, 32)
@@ -12,8 +77,9 @@ size = Vector2(32, 32)
 [node name="Cell" type="Area2D" unique_id=1896603475]
 script = ExtResource("1_pf11k")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2090554630]
-texture = ExtResource("2_oqa08")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236159199]
+sprite_frames = SubResource("SpriteFrames_0rlat")
+animation = &"Red Dig"
 
 [node name="1" type="Sprite2D" parent="." unique_id=258815677]
 scale = Vector2(0.01, 0.01)
