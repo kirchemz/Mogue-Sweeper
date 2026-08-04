@@ -743,7 +743,7 @@ though you ain't a mowl."
 		return
 	if dialogue_section == 3:
 		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Dialogue Box/NinePatchRect/Label".text = "See ya waiter!"
+		$"Dialogue Box/NinePatchRect/Label".text = "See ya waita!"
 		dialogue_section += 1
 		return
 	if dialogue_section == 4:

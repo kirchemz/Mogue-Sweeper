@@ -125,14 +125,12 @@ func _process(delta: float) -> void:
 		$"Camera2D/Flag 10".position = Vector2(-537 + 16, 228)
 		$"Camera2D/Flag 11".position = Vector2(-446 + 16, 228)
 		$"Camera2D/Flag 12".position = Vector2(-446 + 16, -170)
-		$Camera2D/NinePatchRect.position = Vector2(-556, -297)
-		$Camera2D/Label.position = Vector2(-546, -288)
-		$"Camera2D/Main Menu".size.x = 70
-		$"Camera2D/Main Menu/Sprite2D".flip_h = true
-		$"Camera2D/Main Menu/Button".position = Vector2(70, 2)
-		$"Camera2D/Main Menu/Sprite2D".position = Vector2(79, 104)
+		$"Camera2D/Sprite2D".flip_h = true
+		$"Camera2D/Main Menu".position.x = -7211.0
+		$"Camera2D/Button".position = Vector2(-347, -366)
+		$"Camera2D/Sprite2D".position = Vector2(-324, -6)
 		$Camera2D/Area2D/CollisionShape2D.scale.x = 0.5
-		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-453, -0.5)
+		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3628, 210.5)
 	else:
 		$"Camera2D/Number Points".visible = true
 		$"Camera2D/Ability 1".visible = true
@@ -154,14 +152,12 @@ func _process(delta: float) -> void:
 		$"Camera2D/Flag 10".position = Vector2(-521, 244)
 		$"Camera2D/Flag 11".position = Vector2(-430, 244)
 		$"Camera2D/Flag 12".position = Vector2(-342, 244)
-		$Camera2D/NinePatchRect.position = Vector2(-522, -280)
-		$Camera2D/Label.position = Vector2(-512, -273)
-		$"Camera2D/Main Menu".size.x = 140
-		$"Camera2D/Main Menu/Button".position = Vector2(140, 2)
-		$"Camera2D/Main Menu/Sprite2D".position = Vector2(148, 104)
-		$"Camera2D/Main Menu/Sprite2D".flip_h = false
+		$"Camera2D/Main Menu".position.x = -7011.0
+		$"Camera2D/Button".position = Vector2(-149, -366)
+		$"Camera2D/Sprite2D".position = Vector2(-123, -6)
+		$"Camera2D/Sprite2D".flip_h = false
 		$Camera2D/Area2D/CollisionShape2D.scale.x = 1
-		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-331, -0.5)
+		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3530, 210.5)
 	
 	# Update other UI elements
 	$"Camera2D/Point Requirement".text = "Point Requirement: " + "
@@ -172,8 +168,8 @@ func _process(delta: float) -> void:
 	# Hide specific UI elements when the game ends
 	if level_over:
 		hide_menu = false
-		$"Camera2D/Main Menu/Button".visible = false
-		$"Camera2D/Main Menu/Sprite2D".visible = false
+		$"Camera2D/Button".visible = false
+		$"Camera2D/Sprite2D".visible = false
 		$Camera2D/Points.visible = true
 		$"Camera2D/Flag 1".visible = false
 		$"Camera2D/Flag 2".visible = false
@@ -211,11 +207,11 @@ func _process(delta: float) -> void:
 	$Camera2D/Label.visible_characters = 2
 	
 	# Zoom in and out
-	if Input.is_action_just_pressed("Zoom In") and $Camera2D.zoom < Vector2(2, 2):
+	if Input.is_action_just_pressed("Zoom In") and $Camera2D.zoom < Vector2(1, 1):
 		$Camera2D.zoom += Vector2(0.1, 0.1)
 		$Camera2D.scale -= Vector2(0.1, 0.1)
-		if snapped($Camera2D.zoom.x, 0.1) == 0.9:
-			$Camera2D.scale -= Vector2(0.025, 0.025)
+		if $Camera2D.zoom.x - 0.9 < 0.0000000000001:
+			$Camera2D.scale -= Vector2(0.03, 0.03)
 		if $Camera2D.zoom.x - 0.8 < 0.0000000000001:
 			$Camera2D.scale -= Vector2(0.0575, 0.0575)
 		if $Camera2D.zoom.x - 0.7 < 0.0000000000001:
@@ -224,14 +220,13 @@ func _process(delta: float) -> void:
 			$Camera2D.scale -= Vector2(0.08, 0.08)
 	if Input.is_action_just_pressed("Zoom Out") and $Camera2D.zoom > Vector2(0.5, 0.5):
 		$Camera2D.zoom -= Vector2(0.1, 0.1)
-		$Camera2D.scale += Vector2(0.1, 0.1)
-		if snapped($Camera2D.zoom.x, 0.1) == 0.8:
-			$Camera2D.scale += Vector2(0.025, 0.025)
-		if $Camera2D.zoom.x - 0.7 < 0.0000000000001:
+		if not $Camera2D.zoom.x - 0.8 < 0.0000000000001:
+			$Camera2D.scale += Vector2(0.01, 0.01)
+		if not $Camera2D.zoom.x - 0.7 < 0.0000000000001:
 			$Camera2D.scale += Vector2(0.0575, 0.0575)
-		if $Camera2D.zoom.x - 0.6 < 0.0000000000001:
+		if not $Camera2D.zoom.x - 0.6 < 0.0000000000001:
 			$Camera2D.scale += Vector2(0.055, 0.055)
-		if snapped($Camera2D.zoom.x, 0.1) == 0.5:
+		if not $Camera2D.zoom.x - 0.5 < 0.0000000000001:
 			$Camera2D.scale += Vector2(0.08, 0.08)
 	
 	# Setting up the cells and bombs
@@ -548,7 +543,6 @@ func point_count():
 	Globals.mult *= Abilities.three_mult
 	Globals.points *= Globals.point_mult
 	Globals.mult *= Abilities.special_flag_count + 1
-	Globals.currency += round(Globals.total_points * Levels.money_mult)
 	Globals.total_points = Globals.points * (Globals.mult)
 	if Abilities.high_scorer:
 		if not 1 in Abilities.numbers_used and not 2 in Abilities.numbers_used:

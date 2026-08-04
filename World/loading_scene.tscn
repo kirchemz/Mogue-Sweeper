@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dognjb73ne47s"]
+
+[ext_resource type="Script" uid="uid://bfny83dq7r8v0" path="res://World/loading_scene.gd" id="1_lhror"]
+[ext_resource type="Texture2D" uid="uid://cv63r5ragpmyx" path="res://Sprites/Loading.png" id="2_lhror"]
+
+[node name="Loading Scene" type="Node2D" unique_id=98209652]
+script = ExtResource("1_lhror")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=363370636]
+position = Vector2(593.99994, 264)
+scale = Vector2(3.9897897, 3.9897897)
+texture = ExtResource("2_lhror")

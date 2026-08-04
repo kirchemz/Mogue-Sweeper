@@ -1068,6 +1068,8 @@ text = "Hello I'm Mista Mowl! Welcome
 to da mowl shop! We  got some
 abilities you can buy that can
 help you in your travels."
+visible_characters = 0
+visible_ratio = 0.0
 
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

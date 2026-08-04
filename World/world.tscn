@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://6nk83vdjmefb" path="res://UI/number_points_ui.tscn" id="23_o6lw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
-size = Vector2(474, 633)
+size = Vector2(6858, 8993)
 
 [node name="World" type="Node2D" unique_id=1230266813]
 script = ExtResource("1_62w18")
@@ -36,40 +36,36 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
 position = Vector2(576, 324)
-zoom = Vector2(0.9, 0.9)
 
 [node name="Area2D" type="Area2D" parent="Camera2D" unique_id=798329352]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1794008072]
-position = Vector2(-338, -0.5)
+position = Vector2(-3530, 210.5)
 shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="Main Menu" type="NinePatchRect" parent="Camera2D" unique_id=2080969595]
 modulate = Color(0.427493, 0.42749307, 0.42749307, 1)
-offset_left = -568.0
-offset_top = -317.0
-offset_right = -427.62573
-offset_bottom = -105.60498
+offset_left = -7011.0
+offset_top = -4286.0
+offset_right = -4722.332
+offset_bottom = -1298.4617
 scale = Vector2(2.9991248, 2.9991248)
 texture = ExtResource("2_o6lw0")
 patch_margin_left = 3
 patch_margin_top = 5
 patch_margin_right = 3
 patch_margin_bottom = 5
-metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Camera2D/Main Menu" unique_id=39069645]
-layout_mode = 0
-offset_left = 139.70743
-offset_top = 2.0005836
-offset_right = 156.04552
-offset_bottom = 209.39442
+[node name="Button" type="Button" parent="Camera2D" unique_id=39069645]
+offset_left = -149.0
+offset_top = -366.0
+offset_right = -100.0
+offset_bottom = 350.0
 theme_override_fonts/font = ExtResource("6_o6lw0")
-metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Main Menu" unique_id=1486716039]
-position = Vector2(148.37662, 103.69692)
-scale = Vector2(0.844035, 0.844035)
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=1486716039]
+position = Vector2(-123, -6)
+scale = Vector2(2.5313663, 2.5313663)
 texture = ExtResource("3_xw5lg")
 
 [node name="Flag 1" type="TextureButton" parent="Camera2D" unique_id=864618710]
@@ -569,11 +565,11 @@ script = ExtResource("5_0lysu")
 
 [node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=634878893]
 layout_mode = 0
-offset_left = 20.0
-offset_top = -1.0000001
-offset_right = 405.0
-offset_bottom = 265.0
-scale = Vector2(0.062534004, 0.062534004)
+offset_left = 16.807556
+offset_top = -0.120098114
+offset_right = 652.80756
+offset_bottom = 318.8799
+scale = Vector2(0.049403228, 0.049403228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_o6lw0")
 theme_override_font_sizes/font_size = 265
@@ -702,9 +698,9 @@ one_shot = true
 
 [connection signal="mouse_entered" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_exited"]
-[connection signal="mouse_entered" from="Camera2D/Main Menu/Button" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Camera2D/Main Menu/Button" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Main Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Button" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 1" to="." method="_on_button_mouse_entered"]

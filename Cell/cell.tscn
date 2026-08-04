@@ -2,10 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
-[ext_resource type="Texture2D" uid="uid://bbkuxaubljcgg" path="res://Sprites/Bomb.png" id="3_f1fy1"]
+[ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="2_f1fy1"]
+[ext_resource type="Texture2D" uid="uid://c8y0x6xp005ps" path="res://Sprites/Ability Base.png" id="3_7pke3"]
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_pyb8k"]
 [ext_resource type="Texture2D" uid="uid://bua7c7tk66oq7" path="res://Sprites/Red Flag Dig.png" id="3_u2y83"]
 [ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/White Out Cell.png" id="4_wh31u"]
+[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="5_u2y83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2otml"]
+atlas = ExtResource("2_f1fy1")
+region = Rect2(0, 0, 32, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyb8k"]
 atlas = ExtResource("3_u2y83")
@@ -31,7 +40,7 @@ region = Rect2(128, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_f1fy1")
+"texture": SubResource("AtlasTexture_2otml")
 }],
 "loop": 1,
 "name": &"Bomb",
@@ -39,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_37gha")
+"texture": ExtResource("3_7pke3")
 }],
 "loop": 1,
 "name": &"Cell",
@@ -62,24 +71,27 @@ animations = [{
 "texture": SubResource("AtlasTexture_7qwlb")
 }],
 "loop": 0,
-"name": &"Red Dig",
+"name": &"Dig",
 "speed": 2.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u2y83")
+}],
 "loop": 1,
-"name": &"Red Idle",
+"name": &"Idle",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
-size = Vector2(32, 32)
 
 [node name="Cell" type="Area2D" unique_id=1896603475]
 script = ExtResource("1_pf11k")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656142916]
+shape = SubResource("RectangleShape2D_0rlat")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236159199]
 sprite_frames = SubResource("SpriteFrames_0rlat")
-animation = &"Red Dig"
+animation = &"Cell"
 
 [node name="1" type="Sprite2D" parent="." unique_id=258815677]
 scale = Vector2(0.01, 0.01)
@@ -109,9 +121,6 @@ texture = ExtResource("1_37gha")
 self_modulate = Color(0.8392157, 0.57254905, 0, 1)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("1_37gha")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656142916]
-shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=919471134]
 modulate = Color(1, 1, 1, 0)

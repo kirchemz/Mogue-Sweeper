@@ -312,3 +312,7 @@ func upgrade_nines():
 	var two_level_float : float = two_level
 	if two_level_float / 5 == round(two_level_float / 5):
 		twos_points.mult += 1
+
+
+func _process(delta: float) -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

@@ -1,6 +1,17 @@
 extends Area2D
 
 @onready var anim = $AnimatedSprite2D
+@onready var blue_mat = PaletteMaterial.new()
+@onready var violet_mat = PaletteMaterial.new()
+@onready var yellow_mat = PaletteMaterial.new()
+@onready var green_mat = PaletteMaterial.new()
+@onready var orange_mat = PaletteMaterial.new()
+@onready var black_mat = PaletteMaterial.new()
+@onready var white_mat = PaletteMaterial.new()
+@onready var grey_mat = PaletteMaterial.new()
+@onready var brown_mat = PaletteMaterial.new()
+@onready var magenta_mat = PaletteMaterial.new()
+@onready var pink_mat = PaletteMaterial.new()
 
 var is_bomb : bool = false
 var bombs_around : int = 0
@@ -26,6 +37,19 @@ var dug_up : bool = false
 # Funtion to set the cell as a bomb
 func bomb():
 	is_bomb = true
+
+func _ready() -> void:
+	blue_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	violet_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	green_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	magenta_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	orange_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	pink_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	yellow_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	black_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	white_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	grey_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	brown_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
 
 # Runs every frame
 func _process(delta: float) -> void:
@@ -244,6 +268,7 @@ func flagged_bombs_around():
 						if not acting_number in Abilities.numbers_used:
 							Abilities.numbers_used.append(acting_number)
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
+		Globals.currency += acting_number
 		if Abilities.mowl_flags:
 			if acting_number == 2:
 				Globals.blue_flags += 1
@@ -313,8 +338,8 @@ func white_out():
 
 func dig():
 	dug_up = true
-	if flag_type == "Red":
-		anim.play("Red Dig")
+	if flag_type == "Blue":
+		$AnimatedSprite2D.material = blue_mat
+	anim.play("Dig")
 	await anim.animation_finished
-	if flag_type == "Red":
-		anim.play("Red Idle")
+	anim.play("Idle")

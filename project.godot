@@ -21,15 +21,17 @@ config/icon="uid://dqnx3g6e6hrhe"
 Globals="*uid://cdxnn7k5uickl"
 Abilities="*uid://bejto0pb45xai"
 Levels="*uid://cxx01spdoybrq"
+Cursor="*uid://df8yncrjihd1k"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://bf3a52rehof0r"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/calcunow/plugin.cfg", "res://addons/project_statistics/plugin.cfg")
+enabled=PackedStringArray("res://addons/PaletteSwapShader/plugin.cfg", "res://addons/project_statistics/plugin.cfg")
 
 [input]
 
