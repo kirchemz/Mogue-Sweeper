@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="1_ul4ap"]
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_yyppd"]
 [ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="4_kugnm"]
-[ext_resource type="FontFile" uid="uid://bp3w8i3r8x5eg" path="res://Misc/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf" id="4_ourx0"]
+[ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_yyppd"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="5_i2g1e"]
 
 [node name="Number Points UI" type="Control" unique_id=463320316]
@@ -54,7 +54,7 @@ offset_right = 2018.9503
 offset_bottom = 1666.7019
 scale = Vector2(0.021496804, 0.021496804)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -68,7 +68,7 @@ offset_right = 2817.978
 offset_bottom = 1711.4535
 scale = Vector2(0.01938403, 0.01938403)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -82,7 +82,7 @@ offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.44435176, 0.44435176)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 value = 100.0
 
@@ -116,7 +116,7 @@ offset_right = 2020.9393
 offset_bottom = 1667.6964
 scale = Vector2(0.020416135, 0.020416135)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -130,7 +130,7 @@ offset_right = 2818.475
 offset_bottom = 1709.4645
 scale = Vector2(0.019298835, 0.019298835)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -143,7 +143,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.44382268, 0.44382268)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 80.0
 value = 80.0
@@ -178,7 +178,7 @@ offset_right = 2019.9448
 offset_bottom = 1666.7019
 scale = Vector2(0.021010851, 0.021010851)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -192,7 +192,7 @@ offset_right = 2817.978
 offset_bottom = 1708.9673
 scale = Vector2(0.019427646, 0.019427646)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -205,7 +205,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.44329727, 0.44329727)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 10.0
 value = 10.0
@@ -240,7 +240,7 @@ offset_right = 2019.9448
 offset_bottom = 1667.1991
 scale = Vector2(0.021000335, 0.021000335)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -254,7 +254,7 @@ offset_right = 2817.4807
 offset_bottom = 1708.47
 scale = Vector2(0.01965702, 0.01965702)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -267,7 +267,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.44276237, 0.44276237)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 5.0
 value = 5.0
@@ -302,7 +302,7 @@ offset_right = 2021.4365
 offset_bottom = 1670.1826
 scale = Vector2(0.019815577, 0.019815577)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -316,7 +316,7 @@ offset_right = 2818.9724
 offset_bottom = 1710.459
 scale = Vector2(0.019278128, 0.019278128)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -329,7 +329,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.444251, 0.444251)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -364,7 +364,7 @@ offset_right = 2021.4365
 offset_bottom = 1671.177
 scale = Vector2(0.019557199, 0.019557199)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -378,7 +378,7 @@ offset_right = 2817.978
 offset_bottom = 1707.9728
 scale = Vector2(0.019421505, 0.019421505)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -391,7 +391,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.4437739, 0.4437739)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -425,7 +425,7 @@ offset_right = 2021.9337
 offset_bottom = 1668.6908
 scale = Vector2(0.020923778, 0.020923778)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -439,7 +439,7 @@ offset_right = 2820.464
 offset_bottom = 1709.4645
 scale = Vector2(0.01837008, 0.01837008)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -452,7 +452,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.4432448, 0.4432448)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -486,7 +486,7 @@ offset_right = 2019.9448
 offset_bottom = 1669.6853
 scale = Vector2(0.020373302, 0.020373302)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -500,7 +500,7 @@ offset_right = 2820.464
 offset_bottom = 1707.9728
 scale = Vector2(0.017987961, 0.017987961)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -513,7 +513,7 @@ offset_top = -15.911671
 offset_right = 134.25475
 offset_bottom = 17.08833
 scale = Vector2(0.4427194, 0.4427194)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0
@@ -547,7 +547,7 @@ offset_right = 2019.9448
 offset_bottom = 1667.6964
 scale = Vector2(0.020317579, 0.020317579)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Mult:
 9999"
@@ -561,7 +561,7 @@ offset_right = 2820.464
 offset_bottom = 1707.4756
 scale = Vector2(0.018196862, 0.018196862)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 670
 text = "Points:
 9999"
@@ -574,7 +574,7 @@ offset_top = -15.911671
 offset_right = 134.25473
 offset_bottom = 17.08833
 scale = Vector2(0.4421845, 0.4421845)
-theme_override_fonts/font = ExtResource("4_ourx0")
+theme_override_fonts/font = ExtResource("4_yyppd")
 theme_override_font_sizes/font_size = 23
 max_value = 1.0
 value = 1.0

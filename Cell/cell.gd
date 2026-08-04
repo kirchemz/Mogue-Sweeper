@@ -40,16 +40,16 @@ func bomb():
 
 func _ready() -> void:
 	blue_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	violet_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	green_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	magenta_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	orange_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	pink_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	yellow_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	black_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	white_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	grey_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	brown_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
+	violet_mat.palette = preload("res://Sprites/Purple Flag Palette.png")
+	green_mat.palette = preload("res://Sprites/Green Flag Palette.png")
+	magenta_mat.palette = preload("res://Sprites/Magenta Flag Palette.png")
+	orange_mat.palette = preload("res://Sprites/Orange Flag Palette.png")
+	pink_mat.palette = preload("res://Sprites/Pink Flag Palette.png")
+	yellow_mat.palette = preload("res://Sprites/Yellow Flag Palette.png")
+	black_mat.palette = preload("res://Sprites/Black Flag Palette.png")
+	white_mat.palette = preload("res://Sprites/White Flag Palette.png")
+	grey_mat.palette = preload("res://Sprites/Grey Flag Palette.png")
+	brown_mat.palette = preload("res://Sprites/Brown Flag Palette.png")
 
 # Runs every frame
 func _process(delta: float) -> void:
@@ -340,6 +340,28 @@ func dig():
 	dug_up = true
 	if flag_type == "Blue":
 		$AnimatedSprite2D.material = blue_mat
+	if flag_type == "Purple":
+		$AnimatedSprite2D.material = violet_mat
+	if flag_type == "Orange":
+		$AnimatedSprite2D.material = orange_mat
+	if flag_type == "Green":
+		$AnimatedSprite2D.material = green_mat
+	if flag_type == "Magenta":
+		$AnimatedSprite2D.material = magenta_mat
+	if flag_type == "Pink":
+		$AnimatedSprite2D.material = pink_mat
+	if flag_type == "Yellow":
+		$AnimatedSprite2D.material = yellow_mat
+	if flag_type == "Green":
+		$AnimatedSprite2D.material = green_mat
+	if flag_type == "White":
+		$AnimatedSprite2D.material = white_mat
+	if flag_type == "Black":
+		$AnimatedSprite2D.material = black_mat
+	if flag_type == "Grey":
+		$AnimatedSprite2D.material = grey_mat
+	if flag_type == "Brown":
+		$AnimatedSprite2D.material = brown_mat
 	anim.play("Dig")
 	await anim.animation_finished
 	anim.play("Idle")

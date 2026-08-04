@@ -4,6 +4,7 @@ extends Node2D
 @onready var mine_scanner = preload("res://Placables/mine_scanner.tscn")
 @onready var explosion = preload("res://Misc/explosion.tscn")
 
+var cell_box = BoxContainer.new()
 var map : Array = []
 var map_width : int = 40
 var map_height : int = 40
@@ -54,8 +55,10 @@ func start_map():
 			var cell_instance = cell.instantiate()
 			cell_instance.global_position.y = y * 32
 			cell_instance.global_position.x = x * 32
-			$BoxContainer.add_child(cell_instance)
+			cell_box.add_child(cell_instance)
 			map[x][y] = cell_instance
+	add_child(cell_box)
+	move_child(cell_box, 0)
 	map_made = true
 
 # Camera panning

@@ -111,8 +111,8 @@ var ability_stock : Dictionary = {
 		"description" : "Every number acts like the number 1 greater than what it is currently acting as",
 		"type" : "MOWL"
 	},
-	"idk" : {
-		"name" : "idk",
+	"double_trouble" : {
+		"name" : "Double Trouble",
 		"price" : 100,
 		"img" : preload("res://Sprites/Even Numbers.png"),
 		"rarity" : 100,

@@ -207,7 +207,6 @@ func _process(delta: float) -> void:
 		extra_pack_opened = true
 	$"Ability 1".texture_normal = Abilities.ability_one.img
 	$"Ability 1/Label".text = Abilities.ability_one.name
-	$"Ability 1/Label".scale = $"Ability 1/Label".get_total_character_count() * (Vector2(0.002, 0.002) / ($"Ability 1/Label".get_total_character_count() / 9))
 	$"Ability 2".texture_normal = Abilities.ability_two.img
 	$"Ability 2/Label".text = Abilities.ability_two.name
 	$"Ability 3".texture_normal = Abilities.ability_three.img
