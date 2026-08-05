@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_yyppd"]
 [ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="4_kugnm"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_yyppd"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="5_i2g1e"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="5_i2g1e"]
 
 [node name="Number Points UI" type="Control" unique_id=463320316]
 layout_mode = 3

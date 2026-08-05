@@ -35,7 +35,7 @@ scale = Vector2(0.07029286, 0.06998523)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_rrkg4")
 theme_override_font_sizes/font_size = 596
-text = "Points Required 50"
+text = "Quota: 50"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1702463655]

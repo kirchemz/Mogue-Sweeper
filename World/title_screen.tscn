@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ckn55dg3hm1pt" path="res://World/title_screen.gd" id="1_h4hme"]
 [ext_resource type="Texture2D" uid="uid://dqnx3g6e6hrhe" path="res://Sprites/LOGO.png" id="2_nm8xh"]
 [ext_resource type="Texture2D" uid="uid://ex6q0owr0qk4" path="res://Sprites/Button.png" id="3_hwc51"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="4_nm8xh"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="4_nm8xh"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="5_nm8xh"]
 
 [node name="Title Screen" type="Node2D" unique_id=295365305]

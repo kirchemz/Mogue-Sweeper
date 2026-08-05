@@ -13,6 +13,9 @@ extends Area2D
 @onready var magenta_mat = PaletteMaterial.new()
 @onready var pink_mat = PaletteMaterial.new()
 
+var mowl_options : Array = ["Uncle Jimmy", "Cousin Daisy", "Cousin Derick", "Anckle Biter"]
+var chosen_mowl
+
 var is_bomb : bool = false
 var bombs_around : int = 0
 var acting_number : int = 0
@@ -37,6 +40,7 @@ var dug_up : bool = false
 # Funtion to set the cell as a bomb
 func bomb():
 	is_bomb = true
+	chosen_mowl = mowl_options[randi() % mowl_options.size()]
 
 func _ready() -> void:
 	blue_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
@@ -115,7 +119,7 @@ func _process(delta: float) -> void:
 	# Gives the cell its image and number if unhidden
 	if not is_hidden:
 		if is_bomb:
-			anim.play("Bomb")
+			anim.play(chosen_mowl)
 		
 		# Gives the cell the animation of the color filling in when unhidden
 		if acting_number == 1 and not bombs_around == 0:
@@ -224,6 +228,7 @@ func flag_around():
 func flagged_bombs_around():
 	var cell_instance = self
 	scanned = false
+	is_hidden = false
 	
 	var xc = -1
 	var yc = -1

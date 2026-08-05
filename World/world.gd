@@ -163,8 +163,8 @@ func _process(delta: float) -> void:
 		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3530, 210.5)
 	
 	# Update other UI elements
-	$"Camera2D/Point Requirement".text = "Point Requirement: " + "
-	" + str(Globals.level_requirement)
+	$"Camera2D/Point Requirement".text = "Quota: " + "
+	" + str(Globals.level_requirement) + " Supa Moneys"
 	$Camera2D/Mult.text = "Mult: " + "
 	" + str(Globals.mult)
 	

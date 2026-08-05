@@ -22,6 +22,11 @@ var extra_pack_opened : bool = false
 var extra_pack_option_chosen : bool = false
 var dialogue_section : int = 1
 var dialogue_open : bool = false
+var mowl_relatives : Array = ["Uncle Jimmy", "Cousin Daisy", "Cousin Derick", "Anckle Biter"]
+var mowl_relative : String
+var relative_dialogue_section : int = 1
+var relative_dialogue_open : bool = false
+var chosen_quest
 
 # All rocks available for packs
 var rock_stock : Dictionary = {
@@ -144,6 +149,11 @@ var flag_stock : Dictionary = {
 
 # Runs once as soon as the scene is played
 func _ready() -> void:
+	chosen_quest = Quests.choose_quest()
+	mowl_relative = mowl_relatives[randi() % mowl_relatives.size()]
+	$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
+	$AnimatedSprite2D2.play(mowl_relative)
+	
 	# Sets the background color
 	RenderingServer.set_default_clear_color(Color(0.475, 0.255, 0.0, 1.0))
 	
@@ -180,11 +190,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if dialogue_open:
-		if not $"Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
-			$"Dialogue Box/NinePatchRect/Label".visible_characters += 1
-			$"Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Talking")
+		if not $"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
+			$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters += 1
+			$"Mista Mowl Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Talking")
 		else:
-			$"Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Idle")
+			$"Mista Mowl Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Idle")
+	if relative_dialogue_open:
+		if not $"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
+			$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters += 1
+			if mowl_relative == "Cousin Derick":
+				$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Cousin Derick Talking")
+		else:
+			$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
 	if rock_pack_option_chosen:
 		var camera_drag = create_tween()
 		camera_drag.set_ease(Tween.EASE_IN_OUT)
@@ -725,28 +742,48 @@ func _on_extra_three_pressed() -> void:
 func _on_mista_mowl_pressed() -> void:
 	if dialogue_section == 1:
 		dialogue_open = true
-		$"Dialogue Box".visible = true
-		$"Dialogue Box/NinePatchRect/Label".text = "Hello I'm Mista Mowl! Welcome
+		$"Mista Mowl Dialogue Box".visible = true
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "Hello I'm Mista Mowl! Welcome
 to da mowl shop! We  got some
 abilities you can buy that can
 help you in your travels."
 		dialogue_section += 1
 		return
 	if dialogue_section == 2:
-		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Dialogue Box/NinePatchRect/Label".text = "You look like a supa sewious
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "You look like a supa sewious
 buisness man so I'm gonna let
 you buy mowl abilities even
 though you ain't a mowl."
 		dialogue_section += 1
 		return
 	if dialogue_section == 3:
-		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Dialogue Box/NinePatchRect/Label".text = "See ya waita!"
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "See ya waita!"
 		dialogue_section += 1
 		return
 	if dialogue_section == 4:
-		$"Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
 		dialogue_section = 1
 		dialogue_open = false
-		$"Dialogue Box".visible = false
+		$"Mista Mowl Dialogue Box".visible = false
+
+
+func _on_mowl_relative_pressed() -> void:
+	if relative_dialogue_section == 1:
+		relative_dialogue_open = true
+		$"Mowl Relative Dialogue Box".visible = true
+		$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "I'm " + mowl_relative + ". Could you do
+a favor fer me?"
+		relative_dialogue_section += 1
+		return
+	if relative_dialogue_section == 2:
+		$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = chosen_quest.description
+		relative_dialogue_section += 1
+		return
+	if relative_dialogue_section == 3:
+		$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		relative_dialogue_section = 1
+		relative_dialogue_open = false
+		$"Mowl Relative Dialogue Box".visible = false

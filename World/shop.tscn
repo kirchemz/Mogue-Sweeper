@@ -5,19 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="3_gqsku"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_x8l2j"]
 [ext_resource type="Texture2D" uid="uid://uqvvj487qu3k" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame01a.png" id="5_x8l2j"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://tex_button.gd" id="6_fi1uk"]
+[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="6_fi1uk"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="6_s7atx"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
-[ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://button.gd" id="10_8m5wk"]
+[ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="10_8m5wk"]
 [ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="11_d1iyv"]
 [ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
 [ext_resource type="Texture2D" uid="uid://dvgsdlkg3248o" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01a.png" id="13_nws7c"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
+[ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="15_0kkpg"]
 [ext_resource type="Texture2D" uid="uid://bfggduciqjkoa" path="res://Sprites/Mista_Mowl_Talking.png" id="15_2u4ug"]
 [ext_resource type="Texture2D" uid="uid://bko56ymvjeign" path="res://Sprites/Shop Desk.png" id="15_5yg78"]
+[ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="15_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://n74vlux0enov" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot03a.png" id="16_2u4ug"]
 [ext_resource type="Texture2D" uid="uid://c7g1bbx3mc14y" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="18_x8l2j"]
+[ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="20_x40hv"]
+[ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="21_jq0fv"]
+[ext_resource type="Texture2D" uid="uid://cntpcmmgjgjb7" path="res://Sprites/Cousin_Derick_Talking.png" id="23_0m3j8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
 atlas = ExtResource("14_5yg78")
@@ -31,6 +36,41 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atlk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_jq0fv")
+}],
+"loop": 1,
+"name": &"Anckle Biter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_x40hv")
+}],
+"loop": 1,
+"name": &"Cousin Daisy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_0kkpg")
+}],
+"loop": 1,
+"name": &"Cousin Derick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jq0fv")
+}],
+"loop": 1,
+"name": &"Uncle Jimmy",
 "speed": 5.0
 }]
 
@@ -79,6 +119,53 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Talking",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l6ll"]
+atlas = ExtResource("23_0m3j8")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m3j8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_jq0fv")
+}],
+"loop": 1,
+"name": &"Anckle Biter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_x40hv")
+}],
+"loop": 1,
+"name": &"Cousin Daisy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_0kkpg")
+}],
+"loop": 1,
+"name": &"Cousin Derick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l6ll")
+}],
+"loop": 1,
+"name": &"Cousin Derick Talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jq0fv")
+}],
+"loop": 1,
+"name": &"Uncle Jimmy",
 "speed": 5.0
 }]
 
@@ -989,6 +1076,15 @@ offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
 metadata/_edit_use_anchors_ = true
 
+[node name="Mowl Relative" type="Button" parent="." unique_id=1210683976]
+modulate = Color(1, 1, 1, 0)
+offset_left = 82.0
+offset_top = 353.0
+offset_right = 105.03845
+offset_bottom = 387.19998
+scale = Vector2(7.1472907, 7.1472907)
+metadata/_edit_use_anchors_ = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624735375]
 position = Vector2(965.16144, 460.82672)
 scale = Vector2(4.965473, 4.965473)
@@ -1000,7 +1096,18 @@ position = Vector2(967.16144, 501.8267)
 scale = Vector2(6.072592, 6.072592)
 texture = ExtResource("15_5yg78")
 
-[node name="Dialogue Box" type="NinePatchRect" parent="." unique_id=1204832429]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2028974315]
+position = Vector2(160.1615, 468)
+scale = Vector2(4.965473, 4.965473)
+sprite_frames = SubResource("SpriteFrames_atlk4")
+animation = &"Anckle Biter"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1278737492]
+position = Vector2(162.1615, 501.8267)
+scale = Vector2(6.072592, 6.072592)
+texture = ExtResource("15_5yg78")
+
+[node name="Mista Mowl Dialogue Box" type="NinePatchRect" parent="." unique_id=1204832429]
 visible = false
 offset_left = 56.0
 offset_top = 280.00003
@@ -1013,7 +1120,7 @@ patch_margin_top = 5
 patch_margin_right = 3
 patch_margin_bottom = 5
 
-[node name="NinePatchRect11" type="NinePatchRect" parent="Dialogue Box" unique_id=638563721]
+[node name="NinePatchRect11" type="NinePatchRect" parent="Mista Mowl Dialogue Box" unique_id=638563721]
 layout_mode = 0
 offset_left = 240.49522
 offset_top = 11.317408
@@ -1026,7 +1133,7 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="Mista Mowl" type="Button" parent="Dialogue Box/NinePatchRect11" unique_id=1872635111]
+[node name="Dialogue Button" type="Button" parent="Mista Mowl Dialogue Box/NinePatchRect11" unique_id=1872635111]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1.0264416
@@ -1035,14 +1142,14 @@ offset_right = 14.335474
 offset_bottom = 20.314857
 scale = Vector2(3.0721252, 2.1309643)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Dialogue Box/NinePatchRect11" unique_id=654250915]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Mista Mowl Dialogue Box/NinePatchRect11" unique_id=654250915]
 position = Vector2(21.42186, 22.672745)
 scale = Vector2(0.062723115, 0.062723115)
 sprite_frames = SubResource("SpriteFrames_5yg78")
 animation = &"Idle"
 autoplay = "Talking"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Dialogue Box" unique_id=2006988760]
+[node name="NinePatchRect" type="NinePatchRect" parent="Mista Mowl Dialogue Box" unique_id=2006988760]
 layout_mode = 0
 offset_left = 6.9162025
 offset_top = 7.230566
@@ -1055,7 +1162,7 @@ patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 4
 
-[node name="Label" type="Label" parent="Dialogue Box/NinePatchRect" unique_id=1737790297]
+[node name="Label" type="Label" parent="Mista Mowl Dialogue Box/NinePatchRect" unique_id=1737790297]
 layout_mode = 0
 offset_left = 11.241051
 offset_top = -0.28102684
@@ -1069,6 +1176,76 @@ text = "Hello I'm Mista Mowl! Welcome
 to da mowl shop! We  got some
 abilities you can buy that can
 help you in your travels."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Mowl Relative Dialogue Box" type="NinePatchRect" parent="." unique_id=1546830359]
+visible = false
+offset_left = 56.0
+offset_top = 280.00003
+offset_right = 382.00458
+offset_bottom = 381.2281
+scale = Vector2(3.1809366, 3.1809366)
+texture = ExtResource("11_d1iyv")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="Mowl Relative Dialogue Box" unique_id=1353193986]
+layout_mode = 0
+offset_left = 240.49522
+offset_top = 5.344327
+offset_right = 283.3389
+offset_bottom = 54.442966
+scale = Vector2(1.8376273, 1.8376273)
+texture = ExtResource("16_2u4ug")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Dialogue Button" type="Button" parent="Mowl Relative Dialogue Box/NinePatchRect11" unique_id=352515968]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0264416
+offset_top = 1.3686016
+offset_right = 14.335474
+offset_bottom = 22.482435
+scale = Vector2(3.0721252, 2.1309643)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Mowl Relative Dialogue Box/NinePatchRect11" unique_id=1552694297]
+position = Vector2(21.42186, 21.213352)
+scale = Vector2(1.0868931, 1.0868931)
+sprite_frames = SubResource("SpriteFrames_0m3j8")
+animation = &"Cousin Derick Talking"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Mowl Relative Dialogue Box" unique_id=1887620685]
+layout_mode = 0
+offset_left = 6.9162025
+offset_top = 7.230566
+offset_right = 212.06538
+offset_bottom = 85.355865
+scale = Vector2(1.11866, 1.11866)
+texture = ExtResource("18_x8l2j")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Mowl Relative Dialogue Box/NinePatchRect" unique_id=672047731]
+layout_mode = 0
+offset_left = 11.241051
+offset_top = -0.28102684
+offset_right = 2748.241
+offset_bottom = 740.719
+scale = Vector2(0.11219228, 0.11219228)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 152
+text = "If you clear a round 50 points
+within the quota in 3 rounds, I'll
+give you 500 Supa Moneys!"
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -1123,4 +1300,6 @@ visible_ratio = 0.0
 [connection signal="button_down" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_down"]
 [connection signal="button_up" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_up"]
 [connection signal="pressed" from="Mista Mowl" to="." method="_on_mista_mowl_pressed"]
-[connection signal="pressed" from="Dialogue Box/NinePatchRect11/Mista Mowl" to="." method="_on_mista_mowl_pressed"]
+[connection signal="pressed" from="Mowl Relative" to="." method="_on_mowl_relative_pressed"]
+[connection signal="pressed" from="Mista Mowl Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_mista_mowl_pressed"]
+[connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_mowl_relative_pressed"]

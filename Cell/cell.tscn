@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
+[ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="2_0g23a"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="2_f1fy1"]
 [ext_resource type="Texture2D" uid="uid://c8y0x6xp005ps" path="res://Sprites/Ability Base.png" id="3_7pke3"]
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_pyb8k"]
 [ext_resource type="Texture2D" uid="uid://bua7c7tk66oq7" path="res://Sprites/Red Flag Dig.png" id="3_u2y83"]
+[ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="4_2otml"]
 [ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/White Out Cell.png" id="4_wh31u"]
+[ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="5_0g23a"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="5_u2y83"]
+[ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="8_1sibk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(32, 32)
@@ -40,6 +44,14 @@ region = Rect2(128, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_0g23a")
+}],
+"loop": 1,
+"name": &"Anckle Biter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2otml")
 }],
 "loop": 1,
@@ -52,6 +64,22 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Cell",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2otml")
+}],
+"loop": 1,
+"name": &"Cousin Daisy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0g23a")
+}],
+"loop": 1,
+"name": &"Cousin Derick",
 "speed": 5.0
 }, {
 "frames": [{
@@ -81,6 +109,14 @@ animations = [{
 "loop": 1,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1sibk")
+}],
+"loop": 1,
+"name": &"Uncle Jimmy",
+"speed": 5.0
 }]
 
 [node name="Cell" type="Area2D" unique_id=1896603475]
@@ -91,7 +127,7 @@ shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236159199]
 sprite_frames = SubResource("SpriteFrames_0rlat")
-animation = &"Cell"
+animation = &"Anckle Biter"
 
 [node name="1" type="Sprite2D" parent="." unique_id=258815677]
 scale = Vector2(0.01, 0.01)
