@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://do2qf06fh3ukj"
+path="res://.godot/imported/Tales from the Vienna Woods.ogg-3d70b550b931c6fac9c890facaf2adbd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Cozy Tunes v1.5.4/Cozy Tunes - The Classics/Audio/ogg/Tracks/Tales from the Vienna Woods.ogg"
+dest_files=["res://.godot/imported/Tales from the Vienna Woods.ogg-3d70b550b931c6fac9c890facaf2adbd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

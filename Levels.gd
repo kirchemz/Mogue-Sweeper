@@ -1,5 +1,6 @@
 extends Node
 
+var first_load : bool = true
 var money_mult : float = 1.0
 var points_mult : float = 1.0
 var probability_mult : int = 10

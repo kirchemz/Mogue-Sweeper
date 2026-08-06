@@ -30,7 +30,9 @@ var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
-	$Timer.wait_time = 60 * Levels.time_mult
+	MusicPlayer.world()
+	
+	$Timer.wait_time = $Timer.wait_time * Levels.time_mult
 	
 	# Sets BG color
 	RenderingServer.set_default_clear_color(Color(0.561, 0.592, 0.29, 1.0))
@@ -71,6 +73,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		$"Camera2D/Pause Menu".show()
+		$Timer.paused = true
 	if Abilities.slow_mowl:
 		slow_mode()
 	if Abilities.fast_mowl:

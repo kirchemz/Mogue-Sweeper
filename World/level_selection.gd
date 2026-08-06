@@ -3,7 +3,9 @@ extends Node2D
 var level : Dictionary
 
 func _ready() -> void:
-	Levels.choose_level()
+	if not Levels.first_load or Levels.chosen_level == null:
+		Levels.choose_level()
+	Levels.first_load = false
 
 func _process(delta: float) -> void:
 	level = Levels.chosen_level

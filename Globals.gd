@@ -60,27 +60,27 @@ var currency : int = 500
 
 # All flag variables
 var red_flag_active: bool = true
-var blue_flags : int = 1000
+var blue_flags : int = 0
 var blue_flag_active : bool = false
-var violet_flags : int = 4
+var violet_flags : int = 0
 var violet_flag_active : bool = false
-var orange_flags : int = 4
+var orange_flags : int = 0
 var orange_flag_active : bool = false
-var green_flags : int = 4
+var green_flags : int = 0
 var green_flag_active : bool = false
-var black_flags : int = 4
+var black_flags : int = 0
 var black_flag_active : bool = false
-var white_flags : int = 4
+var white_flags : int = 0
 var white_flag_active : bool = false
 var grey_flags : int = 10000
 var grey_flag_active : bool = false
-var brown_flags : int = 4
+var brown_flags : int = 0
 var brown_flag_active : bool = false
-var yellow_flags : int = 4
+var yellow_flags : int = 0
 var yellow_flag_active : bool = false
-var pink_flags : int = 4
+var pink_flags : int = 0
 var pink_flag_active : bool = false
-var magenta_flags : int = 4
+var magenta_flags : int = 0
 var magenta_flag_active : bool = false
 
 # Funtions for activating one flag and disabling all others

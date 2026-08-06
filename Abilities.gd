@@ -27,7 +27,7 @@ var ability_stock : Dictionary = {
 		"name" : "SLow Mowl",
 		"price" : 100,
 		"img" : preload("res://Sprites/Snail.png"),
-		"rarity" : 100,
+		"rarity" : 10000000,
 		"description" : "Makes EVERYTHING go half as fast for 5 seconds",
 		"type" : "MOWL"
 	},
@@ -48,7 +48,7 @@ var ability_stock : Dictionary = {
 		"type" : "MOWL"
 	},
 	"the_mowl_the_merrier" : {
-		"name" : "The Mowl the Merrier",
+		"name" : "The Mowl the Marrier",
 		"price" : 100,
 		"img" : preload("res://Sprites/Number Upgrader.png"),
 		"rarity" : 100,
@@ -289,50 +289,6 @@ func _ready() -> void:
 		ability_options.append(ability)
 
 func _process(delta: float) -> void:
-	if ability_stock.auto_chord in current_abilities:
-		auto_chord = true
-	if ability_stock.auto_chord in current_abilities:
-		mowl_time = true
-	if ability_stock.auto_chord in current_abilities:
-		slow_mowl = true
-	if ability_stock.auto_chord in current_abilities:
-		fast_mowl = true
-	if ability_stock.auto_chord in current_abilities:
-		the_mowl_the_marrier = true
-	if ability_stock.auto_chord in current_abilities:
-		threes = true
-	if ability_stock.auto_chord in current_abilities:
-		one_two_three_four_five = true
-	if ability_stock.auto_chord in current_abilities:
-		mowl_flags = true
-	if ability_stock.auto_chord in current_abilities:
-		owl = true
-	if ability_stock.auto_chord in current_abilities:
-		greedy_mowl = true
-	if ability_stock.auto_chord in current_abilities:
-		mowl_abilities = true
-	if ability_stock.auto_chord in current_abilities:
-		supa_flags = true
-	if ability_stock.auto_chord in current_abilities:
-		mowl_flags_again = true
-	if ability_stock.auto_chord in current_abilities:
-		even_pi = true
-	if ability_stock.auto_chord in current_abilities:
-		low_scorer = true
-	if ability_stock.auto_chord in current_abilities:
-		high_scorer = true
-	if ability_stock.auto_chord in current_abilities:
-		first_try = true
-	if ability_stock.auto_chord in current_abilities:
-		mowl_cascade = true
-	if ability_stock.auto_chord in current_abilities:
-		double_odds = true
-	if ability_stock.auto_chord in current_abilities:
-		halved_odds = true
-	if ability_stock.auto_chord in current_abilities:
-		active_bomb = true
-	if ability_stock.auto_chord in current_abilities:
-		one_mowl = true
 	if set_abilities:
 		if not SaveLoad.data.ability1 == ability_one:
 			if not ability1_set:

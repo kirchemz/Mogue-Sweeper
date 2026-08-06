@@ -149,6 +149,8 @@ var flag_stock : Dictionary = {
 
 # Runs once as soon as the scene is played
 func _ready() -> void:
+	MusicPlayer.shop()
+	
 	chosen_quest = Quests.choose_quest()
 	mowl_relative = mowl_relatives[randi() % mowl_relatives.size()]
 	$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
@@ -743,6 +745,9 @@ func _on_extra_three_pressed() -> void:
 
 
 func _on_mista_mowl_pressed() -> void:
+	mista_mowl_diaglogue()
+
+func mista_mowl_diaglogue():
 	if dialogue_section == 1:
 		dialogue_open = true
 		$"Mista Mowl Dialogue Box".visible = true
@@ -771,8 +776,10 @@ though you ain't a mowl."
 		dialogue_open = false
 		$"Mista Mowl Dialogue Box".visible = false
 
-
 func _on_mowl_relative_pressed() -> void:
+	mowl_relative_dialogue()
+
+func mowl_relative_dialogue():
 	if relative_dialogue_section == 1:
 		relative_dialogue_open = true
 		$"Mowl Relative Dialogue Box".visible = true
@@ -790,3 +797,22 @@ a favor fer me?"
 		relative_dialogue_section = 1
 		relative_dialogue_open = false
 		$"Mowl Relative Dialogue Box".visible = false
+
+
+func _on_pause_pressed() -> void:
+	MusicPlayer.stream_paused = true
+
+
+func _on_play_pressed() -> void:
+	MusicPlayer.stream_paused = false
+
+
+func _on_next_pressed() -> void:
+	if MusicPlayer.shop_music.find(MusicPlayer.chosen_song) + 1 == MusicPlayer.shop_music.size():
+		MusicPlayer.chosen_song = MusicPlayer.shop_music[0]
+		MusicPlayer.stream = load(MusicPlayer.chosen_song)
+		MusicPlayer.play()
+	else:
+		MusicPlayer.chosen_song = MusicPlayer.shop_music[MusicPlayer.shop_music.find(MusicPlayer.chosen_song) + 1]
+		MusicPlayer.stream = load(MusicPlayer.chosen_song)
+		MusicPlayer.play()

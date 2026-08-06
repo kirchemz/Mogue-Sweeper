@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bngeg1x2ggjsy"]
+
+[ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="1_351bv"]
+[ext_resource type="Texture2D" uid="uid://n74vlux0enov" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot03a.png" id="2_85jfh"]
+[ext_resource type="Script" uid="uid://b8jf00r1khlao" path="res://UI/dialogue_box.gd" id="2_yo3x3"]
+[ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="4_a030g"]
+[ext_resource type="Texture2D" uid="uid://c7g1bbx3mc14y" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="4_f71wr"]
+[ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="5_2klrv"]
+[ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="5_d64qh"]
+[ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="6_25g6b"]
+[ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="7_akowh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yg78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a030g")
+}],
+"loop": 1,
+"name": &"Anckle Biter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d64qh")
+}],
+"loop": 1,
+"name": &"Cousin Daisy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_25g6b")
+}],
+"loop": 1,
+"name": &"Cousin Derick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_akowh")
+}],
+"loop": 1,
+"name": &"Uncle Jimmy",
+"speed": 5.0
+}]
+
+[node name="Dialogue Box" type="NinePatchRect" unique_id=1598202318]
+offset_left = 56.0
+offset_top = 280.00003
+offset_right = 382.00458
+offset_bottom = 381.2281
+scale = Vector2(3.1809366, 3.1809366)
+texture = ExtResource("1_351bv")
+patch_margin_left = 3
+patch_margin_top = 5
+patch_margin_right = 3
+patch_margin_bottom = 5
+script = ExtResource("2_yo3x3")
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="." unique_id=258344381]
+layout_mode = 0
+offset_left = 240.49522
+offset_top = 11.317408
+offset_right = 283.3389
+offset_bottom = 54.161087
+scale = Vector2(1.8376273, 1.8376273)
+texture = ExtResource("2_85jfh")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Dialogue Button" type="Button" parent="NinePatchRect11" unique_id=35673731]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0264416
+offset_top = 1.3686016
+offset_right = 14.335474
+offset_bottom = 20.314857
+scale = Vector2(3.0721252, 2.1309643)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="NinePatchRect11" unique_id=2029323142]
+position = Vector2(21.42186, 22.672745)
+scale = Vector2(0.062723115, 0.062723115)
+sprite_frames = SubResource("SpriteFrames_5yg78")
+animation = &"Cousin Daisy"
+autoplay = "Talking"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=76858943]
+layout_mode = 0
+offset_left = 6.9162025
+offset_top = 7.230566
+offset_right = 212.06538
+offset_bottom = 85.355865
+scale = Vector2(1.11866, 1.11866)
+texture = ExtResource("4_f71wr")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=723922740]
+layout_mode = 0
+offset_left = 11.241051
+offset_top = -0.28102684
+offset_right = 2748.241
+offset_bottom = 740.719
+scale = Vector2(0.11219228, 0.11219228)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_2klrv")
+theme_override_font_sizes/font_size = 152
+text = "Hello I'm Mista Mowl! Welcome
+to da mowl shop! We  got some
+abilities you can buy that can
+help you in your travels."
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="pressed" from="NinePatchRect11/Dialogue Button" to="." method="_on_mista_mowl_dialogue_button_pressed"]

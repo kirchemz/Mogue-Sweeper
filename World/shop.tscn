@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://uqvvj487qu3k" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame01a.png" id="5_x8l2j"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="6_fi1uk"]
 [ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="6_s7atx"]
+[ext_resource type="Texture2D" uid="uid://cef44ro30d4b4" path="res://Sprites/Music Player.png" id="6_vj47s"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
 [ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="10_8m5wk"]
@@ -266,6 +267,69 @@ theme_override_font_sizes/font_size = 635
 text = "Supa Money: 9999999"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Music Player Box" type="NinePatchRect" parent="." unique_id=1622030449]
+offset_left = 532.0
+offset_top = 203.0
+offset_right = 601.98047
+offset_bottom = 255.38028
+scale = Vector2(2.7873085, 2.7873085)
+texture = ExtResource("5_x8l2j")
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Music Player Box" unique_id=1738130363]
+position = Vector2(21.526144, 27.625217)
+texture = ExtResource("6_vj47s")
+
+[node name="Label" type="Label" parent="Music Player Box/Sprite2D" unique_id=852228476]
+offset_left = -9.686765
+offset_top = 6.099074
+offset_right = 1363.3132
+offset_bottom = 770.09906
+scale = Vector2(0.0139012635, 0.0139012635)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 712
+text = "Music"
+
+[node name="Pause" type="Button" parent="Music Player Box" unique_id=504103145]
+layout_mode = 0
+offset_left = 41.97598
+offset_top = 4.663998
+offset_right = 567.97595
+offset_bottom = 279.664
+scale = Vector2(0.040963903, 0.040963903)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 248
+text = "Pause"
+
+[node name="Play" type="Button" parent="Music Player Box" unique_id=294784674]
+layout_mode = 0
+offset_left = 41.97598
+offset_top = 19.014761
+offset_right = 567.97595
+offset_bottom = 294.01477
+scale = Vector2(0.040963903, 0.040963903)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 248
+text = "Play"
+
+[node name="Next" type="Button" parent="Music Player Box" unique_id=1630640571]
+layout_mode = 0
+offset_left = 41.97598
+offset_top = 33.006756
+offset_right = 567.97595
+offset_bottom = 308.00674
+scale = Vector2(0.040963903, 0.040963903)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 248
+text = "Next"
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=1832679023]
 offset_left = 323.0
@@ -1255,6 +1319,9 @@ visible_ratio = 0.0
 [node name="Pause Menu" parent="." unique_id=403710505 instance=ExtResource("24_7l6ll")]
 visible = false
 
+[connection signal="pressed" from="Music Player Box/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Music Player Box/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Music Player Box/Next" to="." method="_on_next_pressed"]
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
