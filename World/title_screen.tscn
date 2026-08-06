@@ -10,23 +10,25 @@
 script = ExtResource("1_h4hme")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2133820711]
-offset_left = 327.0
-offset_right = 812.0
-offset_bottom = 420.0
+offset_left = 350.0
+offset_top = -58.0
+offset_right = 835.0
+offset_bottom = 362.0
+scale = Vector2(0.7329173, 0.7329173)
 pivot_offset = Vector2(242.5, 210)
 texture = ExtResource("2_nm8xh")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=663108231]
-offset_left = 600.0
-offset_top = 510.0
-offset_right = 630.0
-offset_bottom = 530.0
-scale = Vector2(8.286854, 7.987634)
+[node name="Normal" type="TextureButton" parent="." unique_id=663108231]
+offset_left = 480.23242
+offset_top = 352.0
+offset_right = 510.23242
+offset_bottom = 372.0
+scale = Vector2(5.92456, 5.7106376)
 pivot_offset = Vector2(16, 6)
 texture_normal = ExtResource("3_hwc51")
 script = ExtResource("4_nm8xh")
 
-[node name="Label" type="Label" parent="TextureButton" unique_id=1346027928]
+[node name="Label" type="Label" parent="Normal" unique_id=1346027928]
 layout_mode = 0
 offset_left = 1.881252
 offset_top = 3.1205502
@@ -35,10 +37,88 @@ offset_bottom = 881.0815
 scale = Vector2(0.016269865, 0.016269865)
 theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 528
-text = "Start"
+text = "Normal"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
-[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Story" type="TextureButton" parent="." unique_id=416418073]
+offset_left = 688.2324
+offset_top = 352.0
+offset_right = 718.2324
+offset_bottom = 372.0
+scale = Vector2(5.92456, 5.7106376)
+pivot_offset = Vector2(16, 6)
+texture_normal = ExtResource("3_hwc51")
+script = ExtResource("4_nm8xh")
+
+[node name="Label" type="Label" parent="Story" unique_id=36442581]
+layout_mode = 0
+offset_left = 1.881252
+offset_top = 0.92175585
+offset_right = 1585.8812
+offset_bottom = 1137.9218
+scale = Vector2(0.016269865, 0.016269865)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 528
+text = "Story
+Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial" type="TextureButton" parent="." unique_id=1807301172]
+offset_left = 480.23245
+offset_top = 490.00003
+offset_right = 510.23245
+offset_bottom = 510.00003
+scale = Vector2(5.92456, 5.7106376)
+pivot_offset = Vector2(16, 6)
+texture_normal = ExtResource("3_hwc51")
+script = ExtResource("4_nm8xh")
+
+[node name="Label" type="Label" parent="Tutorial" unique_id=409139396]
+layout_mode = 0
+offset_left = 1.881252
+offset_top = 0.7466388
+offset_right = 1698.8812
+offset_bottom = 1137.7466
+scale = Vector2(0.015005635, 0.015005635)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 528
+text = "Employee
+Training"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="." unique_id=937200353]
+offset_left = 688.2324
+offset_top = 490.0
+offset_right = 718.2324
+offset_bottom = 510.0
+scale = Vector2(5.92456, 5.7106376)
+pivot_offset = Vector2(16, 6)
+texture_normal = ExtResource("3_hwc51")
+script = ExtResource("4_nm8xh")
+
+[node name="Label" type="Label" parent="Quit" unique_id=201946657]
+layout_mode = 0
+offset_left = 1.881252
+offset_top = 3.3733208
+offset_right = 1613.8812
+offset_bottom = 881.3342
+scale = Vector2(0.016269865, 0.016269865)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 528
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Normal" to="Normal" method="_on_button_down"]
+[connection signal="button_up" from="Normal" to="Normal" method="_on_button_up"]
+[connection signal="pressed" from="Normal" to="." method="_on_texture_button_pressed"]
+[connection signal="button_down" from="Story" to="Story" method="_on_button_down"]
+[connection signal="button_up" from="Story" to="Story" method="_on_button_up"]
+[connection signal="button_down" from="Tutorial" to="Tutorial" method="_on_button_down"]
+[connection signal="button_up" from="Tutorial" to="Tutorial" method="_on_button_up"]
+[connection signal="button_down" from="Quit" to="Quit" method="_on_button_down"]
+[connection signal="button_up" from="Quit" to="Quit" method="_on_button_up"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

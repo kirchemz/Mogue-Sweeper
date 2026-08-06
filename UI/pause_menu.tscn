@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dt25yw7ynr4uq"]
+
+[ext_resource type="Script" uid="uid://edujyr7u7bce" path="res://UI/pause_menu.gd" id="1_0b5ob"]
+[ext_resource type="Texture2D" uid="uid://c2jr0a60n165b" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01b.png" id="1_03fe5"]
+[ext_resource type="Texture2D" uid="uid://dvgsdlkg3248o" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01a.png" id="1_ltd3m"]
+[ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_jfm1e"]
+
+[node name="Pause Menu" type="Control" unique_id=403710505]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0b5ob")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1017030005]
+layout_mode = 0
+offset_right = 229.0451
+offset_bottom = 128.83786
+scale = Vector2(5.0295773, 5.0295773)
+texture = ExtResource("1_03fe5")
+patch_margin_left = 2
+patch_margin_top = 3
+patch_margin_right = 2
+patch_margin_bottom = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=167187286]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 9.0
+offset_right = 409.34723
+offset_bottom = 134.06021
+scale = Vector2(5.0295773, 5.0295773)
+texture = ExtResource("1_ltd3m")
+patch_margin_left = 2
+patch_margin_top = 3
+patch_margin_right = 2
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=293898142]
+layout_mode = 0
+offset_left = 22.268274
+offset_top = 0.59647167
+offset_right = 543.26825
+offset_bottom = 223.59647
+scale = Vector2(0.12363715, 0.12363715)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 207
+text = "PAUSED"
+
+[node name="Save and Quit" type="Button" parent="NinePatchRect" unique_id=720455684]
+layout_mode = 0
+offset_left = 6.9588346
+offset_top = 95.0378
+offset_right = 3372.95
+offset_bottom = 911.0378
+scale = Vector2(0.027998444, 0.027998444)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 754
+text = "Save & Quit"
+
+[node name="Continue" type="Button" parent="NinePatchRect" unique_id=1675256697]
+layout_mode = 0
+offset_left = 6.9588346
+offset_top = 30.221237
+offset_right = 3372.95
+offset_bottom = 846.22125
+scale = Vector2(0.027998444, 0.027998444)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 754
+text = "Continue"
+
+[node name="Settings" type="Button" parent="NinePatchRect" unique_id=1557225326]
+layout_mode = 0
+offset_left = 6.9588346
+offset_top = 61.83422
+offset_right = 3372.95
+offset_bottom = 877.8342
+scale = Vector2(0.027998444, 0.027998444)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 754
+text = "Settings"
+
+[connection signal="pressed" from="NinePatchRect/Save and Quit" to="." method="_on_save_and_quit_pressed"]
+[connection signal="pressed" from="NinePatchRect/Continue" to="." method="_on_continue_pressed"]

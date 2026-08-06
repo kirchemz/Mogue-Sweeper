@@ -189,6 +189,9 @@ func _ready() -> void:
 	extra_options.erase(extra_three)
 
 func _process(delta: float) -> void:
+	if not opening_pack:
+		if Input.is_action_just_pressed("Pause"):
+			$"Pause Menu".show()
 	if dialogue_open:
 		if not $"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
 			$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters += 1
@@ -295,8 +298,8 @@ func _on_ability_one_pressed() -> void:
 				Abilities.mowl_flags = true
 			if ability_one == Abilities.ability_stock.the_mowl_the_merrier:
 				Abilities.the_mowl_the_marrier = true
-			if ability_one == Abilities.ability_stock.lawn_mowler:
-				Abilities.lawn_mowler = true
+			if ability_one == Abilities.ability_stock.owl:
+				Abilities.owl = true
 			if ability_one == Abilities.ability_stock.greedy_mowl:
 				Abilities.greedy_mowl = true
 			if ability_one == Abilities.ability_stock.mowl_cascade:
@@ -359,8 +362,8 @@ func _on_ability_two_pressed() -> void:
 				Abilities.mowl_flags = true
 			if ability_two == Abilities.ability_stock.the_mowl_the_merrier:
 				Abilities.the_mowl_the_marrier = true
-			if ability_two == Abilities.ability_stock.lawn_mowler:
-				Abilities.lawn_mowler = true
+			if ability_two == Abilities.ability_stock.owl:
+				Abilities.owl = true
 			if ability_two == Abilities.ability_stock.greedy_mowl:
 				Abilities.greedy_mowl = true
 			if ability_two == Abilities.ability_stock.mowl_cascade:
@@ -425,8 +428,8 @@ func _on_ability_three_pressed() -> void:
 				Abilities.mowl_flags = true
 			if ability_three == Abilities.ability_stock.the_mowl_the_merrier:
 				Abilities.the_mowl_the_marrier = true
-			if ability_three == Abilities.ability_stock.lawn_mowler:
-				Abilities.lawn_mowler = true
+			if ability_three == Abilities.ability_stock.owl:
+				Abilities.owl = true
 			if ability_three == Abilities.ability_stock.greedy_mowl:
 				Abilities.greedy_mowl = true
 			if ability_three == Abilities.ability_stock.mowl_cascade:

@@ -1,5 +1,6 @@
 extends Node
 
+var current_quests : Array = []
 var quest_options : Array = []
 var quests : Dictionary = {
 	"12345" : {

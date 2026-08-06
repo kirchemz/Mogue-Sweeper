@@ -69,6 +69,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Pause"):
+		$"Camera2D/Pause Menu".show()
 	if Abilities.slow_mowl:
 		slow_mode()
 	if Abilities.fast_mowl:
@@ -240,7 +242,7 @@ func _process(delta: float) -> void:
 			if not cells_set:
 				set_cells()
 	# Mine Scanner Input
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Mine Scanner") and Abilities.lawn_mowler:
+	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Mine Scanner") and Abilities.owl:
 		mine_scanner_clicked = true
 		mine_scanner_placed = true
 	
@@ -389,7 +391,7 @@ func unhide_cells(cell_instance):
 
 # Mine Scanner
 func mine_scan(cell_instance):
-	var repeats = Abilities.lawn_mowler_level
+	var repeats = Abilities.owl_level
 	if cell_instance.unhide_neighbors:
 		return
 	cell_instance.unhide_neighbors = true
@@ -697,14 +699,14 @@ func _on_number_points_pressed() -> void:
 
 
 func _on_ability_1_button_down() -> void:
-	if Abilities.lawn_mowler:
+	if Abilities.owl:
 		if not mine_scanner_made:
 			mouse_over_menu = true
 			mine_scanner_clicked = true
 
 
 func _on_ability_1_button_up() -> void:
-	if Abilities.lawn_mowler:
+	if Abilities.owl:
 		mouse_over_menu = false
 		mine_scanner_placed = true
 

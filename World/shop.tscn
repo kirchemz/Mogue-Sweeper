@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="20_x40hv"]
 [ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="21_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://cntpcmmgjgjb7" path="res://Sprites/Cousin_Derick_Talking.png" id="23_0m3j8"]
+[ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_7l6ll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
 atlas = ExtResource("14_5yg78")
@@ -573,6 +574,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1173
 text = "CHOOSE A ROCK"
+horizontal_alignment = 1
 
 [node name="Rock One" type="TextureButton" parent="." unique_id=1647375030]
 offset_left = 1340.0518
@@ -687,6 +689,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1173
 text = "CHOOSE A FLAG"
+horizontal_alignment = 1
 
 [node name="Extra One" type="TextureButton" parent="." unique_id=1034222299]
 offset_left = -963.948
@@ -1248,6 +1251,9 @@ within the quota in 3 rounds, I'll
 give you 500 Supa Moneys!"
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="Pause Menu" parent="." unique_id=403710505 instance=ExtResource("24_7l6ll")]
+visible = false
 
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

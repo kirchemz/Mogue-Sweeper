@@ -55,8 +55,8 @@ var ability_stock : Dictionary = {
 		"description" : "Every 100 ones, 80 twos, 10 threes, 5 fours, or 1 five through 8 you get an upgrade for that number",
 		"type" : "MOWL"
 	},
-	"lawn_mowler" : {
-		"name" : "Lawn Mowler",
+	"owl" : {
+		"name" : "Owl",
 		"price" : 100,
 		"img" : preload("res://Sprites/Mine Scanner.png"),
 		"rarity" : 30,
@@ -251,8 +251,8 @@ var sixes_cleared : int = 0
 var sevens_cleared : int = 0
 var eights_cleared : int = 0
 var nines_cleared : int = 0
-var lawn_mowler : bool = false
-var lawn_mowler_level : int = 1
+var owl : bool = false
+var owl_level : int = 1
 var mine_lure : bool = false
 var greedy_mowl : bool = false
 var safe_start : bool = false
@@ -277,12 +277,79 @@ var threes : bool = false
 var three_mult : int = 1
 var one_two_three_four_five : bool = false
 var mowl_abilities : bool = false
+var set_abilities : bool = false
+var ability1_set : bool = false
+var ability2_set : bool = false
+var ability3_set : bool = false
+var ability4_set : bool = false
+var ability5_set : bool = false
 
 func _ready() -> void:
 	for ability in ability_stock.values():
 		ability_options.append(ability)
 
 func _process(delta: float) -> void:
+	if ability_stock.auto_chord in current_abilities:
+		auto_chord = true
+	if ability_stock.auto_chord in current_abilities:
+		mowl_time = true
+	if ability_stock.auto_chord in current_abilities:
+		slow_mowl = true
+	if ability_stock.auto_chord in current_abilities:
+		fast_mowl = true
+	if ability_stock.auto_chord in current_abilities:
+		the_mowl_the_marrier = true
+	if ability_stock.auto_chord in current_abilities:
+		threes = true
+	if ability_stock.auto_chord in current_abilities:
+		one_two_three_four_five = true
+	if ability_stock.auto_chord in current_abilities:
+		mowl_flags = true
+	if ability_stock.auto_chord in current_abilities:
+		owl = true
+	if ability_stock.auto_chord in current_abilities:
+		greedy_mowl = true
+	if ability_stock.auto_chord in current_abilities:
+		mowl_abilities = true
+	if ability_stock.auto_chord in current_abilities:
+		supa_flags = true
+	if ability_stock.auto_chord in current_abilities:
+		mowl_flags_again = true
+	if ability_stock.auto_chord in current_abilities:
+		even_pi = true
+	if ability_stock.auto_chord in current_abilities:
+		low_scorer = true
+	if ability_stock.auto_chord in current_abilities:
+		high_scorer = true
+	if ability_stock.auto_chord in current_abilities:
+		first_try = true
+	if ability_stock.auto_chord in current_abilities:
+		mowl_cascade = true
+	if ability_stock.auto_chord in current_abilities:
+		double_odds = true
+	if ability_stock.auto_chord in current_abilities:
+		halved_odds = true
+	if ability_stock.auto_chord in current_abilities:
+		active_bomb = true
+	if ability_stock.auto_chord in current_abilities:
+		one_mowl = true
+	if set_abilities:
+		if not SaveLoad.data.ability1 == ability_one:
+			if not ability1_set:
+				ability1_set = true
+				ability_one = SaveLoad.data.ability1
+			if not ability2_set:
+				ability2_set = true
+				ability_two = SaveLoad.data.ability2
+			if not ability3_set:
+				ability3_set = true
+				ability_three = SaveLoad.data.ability3
+			if not ability4_set:
+				ability4_set = true
+				ability_four = SaveLoad.data.ability4
+			if not ability5_set:
+				ability5_set = true
+				ability_five = SaveLoad.data.ability5
 	if ability_one == ability_stock.supa_flags:
 		current_abilities = [ability_stock.supa_flags]
 		ability_two = empty_ability_two
