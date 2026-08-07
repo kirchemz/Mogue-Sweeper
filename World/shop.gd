@@ -27,8 +27,13 @@ var mowl_relative : String
 var relative_dialogue_section : int = 1
 var relative_dialogue_open : bool = false
 var chosen_quest
-
-var derick_noises : Array = []
+var quest_1_completed : bool = false
+var quest_2_completed : bool = false
+var quest_3_completed : bool = false
+var completed_quest_1 : Dictionary
+var completed_quest_2 : Dictionary
+var completed_quest_3 : Dictionary
+var talked_to_mowl : bool = false
 
 # All rocks available for packs
 var rock_stock : Dictionary = {
@@ -153,10 +158,32 @@ var flag_stock : Dictionary = {
 func _ready() -> void:
 	MusicPlayer.shop()
 	
+	var completed_quests : int = 0
+	for quest in Quests.current_quests:
+		if quest.completed:
+			completed_quests += 1
+			if completed_quests == 1:
+				$"Quest Giver".show()
+				$AnimatedSprite2D3.show()
+				$Sprite2D3.show()
+				$AnimatedSprite2D3.play(quest.giver)
+				completed_quest_1 = quest
+			if completed_quests == 2:
+				$"Quest Giver2".show()
+				$AnimatedSprite2D4.show()
+				$Sprite2D4.show()
+				$AnimatedSprite2D4.play(quest.giver)
+				completed_quest_2 = quest
+			if completed_quests == 3:
+				$"Quest Giver3".show()
+				$AnimatedSprite2D5.show()
+				$Sprite2D5.show()
+				$AnimatedSprite2D5.play(quest.giver)
+				completed_quest_3 = quest
+	
 	chosen_quest = Quests.choose_quest()
 	Quests.quest_options.erase(chosen_quest)
 	mowl_relative = mowl_relatives[randi() % mowl_relatives.size()]
-	$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
 	$AnimatedSprite2D2.play(mowl_relative)
 	
 	# Sets the background color
@@ -194,6 +221,11 @@ func _ready() -> void:
 	extra_options.erase(extra_three)
 
 func _process(delta: float) -> void:
+	if Globals.level_requirement == 50:
+		if not talked_to_mowl:
+			$NinePatchRect6.show()
+		else:
+			$NinePatchRect6.hide()
 	if Quests.current_quests.size() > 0:
 		$"Quest Board/Quest 1".text = Quests.current_quests[0].quest_board_description
 		$"Quest Board/Quest 1 Details".text = "Reward: "  + str(Quests.current_quests[0].reward) + "    Time: " + str(Quests.current_quests[0].time) + " Rounds"
@@ -215,10 +247,6 @@ func _process(delta: float) -> void:
 	if relative_dialogue_open:
 		if not $"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
 			$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters += 1
-			if mowl_relative == "Cousin Derick":
-				$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play("Cousin Derick Talking")
-		else:
-			$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
 	if rock_pack_option_chosen:
 		var camera_drag = create_tween()
 		camera_drag.set_ease(Tween.EASE_IN_OUT)
@@ -758,6 +786,7 @@ func _on_extra_three_pressed() -> void:
 
 func _on_mista_mowl_pressed() -> void:
 	mista_mowl_diaglogue()
+	talked_to_mowl = true
 
 func mista_mowl_diaglogue():
 	if dialogue_section == 1:
@@ -790,8 +819,12 @@ though you ain't a mowl."
 
 func _on_mowl_relative_pressed() -> void:
 	mowl_relative_dialogue()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".hide()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".hide()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".hide()
 
 func mowl_relative_dialogue():
+	$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
 	if mowl_relative == "Cousin Derick":
 		if Quests.derick_quest_given:
 			if relative_dialogue_section == 1:
@@ -809,6 +842,10 @@ promised you."
 				$"Mowl Relative Dialogue Box".visible = false
 				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
 				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+				return
 	if mowl_relative == "Cousin Daisy":
 		if Quests.daisy_quest_given:
 			if relative_dialogue_section == 1:
@@ -826,6 +863,10 @@ promised you."
 				$"Mowl Relative Dialogue Box".visible = false
 				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
 				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+				return
 	if mowl_relative == "Uncle Jimmy":
 		if Quests.jimmy_quest_given:
 			if relative_dialogue_section == 1:
@@ -843,8 +884,56 @@ promised you."
 				$"Mowl Relative Dialogue Box".visible = false
 				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
 				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+				return
+	if mowl_relative == "Anckle Biter":
+		if Quests.anckle_quest_given:
+			if relative_dialogue_section == 1:
+				relative_dialogue_open = true
+				$"Mowl Relative Dialogue Box".visible = true
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Come back when you've finished
+and I'll give you yer money I
+promised you."
+				relative_dialogue_section += 1
+				return
+			if relative_dialogue_section == 2:
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+				relative_dialogue_section = 1
+				relative_dialogue_open = false
+				$"Mowl Relative Dialogue Box".visible = false
+				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+				$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+				return
+	if Quests.current_quests.size() == 3:
+		if relative_dialogue_section == 1:
+			relative_dialogue_open = true
+			$"Mowl Relative Dialogue Box".visible = true
+			$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Looks like you already got a few
+quests. Come back when you
+the time."
+			relative_dialogue_section += 1
+			return
+		if relative_dialogue_section == 2:
+			$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			relative_dialogue_section = 1
+			relative_dialogue_open = false
+			$"Mowl Relative Dialogue Box".visible = false
+			$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+			$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+			$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+			$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+			$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+		return
 	if mowl_relative == "Cousin Derick":
 		if Quests.derick_quest_given:
+			return
+	if mowl_relative == "Anckle Biter":
+		if Quests.anckle_quest_given:
 			return
 	if mowl_relative == "Cousin Daisy":
 		if Quests.daisy_quest_given:
@@ -903,14 +992,29 @@ func _on_yes_pressed() -> void:
 	if mowl_relative == "Uncle Jimmy":
 		chosen_quest.giver = "Uncle Jimmy"
 		Quests.jimmy_quest_given = true
-		mowl_relatives.erase("Cousin Jimmy")
+		mowl_relatives.erase("Uncle Jimmy")
+	if mowl_relative == "Anckle Biter":
+		chosen_quest.giver = "Anckle Biter"
+		Quests.anckle_quest_given = true
+		mowl_relatives.erase("Anckle Biter")
 	Quests.current_quests.append(chosen_quest)
+	if chosen_quest == Quests.quests.one_through_five:
+		Quests.one_through_five = true
+	if chosen_quest == Quests.quests.one_thousand_dollas:
+		Quests.one_thousand_dollas = true
+	if chosen_quest == Quests.quests.no_abilities:
+		Quests.no_abilities = true
+	if chosen_quest == Quests.quests.fifty_quota:
+		Quests.fifty_quota = true
 	$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
 	relative_dialogue_section = 1
 	relative_dialogue_open = false
 	$"Mowl Relative Dialogue Box".visible = false
 	$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
 	$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
 
 
 func _on_no_pressed() -> void:
@@ -920,3 +1024,40 @@ func _on_no_pressed() -> void:
 	$"Mowl Relative Dialogue Box".visible = false
 	$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
 	$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+	$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+
+
+func _on_quest_giver_pressed() -> void:
+	if not quest_1_completed:
+		$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1".show()
+		$"Mowl Relative Dialogue Box/NinePatchRect11/Dialogue Button".hide()
+		$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".hide()
+		$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".hide()
+		$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(completed_quest_1.giver)
+		if relative_dialogue_section == 1:
+			relative_dialogue_open = true
+			$"Mowl Relative Dialogue Box".visible = true
+			$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Thanks for doin' that for me!
+Here's your money."
+			relative_dialogue_section += 1
+			return
+		if relative_dialogue_section == 2:
+			Globals.currency += completed_quest_1.reward
+			$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			relative_dialogue_section = 1
+			relative_dialogue_open = false
+			$"Mowl Relative Dialogue Box".visible = false
+			$"Mowl Relative Dialogue Box/NinePatchRect11/Dialogue Button".show()
+			$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 2".show()
+			$"Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 3".show()
+			Quests.current_quests.erase(completed_quest_1)
+			quest_1_completed = true
+			return
+
+func _on_quest_giver_2_pressed() -> void:
+	Globals.currency += completed_quest_2.reward
+
+func _on_quest_giver_3_pressed() -> void:
+	Globals.currency += completed_quest_3.reward

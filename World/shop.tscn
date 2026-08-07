@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
 [ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="10_8m5wk"]
 [ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
-[ext_resource type="Texture2D" uid="uid://dvgsdlkg3248o" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01a.png" id="13_nws7c"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
 [ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="15_0kkpg"]
 [ext_resource type="Texture2D" uid="uid://bfggduciqjkoa" path="res://Sprites/Mista_Mowl_Talking.png" id="15_2u4ug"]
@@ -184,13 +183,6 @@ offset_right = 2304.0
 offset_bottom = 648.0
 texture = ExtResource("9_ty2y0")
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=895600081]
-visible = false
-offset_left = 1152.0
-offset_right = 2304.0
-offset_bottom = 648.0
-texture = ExtResource("9_ty2y0")
 
 [node name="NinePatchRect8" type="NinePatchRect" parent="." unique_id=714572192]
 offset_left = 58.0
@@ -469,7 +461,7 @@ patch_margin_bottom = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.021641895
-anchor_top = 0.45401835
+anchor_top = 0.45401782
 anchor_right = 84.19854
 anchor_bottom = 0.45401782
 offset_left = 7.230571
@@ -518,7 +510,7 @@ patch_margin_bottom = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.021641895
-anchor_top = 0.7227596
+anchor_top = 0.72275925
 anchor_right = 84.19854
 anchor_bottom = 0.72275925
 offset_left = 7.230571
@@ -1261,58 +1253,6 @@ theme_override_font_sizes/font_size = 861
 text = "OPEN"
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect6" type="NinePatchRect" parent="." unique_id=850184005]
-visible = false
-offset_left = 722.0
-offset_top = 268.0
-offset_right = 819.66675
-offset_bottom = 305.20636
-scale = Vector2(2.3651862, 2.3651862)
-texture = ExtResource("13_nws7c")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="Label" type="Label" parent="NinePatchRect6" unique_id=1935252331]
-layout_mode = 0
-offset_left = 2.1139984
-offset_right = 7492.114
-offset_bottom = 801.0
-scale = Vector2(0.022120446, 0.022120446)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_x8l2j")
-theme_override_font_sizes/font_size = 800
-text = "Chose 1 of 3
-flags to get 5 of"
-
-[node name="NinePatchRect7" type="NinePatchRect" parent="." unique_id=743055607]
-visible = false
-offset_left = 334.0
-offset_top = 229.0
-offset_right = 463.37668
-offset_bottom = 285.23236
-scale = Vector2(2.3651862, 2.3651862)
-texture = ExtResource("13_nws7c")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="Label" type="Label" parent="NinePatchRect7" unique_id=672257532]
-layout_mode = 0
-offset_left = 3.3823848
-offset_right = 5530.3823
-offset_bottom = 2409.0
-scale = Vector2(0.022120446, 0.022120446)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_x8l2j")
-theme_override_font_sizes/font_size = 800
-text = "Chose 1 rock or gem
-to upgrade a numbers
-point bonus"
-horizontal_alignment = 1
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1725712666]
 position = Vector2(576, 332)
 scale = Vector2(0.588139, 0.588139)
@@ -1335,25 +1275,119 @@ offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect6" type="NinePatchRect" parent="." unique_id=2113621004]
+visible = false
+offset_left = 878.0
+offset_top = 355.0
+offset_right = 918.0
+offset_bottom = 395.0
+scale = Vector2(1.9629337, 1.9629337)
+texture = ExtResource("25_7vwke")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="NinePatchRect6" unique_id=2089533932]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -9.0
+offset_right = 131.0
+offset_bottom = 750.0
+scale = Vector2(0.07779585, 0.07779585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 707
+text = "!"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624735375]
-position = Vector2(965.16144, 460.82672)
+position = Vector2(991.16144, 460.82672)
 scale = Vector2(4.965473, 4.965473)
 sprite_frames = SubResource("SpriteFrames_0rlat")
 animation = &"Idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1354400583]
-position = Vector2(967.16144, 501.8267)
+position = Vector2(993.16144, 501.8267)
 scale = Vector2(6.072592, 6.072592)
 texture = ExtResource("15_5yg78")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2028974315]
-position = Vector2(160.1615, 468)
+position = Vector2(148.16147, 468)
 scale = Vector2(4.965473, 4.965473)
 sprite_frames = SubResource("SpriteFrames_atlk4")
 animation = &"Anckle Biter"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1278737492]
-position = Vector2(162.1615, 501.8267)
+position = Vector2(150.16147, 501.8267)
+scale = Vector2(6.072592, 6.072592)
+texture = ExtResource("15_5yg78")
+
+[node name="Quest Giver" type="Button" parent="." unique_id=1804844671]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 492.99997
+offset_top = 353.0
+offset_right = 516.03845
+offset_bottom = 387.19998
+scale = Vector2(7.1472907, 7.1472907)
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest Giver2" type="Button" parent="." unique_id=1940871122]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 281.0
+offset_top = 353.0
+offset_right = 304.03848
+offset_bottom = 387.19998
+scale = Vector2(7.1472907, 7.1472907)
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest Giver3" type="Button" parent="." unique_id=1890498167]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 702.0
+offset_top = 353.0
+offset_right = 725.03845
+offset_bottom = 387.19998
+scale = Vector2(7.1472907, 7.1472907)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=664182000]
+visible = false
+position = Vector2(571.16144, 468)
+scale = Vector2(4.965473, 4.965473)
+sprite_frames = SubResource("SpriteFrames_atlk4")
+animation = &"Anckle Biter"
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=2093882771]
+visible = false
+position = Vector2(573.16144, 501.8267)
+scale = Vector2(6.072592, 6.072592)
+texture = ExtResource("15_5yg78")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=58182034]
+visible = false
+position = Vector2(360.1615, 468)
+scale = Vector2(4.965473, 4.965473)
+sprite_frames = SubResource("SpriteFrames_atlk4")
+animation = &"Anckle Biter"
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=892707630]
+visible = false
+position = Vector2(362.1615, 501.8267)
+scale = Vector2(6.072592, 6.072592)
+texture = ExtResource("15_5yg78")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=2002752799]
+visible = false
+position = Vector2(779.16144, 468)
+scale = Vector2(4.965473, 4.965473)
+sprite_frames = SubResource("SpriteFrames_atlk4")
+animation = &"Anckle Biter"
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=876693356]
+visible = false
+position = Vector2(781.16144, 501.8267)
 scale = Vector2(6.072592, 6.072592)
 texture = ExtResource("15_5yg78")
 
@@ -1464,6 +1498,33 @@ offset_right = 14.335474
 offset_bottom = 22.482435
 scale = Vector2(3.0721252, 2.1309643)
 
+[node name="Quest Giver 1" type="Button" parent="Mowl Relative Dialogue Box/NinePatchRect11" unique_id=1499591467]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0264416
+offset_top = 1.3686016
+offset_right = 14.335474
+offset_bottom = 22.482435
+scale = Vector2(3.0721252, 2.1309643)
+
+[node name="Quest Giver 2" type="Button" parent="Mowl Relative Dialogue Box/NinePatchRect11" unique_id=805088454]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0264416
+offset_top = 1.3686016
+offset_right = 14.335474
+offset_bottom = 22.482435
+scale = Vector2(3.0721252, 2.1309643)
+
+[node name="Quest Giver 3" type="Button" parent="Mowl Relative Dialogue Box/NinePatchRect11" unique_id=337192669]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0264416
+offset_top = 1.3686016
+offset_right = 14.335474
+offset_bottom = 22.482435
+scale = Vector2(3.0721252, 2.1309643)
+
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Mowl Relative Dialogue Box/NinePatchRect11" unique_id=1552694297]
 position = Vector2(21.42186, 21.213352)
 scale = Vector2(1.0868931, 1.0868931)
@@ -1493,9 +1554,8 @@ scale = Vector2(0.11219228, 0.11219228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 152
-text = "Come back when you've finished
-and I'll give you yer money I
-promised you."
+text = "Thanks for doin' that for me!
+Here's your money."
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -1610,8 +1670,12 @@ visible = false
 [connection signal="button_up" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_up"]
 [connection signal="pressed" from="Mista Mowl" to="." method="_on_mista_mowl_pressed"]
 [connection signal="pressed" from="Mowl Relative" to="." method="_on_mowl_relative_pressed"]
+[connection signal="pressed" from="Quest Giver" to="." method="_on_quest_giver_pressed"]
+[connection signal="pressed" from="Quest Giver2" to="." method="_on_quest_giver_2_pressed"]
+[connection signal="pressed" from="Quest Giver3" to="." method="_on_quest_giver_3_pressed"]
 [connection signal="pressed" from="Mista Mowl Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_mista_mowl_pressed"]
 [connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_mowl_relative_pressed"]
+[connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect11/Quest Giver 1" to="." method="_on_quest_giver_pressed"]
 [connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="NinePatchRect11/Continue" to="." method="_on_continue_pressed"]

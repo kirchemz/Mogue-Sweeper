@@ -3,6 +3,7 @@ extends Node
 var derick_quest_given : bool = false
 var daisy_quest_given : bool = false
 var jimmy_quest_given : bool = false
+var anckle_quest_given : bool = false
 
 var quest_options : Array = []
 
@@ -39,7 +40,7 @@ Moneys!",
 		"time" : 3,
 		"completed" : false
 	},
-	"50_quota" : {
+	"fifty_quota" : {
 		"description" : "If you clear a round 50 points
 within the quota in 3 rounds, I'll
 give you 500 Supa Moneys!",
@@ -51,7 +52,11 @@ give you 500 Supa Moneys!",
 	},
 }
 
-var current_quests : Array = [quests.one_through_five, quests.one_thousand_dollas]
+var one_through_five : bool = false
+var one_thousand_dollas : bool = false
+var no_abilities : bool = false
+var fifty_quota : bool = false
+var current_quests : Array = []
 
 func _ready() -> void:
 	for quest in quests.values():

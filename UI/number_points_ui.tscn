@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_iuev5"]
 [ext_resource type="Script" uid="uid://c13eqpkrk8kj2" path="res://UI/number_points_ui.gd" id="1_mgfu4"]
-[ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="1_ul4ap"]
+[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="2_yyppd"]
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_yyppd"]
-[ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="4_kugnm"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_yyppd"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="5_i2g1e"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="7_yyppd"]
 
 [node name="Number Points UI" type="Control" unique_id=463320316]
 layout_mode = 3
@@ -31,11 +31,11 @@ offset_top = 40.0
 offset_right = 331.14944
 offset_bottom = 176.74092
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="1" unique_id=1565821892]
 self_modulate = Color(0, 0.8509804, 0.15686275, 1)
@@ -93,11 +93,11 @@ offset_top = 40.0
 offset_right = 572.1494
 offset_bottom = 176.74092
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="2" unique_id=249179570]
 self_modulate = Color(0, 0.5529412, 1, 1)
@@ -155,11 +155,11 @@ offset_top = 40.0
 offset_right = 804.1494
 offset_bottom = 176.74092
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="3" unique_id=539274401]
 self_modulate = Color(0.8392157, 0, 0, 1)
@@ -217,11 +217,11 @@ offset_top = 40.0
 offset_right = 1033.1494
 offset_bottom = 176.74092
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="4" unique_id=1425903273]
 self_modulate = Color(0.8117647, 0, 0.8392157, 1)
@@ -279,11 +279,11 @@ offset_top = 358.0
 offset_right = 107.149445
 offset_bottom = 494.7409
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="5" unique_id=1839830583]
 self_modulate = Color(0.76862746, 0.8392157, 0, 1)
@@ -341,11 +341,11 @@ offset_top = 358.0
 offset_right = 331.14944
 offset_bottom = 494.7409
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="6" unique_id=2145789343]
 self_modulate = Color(0.8392157, 0.57254905, 0, 1)
@@ -403,11 +403,11 @@ offset_top = 358.0
 offset_right = 572.1494
 offset_bottom = 494.7409
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="7" unique_id=615337804]
 layout_mode = 0
@@ -464,11 +464,11 @@ offset_top = 358.0
 offset_right = 804.1494
 offset_bottom = 494.7409
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="8" unique_id=212625599]
 layout_mode = 0
@@ -525,11 +525,11 @@ offset_top = 358.0
 offset_right = 1033.1494
 offset_bottom = 494.7409
 scale = Vector2(2.0111024, 2.0111024)
-texture = ExtResource("1_ul4ap")
+texture = ExtResource("2_yyppd")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 7
 
 [node name="TextureRect" type="TextureRect" parent="9" unique_id=409917232]
 layout_mode = 0
@@ -581,14 +581,35 @@ value = 1.0
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2120847354]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 196.0
-offset_right = 62.0
-offset_bottom = 212.0
+offset_left = 14.000004
+offset_top = 18.000008
+offset_right = 45.731987
+offset_bottom = 34.000008
 scale = Vector2(7.437291, 7.437291)
-texture_normal = ExtResource("4_kugnm")
 flip_h = true
 script = ExtResource("5_i2g1e")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextureButton" unique_id=1655113155]
+layout_mode = 0
+offset_right = 32.135353
+offset_bottom = 15.328161
+texture = ExtResource("7_yyppd")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=1414145643]
+layout_mode = 0
+offset_left = 7.1262507
+offset_top = 3.0925238
+offset_right = 1890.1262
+offset_bottom = 841.0925
+scale = Vector2(0.009093245, 0.0091074025)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_yyppd")
+theme_override_font_sizes/font_size = 781
+text = "Return"
 
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

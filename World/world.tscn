@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dbbgr6bb8ak3h"]
 
 [ext_resource type="Script" uid="uid://c1ueffw5xb8q2" path="res://World/world.gd" id="1_62w18"]
-[ext_resource type="Texture2D" uid="uid://qaneuj2ntgke" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="2_3f78f"]
-[ext_resource type="Texture2D" uid="uid://c2jr0a60n165b" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01b.png" id="2_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="2_o6lw0"]
 [ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="5_0lysu"]
@@ -40,7 +39,6 @@ position = Vector2(-3530, 210.5)
 shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="Main Menu" type="NinePatchRect" parent="Camera2D" unique_id=2080969595]
-modulate = Color(0.427493, 0.42749307, 0.42749307, 1)
 offset_left = -7011.0
 offset_top = -4286.0
 offset_right = -4722.332
@@ -533,21 +531,32 @@ horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=2050875328]
 visible = false
-offset_left = -461.0
+offset_left = -460.99997
 offset_top = 239.0
-offset_right = -397.0
-offset_bottom = 259.0
+offset_right = -400.7106
+offset_bottom = 264.54987
 scale = Vector2(3.8176887, 3.8176887)
 pivot_offset = Vector2(32, 8)
-texture_normal = ExtResource("2_3f78f")
 script = ExtResource("5_0lysu")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/TextureButton" unique_id=1685601615]
+layout_mode = 0
+offset_left = 0.04348588
+offset_top = -0.12009764
+offset_right = 60.070904
+offset_bottom = 25.429783
+texture = ExtResource("21_o6lw0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=634878893]
 layout_mode = 0
-offset_left = 16.807556
-offset_top = -0.120098114
-offset_right = 652.80756
-offset_bottom = 318.8799
+offset_left = 19.165003
+offset_top = 5.3806124
+offset_right = 655.165
+offset_bottom = 324.3806
 scale = Vector2(0.049403228, 0.049403228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
@@ -676,8 +685,203 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 
+[node name="Quest Board" type="NinePatchRect" parent="Camera2D" unique_id=389108413]
+offset_left = 215.00006
+offset_top = -311.0
+offset_right = 350.7827
+offset_bottom = -231.01309
+scale = Vector2(2.5629194, 2.5629194)
+texture = ExtResource("20_x0pyu")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest Details" type="Label" parent="Camera2D/Quest Board" unique_id=306597758]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3030707
+anchor_top = 0.015594678
+anchor_right = 54.640163
+anchor_bottom = 12.75444
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.0051072333, 0.0051072333)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+text = "Talk to one of Mista Mowl's relatives
+to recieve a quest"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest Details2" type="Label" parent="Camera2D/Quest Board" unique_id=1448610644]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045977093
+anchor_top = 0.029556615
+anchor_right = 0.31841946
+anchor_bottom = 0.2284499
+offset_right = 2647.008
+offset_bottom = 1127.2463
+scale = Vector2(0.012681965, 0.012681965)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+text = "Quests:"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Quest Board" unique_id=903693072]
+layout_mode = 0
+offset_left = 2.7312603
+offset_top = 15.217022
+offset_right = 134.53818
+offset_bottom = 37.05251
+scale = Vector2(0.9827996, 0.9827996)
+texture = ExtResource("2_o6lw0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest 1" type="Label" parent="Camera2D/Quest Board" unique_id=916123537]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.19293456
+anchor_right = 84.19854
+anchor_bottom = 0.1929353
+offset_left = 7.2305555
+offset_top = 1.8862457
+offset_right = 7043.2285
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest 1 Details" type="Label" parent="Camera2D/Quest Board" unique_id=1065517189]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.30130845
+anchor_right = 84.19854
+anchor_bottom = 0.30130845
+offset_left = 7.230571
+offset_top = 1.8862362
+offset_right = 7043.2285
+offset_bottom = 1281.8864
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Camera2D/Quest Board" unique_id=1728765432]
+layout_mode = 0
+offset_left = 2.7312622
+offset_top = 36.286743
+offset_right = 134.53818
+offset_bottom = 58.12223
+scale = Vector2(0.9827996, 0.9827996)
+texture = ExtResource("2_o6lw0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest 2" type="Label" parent="Camera2D/Quest Board" unique_id=395944171]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.45401782
+anchor_right = 84.19854
+anchor_bottom = 0.45401782
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest 2 Details" type="Label" parent="Camera2D/Quest Board" unique_id=880607553]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.56731886
+anchor_right = 84.19854
+anchor_bottom = 0.56731963
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Camera2D/Quest Board" unique_id=1404476776]
+layout_mode = 0
+offset_left = 2.7312622
+offset_top = 57.356464
+offset_right = 134.53818
+offset_bottom = 79.191956
+scale = Vector2(0.9827996, 0.9827996)
+texture = ExtResource("2_o6lw0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest 3" type="Label" parent="Camera2D/Quest Board" unique_id=1132250795]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.72275925
+anchor_right = 84.19854
+anchor_bottom = 0.72275925
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest 3 Details" type="Label" parent="Camera2D/Quest Board" unique_id=216744286]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.8360598
+anchor_right = 84.19854
+anchor_bottom = 0.8360606
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Timer" type="Timer" parent="." unique_id=1810617686]
-wait_time = 60.0
+wait_time = 20.0
 one_shot = true
 
 [connection signal="mouse_entered" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_entered"]

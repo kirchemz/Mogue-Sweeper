@@ -12,6 +12,10 @@ var data : Dictionary = {
 	"quota" : 50,
 	"currency" : 0,
 	"current_quests" : [],
+	"one_through_five" : false,
+	"one_thousand_dollas" : false,
+	"no_abilities" : false,
+	"fifty_quota" : false,
 	"current_level" : {},
 	"ones_levels" : 1,
 	"twos_levels" : 1,
@@ -159,6 +163,10 @@ func _save():
 	
 	data.current_quests = Quests.current_quests
 	data.quest_options = Quests.quest_options
+	data.one_through_five = Quests.one_through_five
+	data.one_thousand_dollas = Quests.one_thousand_dollas
+	data.no_abilities = Quests.no_abilities
+	data.fifty_quota = Quests.fifty_quota
 	
 	data.current_level = Levels.chosen_level
 	data.quota = Globals.level_requirement
@@ -186,27 +194,27 @@ func _load():
 		AudioServer.set_bus_volume_db(music_bus, data.music_volume)
 		AudioServer.set_bus_volume_db(sfx_bus, data.sfx_volume)
 		
-		data.ones_levels = Globals.one_level
-		data.twos_levels = Globals.two_level
-		data.threes_levels = Globals.three_level
-		data.fours_levels = Globals.four_level
-		data.fives_levels = Globals.five_level
-		data.sixes_levels = Globals.six_level
-		data.sevens_levels = Globals.seven_level
-		data.eights_levels = Globals.eight_level
-		data.nines_levels = Globals.nine_level
+		Globals.one_level = data.ones_levels
+		Globals.two_level = data.twos_levels
+		Globals.three_level = data.threes_levels
+		Globals.four_level = data.fours_levels
+		Globals.five_level = data.fives_levels
+		Globals.six_level = data.sixes_levels
+		Globals.seven_level = data.sevens_levels
+		Globals.eight_level = data.eights_levels
+		Globals.nine_level = data.nines_levels
 		
-		data.blue_flags = Globals.blue_flags
-		data.violet_flags = Globals.violet_flags
-		data.yellow_flags = Globals.yellow_flags
-		data.orange_flags = Globals.orange_flags
-		data.green_flags = Globals.green_flags
-		data.pink_flags = Globals.pink_flags
-		data.magenta_flags = Globals.magenta_flags
-		data.white_flags = Globals.white_flags
-		data.black_flags = Globals.black_flags
-		data.grey_flags = Globals.grey_flags
-		data.brown_flags = Globals.brown_flags
+		Globals.blue_flags = data.blue_flags
+		Globals.violet_flags = data.violet_flags
+		Globals.yellow_flags = data.yellow_flags
+		Globals.orange_flags = data.orange_flags
+		Globals.green_flags = data.green_flags
+		Globals.pink_flags = data.pink_flags
+		Globals.magenta_flags = data.magenta_flags
+		Globals.white_flags = data.white_flags
+		Globals.black_flags = data.black_flags
+		Globals.grey_flags = data.grey_flags
+		Globals.brown_flags = data.brown_flags
 		
 		Abilities.auto_chord = data.auto_chord
 		Abilities.mowl_time = data.mowl_time
@@ -252,6 +260,10 @@ func _load():
 		
 		Quests.current_quests = data.current_quests
 		Quests.quest_options = data.quest_options
+		Quests.one_through_five = data.one_through_five
+		Quests.one_thousand_dollas = data.one_thousand_dollas
+		Quests.no_abilities = data.no_abilities
+		Quests.fifty_quota = data.fifty_quota
 		
 		Levels.chosen_level = data.current_level
 		

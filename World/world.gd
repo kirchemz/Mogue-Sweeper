@@ -34,7 +34,7 @@ func _ready() -> void:
 	Abilities.special_flag_count = 0
 	Abilities.numbers_used.clear()
 	Abilities.first_click = false
-	Abilities.three_mult = 0
+	Abilities.three_mult = 1
 	
 	MusicPlayer.world()
 	
@@ -77,6 +77,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	if Quests.current_quests.size() > 0:
+		$"Camera2D/Quest Board/Quest 1".text = Quests.current_quests[0].quest_board_description
+		$"Camera2D/Quest Board/Quest 1 Details".text = "Reward: "  + str(Quests.current_quests[0].reward) + "    Time: " + str(Quests.current_quests[0].time) + " Rounds"
+	if Quests.current_quests.size() > 1:
+		$"Camera2D/Quest Board/Quest 2".text = Quests.current_quests[1].quest_board_description
+		$"Camera2D/Quest Board/Quest 2 Details".text = "Reward: "  + str(Quests.current_quests[1].reward) + "    Time: " + str(Quests.current_quests[1].time) + " Rounds"
+	if Quests.current_quests.size() > 2:
+		$"Camera2D/Quest Board/Quest 3".text = Quests.current_quests[2].quest_board_description
+		$"Camera2D/Quest Board/Quest 3 Details".text = "Reward: "  + str(Quests.current_quests[2].reward) + "    Time: " + str(Quests.current_quests[2].time) + " Rounds"
 	if Input.is_action_just_pressed("Pause"):
 		$"Camera2D/Pause Menu".show()
 		$Timer.paused = true
@@ -549,7 +558,7 @@ func point_count():
 	if Abilities.one_two_three_four_five:
 		if 1 in Abilities.numbers_used and 2 in Abilities.numbers_used and 3 in Abilities.numbers_used and 4 in Abilities.numbers_used and 5 in Abilities.numbers_used:
 			Globals.mult *= 5
-	if Quests.quests.one_through_five in Quests.current_quests:
+	if Quests.one_through_five:
 		if 1 in Abilities.numbers_used and 2 in Abilities.numbers_used and 3 in Abilities.numbers_used and 4 in Abilities.numbers_used and 5 in Abilities.numbers_used:
 			Quests.current_quests[Quests.current_quests.find(Quests.quests.one_through_five)].completed = true
 	if Abilities.mowl_abilities:
@@ -564,9 +573,6 @@ func point_count():
 	if Abilities.high_scorer:
 		if not 1 in Abilities.numbers_used and not 2 in Abilities.numbers_used:
 			Globals.total_points *= 4
-			print("Boom shakalaka")
-		else:
-			print(Abilities.numbers_used)
 	$Camera2D/Points.text = "Points: " + str(Globals.points) + "
 	" + "X" + "
 	" + "Mult:" + str(Globals.mult) + "
