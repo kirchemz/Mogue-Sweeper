@@ -28,6 +28,8 @@ var relative_dialogue_section : int = 1
 var relative_dialogue_open : bool = false
 var chosen_quest
 
+var derick_noises : Array = []
+
 # All rocks available for packs
 var rock_stock : Dictionary = {
 	"granite" : {
@@ -152,6 +154,7 @@ func _ready() -> void:
 	MusicPlayer.shop()
 	
 	chosen_quest = Quests.choose_quest()
+	Quests.quest_options.erase(chosen_quest)
 	mowl_relative = mowl_relatives[randi() % mowl_relatives.size()]
 	$"Mowl Relative Dialogue Box/NinePatchRect11/AnimatedSprite2D2".play(mowl_relative)
 	$AnimatedSprite2D2.play(mowl_relative)
@@ -191,6 +194,15 @@ func _ready() -> void:
 	extra_options.erase(extra_three)
 
 func _process(delta: float) -> void:
+	if Quests.current_quests.size() > 0:
+		$"Quest Board/Quest 1".text = Quests.current_quests[0].quest_board_description
+		$"Quest Board/Quest 1 Details".text = "Reward: "  + str(Quests.current_quests[0].reward) + "    Time: " + str(Quests.current_quests[0].time) + " Rounds"
+	if Quests.current_quests.size() > 1:
+		$"Quest Board/Quest 2".text = Quests.current_quests[1].quest_board_description
+		$"Quest Board/Quest 2 Details".text = "Reward: "  + str(Quests.current_quests[1].reward) + "    Time: " + str(Quests.current_quests[1].time) + " Rounds"
+	if Quests.current_quests.size() > 2:
+		$"Quest Board/Quest 3".text = Quests.current_quests[2].quest_board_description
+		$"Quest Board/Quest 3 Details".text = "Reward: "  + str(Quests.current_quests[2].reward) + "    Time: " + str(Quests.current_quests[2].time) + " Rounds"
 	if not opening_pack:
 		if Input.is_action_just_pressed("Pause"):
 			$"Pause Menu".show()
@@ -271,7 +283,7 @@ func _process(delta: float) -> void:
 	$"Extra Three".texture_normal = extra_three.img
 	$"Extra Three/Label".text = extra_three.name
 
-func _on_texture_button_pressed() -> void:
+func _on_continue_pressed() -> void:
 	Globals.level_requirement *= 2
 	get_tree().change_scene_to_file("res://World/level_selection.tscn")
 
@@ -780,6 +792,66 @@ func _on_mowl_relative_pressed() -> void:
 	mowl_relative_dialogue()
 
 func mowl_relative_dialogue():
+	if mowl_relative == "Cousin Derick":
+		if Quests.derick_quest_given:
+			if relative_dialogue_section == 1:
+				relative_dialogue_open = true
+				$"Mowl Relative Dialogue Box".visible = true
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Come back when you've finished
+and I'll give you yer money I
+promised you."
+				relative_dialogue_section += 1
+				return
+			if relative_dialogue_section == 2:
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+				relative_dialogue_section = 1
+				relative_dialogue_open = false
+				$"Mowl Relative Dialogue Box".visible = false
+				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+	if mowl_relative == "Cousin Daisy":
+		if Quests.daisy_quest_given:
+			if relative_dialogue_section == 1:
+				relative_dialogue_open = true
+				$"Mowl Relative Dialogue Box".visible = true
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Come back when you've finished
+and I'll give you yer money I
+promised you."
+				relative_dialogue_section += 1
+				return
+			if relative_dialogue_section == 2:
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+				relative_dialogue_section = 1
+				relative_dialogue_open = false
+				$"Mowl Relative Dialogue Box".visible = false
+				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+	if mowl_relative == "Uncle Jimmy":
+		if Quests.jimmy_quest_given:
+			if relative_dialogue_section == 1:
+				relative_dialogue_open = true
+				$"Mowl Relative Dialogue Box".visible = true
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Come back when you've finished
+and I'll give you yer money I
+promised you."
+				relative_dialogue_section += 1
+				return
+			if relative_dialogue_section == 2:
+				$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+				relative_dialogue_section = 1
+				relative_dialogue_open = false
+				$"Mowl Relative Dialogue Box".visible = false
+				$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+				$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+	if mowl_relative == "Cousin Derick":
+		if Quests.derick_quest_given:
+			return
+	if mowl_relative == "Cousin Daisy":
+		if Quests.daisy_quest_given:
+			return
+	if mowl_relative == "Uncle Jimmy":
+		if Quests.jimmy_quest_given:
+			return
 	if relative_dialogue_section == 1:
 		relative_dialogue_open = true
 		$"Mowl Relative Dialogue Box".visible = true
@@ -794,9 +866,10 @@ a favor fer me?"
 		return
 	if relative_dialogue_section == 3:
 		$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		relative_dialogue_section = 1
-		relative_dialogue_open = false
-		$"Mowl Relative Dialogue Box".visible = false
+		$"Mowl Relative Dialogue Box/NinePatchRect/Label".text = "Will ya do it?"
+		$"Mowl Relative Dialogue Box/NinePatchRect/Yes".show()
+		$"Mowl Relative Dialogue Box/NinePatchRect/No".show()
+		return
 
 
 func _on_pause_pressed() -> void:
@@ -816,3 +889,34 @@ func _on_next_pressed() -> void:
 		MusicPlayer.chosen_song = MusicPlayer.shop_music[MusicPlayer.shop_music.find(MusicPlayer.chosen_song) + 1]
 		MusicPlayer.stream = load(MusicPlayer.chosen_song)
 		MusicPlayer.play()
+
+
+func _on_yes_pressed() -> void:
+	if mowl_relative == "Cousin Derick":
+		chosen_quest.giver = "Cousin Derick"
+		Quests.derick_quest_given = true
+		mowl_relatives.erase("Cousin Derick")
+	if mowl_relative == "Cousin Daisy":
+		chosen_quest.giver = "Cousin Daisy"
+		Quests.daisy_quest_given = true
+		mowl_relatives.erase("Cousin Daisy")
+	if mowl_relative == "Uncle Jimmy":
+		chosen_quest.giver = "Uncle Jimmy"
+		Quests.jimmy_quest_given = true
+		mowl_relatives.erase("Cousin Jimmy")
+	Quests.current_quests.append(chosen_quest)
+	$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+	relative_dialogue_section = 1
+	relative_dialogue_open = false
+	$"Mowl Relative Dialogue Box".visible = false
+	$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+	$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()
+
+
+func _on_no_pressed() -> void:
+	$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0
+	relative_dialogue_section = 1
+	relative_dialogue_open = false
+	$"Mowl Relative Dialogue Box".visible = false
+	$"Mowl Relative Dialogue Box/NinePatchRect/Yes".hide()
+	$"Mowl Relative Dialogue Box/NinePatchRect/No".hide()

@@ -6,9 +6,12 @@ var auto_save_timer : float = 0.0
 
 var data : Dictionary = {
 	"current_scene" : "res://World/title_screen.tscn",
+	"volume" : 1.5,
+	"music_volume" : 1.5,
+	"sfx_volume" : 1.5,
 	"quota" : 50,
 	"currency" : 0,
-	"quests" : [],
+	"current_quests" : [],
 	"current_level" : {},
 	"ones_levels" : 1,
 	"twos_levels" : 1,
@@ -31,6 +34,7 @@ var data : Dictionary = {
 	"grey_flags" : 0,
 	"brown_flags" : 0,
 	"current_abilities" : [],
+	"quest_options" : [],
 	"auto_chord" : false,
 	"mowl_time" : false,
 	"mowl_flags" : false,
@@ -81,6 +85,14 @@ func _process(delta: float) -> void:
 
 func _save():
 	var file : FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
+	
+	var master_bus = AudioServer.get_bus_index("Master")
+	data.volume = AudioServer.get_bus_volume_linear(master_bus)
+	var music_bus = AudioServer.get_bus_index("Music")
+	data.music_volume = AudioServer.get_bus_volume_linear(music_bus)
+	var sfx_bus = AudioServer.get_bus_index("SFX")
+	data.sfx_volume = AudioServer.get_bus_volume_linear(sfx_bus)
+	
 	data.ones_levels = Globals.one_level
 	data.twos_levels = Globals.two_level
 	data.threes_levels = Globals.three_level
@@ -145,6 +157,9 @@ func _save():
 	data.current_abilities = Abilities.current_abilities
 	data.ability_options = Abilities.ability_options
 	
+	data.current_quests = Quests.current_quests
+	data.quest_options = Quests.quest_options
+	
 	data.current_level = Levels.chosen_level
 	data.quota = Globals.level_requirement
 	
@@ -163,6 +178,13 @@ func _load():
 			get_tree().change_scene_to_file("res://World/level_selection.tscn")
 		else:
 			get_tree().change_scene_to_file(data.current_scene)
+		
+		var master_bus = AudioServer.get_bus_index("Master")
+		var music_bus = AudioServer.get_bus_index("Music")
+		var sfx_bus = AudioServer.get_bus_index("SFX")
+		AudioServer.set_bus_volume_db(master_bus, data.volume)
+		AudioServer.set_bus_volume_db(music_bus, data.music_volume)
+		AudioServer.set_bus_volume_db(sfx_bus, data.sfx_volume)
 		
 		data.ones_levels = Globals.one_level
 		data.twos_levels = Globals.two_level
@@ -227,6 +249,9 @@ func _load():
 		Abilities.ability_one = data.ability5
 		Abilities.current_abilities = data.current_abilities
 		Abilities.ability_options = data.ability_options
+		
+		Quests.current_quests = data.current_quests
+		Quests.quest_options = data.quest_options
 		
 		Levels.chosen_level = data.current_level
 		

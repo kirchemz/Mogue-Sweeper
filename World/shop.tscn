@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://62n41e7k5asm"]
 
 [ext_resource type="Script" uid="uid://bn4dorke00twm" path="res://World/shop.gd" id="1_2nxxu"]
-[ext_resource type="Texture2D" uid="uid://vskmfvrt3gwl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner01a.png" id="2_gqsku"]
-[ext_resource type="Texture2D" uid="uid://cw25lvsnvmvg7" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_ButtonArrow01a.png" id="3_gqsku"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_x8l2j"]
-[ext_resource type="Texture2D" uid="uid://uqvvj487qu3k" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame01a.png" id="5_x8l2j"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_vj47s"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="6_fi1uk"]
-[ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="6_s7atx"]
 [ext_resource type="Texture2D" uid="uid://cef44ro30d4b4" path="res://Sprites/Music Player.png" id="6_vj47s"]
+[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="7_0m3j8"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
 [ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="10_8m5wk"]
-[ext_resource type="Texture2D" uid="uid://bkptryvggq7tl" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame02a.png" id="11_d1iyv"]
 [ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
 [ext_resource type="Texture2D" uid="uid://dvgsdlkg3248o" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01a.png" id="13_nws7c"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
@@ -19,12 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://bfggduciqjkoa" path="res://Sprites/Mista_Mowl_Talking.png" id="15_2u4ug"]
 [ext_resource type="Texture2D" uid="uid://bko56ymvjeign" path="res://Sprites/Shop Desk.png" id="15_5yg78"]
 [ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="15_jq0fv"]
-[ext_resource type="Texture2D" uid="uid://n74vlux0enov" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot03a.png" id="16_2u4ug"]
-[ext_resource type="Texture2D" uid="uid://c7g1bbx3mc14y" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="18_x8l2j"]
 [ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="20_x40hv"]
 [ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="21_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://cntpcmmgjgjb7" path="res://Sprites/Cousin_Derick_Talking.png" id="23_0m3j8"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_7l6ll"]
+[ext_resource type="Texture2D" uid="uid://dhfioyw5wp7fx" path="res://Sprites/Blue UI Box.png" id="24_erba8"]
+[ext_resource type="Texture2D" uid="uid://dfre77xp73ssb" path="res://Sprites/Yellow UI Box.png" id="25_7vwke"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="26_7vwke"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
 atlas = ExtResource("14_5yg78")
@@ -212,7 +210,7 @@ offset_top = 66.99999
 offset_right = 275.6216
 offset_bottom = 93.0
 scale = Vector2(2.1457918, 2.1457918)
-texture = ExtResource("2_gqsku")
+texture = ExtResource("26_7vwke")
 patch_margin_left = 13
 patch_margin_top = 5
 patch_margin_right = 13
@@ -242,11 +240,11 @@ offset_top = 146.0
 offset_right = 601.98047
 offset_bottom = 162.73804
 scale = Vector2(2.7873085, 2.7873085)
-texture = ExtResource("5_x8l2j")
-patch_margin_left = 4
-patch_margin_top = 5
-patch_margin_right = 4
-patch_margin_bottom = 5
+texture = ExtResource("5_vj47s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect2" unique_id=707301438]
@@ -272,13 +270,13 @@ metadata/_edit_use_anchors_ = true
 offset_left = 532.0
 offset_top = 203.0
 offset_right = 601.98047
-offset_bottom = 255.38028
+offset_bottom = 256.09784
 scale = Vector2(2.7873085, 2.7873085)
-texture = ExtResource("5_x8l2j")
-patch_margin_left = 4
-patch_margin_top = 5
-patch_margin_right = 4
-patch_margin_bottom = 5
+texture = ExtResource("5_vj47s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Music Player Box" unique_id=1738130363]
 position = Vector2(21.526144, 27.625217)
@@ -335,13 +333,13 @@ text = "Next"
 offset_left = 323.0
 offset_top = 146.0
 offset_right = 425.68622
-offset_bottom = 248.73279
+offset_bottom = 249.74493
 scale = Vector2(1.9760003, 1.9760003)
-texture = ExtResource("13_nws7c")
+texture = ExtResource("5_vj47s")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="NinePatchRect5" unique_id=1571024310]
 layout_mode = 0
@@ -357,17 +355,212 @@ text = "Packs: $500"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Quest Board" type="NinePatchRect" parent="." unique_id=1354622188]
+offset_left = 740.0
+offset_top = 146.0
+offset_right = 875.78265
+offset_bottom = 225.98691
+scale = Vector2(2.5629194, 2.5629194)
+texture = ExtResource("5_vj47s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest Details" type="Label" parent="Quest Board" unique_id=858811921]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3030707
+anchor_top = 0.015594678
+anchor_right = 54.640163
+anchor_bottom = 12.75444
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.0051072333, 0.0051072333)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+text = "Talk to one of Mista Mowl's relatives
+to recieve a quest"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest Details2" type="Label" parent="Quest Board" unique_id=1142226523]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045977093
+anchor_top = 0.029556615
+anchor_right = 0.31841946
+anchor_bottom = 0.2284499
+offset_right = 2647.008
+offset_bottom = 1127.2463
+scale = Vector2(0.012681965, 0.012681965)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+text = "Quests:"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Quest Board" unique_id=821461077]
+layout_mode = 0
+offset_left = 2.7312603
+offset_top = 15.217022
+offset_right = 134.53818
+offset_bottom = 37.05251
+scale = Vector2(0.9827996, 0.9827996)
+texture = ExtResource("7_0m3j8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest 1" type="Label" parent="Quest Board" unique_id=991371540]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.19293456
+anchor_right = 84.19854
+anchor_bottom = 0.1929353
+offset_left = 7.2305555
+offset_top = 1.8862457
+offset_right = 7043.2285
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest 1 Details" type="Label" parent="Quest Board" unique_id=240325180]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.30130845
+anchor_right = 84.19854
+anchor_bottom = 0.30130845
+offset_left = 7.230571
+offset_top = 1.8862362
+offset_right = 7043.2285
+offset_bottom = 1281.8864
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Quest Board" unique_id=264229694]
+layout_mode = 0
+offset_left = 2.7312622
+offset_top = 36.286743
+offset_right = 134.53818
+offset_bottom = 58.12223
+scale = Vector2(0.9827996, 0.9827996)
+texture = ExtResource("7_0m3j8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest 2" type="Label" parent="Quest Board" unique_id=1735556823]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.45401835
+anchor_right = 84.19854
+anchor_bottom = 0.45401782
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest 2 Details" type="Label" parent="Quest Board" unique_id=1889769518]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.56731886
+anchor_right = 84.19854
+anchor_bottom = 0.56731963
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Quest Board" unique_id=371053503]
+layout_mode = 0
+offset_left = 2.7312622
+offset_top = 57.356464
+offset_right = 134.53818
+offset_bottom = 79.191956
+scale = Vector2(0.9827996, 0.9827996)
+texture = ExtResource("7_0m3j8")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Quest 3" type="Label" parent="Quest Board" unique_id=1564451031]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.7227596
+anchor_right = 84.19854
+anchor_bottom = 0.72275925
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest 3 Details" type="Label" parent="Quest Board" unique_id=722858532]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021641895
+anchor_top = 0.8360598
+anchor_right = 84.19854
+anchor_bottom = 0.8360606
+offset_left = 7.230571
+offset_top = 1.886237
+offset_right = 7043.2305
+offset_bottom = 1281.8862
+scale = Vector2(0.006907285, 0.006907285)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 1066
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=521339773]
 offset_left = 56.0
 offset_top = 251.0
 offset_right = 188.74797
 offset_bottom = 300.40845
 scale = Vector2(1.9760003, 1.9760003)
-texture = ExtResource("13_nws7c")
+texture = ExtResource("5_vj47s")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect4" unique_id=1965026485]
@@ -389,11 +582,11 @@ offset_top = 146.0
 offset_right = 188.74797
 offset_bottom = 195.40845
 scale = Vector2(1.9760003, 1.9760003)
-texture = ExtResource("13_nws7c")
+texture = ExtResource("5_vj47s")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect3" unique_id=279259037]
@@ -446,23 +639,13 @@ theme_override_font_sizes/font_size = 1091
 text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=36508199]
-offset_left = 1008.00006
-offset_top = 70.0
-offset_right = 1025.0001
-offset_bottom = 86.00003
-scale = Vector2(3.2262716, 3.2262716)
-texture_normal = ExtResource("3_gqsku")
-script = ExtResource("6_fi1uk")
-metadata/_edit_use_anchors_ = true
-
 [node name="Ability One" type="TextureButton" parent="." unique_id=853133183]
 offset_left = 65.0
 offset_top = 280.00003
 offset_right = 97.0
 offset_bottom = 312.00003
 scale = Vector2(1.567471, 1.567471)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
@@ -487,7 +670,7 @@ offset_top = 280.0
 offset_right = 194.0
 offset_bottom = 312.0
 scale = Vector2(1.567471, 1.567471)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
@@ -513,7 +696,7 @@ offset_top = 280.0
 offset_right = 289.0
 offset_bottom = 312.0
 scale = Vector2(1.567471, 1.567471)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
 
@@ -540,7 +723,7 @@ offset_right = 97.0
 offset_bottom = 207.0
 scale = Vector2(1.567471, 1.567471)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -567,7 +750,7 @@ offset_top = 175.0
 offset_right = 194.00002
 offset_bottom = 207.0
 scale = Vector2(1.567471, 1.567471)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -594,7 +777,7 @@ offset_top = 175.0
 offset_right = 289.0
 offset_bottom = 207.0
 scale = Vector2(1.5674711, 1.5674711)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -648,7 +831,7 @@ offset_bottom = 396.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -676,7 +859,7 @@ offset_bottom = 396.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -704,7 +887,7 @@ offset_bottom = 396.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -757,13 +940,13 @@ horizontal_alignment = 1
 
 [node name="Extra One" type="TextureButton" parent="." unique_id=1034222299]
 offset_left = -963.948
-offset_top = 275.05176
+offset_top = 361.05176
 offset_right = -931.948
-offset_bottom = 307.05176
+offset_bottom = 393.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -785,13 +968,13 @@ horizontal_alignment = 1
 
 [node name="Extra Two" type="TextureButton" parent="." unique_id=1644646514]
 offset_left = -593.948
-offset_top = 275.05176
+offset_top = 361.05176
 offset_right = -561.948
-offset_bottom = 307.05176
+offset_bottom = 393.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -813,13 +996,13 @@ horizontal_alignment = 1
 
 [node name="Extra Three" type="TextureButton" parent="." unique_id=1003581859]
 offset_left = -215.948
-offset_top = 275.05176
+offset_top = 361.05176
 offset_right = -183.948
-offset_bottom = 307.05176
+offset_bottom = 393.05176
 scale = Vector2(8.753236, 8.753236)
 pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("6_fi1uk")
 metadata/_edit_use_anchors_ = true
@@ -840,12 +1023,12 @@ text = "FLAGS"
 horizontal_alignment = 1
 
 [node name="Ability 1" type="TextureButton" parent="." unique_id=149004265]
-offset_left = 588.0
+offset_left = 534.0
 offset_top = 70.00003
-offset_right = 620.0
+offset_right = 566.0
 offset_bottom = 102.00006
 scale = Vector2(1.5312849, 1.5312849)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 1" unique_id=98754947]
@@ -867,12 +1050,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="." unique_id=2138932469]
-offset_left = 659.0
+offset_left = 605.0
 offset_top = 70.0
-offset_right = 691.00006
+offset_right = 637.00006
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 2" unique_id=356654154]
@@ -894,12 +1077,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 3" type="TextureButton" parent="." unique_id=1940929645]
-offset_left = 733.0
+offset_left = 679.0
 offset_top = 70.0
-offset_right = 765.0
+offset_right = 711.0
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 3" unique_id=405108533]
@@ -921,12 +1104,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="." unique_id=567917125]
-offset_left = 808.0
+offset_left = 754.0
 offset_top = 70.0
-offset_right = 840.00006
+offset_right = 786.00006
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 4" unique_id=388867359]
@@ -948,12 +1131,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="." unique_id=543151954]
-offset_left = 884.0
+offset_left = 830.0
 offset_top = 70.0
-offset_right = 916.0
+offset_right = 862.0
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
-texture_normal = ExtResource("6_s7atx")
+texture_normal = ExtResource("5_vj47s")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 5" unique_id=1344563823]
@@ -1181,7 +1364,7 @@ offset_top = 280.00003
 offset_right = 382.00458
 offset_bottom = 381.2281
 scale = Vector2(3.1809366, 3.1809366)
-texture = ExtResource("11_d1iyv")
+texture = ExtResource("24_erba8")
 patch_margin_left = 3
 patch_margin_top = 5
 patch_margin_right = 3
@@ -1194,7 +1377,7 @@ offset_top = 11.317408
 offset_right = 283.3389
 offset_bottom = 54.161087
 scale = Vector2(1.8376273, 1.8376273)
-texture = ExtResource("16_2u4ug")
+texture = ExtResource("25_7vwke")
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -1210,7 +1393,7 @@ offset_bottom = 20.314857
 scale = Vector2(3.0721252, 2.1309643)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Mista Mowl Dialogue Box/NinePatchRect11" unique_id=654250915]
-position = Vector2(21.42186, 22.672745)
+position = Vector2(21.42186, 23.779484)
 scale = Vector2(0.062723115, 0.062723115)
 sprite_frames = SubResource("SpriteFrames_5yg78")
 animation = &"Idle"
@@ -1223,11 +1406,11 @@ offset_top = 7.230566
 offset_right = 212.06538
 offset_bottom = 85.355865
 scale = Vector2(1.11866, 1.11866)
-texture = ExtResource("18_x8l2j")
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 4
+texture = ExtResource("26_7vwke")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Mista Mowl Dialogue Box/NinePatchRect" unique_id=1737790297]
 layout_mode = 0
@@ -1253,11 +1436,11 @@ offset_top = 280.00003
 offset_right = 382.00458
 offset_bottom = 381.2281
 scale = Vector2(3.1809366, 3.1809366)
-texture = ExtResource("11_d1iyv")
+texture = ExtResource("24_erba8")
 patch_margin_left = 3
-patch_margin_top = 5
+patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 5
+patch_margin_bottom = 3
 
 [node name="NinePatchRect11" type="NinePatchRect" parent="Mowl Relative Dialogue Box" unique_id=1353193986]
 layout_mode = 0
@@ -1266,7 +1449,7 @@ offset_top = 5.344327
 offset_right = 283.3389
 offset_bottom = 54.442966
 scale = Vector2(1.8376273, 1.8376273)
-texture = ExtResource("16_2u4ug")
+texture = ExtResource("25_7vwke")
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -1294,27 +1477,83 @@ offset_top = 7.230566
 offset_right = 212.06538
 offset_bottom = 85.355865
 scale = Vector2(1.11866, 1.11866)
-texture = ExtResource("18_x8l2j")
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 4
+texture = ExtResource("26_7vwke")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Mowl Relative Dialogue Box/NinePatchRect" unique_id=672047731]
 layout_mode = 0
-offset_left = 11.241051
+offset_left = 6.463604
 offset_top = -0.28102684
-offset_right = 2748.241
+offset_right = 2743.4636
 offset_bottom = 740.719
 scale = Vector2(0.11219228, 0.11219228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 152
-text = "If you clear a round 50 points
-within the quota in 3 rounds, I'll
-give you 500 Supa Moneys!"
+text = "Come back when you've finished
+and I'll give you yer money I
+promised you."
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="Yes" type="Button" parent="Mowl Relative Dialogue Box/NinePatchRect" unique_id=1901508097]
+visible = false
+layout_mode = 0
+offset_left = 6.182576
+offset_top = 50.022675
+offset_right = 2832.4294
+offset_bottom = 634.0227
+scale = Vector2(0.03380771, 0.03380771)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 537
+text = "Yes"
+
+[node name="No" type="Button" parent="Mowl Relative Dialogue Box/NinePatchRect" unique_id=1614732967]
+visible = false
+layout_mode = 0
+offset_left = 103.97971
+offset_top = 50.022675
+offset_right = 2913.6018
+offset_bottom = 634.0227
+scale = Vector2(0.03380771, 0.03380771)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 537
+text = "No"
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="." unique_id=152745047]
+offset_left = 909.00006
+offset_top = 63.0
+offset_right = 955.18
+offset_bottom = 81.05919
+scale = Vector2(3.876143, 3.876143)
+texture = ExtResource("5_vj47s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="NinePatchRect11" unique_id=1119293270]
+layout_mode = 0
+offset_left = 4.385787
+offset_top = 2.0639071
+offset_right = 1393.3857
+offset_bottom = 490.0639
+scale = Vector2(0.027136147, 0.027136147)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 455
+text = "Continue"
+
+[node name="Continue" type="Button" parent="NinePatchRect11" unique_id=705580854]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 46.437912
+offset_bottom = 18.317179
 
 [node name="Pause Menu" parent="." unique_id=403710505 instance=ExtResource("24_7l6ll")]
 visible = false
@@ -1322,9 +1561,6 @@ visible = false
 [connection signal="pressed" from="Music Player Box/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="Music Player Box/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Music Player Box/Next" to="." method="_on_next_pressed"]
-[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
-[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="button_down" from="Ability One" to="Ability One" method="_on_button_down"]
 [connection signal="button_up" from="Ability One" to="Ability One" method="_on_button_up"]
 [connection signal="pressed" from="Ability One" to="." method="_on_ability_one_pressed"]
@@ -1376,3 +1612,6 @@ visible = false
 [connection signal="pressed" from="Mowl Relative" to="." method="_on_mowl_relative_pressed"]
 [connection signal="pressed" from="Mista Mowl Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_mista_mowl_pressed"]
 [connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_mowl_relative_pressed"]
+[connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Mowl Relative Dialogue Box/NinePatchRect/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="NinePatchRect11/Continue" to="." method="_on_continue_pressed"]

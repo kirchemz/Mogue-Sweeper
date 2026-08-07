@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c1ueffw5xb8q2" path="res://World/world.gd" id="1_62w18"]
 [ext_resource type="Texture2D" uid="uid://qaneuj2ntgke" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner02a.png" id="2_3f78f"]
-[ext_resource type="Texture2D" uid="uid://c27vxgaejt3bg" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Banner04a.png" id="2_j8job"]
 [ext_resource type="Texture2D" uid="uid://c2jr0a60n165b" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01b.png" id="2_o6lw0"]
 [ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
 [ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="5_0lysu"]
-[ext_resource type="Texture2D" uid="uid://bcmvkoqn6t60x" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Button02a_1.png" id="5_k8do8"]
 [ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
 [ext_resource type="Texture2D" uid="uid://stv6h2wu727q" path="res://Sprites/Purple Flag.png" id="6_w47uh"]
 [ext_resource type="Texture2D" uid="uid://gb56b1t1vljf" path="res://Sprites/Orange Flag.png" id="7_kcyjf"]
@@ -20,8 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bs8cji5cpcejr" path="res://Sprites/Brown Flag.png" id="13_x0pyu"]
 [ext_resource type="Texture2D" uid="uid://c0lm77tkj8ygj" path="res://Sprites/Magenta Flag.png" id="14_dg1ng"]
 [ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Pink Flag.png" id="15_yfuda"]
-[ext_resource type="Texture2D" uid="uid://c7g1bbx3mc14y" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_InputField01a.png" id="21_26uyv"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="20_x0pyu"]
 [ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="21_dqu5g"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="21_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://6nk83vdjmefb" path="res://UI/number_points_ui.tscn" id="23_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_x0pyu"]
 
@@ -419,7 +418,7 @@ offset_right = -202.0
 offset_bottom = 104.377335
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
-texture_normal = ExtResource("5_k8do8")
+texture_normal = ExtResource("20_x0pyu")
 script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
@@ -443,7 +442,7 @@ offset_right = -202.0
 offset_bottom = 12.377312
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
-texture_normal = ExtResource("5_k8do8")
+texture_normal = ExtResource("20_x0pyu")
 script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
@@ -467,7 +466,7 @@ offset_right = -202.0
 offset_bottom = -77.717
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
-texture_normal = ExtResource("5_k8do8")
+texture_normal = ExtResource("20_x0pyu")
 script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
@@ -491,7 +490,7 @@ offset_right = -202.0
 offset_bottom = -166.81134
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
-texture_normal = ExtResource("5_k8do8")
+texture_normal = ExtResource("20_x0pyu")
 script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
@@ -515,7 +514,7 @@ offset_right = -202.0
 offset_bottom = -251.90564
 scale = Vector2(2.0058954, 2.0058954)
 pivot_offset = Vector2(16, 16)
-texture_normal = ExtResource("5_k8do8")
+texture_normal = ExtResource("20_x0pyu")
 script = ExtResource("5_0lysu")
 metadata/_edit_use_anchors_ = true
 
@@ -556,24 +555,24 @@ theme_override_font_sizes/font_size = 265
 text = "Shop"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=674497212]
-offset_left = -522.0
-offset_top = -279.99997
-offset_right = -434.0
-offset_bottom = -198.99997
-texture = ExtResource("2_j8job")
-patch_margin_left = 4
+offset_left = -528.0
+offset_top = -290.0
+offset_right = -497.0151
+offset_bottom = -261.98175
+scale = Vector2(3.0337365, 3.0337365)
+texture = ExtResource("20_x0pyu")
+patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
-patch_margin_bottom = 2
-metadata/_edit_use_anchors_ = true
+patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Camera2D" unique_id=1776224770]
 self_modulate = Color(1, 0, 0, 1)
-offset_left = -501.99997
-offset_top = -273.0
-offset_right = -205.99997
-offset_bottom = 24.0
-scale = Vector2(0.22652115, 0.22652115)
+offset_left = -512.0
+offset_top = -287.00003
+offset_right = -216.0
+offset_bottom = 9.9999695
+scale = Vector2(0.3209241, 0.3209241)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 247
 text = "60:00"
@@ -641,11 +640,11 @@ offset_left = -0.27060127
 offset_top = 0.27635074
 offset_right = 63.7294
 offset_bottom = 64.27635
-texture = ExtResource("21_26uyv")
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 4
+texture = ExtResource("21_o6lw0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Number Points/NinePatchRect" unique_id=261635607]

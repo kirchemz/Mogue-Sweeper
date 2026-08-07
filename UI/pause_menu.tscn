@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dt25yw7ynr4uq"]
 
 [ext_resource type="Script" uid="uid://edujyr7u7bce" path="res://UI/pause_menu.gd" id="1_0b5ob"]
-[ext_resource type="Texture2D" uid="uid://c2jr0a60n165b" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01b.png" id="1_03fe5"]
 [ext_resource type="Texture2D" uid="uid://dvgsdlkg3248o" path="res://Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01a.png" id="1_ltd3m"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_jfm1e"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="3_pqlge"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_pqlge"]
 
 [node name="Pause Menu" type="Control" unique_id=403710505]
 layout_mode = 3
@@ -19,10 +20,10 @@ layout_mode = 0
 offset_right = 229.0451
 offset_bottom = 128.83786
 scale = Vector2(5.0295773, 5.0295773)
-texture = ExtResource("1_03fe5")
-patch_margin_left = 2
+texture = ExtResource("5_pqlge")
+patch_margin_left = 3
 patch_margin_top = 3
-patch_margin_right = 2
+patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=167187286]
@@ -32,10 +33,10 @@ offset_top = 9.0
 offset_right = 409.34723
 offset_bottom = 134.06021
 scale = Vector2(5.0295773, 5.0295773)
-texture = ExtResource("1_ltd3m")
-patch_margin_left = 2
+texture = ExtResource("3_pqlge")
+patch_margin_left = 3
 patch_margin_top = 3
-patch_margin_right = 2
+patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="NinePatchRect" unique_id=293898142]
@@ -83,5 +84,136 @@ theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Settings"
 
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=506708549]
+visible = false
+layout_mode = 0
+offset_left = 299.0
+offset_top = 9.0
+offset_right = 409.34723
+offset_bottom = 134.06021
+scale = Vector2(5.0295773, 5.0295773)
+texture = ExtResource("1_ltd3m")
+patch_margin_left = 2
+patch_margin_top = 3
+patch_margin_right = 2
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="NinePatchRect3" unique_id=375854763]
+layout_mode = 0
+offset_left = 37.776535
+offset_top = 4.374125
+offset_right = 636.77655
+offset_bottom = 227.37413
+scale = Vector2(0.09130319, 0.09130319)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 207
+text = "Settings"
+
+[node name="Master" type="HSlider" parent="NinePatchRect3" unique_id=197808812]
+layout_mode = 0
+offset_left = 4.572949
+offset_top = 42.150658
+offset_right = 103.18959
+offset_bottom = 58.15066
+max_value = 3.0
+step = 0.01
+value = 1.5
+
+[node name="Label" type="Label" parent="NinePatchRect3/Master" unique_id=1560329723]
+layout_mode = 0
+offset_left = -3.9764767
+offset_top = -16.104733
+offset_right = 3230.6082
+offset_bottom = 446.89526
+scale = Vector2(0.033438664, 0.033438664)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 431
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="Music" type="HSlider" parent="NinePatchRect3" unique_id=1102779340]
+layout_mode = 0
+offset_left = 4.572949
+offset_top = 73.16718
+offset_right = 103.18959
+offset_bottom = 89.16719
+max_value = 3.0
+step = 0.01
+value = 1.5
+
+[node name="Label" type="Label" parent="NinePatchRect3/Music" unique_id=407424520]
+layout_mode = 0
+offset_left = -2.584711
+offset_top = -16.104733
+offset_right = 3232.0002
+offset_bottom = 446.89526
+scale = Vector2(0.033438664, 0.033438664)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 431
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="SFX" type="HSlider" parent="NinePatchRect3" unique_id=1102436083]
+layout_mode = 0
+offset_left = 4.572949
+offset_top = 103.38841
+offset_right = 103.18959
+offset_bottom = 119.38842
+max_value = 3.0
+step = 0.01
+value = 1.5
+
+[node name="Label" type="Label" parent="NinePatchRect3/SFX" unique_id=1992684932]
+layout_mode = 0
+offset_left = -3.9764767
+offset_top = -16.104733
+offset_right = 3230.6082
+offset_bottom = 446.89526
+scale = Vector2(0.033438664, 0.033438664)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 431
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect3" unique_id=1055551628]
+layout_mode = 0
+offset_left = 7.157659
+offset_top = 5.1694202
+offset_right = 28.541182
+offset_bottom = 21.307924
+scale = Vector2(1.2597134, 1.2597134)
+texture = ExtResource("5_pqlge")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label2" type="Label" parent="NinePatchRect3/NinePatchRect" unique_id=227194533]
+layout_mode = 0
+offset_left = 2.6831536
+offset_top = 3.1566527
+offset_right = 346.68317
+offset_bottom = 226.15665
+scale = Vector2(0.043860577, 0.043860577)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 207
+text = "Back"
+
+[node name="Button" type="Button" parent="NinePatchRect3/NinePatchRect" unique_id=445506075]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 21.465237
+offset_bottom = 15.783262
+
 [connection signal="pressed" from="NinePatchRect/Save and Quit" to="." method="_on_save_and_quit_pressed"]
 [connection signal="pressed" from="NinePatchRect/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="NinePatchRect/Settings" to="." method="_on_settings_pressed"]
+[connection signal="value_changed" from="NinePatchRect3/Master" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="NinePatchRect3/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="NinePatchRect3/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="NinePatchRect3/NinePatchRect/Button" to="." method="_on_button_pressed"]

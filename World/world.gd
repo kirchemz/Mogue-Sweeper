@@ -30,6 +30,12 @@ var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
+	Abilities.casecade_count = 0
+	Abilities.special_flag_count = 0
+	Abilities.numbers_used.clear()
+	Abilities.first_click = false
+	Abilities.three_mult = 0
+	
 	MusicPlayer.world()
 	
 	$Timer.wait_time = $Timer.wait_time * Levels.time_mult
@@ -543,6 +549,9 @@ func point_count():
 	if Abilities.one_two_three_four_five:
 		if 1 in Abilities.numbers_used and 2 in Abilities.numbers_used and 3 in Abilities.numbers_used and 4 in Abilities.numbers_used and 5 in Abilities.numbers_used:
 			Globals.mult *= 5
+	if Quests.quests.one_through_five in Quests.current_quests:
+		if 1 in Abilities.numbers_used and 2 in Abilities.numbers_used and 3 in Abilities.numbers_used and 4 in Abilities.numbers_used and 5 in Abilities.numbers_used:
+			Quests.current_quests[Quests.current_quests.find(Quests.quests.one_through_five)].completed = true
 	if Abilities.mowl_abilities:
 		for ability in Abilities.current_abilities:
 			if "type" in ability:
