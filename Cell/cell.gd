@@ -36,6 +36,7 @@ var bombs_around_set : bool = false
 var scanned : bool = false
 var got_points : bool = false
 var dug_up : bool = false
+var sabatoge_timer : float = 0.0
 
 # Funtion to set the cell as a bomb
 func bomb():
@@ -57,6 +58,14 @@ func _ready() -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	sabatoge_timer += delta
+	
+	if sabatoge_timer >= 5:
+		sabatoge_timer = 0
+		if flagged:
+			if randi() % 10 == 0:
+				flagged = false
+	
 	# Mine Scanner
 	if scanned:
 		if is_bomb:
@@ -263,7 +272,7 @@ func flagged_bombs_around():
 								Abilities.special_flag_count += 1
 						if Abilities.even_pi:
 							if acting_number == 2 or acting_number == 4 or acting_number == 6 or acting_number == 8:
-								self_mult += point_bonus * 3.14
+								Globals.points += 3.14
 						if Abilities.threes:
 							if acting_number == 3:
 								Abilities.three_mult += 1
@@ -273,7 +282,8 @@ func flagged_bombs_around():
 						if not acting_number in Abilities.numbers_used:
 							Abilities.numbers_used.append(acting_number)
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
-		Globals.currency += acting_number
+		Globals.currency += acting_number * Levels.money_mult
+		world.money_gained += acting_number * Levels.money_mult
 		if Abilities.mowl_flags:
 			if acting_number == 2:
 				Globals.blue_flags += 1

@@ -165,7 +165,6 @@ func _save():
 	data.quest_options = Quests.quest_options
 	data.one_through_five = Quests.one_through_five
 	data.one_thousand_dollas = Quests.one_thousand_dollas
-	data.no_abilities = Quests.no_abilities
 	data.fifty_quota = Quests.fifty_quota
 	
 	data.current_level = Levels.chosen_level
@@ -262,7 +261,6 @@ func _load():
 		Quests.quest_options = data.quest_options
 		Quests.one_through_five = data.one_through_five
 		Quests.one_thousand_dollas = data.one_thousand_dollas
-		Quests.no_abilities = data.no_abilities
 		Quests.fifty_quota = data.fifty_quota
 		
 		Levels.chosen_level = data.current_level

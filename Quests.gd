@@ -14,7 +14,7 @@ one round I'll give you 500 Supa
 Moneys! You'll have 3 rounds to
 do it.",
 		"quest_board_description" : "Clear a 1, 2, 3, 4, and 5 in one round.",
-		"reward" : 500,
+		"reward" : 1000,
 		"giver" : "",
 		"time" : 3,
 		"completed" : false
@@ -22,19 +22,8 @@ do it.",
 	"one_thousand_dollas" : {
 		"description" : "If you make a total of 1000 Supa
 Moneys in 3 rounds or less I'll
-give you 1000 more.",
+give you 500 more.",
 		"quest_board_description" : "Make a total of 1000 Supa Moneys.",
-		"reward" : 500,
-		"giver" : "",
-		"time" : 3,
-		"completed" : false
-	},
-	"no_abilities" : {
-		"description" : "If you clear a round without
-activating a single ability in 3
-rounds, I will give you 500 Supa
-Moneys!",
-		"quest_board_description" : "Clear a round without activating a single ability.",
 		"reward" : 500,
 		"giver" : "",
 		"time" : 3,
@@ -50,17 +39,33 @@ give you 500 Supa Moneys!",
 		"time" : 3,
 		"completed" : false
 	},
+	"no_mult" : {
+		"description" : "If you clear a round without
+adding any mult in three rounds,
+I'll give you 500 Supa Moneys.",
+		"quest_board_description" : "Clear a round without adding any mult.",
+		"reward" : 500,
+		"giver" : "",
+		"time" : 3,
+		"completed" : false
+	},
 }
 
 var one_through_five : bool = false
 var one_thousand_dollas : bool = false
-var no_abilities : bool = false
 var fifty_quota : bool = false
+var no_mult : bool = false
 var current_quests : Array = []
+var total_money : int = 0
 
 func _ready() -> void:
 	for quest in quests.values():
 		quest_options.append(quest)
+
+func _process(delta: float) -> void:
+	if total_money >= 1000:
+		total_money = 0
+		Quests.current_quests[Quests.current_quests.find(Quests.quests.fifty_quota)].completed = true
 
 func choose_quest():
 	var chosen_quest : Dictionary

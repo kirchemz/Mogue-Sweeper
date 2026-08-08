@@ -1002,8 +1002,6 @@ func _on_yes_pressed() -> void:
 		Quests.one_through_five = true
 	if chosen_quest == Quests.quests.one_thousand_dollas:
 		Quests.one_thousand_dollas = true
-	if chosen_quest == Quests.quests.no_abilities:
-		Quests.no_abilities = true
 	if chosen_quest == Quests.quests.fifty_quota:
 		Quests.fifty_quota = true
 	$"Mowl Relative Dialogue Box/NinePatchRect/Label".visible_characters = 0

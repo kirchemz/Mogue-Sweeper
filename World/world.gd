@@ -22,6 +22,8 @@ var mine_scanner_made : bool = false
 var mine_scanner_placed : bool = false
 var mine_scanner_clicked : bool = false
 var mine_scanner_instance
+var money_gained : int = 0
+var added_mult : bool = false
 
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
@@ -302,6 +304,7 @@ func _process(delta: float) -> void:
 				if Globals.yellow_flag_active:
 					if Globals.yellow_flags > 0:
 						Globals.mult += 1
+						added_mult = true
 						if Abilities.mowl_flags_again:
 							Globals.mult += 1
 						target_cell.flag_type = "Yellow"
@@ -578,6 +581,15 @@ func point_count():
 	" + "Mult:" + str(Globals.mult) + "
 	" + "=" + "
 	" + str(Globals.total_points)
+	if Quests.fifty_quota:
+		for i in range(Globals.level_requirement - 50, Globals.level_requirement + 50):
+			if Globals.total_points == i:
+				Quests.current_quests[Quests.current_quests.find(Quests.quests.fifty_quota)].completed = true
+	if Quests.one_thousand_dollas:
+		Quests.total_money += money_gained
+	if Quests.no_mult:
+		if not added_mult:
+			Quests.current_quests[Quests.current_quests.find(Quests.quests.no_mult)].completed = true
 
 # Makes it so when you click in the menu it doesn't dig up any cells behind the menu
 func _on_main_menu_mouse_entered() -> void:

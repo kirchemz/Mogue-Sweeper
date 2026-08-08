@@ -100,7 +100,7 @@ var ability_stock : Dictionary = {
 		"price" : 100,
 		"img" : preload("res://Sprites/Even Numbers.png"),
 		"rarity" : 100,
-		"description" : "Every even number gets 3.14 times their points",
+		"description" : "Every even number gets plus 3.14 points",
 		"type" : "BAKERY"
 	},
 	"one_mowl" : {

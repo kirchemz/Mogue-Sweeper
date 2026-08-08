@@ -23,13 +23,13 @@ func _process(delta: float) -> void:
 		logo_rot_down.play()
 
 
-func _on_texture_button_pressed() -> void:
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_normal_pressed() -> void:
 	if FileAccess.file_exists("user://save_file.json"):
 		SaveLoad._load()
 	else:
 		get_tree().change_scene_to_file("res://World/level_selection.tscn")
 	Abilities.set_abilities = true
-
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()

@@ -1554,8 +1554,9 @@ scale = Vector2(0.11219228, 0.11219228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 152
-text = "Thanks for doin' that for me!
-Here's your money."
+text = "If you clear a round without
+gaining any mult in three rounds,
+I'll give you 500 Supa Moneys"
 visible_characters = 0
 visible_ratio = 0.0
 
