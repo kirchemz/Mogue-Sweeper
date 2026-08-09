@@ -79,7 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
 # Runs every frame
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Camera2D/NinePatchRect2/Label.text = "Supa Money: "  + str(Globals.currency)
 	if Quests.current_quests.size() > 0:
 		$"Camera2D/Quest Board/Quest 1".text = Quests.current_quests[0].quest_board_description
