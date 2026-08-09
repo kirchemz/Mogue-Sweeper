@@ -4,14 +4,18 @@
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
 [ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="2_0g23a"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="2_f1fy1"]
-[ext_resource type="Texture2D" uid="uid://c8y0x6xp005ps" path="res://Sprites/Ability Base.png" id="3_7pke3"]
 [ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_pyb8k"]
 [ext_resource type="Texture2D" uid="uid://bua7c7tk66oq7" path="res://Sprites/Red Flag Dig.png" id="3_u2y83"]
+[ext_resource type="Texture2D" uid="uid://drc8jkurv7s8u" path="res://Sprites/Flag Burried.png" id="4_1sibk"]
 [ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="4_2otml"]
 [ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/White Out Cell.png" id="4_wh31u"]
 [ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="5_0g23a"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="5_u2y83"]
 [ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="8_1sibk"]
+[ext_resource type="Texture2D" uid="uid://cyi7hyvwsg0km" path="res://Sprites/Grass Cell.png" id="9_5udsl"]
+[ext_resource type="Texture2D" uid="uid://b1xornd6qp4dy" path="res://Sprites/Poor Field.png" id="10_abcbo"]
+[ext_resource type="Texture2D" uid="uid://c7nugxw6ckxdg" path="res://Sprites/Wealthy Field.png" id="11_abcbo"]
+[ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="16_p4vkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(32, 32)
@@ -19,6 +23,26 @@ size = Vector2(32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2otml"]
 atlas = ExtResource("2_f1fy1")
 region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abcbo"]
+atlas = ExtResource("4_1sibk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5udsl"]
+atlas = ExtResource("4_1sibk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4vkr"]
+atlas = ExtResource("4_1sibk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd1nb"]
+atlas = ExtResource("4_1sibk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u85dn"]
+atlas = ExtResource("4_1sibk")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyb8k"]
 atlas = ExtResource("3_u2y83")
@@ -60,7 +84,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_7pke3")
+"texture": SubResource("AtlasTexture_abcbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5udsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4vkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd1nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u85dn")
+}],
+"loop": 0,
+"name": &"Burried",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_37gha")
 }],
 "loop": 1,
 "name": &"Cell",
@@ -104,6 +148,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_5udsl")
+}],
+"loop": 1,
+"name": &"Grass",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_u2y83")
 }],
 "loop": 1,
@@ -112,10 +164,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_abcbo")
+}],
+"loop": 1,
+"name": &"Poor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_1sibk")
 }],
 "loop": 1,
 "name": &"Uncle Jimmy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_abcbo")
+}],
+"loop": 1,
+"name": &"Wealthy",
 "speed": 5.0
 }]
 
@@ -127,7 +195,7 @@ shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236159199]
 sprite_frames = SubResource("SpriteFrames_0rlat")
-animation = &"Anckle Biter"
+animation = &"Cell"
 
 [node name="1" type="Sprite2D" parent="." unique_id=258815677]
 scale = Vector2(0.01, 0.01)
@@ -163,6 +231,19 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 scale = Vector2(2, 2)
 texture = ExtResource("4_wh31u")
+
+[node name="Label" type="Label" parent="." unique_id=2123037955]
+visible = false
+offset_left = -16.0
+offset_top = -9.999992
+offset_right = 943.697
+offset_bottom = 608.0
+scale = Vector2(0.03334386, 0.03334386)
+theme_override_colors/font_color = Color(0.947918, 0.9479181, 1.540184e-06, 1)
+theme_override_fonts/font = ExtResource("16_p4vkr")
+theme_override_font_sizes/font_size = 576
+text = "$"
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

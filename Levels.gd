@@ -13,44 +13,54 @@ var level_options : Array
 
 var levels : Dictionary = {
 	"money_db" : {
-		"name" : "Money Debuff",
-		"description" : "Currency gained at the end of the round is multiplied by 0.5"
+		"name" : "Pay Cut",
+		"description" : "Currency gained at the end of the round is multiplied by 0.5",
+		"plot_description" : "The boss is letting you keep less of the money you find"
 	},
 	"money_b" : {
-		"name" : "Money Buff",
-		"description" : "Currency gained at the end of the round is multiplied by 1.5"
+		"name" : "Pay Raise",
+		"description" : "Currency gained at the end of the round is multiplied by 1.5",
+		"plot_description" : "The boss is letting you keep more of the money you find"
 	},
 	"point_db" : {
-		"name" : "Point Debuff",
-		"description" : "Total Points gained at the end of the round are multiplied by 0.5"
+		"name" : "Poor Field",
+		"description" : "Total Points gained at the end of the round are multiplied by 0.5",
+		"plot_description" : "The Mowls didn't bury much money here"
 	},
 	"point_b" : {
-		"name" : "Point Buff",
-		"description" : "Total Points gained at the end of the round are multiplied by 1.5"
+		"name" : "Wealthy Field",
+		"description" : "Total Points gained at the end of the round are multiplied by 1.5",
+		"plot_description" : "The Mowls burried a lot of money here turning the soil gold"
 	},
 	"flag_db" : {
 		"name" : "Flag Debuff",
-		"description" : "All flags other then the red flag are disabled"
+		"description" : "All flags other then the red flag are disabled",
+		"plot_description" : ""
 	},
 	"dig_db" : {
 		"name" : "Digging Debuff",
-		"description" : "Some spots aren't possible to dig up"
+		"description" : "Some spots aren't possible to dig up",
+		"plot_description" : ""
 	},
 	"time_db" : {
 		"name" : "Time Debuff",
-		"description" : "The clock's time at the start gets multiplied by 0.75"
+		"description" : "The clock's time at the start gets multiplied by 0.75",
+		"plot_description" : "The Mowls here are a lot more focused"
 	},
 	"time_b" : {
 		"name" : "Time Buff",
-		"description" : "The clock's time at the start gets multiplied by 1.25"
+		"description" : "The clock's time at the start gets multiplied by 1.25",
+		"plot_description" : "The Mowls here aren't as focused"
 	},
 	"double_odds" : {
 		"name" : "Doubled Odds",
-		"description" : "All probabilities are doubled"
+		"description" : "All probabilities are doubled",
+		"plot_description" : ""
 	},
 	"halved_odds" : {
 		"name" : "Halved Odds",
-		"description" : "All probabilities are halved"
+		"description" : "All probabilities are halved",
+		"plot_description" : ""
 	}
 }
 

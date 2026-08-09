@@ -34,7 +34,7 @@ mouse_cursor/custom_image="uid://bf3a52rehof0r"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/PaletteSwapShader/plugin.cfg", "res://addons/project_statistics/plugin.cfg")
+enabled=PackedStringArray("res://addons/PaletteSwapShader/plugin.cfg", "res://addons/cheatsheet_viewer/plugin.cfg", "res://addons/project_statistics/plugin.cfg")
 
 [input]
 

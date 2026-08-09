@@ -36,6 +36,7 @@ func _ready() -> void:
 	Abilities.special_flag_count = 0
 	Abilities.numbers_used.clear()
 	Abilities.first_click = false
+	Globals.cascade_click = false
 	Abilities.three_mult = 1
 	
 	MusicPlayer.world()
@@ -79,6 +80,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	$Camera2D/NinePatchRect2/Label.text = "Supa Money: "  + str(Globals.currency)
 	if Quests.current_quests.size() > 0:
 		$"Camera2D/Quest Board/Quest 1".text = Quests.current_quests[0].quest_board_description
 		$"Camera2D/Quest Board/Quest 1 Details".text = "Reward: "  + str(Quests.current_quests[0].reward) + "    Time: " + str(Quests.current_quests[0].time) + " Rounds"
@@ -280,6 +282,7 @@ func _process(delta: float) -> void:
 			unhide_cells(target_cell)
 		if target_cell.bombs_around != 0 or target_cell.is_bomb:
 			if not target_cell.flagged:
+				target_cell.clicked = true
 				target_cell.is_hidden = false
 				if target_cell.is_bomb:
 					game_over()
@@ -394,12 +397,16 @@ func unhide_cells(cell_instance):
 			if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
 				var neighbor = map[check_x][check_y]
 				if is_instance_valid(neighbor) and neighbor.is_hidden:
+					if neighbor.bombs_around != 0 and not neighbor.is_bomb:
+						neighbor.clicked = true
 					neighbor.is_hidden = false
 					if not neighbor.is_bomb:
 						neighbor.flagged = false
 					if not cell_instance.unflagged_bomb_around() and neighbor.is_bomb:
 						neighbor.is_hidden = true
 					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
+						if not Globals.cascade_click:
+							Globals.cascade_click = true
 						if Abilities.first_try and Abilities.first_click:
 							Globals.currency += 100
 						if Abilities.mowl_cascade:
@@ -408,7 +415,49 @@ func unhide_cells(cell_instance):
 								Abilities.casecade_count = 0
 								Globals.currency +=1
 						Abilities.first_click = false
-						unhide_cells(neighbor)
+						unhide_cascade(neighbor)
+
+func unhide_cascade(cell_instance):
+	if cell_instance.unhide_neighbors:
+		return
+	cell_instance.unhide_neighbors = true
+	cell_instance.is_hidden = false
+	
+	var xc = -1
+	var yc = -1
+	for y in range(map_height):
+		for x in range(map_width):
+			if map[x][y] == cell_instance:
+				xc = x
+				yc = y
+	
+	if xc == -1 or yc == -1:
+		return
+	
+	for ay in range(-1, 2):
+		for ax in range(-1, 2):
+			var check_x = xc + ax
+			var check_y = yc + ay
+			if check_x >= 0 and check_x < map_width and check_y >= 0 and check_y < map_height:
+				var neighbor = map[check_x][check_y]
+				if is_instance_valid(neighbor) and neighbor.is_hidden:
+					neighbor.is_hidden = false
+					if not neighbor.is_bomb:
+						neighbor.flagged = false
+					if not cell_instance.unflagged_bomb_around() and neighbor.is_bomb:
+						neighbor.is_hidden = true
+					if neighbor.bombs_around == 0 and not neighbor.is_bomb:
+						if not Globals.cascade_click:
+							Globals.cascade_click = true
+						if Abilities.first_try and Abilities.first_click:
+							Globals.currency += 100
+						if Abilities.mowl_cascade:
+							Abilities.casecade_count += 1
+							if Abilities.casecade_count >= 4:
+								Abilities.casecade_count = 0
+								Globals.currency +=1
+						Abilities.first_click = false
+						unhide_cascade(neighbor)
 
 # Mine Scanner
 func mine_scan(cell_instance):

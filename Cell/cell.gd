@@ -37,6 +37,9 @@ var scanned : bool = false
 var got_points : bool = false
 var dug_up : bool = false
 var sabatoge_timer : float = 0.0
+var cell : String = "Cell"
+var money_given : bool = false
+var clicked : bool = false
 
 # Funtion to set the cell as a bomb
 func bomb():
@@ -58,13 +61,39 @@ func _ready() -> void:
 
 # Runs every frame
 func _process(delta: float) -> void:
+	if not money_given and not is_hidden and not is_bomb and clicked:
+		money_given = true
+		Globals.currency += acting_number * Levels.money_mult
+		$Label.text = "$" + str(acting_number)
+		$Label.visible = true
+		var label_pos = create_tween()
+		label_pos.set_ease(Tween.EASE_OUT)
+		label_pos.set_trans(Tween.TRANS_EXPO)
+		label_pos.tween_property($Label, "position", Vector2(-16, -42), 2)
+		label_pos.play()
+		var label_color = create_tween()
+		label_color.set_ease(Tween.EASE_OUT)
+		label_color.set_trans(Tween.TRANS_EXPO)
+		label_color.tween_property($Label, "modulate:a", 0, 3)
+		label_color.play()
+		await label_color.finished
+		$Label.queue_free()
+	if not Globals.cascade_click:
+		cell = "Grass"
+	elif Levels.chosen_level == Levels.levels.point_b:
+		cell = "Wealthy"
+	elif Levels.chosen_level == Levels.levels.point_db:
+		cell = "Poor"
+	else:
+		cell = "Cell"
 	sabatoge_timer += delta
 	
 	if sabatoge_timer >= 5:
 		sabatoge_timer = 0
-		if flagged:
-			if randi() % 10 == 0:
-				flagged = false
+		if is_hidden:
+			if flagged:
+				if randi() % 10 == 0:
+					bury()
 	
 	# Mine Scanner
 	if scanned:
@@ -120,10 +149,10 @@ func _process(delta: float) -> void:
 			if not dug_up:
 				dig()
 		elif is_bomb and not flagged:
-			anim.play("Cell")
+			anim.play(cell)
 		else:
 			if not dug_up:
-				anim.play("Cell")
+				anim.play(cell)
 	
 	# Gives the cell its image and number if unhidden
 	if not is_hidden:
@@ -282,7 +311,6 @@ func flagged_bombs_around():
 						if not acting_number in Abilities.numbers_used:
 							Abilities.numbers_used.append(acting_number)
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
-		Globals.currency += acting_number * Levels.money_mult
 		world.money_gained += acting_number * Levels.money_mult
 		if Abilities.mowl_flags:
 			if acting_number == 2:
@@ -380,3 +408,33 @@ func dig():
 	anim.play("Dig")
 	await anim.animation_finished
 	anim.play("Idle")
+
+func bury():
+	if flag_type == "Blue":
+		$AnimatedSprite2D.material = blue_mat
+	if flag_type == "Purple":
+		$AnimatedSprite2D.material = violet_mat
+	if flag_type == "Orange":
+		$AnimatedSprite2D.material = orange_mat
+	if flag_type == "Green":
+		$AnimatedSprite2D.material = green_mat
+	if flag_type == "Magenta":
+		$AnimatedSprite2D.material = magenta_mat
+	if flag_type == "Pink":
+		$AnimatedSprite2D.material = pink_mat
+	if flag_type == "Yellow":
+		$AnimatedSprite2D.material = yellow_mat
+	if flag_type == "Green":
+		$AnimatedSprite2D.material = green_mat
+	if flag_type == "White":
+		$AnimatedSprite2D.material = white_mat
+	if flag_type == "Black":
+		$AnimatedSprite2D.material = black_mat
+	if flag_type == "Grey":
+		$AnimatedSprite2D.material = grey_mat
+	if flag_type == "Brown":
+		$AnimatedSprite2D.material = brown_mat
+	anim.play("Burried")
+	await anim.animation_finished
+	anim.play("Idle")
+	flagged = false

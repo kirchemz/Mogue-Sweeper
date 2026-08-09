@@ -27,6 +27,16 @@ theme_override_font_sizes/font_size = 596
 text = "Total Points are multiplied by 0.5"
 horizontal_alignment = 1
 
+[node name="Label4" type="Label" parent="." unique_id=1635627495]
+offset_top = 112.0
+offset_right = 22265.21
+offset_bottom = 828.0
+scale = Vector2(0.05191956, 0.05169234)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rrkg4")
+theme_override_font_sizes/font_size = 596
+horizontal_alignment = 1
+
 [node name="Label3" type="Label" parent="." unique_id=1007748860]
 offset_top = 255.0
 offset_right = 16388.576

@@ -808,10 +808,18 @@ though you ain't a mowl."
 		return
 	if dialogue_section == 3:
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "See ya waita!"
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "By the way, you can talk to my
+relatives and get quests from
+them. They'll give you money fer
+doin it but you'll have a time limit."
 		dialogue_section += 1
 		return
 	if dialogue_section == 4:
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "See ya waita!"
+		dialogue_section += 1
+		return
+	if dialogue_section == 5:
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
 		dialogue_section = 1
 		dialogue_open = false

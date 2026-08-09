@@ -1448,18 +1448,18 @@ patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Mista Mowl Dialogue Box/NinePatchRect" unique_id=1737790297]
 layout_mode = 0
-offset_left = 11.241051
-offset_top = -0.28102684
-offset_right = 2748.241
-offset_bottom = 740.719
+offset_left = 3.9343677
+offset_top = -1.4051319
+offset_right = 2740.9343
+offset_bottom = 739.59485
 scale = Vector2(0.11219228, 0.11219228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 152
-text = "Hello I'm Mista Mowl! Welcome
-to da mowl shop! We  got some
-abilities you can buy that can
-help you in your travels."
+text = "By the way you can talk to my
+relatives and get quests from
+them. They'll give you money for
+doin it but you'll have a time limit"
 visible_characters = 0
 visible_ratio = 0.0
 

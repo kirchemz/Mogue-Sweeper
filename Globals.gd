@@ -57,6 +57,7 @@ var mult_mult : float = 1.0
 var total_points : float = 0.0
 var level_requirement : int = 50
 var currency : int = 500
+var cascade_click : bool = false
 
 # All flag variables
 var red_flag_active: bool = true

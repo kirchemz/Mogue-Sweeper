@@ -64,20 +64,20 @@ horizontal_alignment = 1
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
 offset_top = 472.0
-offset_right = 314.0
+offset_right = 166.0
 offset_bottom = 534.0
 
 [node name="Label" type="Label" parent="Tutorial" unique_id=1787497591]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 7.0
-offset_right = 4763.0
+offset_right = 2240.9033
 offset_bottom = 829.0
 scale = Vector2(0.058090087, 0.058090087)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 766
-text = "Employee Training"
+text = "Tutorial"
 horizontal_alignment = 1
 
 [node name="Quit" type="Button" parent="." unique_id=2034018236]

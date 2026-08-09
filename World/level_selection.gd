@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	$Label.text = level.name
 	$Label2.text = level.description
 	$Label3.text = "Quota: " + str(Globals.level_requirement) + " Supa Moneys"
+	$Label4.text = level.plot_description
 
 
 func _on_button_pressed() -> void:
