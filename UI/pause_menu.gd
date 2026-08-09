@@ -6,7 +6,8 @@ func _ready() -> void:
 	$NinePatchRect3/SFX.value = SaveLoad.data.sfx_volume
 
 func _on_save_and_quit_pressed() -> void:
-	SaveLoad._save()
+	if get_tree().current_scene.scene_file_path != "res://World/title_screen.tscn" and get_tree().current_scene.scene_file_path != "res://World/tutorial.tscn" and get_tree().current_scene.scene_file_path != "res://World/game_over.tscn" and get_tree().current_scene.scene_file_path != "res://World/level_selection.tscn":
+		SaveLoad._save()
 	get_tree().quit()
 
 func _on_continue_pressed() -> void:

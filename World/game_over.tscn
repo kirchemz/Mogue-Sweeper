@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgh5dusidv0kj"]
 
-[ext_resource type="Script" uid="uid://danh4xvdy7gtq" path="res://World/game_over.gd" id="1_sad6x"]
+[ext_resource type="Script" uid="uid://d1aq6vsxv8in6" path="res://Scripts/game_over.gd" id="1_sad6x"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_sad6x"]
 
 [node name="Game Over" type="Node2D" unique_id=841727645]

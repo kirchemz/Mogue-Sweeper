@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkv3nmf74smar"]
 
-[ext_resource type="Script" uid="uid://c0410f2mgqjke" path="res://World/level_selection.gd" id="1_rrkg4"]
+[ext_resource type="Script" uid="uid://h1om7kwtt7s3" path="res://Scripts/level_selection.gd" id="1_rrkg4"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_rrkg4"]
 
 [node name="Level Selection" type="Node2D" unique_id=101460984]

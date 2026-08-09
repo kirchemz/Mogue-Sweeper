@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dognjb73ne47s"]
 
-[ext_resource type="Script" uid="uid://bfny83dq7r8v0" path="res://World/loading_scene.gd" id="1_lhror"]
+[ext_resource type="Script" uid="uid://b4n53djf8trit" path="res://Scripts/loading_scene.gd" id="1_lhror"]
 [ext_resource type="Texture2D" uid="uid://cv63r5ragpmyx" path="res://Sprites/Loading.png" id="2_lhror"]
 
 [node name="Loading Scene" type="Node2D" unique_id=98209652]

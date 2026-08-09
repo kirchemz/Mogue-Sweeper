@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c6k7anaruwjh2"]
 
-[ext_resource type="Script" uid="uid://ckn55dg3hm1pt" path="res://World/title_screen.gd" id="1_h4hme"]
+[ext_resource type="Script" uid="uid://bikn5rvph0r2e" path="res://Scripts/title_screen.gd" id="1_h4hme"]
 [ext_resource type="Texture2D" uid="uid://os4eli6fd3ip" path="res://Sprites/MowlFamily.Png" id="2_h4hme"]
 [ext_resource type="Texture2D" uid="uid://dqnx3g6e6hrhe" path="res://Sprites/LOGO.png" id="2_nm8xh"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_hwc51"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="5_nm8xh"]
 
 [node name="Title Screen" type="Node2D" unique_id=295365305]
@@ -14,20 +15,21 @@ scale = Vector2(2.8300517, 2.8300517)
 texture = ExtResource("2_h4hme")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2133820711]
-offset_left = -26.0
-offset_top = -45.0
-offset_right = 459.0
-offset_bottom = 375.0
-scale = Vector2(0.7329173, 0.7329173)
+offset_left = -61.999992
+offset_top = -70.99999
+offset_right = 423.0
+offset_bottom = 349.0
+scale = Vector2(0.641818, 0.641818)
 pivot_offset = Vector2(242.5, 210)
 texture = ExtResource("2_nm8xh")
 
 [node name="Normal" type="Button" parent="." unique_id=492255796]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
-offset_top = 321.0
+offset_top = 353.0
 offset_right = 176.0
-offset_bottom = 383.0
+offset_bottom = 415.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Normal" unique_id=204673554]
 layout_mode = 0
@@ -40,13 +42,35 @@ theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 766
 text = "Normal"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="." unique_id=2084163688]
+self_modulate = Color(1, 1, 1, 0.2)
+offset_left = 30.0
+offset_top = 276.0
+offset_right = 198.0
+offset_bottom = 338.0
+
+[node name="Label" type="Label" parent="Continue" unique_id=814765162]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 2049.2524
+offset_bottom = 822.0
+scale = Vector2(0.06939516, 0.06939516)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 766
+text = "Continue"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Story" type="Button" parent="." unique_id=257205582]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
-offset_top = 396.0
+offset_top = 428.0
 offset_right = 253.0
-offset_bottom = 458.0
+offset_bottom = 490.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Story" unique_id=602558185]
 layout_mode = 0
@@ -59,13 +83,15 @@ theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 766
 text = "Story Mode"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" type="Button" parent="." unique_id=1513679465]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
-offset_top = 472.0
+offset_top = 504.0
 offset_right = 166.0
-offset_bottom = 534.0
+offset_bottom = 566.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Tutorial" unique_id=1787497591]
 layout_mode = 0
@@ -79,13 +105,15 @@ theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 766
 text = "Tutorial"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="." unique_id=2034018236]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
-offset_top = 544.0
+offset_top = 576.0
 offset_right = 119.0
-offset_bottom = 606.0
+offset_bottom = 638.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Quit" unique_id=1271167266]
 layout_mode = 0
@@ -99,6 +127,86 @@ theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 766
 text = "Quit"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Warning" type="Control" parent="." unique_id=814843932]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Warning" unique_id=795685963]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Warning" unique_id=2119627207]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 103.0
+offset_right = 495.11743
+offset_bottom = 226.51169
+scale = Vector2(3.6514761, 3.6514761)
+texture = ExtResource("5_hwc51")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="Warning/NinePatchRect" unique_id=1294847051]
+layout_mode = 0
+offset_left = 8.215856
+offset_top = 1.917033
+offset_right = 2034.2781
+offset_bottom = 1135.917
+scale = Vector2(0.050147887, 0.050147887)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 350
+text = "This will erase
+all previous
+save data"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Warning/NinePatchRect" unique_id=1306263456]
+layout_mode = 0
+offset_left = 3.5601997
+offset_top = 58.33257
+offset_right = 2667.5603
+offset_bottom = 1192.3325
+scale = Vector2(0.040501766, 0.040501766)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 350
+text = "Are you sure you
+would like to continue"
+horizontal_alignment = 1
+
+[node name="Yes" type="Button" parent="Warning/NinePatchRect" unique_id=1117755009]
+layout_mode = 0
+offset_left = 13.145369
+offset_top = 88.73124
+offset_right = 866.1454
+offset_bottom = 800.73126
+scale = Vector2(0.03860265, 0.03860265)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 657
+text = "Yes"
+
+[node name="No" type="Button" parent="Warning/NinePatchRect" unique_id=1926296392]
+layout_mode = 0
+offset_left = 69.83477
+offset_top = 88.73124
+offset_right = 922.8348
+offset_bottom = 800.73126
+scale = Vector2(0.03860265, 0.03860265)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 657
+text = "No"
 
 [connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Warning/NinePatchRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Warning/NinePatchRect/No" to="." method="_on_no_pressed"]

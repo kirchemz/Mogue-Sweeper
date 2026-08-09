@@ -5,7 +5,7 @@ const file_path : String = "user://save_file.json"
 var auto_save_timer : float = 0.0
 
 var data : Dictionary = {
-	"current_scene" : "res://World/title_screen.tscn",
+	"current_scene" : "res://World/level_selection.tscn",
 	"volume" : 1.5,
 	"music_volume" : 1.5,
 	"sfx_volume" : 1.5,
@@ -80,11 +80,93 @@ var data : Dictionary = {
 	"ability5" : Abilities.empty_ability_five
 }
 
+func clear() -> void:
+	data = {
+		"current_scene" : "res://World/level_selection.tscn",
+		"volume" : 1.5,
+		"music_volume" : 1.5,
+		"sfx_volume" : 1.5,
+		"quota" : 50,
+		"currency" : 0,
+		"current_quests" : [],
+		"one_through_five" : false,
+		"one_thousand_dollas" : false,
+		"no_abilities" : false,
+		"fifty_quota" : false,
+		"current_level" : {},
+		"ones_levels" : 1,
+		"twos_levels" : 1,
+		"threes_levels" : 1,
+		"fours_levels" : 1,
+		"fives_levels" : 1,
+		"sixes_levels" : 1,
+		"sevens_levels" : 1,
+		"eights_levels" : 1,
+		"nines_levels" : 1,
+		"blue_flags" : 0,
+		"violet_flags" : 0,
+		"orange_flags" : 0,
+		"green_flags" : 0,
+		"pink_flags" : 0,
+		"magenta_flags" : 0,
+		"yellow_flags" : 0,
+		"black_flags" : 0,
+		"white_flags" : 0,
+		"grey_flags" : 0,
+		"brown_flags" : 0,
+		"current_abilities" : [],
+		"quest_options" : [],
+		"auto_chord" : false,
+		"mowl_time" : false,
+		"mowl_flags" : false,
+		"the_mowl_the_marrier" : false,
+		"ones_cleared" : 0,
+		"twos_cleared" : 0,
+		"threes_cleared" : 0,
+		"fours_cleared" : 0,
+		"fives_cleared" : 0,
+		"sixes_cleared" : 0,
+		"sevens_cleared" : 0,
+		"eights_cleared" : 0,
+		"nines_cleared" : 0,
+		"owl" : false,
+		"owl_level" : 1,
+		"greedy_mowl" : false,
+		"safe_start" : false,
+		"mowl_cascade" : false,
+		"mowl_flags_again" : false,
+		"supa_flags" : false,
+		"even_pi" : false,
+		"one_mowl" : false,
+		"high_scorer" : false,
+		"low_scorer" : false,
+		"first_try" : false,
+		"active_bomb" : false,
+		"slow_mowl" : false,
+		"fast_mowl" : false,
+		"double_odds" : false,
+		"halved_odds" : false,
+		"threes" : false,
+		"one_two_three_four_five" : false,
+		"mowl_abilities" : false,
+		"ability_options" : Abilities.ability_options,
+		"ability1" : Abilities.empty_ability_one,
+		"ability2" : Abilities.empty_ability_two,
+		"ability3" : Abilities.empty_ability_three,
+		"ability4" : Abilities.empty_ability_four,
+		"ability5" : Abilities.empty_ability_five
+	}
+
+	var file : FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
+	if file != null:
+		file.store_var(data)
+		file.close()
+
 func _process(delta: float) -> void:
 	auto_save_timer += delta
 	if auto_save_timer >= 30:
 		if is_instance_valid(get_tree().current_scene):
-			if get_tree().current_scene.scene_file_path != "res://World/title_screen.tscn":
+			if get_tree().current_scene.scene_file_path != "res://World/title_screen.tscn" and get_tree().current_scene.scene_file_path != "res://World/tutorial.tscn" and get_tree().current_scene.scene_file_path != "res://World/game_over.tscn" and get_tree().current_scene.scene_file_path != "res://World/level_selection.tscn":
 				_save()
 
 func _save():
@@ -171,7 +253,7 @@ func _save():
 	data.quota = Globals.level_requirement
 	
 	if is_instance_valid(get_tree().current_scene):
-		if get_tree().current_scene.scene_file_path != "res://World/title_screen.tscn":
+		if get_tree().current_scene.scene_file_path != "res://World/title_screen.tscn" and get_tree().current_scene.scene_file_path != "res://World/tutorial.tscn" and get_tree().current_scene.scene_file_path != "res://World/game_over.tscn" and get_tree().current_scene.scene_file_path != "res://World/level_selection.tscn":
 			data.current_scene = get_tree().current_scene.scene_file_path
 	file.store_var(data)
 	file.close()
@@ -183,9 +265,15 @@ func _load():
 		data = save_data
 		if data.current_scene == "res://World/world.tscn":
 			get_tree().change_scene_to_file("res://World/level_selection.tscn")
+		elif data.current_scene == "res://World/tutorial.tscn":
+			get_tree().change_scene_to_file("res://World/level_selection.tscn")
+			Levels.tutorial = true
 		else:
 			get_tree().change_scene_to_file(data.current_scene)
-		
+			Levels.tutorial = false
+			Levels.died = false
+			Levels.death_level = {}
+
 		var master_bus = AudioServer.get_bus_index("Master")
 		var music_bus = AudioServer.get_bus_index("Music")
 		var sfx_bus = AudioServer.get_bus_index("SFX")

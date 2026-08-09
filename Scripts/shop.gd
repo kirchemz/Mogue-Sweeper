@@ -220,7 +220,7 @@ func _ready() -> void:
 	extra_three = choose_item(extra_options)
 	extra_options.erase(extra_three)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Globals.level_requirement == 50:
 		if not talked_to_mowl:
 			$NinePatchRect6.show()
@@ -800,13 +800,21 @@ help you in your travels."
 		return
 	if dialogue_section == 2:
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "There's flags you can buy too.
+They do different things to get
+you more money but you only have
+a limited stock so use them wisley."
+		dialogue_section += 1
+		return
+	if dialogue_section == 3:
+		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "You look like a supa sewious
 buisness man so I'm gonna let
 you buy mowl abilities even
 though you ain't a mowl."
 		dialogue_section += 1
 		return
-	if dialogue_section == 3:
+	if dialogue_section == 4:
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "By the way, you can talk to my
 relatives and get quests from
@@ -814,12 +822,12 @@ them. They'll give you money fer
 doin it but you'll have a time limit."
 		dialogue_section += 1
 		return
-	if dialogue_section == 4:
+	if dialogue_section == 5:
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".text = "See ya waita!"
 		dialogue_section += 1
 		return
-	if dialogue_section == 5:
+	if dialogue_section == 6:
 		$"Mista Mowl Dialogue Box/NinePatchRect/Label".visible_characters = 0
 		dialogue_section = 1
 		dialogue_open = false

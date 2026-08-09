@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dbbgr6bb8ak3h"]
 
-[ext_resource type="Script" uid="uid://c1ueffw5xb8q2" path="res://World/world.gd" id="1_62w18"]
+[ext_resource type="Script" uid="uid://iywf25xycw1g" path="res://Scripts/world.gd" id="1_dqu5g"]
 [ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="2_o6lw0"]
 [ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="5_0lysu"]
+[ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="4_dqu5g"]
 [ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
 [ext_resource type="Texture2D" uid="uid://stv6h2wu727q" path="res://Sprites/Purple Flag.png" id="6_w47uh"]
 [ext_resource type="Texture2D" uid="uid://gb56b1t1vljf" path="res://Sprites/Orange Flag.png" id="7_kcyjf"]
+[ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="7_o6lw0"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="7_x0pyu"]
 [ext_resource type="Texture2D" uid="uid://3s6iiuig2ju6" path="res://Sprites/Yellow Flag.png" id="8_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://uhea4ig2c4p8" path="res://Sprites/Green Flag.png" id="9_0lysu"]
@@ -18,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c0lm77tkj8ygj" path="res://Sprites/Magenta Flag.png" id="14_dg1ng"]
 [ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Pink Flag.png" id="15_yfuda"]
 [ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="20_x0pyu"]
-[ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="21_dqu5g"]
 [ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="21_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://6nk83vdjmefb" path="res://UI/number_points_ui.tscn" id="23_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_x0pyu"]
@@ -27,7 +27,7 @@
 size = Vector2(6858, 8993)
 
 [node name="World" type="Node2D" unique_id=1230266813]
-script = ExtResource("1_62w18")
+script = ExtResource("1_dqu5g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
 position = Vector2(576, 324)
@@ -57,6 +57,7 @@ offset_top = -366.0
 offset_right = -100.0
 offset_bottom = 350.0
 theme_override_fonts/font = ExtResource("7_x0pyu")
+script = ExtResource("4_dqu5g")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=1486716039]
@@ -72,7 +73,7 @@ offset_bottom = 20.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("3_yf0ba")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 1" unique_id=1291048954]
@@ -102,7 +103,7 @@ offset_bottom = 35.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("5_oe8m4")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 2" unique_id=1951801237]
@@ -132,7 +133,7 @@ offset_bottom = 19.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("6_w47uh")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 3" unique_id=442120244]
@@ -162,7 +163,7 @@ offset_bottom = 84.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("7_kcyjf")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 4" unique_id=1054746687]
@@ -192,7 +193,7 @@ offset_bottom = 85.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("8_xw5lg")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 5" unique_id=953338764]
@@ -222,7 +223,7 @@ offset_bottom = 85.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("9_0lysu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 6" unique_id=550620446]
@@ -252,7 +253,7 @@ offset_bottom = 163.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("10_26uyv")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 7" unique_id=124279044]
@@ -282,7 +283,7 @@ offset_bottom = 163.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("11_dqu5g")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 8" unique_id=431028872]
@@ -312,7 +313,7 @@ offset_bottom = 163.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("12_o6lw0")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 9" unique_id=1130691490]
@@ -342,7 +343,7 @@ offset_bottom = 244.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("13_x0pyu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 10" unique_id=1299739723]
@@ -372,7 +373,7 @@ offset_bottom = 244.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("14_dg1ng")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 11" unique_id=549990866]
@@ -402,7 +403,7 @@ offset_bottom = 244.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("15_yfuda")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Flag 12" unique_id=1504186339]
@@ -432,7 +433,7 @@ offset_bottom = 104.377335
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("20_x0pyu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 1" unique_id=855718142]
@@ -457,7 +458,7 @@ offset_bottom = 12.377312
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("20_x0pyu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 2" unique_id=948291959]
@@ -482,7 +483,7 @@ offset_bottom = -77.717
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("20_x0pyu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 3" unique_id=533470652]
@@ -507,7 +508,7 @@ offset_bottom = -166.81134
 scale = Vector2(2.0058956, 2.0058956)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("20_x0pyu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 4" unique_id=1581180976]
@@ -532,7 +533,7 @@ offset_bottom = -251.90564
 scale = Vector2(2.0058954, 2.0058954)
 pivot_offset = Vector2(16, 16)
 texture_normal = ExtResource("20_x0pyu")
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/Ability 5" unique_id=1231627670]
@@ -557,7 +558,7 @@ offset_right = -400.7106
 offset_bottom = 264.54987
 scale = Vector2(3.8176887, 3.8176887)
 pivot_offset = Vector2(32, 8)
-script = ExtResource("5_0lysu")
+script = ExtResource("7_o6lw0")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/TextureButton" unique_id=1685601615]
 layout_mode = 0
@@ -665,10 +666,10 @@ Mult: 100
 horizontal_alignment = 1
 
 [node name="Point Requirement" type="Label" parent="Camera2D" unique_id=2091116381]
-offset_left = -534.0
-offset_top = -192.0
-offset_right = 2121.0
-offset_bottom = 675.0
+offset_left = -574.99994
+offset_top = -204.0
+offset_right = 2080.0
+offset_bottom = 663.0
 scale = Vector2(0.06610039, 0.06610039)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
@@ -679,10 +680,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Mult" type="Label" parent="Camera2D" unique_id=932083504]
-offset_left = -552.00006
-offset_top = -106.999985
-offset_right = 929.99994
-offset_bottom = 490.0
+offset_left = -441.0
+offset_top = -222.0
+offset_right = 1041.0
+offset_bottom = 375.0
 scale = Vector2(0.14212684, 0.14212684)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
@@ -699,7 +700,7 @@ offset_right = -199.0
 offset_bottom = 259.0
 scale = Vector2(1.8282888, 1.8282888)
 pivot_offset = Vector2(32, 32)
-script = ExtResource("21_dqu5g")
+script = ExtResource("4_dqu5g")
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Number Points" unique_id=714665560]
@@ -730,20 +731,6 @@ Points"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Number Points UI" parent="Camera2D" unique_id=463320316 instance=ExtResource("23_o6lw0")]
-visible = false
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
-
-[node name="Pause Menu" parent="Camera2D" unique_id=403710505 instance=ExtResource("24_x0pyu")]
-visible = false
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
 
 [node name="Quest Board" type="NinePatchRect" parent="Camera2D" unique_id=389108413]
 offset_left = 215.00006
@@ -944,6 +931,71 @@ theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Level Details" type="NinePatchRect" parent="Camera2D" unique_id=1377690726]
+offset_left = -555.0
+offset_top = -140.0
+offset_right = -424.3435
+offset_bottom = -86.38577
+scale = Vector2(2.2195601, 2.2195601)
+texture = ExtResource("20_x0pyu")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="Camera2D/Level Details" unique_id=870336817]
+layout_mode = 0
+offset_left = 0.9010849
+offset_top = 0.901078
+offset_right = 5479.9185
+offset_bottom = 580.90106
+scale = Vector2(0.023517782, 0.023517782)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 541
+text = "WEALTHY FIELD"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Camera2D/Level Details" unique_id=1509665839]
+layout_mode = 0
+offset_left = 0.9010849
+offset_top = 19.823751
+offset_right = 11087.72
+offset_bottom = 599.8237
+scale = Vector2(0.01166294, 0.01166294)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 541
+text = "WEALTHY FIELD"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Camera2D/Level Details" unique_id=366332139]
+layout_mode = 0
+offset_left = 0.9010849
+offset_top = 35.592636
+offset_right = 11087.72
+offset_bottom = 615.59265
+scale = Vector2(0.01166294, 0.01166294)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 541
+text = "WEALTHY FIELD"
+horizontal_alignment = 1
+
+[node name="Number Points UI" parent="Camera2D" unique_id=463320316 instance=ExtResource("23_o6lw0")]
+visible = false
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+
+[node name="Pause Menu" parent="Camera2D" unique_id=403710505 instance=ExtResource("24_x0pyu")]
+visible = false
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1810617686]
 wait_time = 60.0

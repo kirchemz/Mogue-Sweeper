@@ -32,6 +32,10 @@ var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
+	$"Camera2D/Level Details/Label".text = Levels.chosen_level.name
+	$"Camera2D/Level Details/Label2".text = Levels.chosen_level.description
+	$"Camera2D/Level Details/Label3".text = Levels.chosen_level.plot_description
+
 	Abilities.casecade_count = 0
 	Abilities.special_flag_count = 0
 	Abilities.numbers_used.clear()
@@ -158,6 +162,7 @@ func _process(_delta: float) -> void:
 		$"Camera2D/Sprite2D".position = Vector2(-324, -6)
 		$Camera2D/Area2D/CollisionShape2D.scale.x = 0.5
 		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3628, 210.5)
+		$"Camera2D/Level Details".hide()
 	else:
 		$"Camera2D/Number Points".visible = true
 		$"Camera2D/Ability 1".visible = true
@@ -183,6 +188,7 @@ func _process(_delta: float) -> void:
 		$"Camera2D/Button".position = Vector2(-149, -366)
 		$"Camera2D/Sprite2D".position = Vector2(-123, -6)
 		$"Camera2D/Sprite2D".flip_h = false
+		$"Camera2D/Level Details".show()
 		$Camera2D/Area2D/CollisionShape2D.scale.x = 1
 		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3530, 210.5)
 	
@@ -592,6 +598,8 @@ func unhide_flag_neighbors(cell_instance):
 
 # Funtion to end the game and change the current scene to the game over scene
 func game_over():
+	Levels.death_level = Levels.chosen_level
+	Levels.died = true
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://World/game_over.tscn")
 

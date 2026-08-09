@@ -24,6 +24,7 @@ var mine_scanner_clicked : bool = false
 var mine_scanner_instance
 var money_gained : int = 0
 var added_mult : bool = false
+var dug_up_mowl : bool = false
 
 var dialogue_section : int = 1
 var dialogue_open : bool = false
@@ -79,7 +80,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera2D.position -= event.relative / $Camera2D.zoom
 
 # Runs every frame
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dialogue_open:
 		if not $"Camera2D/Dialogue Box/NinePatchRect/Label".visible_ratio == 1:
 			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters += 1
@@ -315,8 +316,7 @@ func unhide_cells(cell_instance):
 
 # Funtion to end the game and change the current scene to the game over scene
 func game_over():
-	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://World/game_over.tscn")
+	game_over_dialogue()
 
 # Function to tally up all of the points and updates the total points and the UI elements accordingly
 func point_count():
@@ -409,107 +409,109 @@ func dialogue():
 	$Timer.paused = true
 	$Camera2D/Button.hide()
 	$Camera2D/Button/AnimatedSprite2D.play("Idle")
-	if dialogue_section == 1:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		dialogue_open = true
-		$"Camera2D/Dialogue Box".visible = true
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Hello and welcome to Supa not
-Evil Company! The boss has put
-you in charge of getting his
-money back from the mowls."
-		dialogue_section += 1
-		return
-	if dialogue_section == 2:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "But first, you'll need to go
-through employee training which
-I'll take you through now."
-		dialogue_section += 1
-		return
-	if dialogue_section == 3:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "The mowls planted flowers on
-top of every patch of money and
-have a mowl next to each patch
-to guard it."
-		dialogue_section += 1
-		return
-	if dialogue_section == 4:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Every flower is shaped like the
-number of mowls around it, so
-use that info to dermine which 
-spots to dig and which to flag."
-		dialogue_section += 1
-		return
-	if dialogue_section == 5:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Once you get to a field you'll only
-have one minute to get all the
-money you can before the mowls
-find out whats happening."
-		dialogue_section += 1
-		return
-	if dialogue_section == 6:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Some mowls will realize you're 
-there and will destroy your flag
-and replace that patch with even 
-tuffer soil thats  harder to flag."
-		dialogue_section += 1
-		return
-	if dialogue_section == 7:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "You'll only be able to take a
-portion of the money you find
-for buisness expenses but the
-rest goes to the boss."
-		dialogue_section += 1
-		return
-	if dialogue_section == 8:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Alright, now get to work and get
-as much money as you can!"
-		dialogue_section += 1
-		return
-	if dialogue_section == 9:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		dialogue_section = 1
-		dialogue_open = false
-		$Camera2D/Button.show()
-		$Timer.paused = false
-		$"Camera2D/Dialogue Box".visible = false
-		$Camera2D/Panel.hide()
-
-func game_over_dialogue():
-	$Timer.paused = true
-	$Camera2D/Button.hide()
-	$Camera2D/Button/AnimatedSprite2D.play("Idle")
-	if dialogue_section == 1:
-		dialogue_open = true
-		$"Camera2D/Dialogue Box".visible = true
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Uh oh! Looks like you dug up a
+	if dug_up_mowl:
+		if dialogue_section == 1:
+			dialogue_open = true
+			$"Camera2D/Dialogue Box".visible = true
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Uh oh! Looks like you dug up a
 mowl! Normally, when you dig up
 a mowl you'll lose all your money
 and have to leave the field."
-		dialogue_section += 1
-		return
-	if dialogue_section == 2:
-		dialogue_open = true
-		$"Camera2D/Dialogue Box".visible = true
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Try not to dig up anyone or else
+			dialogue_section += 1
+			return
+		if dialogue_section == 2:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Try not to dig up anyone or else
 we have a lot more paperwork
 to deal with and you have a lot
 more scrapes to heal."
-		dialogue_section += 1
-		return
-	if dialogue_section == 3:
-		$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
-		dialogue_section = 1
-		dialogue_open = false
-		$Camera2D/Button.show()
-		$Timer.paused = false
-		$"Camera2D/Dialogue Box".visible = false
+			dialogue_section += 1
+			return
+		if dialogue_section == 3:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			dialogue_section = 1
+			dialogue_open = false
+			$Camera2D/Button.show()
+			$Timer.paused = false
+			$"Camera2D/Dialogue Box".visible = false
+			dug_up_mowl = false
+	else:
+		if dialogue_section == 1:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			dialogue_open = true
+			$"Camera2D/Dialogue Box".visible = true
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Hello and welcome to Supa not
+Evil Company! The boss has put
+you in charge of getting his
+money back from the mowls."
+			dialogue_section += 1
+			return
+		if dialogue_section == 2:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "But first, you'll need to go
+through employee training which
+I'll take you through now."
+			dialogue_section += 1
+			return
+		if dialogue_section == 3:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "The mowls planted flowers on
+top of every patch of money and
+have a mowl next to each patch
+to guard it."
+			dialogue_section += 1
+			return
+		if dialogue_section == 4:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Every flower is shaped like the
+number of mowls around it, so
+use that info to dermine which 
+spots to dig and which to flag."
+			dialogue_section += 1
+			return
+		if dialogue_section == 5:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Once you get to a field you'll only
+have one minute to get all the
+money you can before the mowls
+find out whats happening."
+			dialogue_section += 1
+			return
+		if dialogue_section == 6:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Some mowls will realize you're 
+there and will destroy your flag
+and replace that patch with even 
+tuffer soil thats  harder to flag."
+			dialogue_section += 1
+			return
+		if dialogue_section == 7:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "You'll only be able to take a
+portion of the money you find
+for buisness expenses but the
+rest goes to the boss."
+			dialogue_section += 1
+			return
+		if dialogue_section == 8:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".text = "Alright, now get to work and get
+as much money as you can!"
+			dialogue_section += 1
+			return
+		if dialogue_section == 9:
+			$"Camera2D/Dialogue Box/NinePatchRect/Label".visible_characters = 0
+			dialogue_section = 1
+			dialogue_open = false
+			$Camera2D/Button.show()
+			$Timer.paused = false
+			$"Camera2D/Dialogue Box".visible = false
+			$Camera2D/Panel.hide()
+			$"Camera2D/Info".show()
+
+func game_over_dialogue():
+	dug_up_mowl = true
+	dialogue()
 
 func _on_dialogue_button_pressed() -> void:
 	dialogue()

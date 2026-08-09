@@ -8,8 +8,17 @@ var time_mult : float = 1.0
 var flags_active : bool = true
 var digging_debuff : bool = false
 var chosen_level
+var tutorial : bool = false
+var death_level : Dictionary
+var died : bool = false
 
 var level_options : Array
+
+var tutorial_level : Dictionary = {
+	"name" : "Tutorial",
+	"description" : "Employee Training",
+	"plot_description" : "A training field for new employees to learn the basics of Mowling"
+}
 
 var levels : Dictionary = {
 	"money_db" : {
@@ -69,7 +78,12 @@ func _ready() -> void:
 		level_options.append(level)
 
 func choose_level():
-	chosen_level = level_options[randi() % level_options.size()]
+	if died:
+		chosen_level = death_level
+	elif not tutorial:
+		chosen_level = level_options[randi() % level_options.size()]
+	else:
+		chosen_level = tutorial_level
 
 func _process(_delta: float) -> void:
 	if not flags_active:

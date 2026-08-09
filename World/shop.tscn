@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://62n41e7k5asm"]
 
-[ext_resource type="Script" uid="uid://bn4dorke00twm" path="res://World/shop.gd" id="1_2nxxu"]
+[ext_resource type="Script" uid="uid://bl1nqgyqfkrsw" path="res://Scripts/shop.gd" id="1_jq0fv"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_x8l2j"]
 [ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_vj47s"]
-[ext_resource type="Script" uid="uid://d0crn7cgjug0w" path="res://World/tex_button.gd" id="6_fi1uk"]
 [ext_resource type="Texture2D" uid="uid://cef44ro30d4b4" path="res://Sprites/Music Player.png" id="6_vj47s"]
 [ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="7_0m3j8"]
+[ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="7_7l6ll"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
+[ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="9_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
-[ext_resource type="Script" uid="uid://4abpktm6kfrb" path="res://World/button.gd" id="10_8m5wk"]
 [ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
 [ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="15_0kkpg"]
@@ -169,7 +169,7 @@ animations = [{
 }]
 
 [node name="Shop" type="Node2D" unique_id=2030919428]
-script = ExtResource("1_2nxxu")
+script = ExtResource("1_jq0fv")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1992850780]
 offset_right = 1152.0
@@ -296,6 +296,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 248
 text = "Pause"
+script = ExtResource("7_7l6ll")
 
 [node name="Play" type="Button" parent="Music Player Box" unique_id=294784674]
 layout_mode = 0
@@ -308,6 +309,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 248
 text = "Play"
+script = ExtResource("7_7l6ll")
 
 [node name="Next" type="Button" parent="Music Player Box" unique_id=1630640571]
 layout_mode = 0
@@ -320,6 +322,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 248
 text = "Next"
+script = ExtResource("7_7l6ll")
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=1832679023]
 offset_left = 323.0
@@ -638,7 +641,7 @@ offset_right = 97.0
 offset_bottom = 312.00003
 scale = Vector2(1.567471, 1.567471)
 texture_normal = ExtResource("5_vj47s")
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability One" unique_id=836141810]
@@ -663,7 +666,7 @@ offset_right = 194.0
 offset_bottom = 312.0
 scale = Vector2(1.567471, 1.567471)
 texture_normal = ExtResource("5_vj47s")
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability Two" unique_id=1271819118]
@@ -689,7 +692,7 @@ offset_right = 289.0
 offset_bottom = 312.0
 scale = Vector2(1.567471, 1.567471)
 texture_normal = ExtResource("5_vj47s")
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability Three" unique_id=1862695716]
@@ -717,7 +720,7 @@ scale = Vector2(1.567471, 1.567471)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Flag One" unique_id=1234541919]
@@ -744,7 +747,7 @@ offset_bottom = 207.0
 scale = Vector2(1.567471, 1.567471)
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Flag Two" unique_id=2147469479]
@@ -771,7 +774,7 @@ offset_bottom = 207.0
 scale = Vector2(1.5674711, 1.5674711)
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Flag Three" unique_id=1968691791]
@@ -825,7 +828,7 @@ pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Rock One" unique_id=815261953]
@@ -853,7 +856,7 @@ pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Rock Two" unique_id=1418108818]
@@ -881,7 +884,7 @@ pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Rock Three" unique_id=2122483387]
@@ -940,7 +943,7 @@ pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Extra One" unique_id=85957290]
@@ -968,7 +971,7 @@ pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Extra Two" unique_id=313926335]
@@ -996,7 +999,7 @@ pivot_offset = Vector2(16, 16)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Extra Three" unique_id=376373435]
@@ -1021,6 +1024,7 @@ offset_right = 566.0
 offset_bottom = 102.00006
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 1" unique_id=98754947]
@@ -1048,6 +1052,7 @@ offset_right = 637.00006
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 2" unique_id=356654154]
@@ -1075,6 +1080,7 @@ offset_right = 711.0
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 3" unique_id=405108533]
@@ -1102,6 +1108,7 @@ offset_right = 786.00006
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 4" unique_id=388867359]
@@ -1129,6 +1136,7 @@ offset_right = 862.0
 offset_bottom = 102.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 5" unique_id=1344563823]
@@ -1182,7 +1190,7 @@ scale = Vector2(1.8557684, 1.8557684)
 pivot_offset = Vector2(24, 32)
 offset_transform_enabled = true
 texture_normal = ExtResource("8_ghprd")
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Rock Pack" unique_id=369209368]
@@ -1193,7 +1201,7 @@ offset_right = 44.167107
 offset_bottom = 80.779396
 pivot_offset = Vector2(20, 8)
 offset_transform_enabled = true
-script = ExtResource("10_8m5wk")
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Rock Pack/Button" unique_id=2042840645]
@@ -1222,7 +1230,7 @@ scale = Vector2(1.8557684, 1.8557684)
 pivot_offset = Vector2(24, 32)
 offset_transform_enabled = true
 texture_normal = ExtResource("12_5coi5")
-script = ExtResource("6_fi1uk")
+script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Extra Pack" unique_id=1174925539]
@@ -1233,7 +1241,7 @@ offset_right = 44.167107
 offset_bottom = 80.779396
 pivot_offset = Vector2(20, 8)
 offset_transform_enabled = true
-script = ExtResource("10_8m5wk")
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Extra Pack/Button" unique_id=508046480]
@@ -1264,6 +1272,7 @@ offset_top = 353.0
 offset_right = 905.03845
 offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="Mowl Relative" type="Button" parent="." unique_id=1210683976]
@@ -1273,6 +1282,7 @@ offset_top = 353.0
 offset_right = 105.03845
 offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="." unique_id=2113621004]
@@ -1330,6 +1340,7 @@ offset_top = 353.0
 offset_right = 516.03845
 offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="Quest Giver2" type="Button" parent="." unique_id=1940871122]
@@ -1340,6 +1351,7 @@ offset_top = 353.0
 offset_right = 304.03848
 offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="Quest Giver3" type="Button" parent="." unique_id=1890498167]
@@ -1350,6 +1362,7 @@ offset_top = 353.0
 offset_right = 725.03845
 offset_bottom = 387.19998
 scale = Vector2(7.1472907, 7.1472907)
+script = ExtResource("7_7l6ll")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=664182000]
@@ -1448,20 +1461,18 @@ patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Mista Mowl Dialogue Box/NinePatchRect" unique_id=1737790297]
 layout_mode = 0
-offset_left = 3.9343677
-offset_top = -1.4051319
-offset_right = 2740.9343
-offset_bottom = 739.59485
-scale = Vector2(0.11219228, 0.11219228)
+offset_left = 3.3723152
+offset_top = 0.562052
+offset_right = 2740.3723
+offset_bottom = 741.5621
+scale = Vector2(0.10895098, 0.10895098)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 152
-text = "By the way you can talk to my
-relatives and get quests from
-them. They'll give you money for
-doin it but you'll have a time limit"
-visible_characters = 0
-visible_ratio = 0.0
+text = "There's flags you can buy too.
+They do different things to get
+you more money but you only have
+a limited stock so use them wisley"
 
 [node name="Mowl Relative Dialogue Box" type="NinePatchRect" parent="." unique_id=1546830359]
 visible = false
