@@ -77,7 +77,14 @@ var data : Dictionary = {
 	"ability2" : Abilities.empty_ability_two,
 	"ability3" : Abilities.empty_ability_three,
 	"ability4" : Abilities.empty_ability_four,
-	"ability5" : Abilities.empty_ability_five
+	"ability5" : Abilities.empty_ability_five,
+	"ability1_id" : "",
+	"ability2_id" : "",
+	"ability3_id" : "",
+	"ability4_id" : "",
+	"ability5_id" : "",
+	"current_abilities_ids" : [],
+	"ability_options_ids" : []
 }
 
 func clear() -> void:
@@ -154,7 +161,14 @@ func clear() -> void:
 		"ability2" : Abilities.empty_ability_two,
 		"ability3" : Abilities.empty_ability_three,
 		"ability4" : Abilities.empty_ability_four,
-		"ability5" : Abilities.empty_ability_five
+		"ability5" : Abilities.empty_ability_five,
+		"ability1_id" : "",
+		"ability2_id" : "",
+		"ability3_id" : "",
+		"ability4_id" : "",
+		"ability5_id" : "",
+		"current_abilities_ids" : [],
+		"ability_options_ids" : []
 	}
 
 	var file : FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
@@ -168,6 +182,61 @@ func _process(delta: float) -> void:
 		if is_instance_valid(get_tree().current_scene):
 			if get_tree().current_scene.scene_file_path != "res://World/title_screen.tscn" and get_tree().current_scene.scene_file_path != "res://World/tutorial.tscn" and get_tree().current_scene.scene_file_path != "res://World/game_over.tscn" and get_tree().current_scene.scene_file_path != "res://World/level_selection.tscn":
 				_save()
+
+func _ability_to_id(ability: Dictionary) -> String:
+	if ability.is_empty():
+		return ""
+	if ability.has("id"):
+		return String(ability["id"])
+	var ability_name: String = String(ability.get("name", ""))
+	if ability_name == String(Abilities.empty_ability_one.get("name", "")):
+		return "empty_ability_one"
+	if ability_name == String(Abilities.empty_ability_two.get("name", "")):
+		return "empty_ability_two"
+	if ability_name == String(Abilities.empty_ability_three.get("name", "")):
+		return "empty_ability_three"
+	if ability_name == String(Abilities.empty_ability_four.get("name", "")):
+		return "empty_ability_four"
+	if ability_name == String(Abilities.empty_ability_five.get("name", "")):
+		return "empty_ability_five"
+	for key in Abilities.ability_stock.keys():
+		if String(Abilities.ability_stock[key].get("name", "")) == ability_name:
+			return key
+	return ability_name
+
+func _ability_from_id(id_value: String, fallback: Dictionary = {}) -> Dictionary:
+	if id_value == "":
+		return fallback if not fallback.is_empty() else Abilities.empty_ability_one
+	match id_value:
+		"empty_ability_one":
+			return Abilities.empty_ability_one
+		"empty_ability_two":
+			return Abilities.empty_ability_two
+		"empty_ability_three":
+			return Abilities.empty_ability_three
+		"empty_ability_four":
+			return Abilities.empty_ability_four
+		"empty_ability_five":
+			return Abilities.empty_ability_five
+	if id_value in Abilities.ability_stock:
+		return Abilities.ability_stock[id_value]
+	for ability in Abilities.ability_stock.values():
+		if String(ability.get("name", "")) == id_value:
+			return ability
+	return fallback if not fallback.is_empty() else Abilities.empty_ability_one
+
+func _abilities_from_ids(id_list: Array, fallback: Array = []) -> Array:
+	var result: Array = []
+	for entry in id_list:
+		if entry is String:
+			result.append(_ability_from_id(entry, Abilities.empty_ability_one))
+		elif entry is Dictionary:
+			result.append(_ability_from_id(_ability_to_id(entry), entry))
+		else:
+			result.append(entry)
+	if result.is_empty() and not fallback.is_empty():
+		return fallback
+	return result
 
 func _save():
 	var file : FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
@@ -240,8 +309,19 @@ func _save():
 	data.ability3 = Abilities.ability_three
 	data.ability4 = Abilities.ability_four
 	data.ability5 = Abilities.ability_five
+	data.ability1_id = _ability_to_id(Abilities.ability_one)
+	data.ability2_id = _ability_to_id(Abilities.ability_two)
+	data.ability3_id = _ability_to_id(Abilities.ability_three)
+	data.ability4_id = _ability_to_id(Abilities.ability_four)
+	data.ability5_id = _ability_to_id(Abilities.ability_five)
 	data.current_abilities = Abilities.current_abilities
+	data.current_abilities_ids = []
+	for ability in Abilities.current_abilities:
+		data.current_abilities_ids.append(_ability_to_id(ability))
 	data.ability_options = Abilities.ability_options
+	data.ability_options_ids = []
+	for ability in Abilities.ability_options:
+		data.ability_options_ids.append(_ability_to_id(ability))
 	
 	data.current_quests = Quests.current_quests
 	data.quest_options = Quests.quest_options
@@ -337,13 +417,13 @@ func _load():
 		Abilities.mowl_abilities = data.mowl_abilities
 		Abilities.one_two_three_four_five = data.one_two_three_four_five
 		
-		Abilities.ability_one = data.ability1
-		Abilities.ability_one = data.ability2
-		Abilities.ability_one = data.ability3
-		Abilities.ability_one = data.ability4
-		Abilities.ability_one = data.ability5
-		Abilities.current_abilities = data.current_abilities
-		Abilities.ability_options = data.ability_options
+		Abilities.ability_one = _ability_from_id(data.get("ability1_id", ""), data.get("ability1", Abilities.empty_ability_one))
+		Abilities.ability_two = _ability_from_id(data.get("ability2_id", ""), data.get("ability2", Abilities.empty_ability_two))
+		Abilities.ability_three = _ability_from_id(data.get("ability3_id", ""), data.get("ability3", Abilities.empty_ability_three))
+		Abilities.ability_four = _ability_from_id(data.get("ability4_id", ""), data.get("ability4", Abilities.empty_ability_four))
+		Abilities.ability_five = _ability_from_id(data.get("ability5_id", ""), data.get("ability5", Abilities.empty_ability_five))
+		Abilities.current_abilities = _abilities_from_ids(data.get("current_abilities_ids", data.get("current_abilities", [])), data.get("current_abilities", []))
+		Abilities.ability_options = _abilities_from_ids(data.get("ability_options_ids", data.get("ability_options", [])), data.get("ability_options", []))
 		
 		Quests.current_quests = data.current_quests
 		Quests.quest_options = data.quest_options

@@ -26,13 +26,12 @@ var money_gained : int = 0
 var added_mult : bool = false
 var dug_up_mowl : bool = false
 
+var timer_started : bool = false
 var dialogue_section : int = 1
 var dialogue_open : bool = false
 
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
-
-var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
@@ -44,13 +43,12 @@ func _ready() -> void:
 	
 	MusicPlayer.world()
 	
-	$Timer.wait_time = $Timer.wait_time * Levels.time_mult
-	
 	# Sets BG color
 	RenderingServer.set_default_clear_color(Color(0.561, 0.592, 0.29, 1.0))
 	
-	$Timer.wait_time = $Timer.wait_time + time_bonus
-	$Camera2D/Label.text = "60"
+	# Keep the timer paused until the dialogue finishes
+	$Timer.stop()
+	$Timer.paused = true
 	
 	# Creates the map
 	start_map()
@@ -150,7 +148,13 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(2).timeout
 	
 	# Update clock
-	$Camera2D/Label.text = str($Timer.time_left)
+	if not timer_started:
+		$Camera2D/Label.text = "60"
+	else:
+		if $Timer.time_left < 10:
+			$Camera2D/Label.text = "0" + str($Timer.time_left)
+		else:
+			$Camera2D/Label.text = str($Timer.time_left)
 	$Camera2D/Label.visible_characters = 2
 	
 	# Zoom in and out
@@ -505,6 +509,9 @@ as much money as you can!"
 			dialogue_open = false
 			$Camera2D/Button.show()
 			$Timer.paused = false
+			if not timer_started:
+				timer_started = true
+				$Timer.start()
 			$"Camera2D/Dialogue Box".visible = false
 			$Camera2D/Panel.hide()
 			$"Camera2D/Info".show()

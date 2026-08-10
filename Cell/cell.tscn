@@ -15,7 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://cyi7hyvwsg0km" path="res://Sprites/Grass Cell.png" id="9_5udsl"]
 [ext_resource type="Texture2D" uid="uid://b1xornd6qp4dy" path="res://Sprites/Poor Field.png" id="10_abcbo"]
 [ext_resource type="Texture2D" uid="uid://c7nugxw6ckxdg" path="res://Sprites/Wealthy Field.png" id="11_abcbo"]
+[ext_resource type="Texture2D" uid="uid://cnmfjsbqvqdrj" path="res://Sprites/Tile#2-plant.png" id="15_gd1nb"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="16_p4vkr"]
+[ext_resource type="Texture2D" uid="uid://cth002jbp6ejk" path="res://Sprites/Tile#3-plant.png" id="16_u85dn"]
+[ext_resource type="Texture2D" uid="uid://dgfvfiv52hk8a" path="res://Sprites/Tile#4-plant.png" id="17_35pr0"]
+[ext_resource type="Texture2D" uid="uid://cg8kwcwfff4uu" path="res://Sprites/Tile#5-plant.png" id="18_lgtde"]
+[ext_resource type="Texture2D" uid="uid://7ch76vcub82q" path="res://Sprites/Tile#6-plant.png" id="19_qmyyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(32, 32)
@@ -202,29 +207,24 @@ scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_pyb8k")
 
 [node name="2" type="Sprite2D" parent="." unique_id=502107828]
-self_modulate = Color(0, 0.5529412, 1, 1)
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_37gha")
+texture = ExtResource("15_gd1nb")
 
 [node name="3" type="Sprite2D" parent="." unique_id=1173964557]
-self_modulate = Color(0.8392157, 0, 0, 1)
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_37gha")
+texture = ExtResource("16_u85dn")
 
 [node name="4" type="Sprite2D" parent="." unique_id=964399824]
-self_modulate = Color(0.8117647, 0, 0.8392157, 1)
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_37gha")
+texture = ExtResource("17_35pr0")
 
 [node name="5" type="Sprite2D" parent="." unique_id=1315036647]
-self_modulate = Color(0.76862746, 0.8392157, 0, 1)
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_37gha")
+texture = ExtResource("18_lgtde")
 
 [node name="6" type="Sprite2D" parent="." unique_id=33614188]
-self_modulate = Color(0.8392157, 0.57254905, 0, 1)
 scale = Vector2(0.01, 0.01)
-texture = ExtResource("1_37gha")
+texture = ExtResource("19_qmyyp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=919471134]
 modulate = Color(1, 1, 1, 0)
