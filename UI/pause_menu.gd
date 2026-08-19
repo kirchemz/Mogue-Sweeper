@@ -38,3 +38,8 @@ func _on_music_value_changed(value: float) -> void:
 func _on_button_pressed() -> void:
 	$NinePatchRect3.hide()
 	$NinePatchRect.show()
+
+
+func _on_title_screen_pressed() -> void:
+	SaveLoad._save()
+	get_tree().change_scene_to_file("res://World/title_screen.tscn")

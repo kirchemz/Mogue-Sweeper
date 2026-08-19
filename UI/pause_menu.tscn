@@ -40,11 +40,11 @@ patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="NinePatchRect" unique_id=293898142]
 layout_mode = 0
-offset_left = 22.268274
-offset_top = 0.59647167
-offset_right = 543.26825
-offset_bottom = 223.59647
-scale = Vector2(0.12363715, 0.12363715)
+offset_left = 27.238873
+offset_top = -0.9941194
+offset_right = 548.2389
+offset_bottom = 222.00587
+scale = Vector2(0.10915486, 0.10915486)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 207
@@ -52,33 +52,44 @@ text = "PAUSED"
 
 [node name="Save and Quit" type="Button" parent="NinePatchRect" unique_id=720455684]
 layout_mode = 0
-offset_left = 6.9588346
-offset_top = 95.0378
-offset_right = 3372.95
-offset_bottom = 911.0378
-scale = Vector2(0.027998444, 0.027998444)
+offset_left = 10.1400175
+offset_top = 99.41195
+offset_right = 3376.1313
+offset_bottom = 915.4119
+scale = Vector2(0.026603714, 0.026603714)
 theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Save & Quit"
 
+[node name="Title Screen" type="Button" parent="NinePatchRect" unique_id=1397882826]
+layout_mode = 0
+offset_left = 10.1400175
+offset_top = 74.16131
+offset_right = 3376.1313
+offset_bottom = 890.1613
+scale = Vector2(0.026603714, 0.026603714)
+theme_override_fonts/font = ExtResource("2_jfm1e")
+theme_override_font_sizes/font_size = 754
+text = "Title Screen"
+
 [node name="Continue" type="Button" parent="NinePatchRect" unique_id=1675256697]
 layout_mode = 0
-offset_left = 6.9588346
-offset_top = 30.221237
-offset_right = 3372.95
-offset_bottom = 846.22125
-scale = Vector2(0.027998444, 0.027998444)
+offset_left = 10.140014
+offset_top = 22.467096
+offset_right = 3376.131
+offset_bottom = 838.4671
+scale = Vector2(0.02660371, 0.02660371)
 theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Continue"
 
 [node name="Settings" type="Button" parent="NinePatchRect" unique_id=1557225326]
 layout_mode = 0
-offset_left = 6.9588346
-offset_top = 61.83422
-offset_right = 3372.95
-offset_bottom = 877.8342
-scale = Vector2(0.027998444, 0.027998444)
+offset_left = 10.140014
+offset_top = 48.513023
+offset_right = 3376.131
+offset_bottom = 864.513
+scale = Vector2(0.02660371, 0.02660371)
 theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Settings"
@@ -210,6 +221,7 @@ offset_right = 21.465237
 offset_bottom = 15.783262
 
 [connection signal="pressed" from="NinePatchRect/Save and Quit" to="." method="_on_save_and_quit_pressed"]
+[connection signal="pressed" from="NinePatchRect/Title Screen" to="." method="_on_title_screen_pressed"]
 [connection signal="pressed" from="NinePatchRect/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="NinePatchRect/Settings" to="." method="_on_settings_pressed"]
 [connection signal="value_changed" from="NinePatchRect3/Master" to="." method="_on_h_slider_value_changed"]

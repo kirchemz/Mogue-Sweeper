@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://bgo477hl5syd"]
 
-[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="1_td7pr"]
 [ext_resource type="Script" uid="uid://qhdr8fg0nr7m" path="res://Scripts/tutorial.gd" id="1_uhr3w"]
+[ext_resource type="Texture2D" uid="uid://cmo4w24pouhkn" path="res://Sprites/Main Menu.png" id="2_0udkt"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="2_b6xh4"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_nftbj"]
 [ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="4_uhr3w"]
-[ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_r6pgm"]
-[ext_resource type="Texture2D" uid="uid://stv6h2wu727q" path="res://Sprites/Purple Flag.png" id="6_uhr3w"]
-[ext_resource type="Texture2D" uid="uid://gb56b1t1vljf" path="res://Sprites/Orange Flag.png" id="7_hhhlv"]
-[ext_resource type="Texture2D" uid="uid://3s6iiuig2ju6" path="res://Sprites/Yellow Flag.png" id="8_avyj0"]
-[ext_resource type="Texture2D" uid="uid://uhea4ig2c4p8" path="res://Sprites/Green Flag.png" id="9_afqte"]
-[ext_resource type="Texture2D" uid="uid://dt5w67yafqsso" path="res://Sprites/Black Flag.png" id="10_funh4"]
-[ext_resource type="Texture2D" uid="uid://byw17cnwvg5li" path="res://Sprites/White Flag.png" id="11_fbhn5"]
-[ext_resource type="Texture2D" uid="uid://ccb003ljk7pr3" path="res://Sprites/Grey Flag.png" id="12_3tg8v"]
-[ext_resource type="Texture2D" uid="uid://bs8cji5cpcejr" path="res://Sprites/Brown Flag.png" id="13_c1gde"]
-[ext_resource type="Texture2D" uid="uid://c0lm77tkj8ygj" path="res://Sprites/Magenta Flag.png" id="14_dmc5n"]
-[ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Pink Flag.png" id="15_e0hk8"]
 [ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="16_7kkxi"]
 [ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="17_lmekh"]
 [ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="19_hhhlv"]
@@ -26,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://ch0hoha5utnjp" path="res://Sprites/Employee.png" id="23_uhr3w"]
 [ext_resource type="Texture2D" uid="uid://ca0bro2pk2iq6" path="res://Sprites/Employee Waving.png" id="25_uhr3w"]
 [ext_resource type="Texture2D" uid="uid://c8n6dxk3c1dci" path="res://Sprites/Shovel.png" id="26_hhhlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5qk7"]
+size = Vector2(6843, 8993)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf64p"]
 atlas = ExtResource("23_uhr3w")
@@ -105,383 +97,25 @@ animations = [{
 [node name="Tutorial" type="Node2D" unique_id=1021033824]
 script = ExtResource("1_uhr3w")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=958123403]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=853865778]
 position = Vector2(576, 324)
 
-[node name="Main Menu" type="NinePatchRect" parent="Camera2D" unique_id=264926174]
+[node name="Area2D" type="Area2D" parent="Camera2D" unique_id=1707203361]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1210992613]
+position = Vector2(-3537.5, 210.5)
+shape = SubResource("RectangleShape2D_t5qk7")
+
+[node name="Main Menu" type="NinePatchRect" parent="Camera2D" unique_id=263409294]
 offset_left = -7011.0
 offset_top = -4286.0
-offset_right = -4722.332
+offset_right = -4711.996
 offset_bottom = -1298.4617
 scale = Vector2(2.9991248, 2.9991248)
-texture = ExtResource("1_td7pr")
-patch_margin_left = 3
-patch_margin_top = 5
-patch_margin_right = 3
-patch_margin_bottom = 5
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_0udkt")
+patch_margin_right = 11
 
-[node name="Flag 1" type="TextureButton" parent="Camera2D" unique_id=1777233651]
-offset_left = -521.0
-offset_top = 4.0
-offset_right = -505.0
-offset_bottom = 20.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("2_b6xh4")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 1" unique_id=803171904]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.32292175
-anchor_top = 0.45833206
-anchor_right = -0.32292175
-anchor_bottom = 0.45833206
-offset_left = 1.6668301
-offset_top = 18.666706
-offset_right = 4993.4326
-offset_bottom = 830.6667
-scale = Vector2(0.010163431, 0.010163431)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Red Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 2" type="TextureButton" parent="Camera2D" unique_id=1816901077]
-offset_left = -454.0
-offset_top = 3.0
-offset_right = -422.0
-offset_bottom = 35.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("5_r6pgm")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 2" unique_id=2011701411]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.36458337
-anchor_top = 0.49999994
-anchor_right = -0.36457825
-anchor_bottom = 0.5
-offset_left = 3.6666698
-offset_top = 17.999998
-offset_right = 4995.432
-offset_bottom = 830.0
-scale = Vector2(0.010142742, 0.010142742)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Blue Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 3" type="TextureButton" parent="Camera2D" unique_id=466078450]
-offset_left = -358.0
-offset_top = 3.0
-offset_right = -342.0
-offset_bottom = 19.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("6_uhr3w")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 3" unique_id=2046990852]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.28126526
-anchor_top = 0.47916603
-anchor_right = -0.28126526
-anchor_bottom = 0.47916603
-offset_left = 0.33382225
-offset_top = 17.333351
-offset_right = 4992.0996
-offset_bottom = 829.3334
-scale = Vector2(0.01002961, 0.01002961)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Violet Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 4" type="TextureButton" parent="Camera2D" unique_id=1551483438]
-offset_left = -537.0
-offset_top = 68.0
-offset_right = -521.0
-offset_bottom = 84.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("7_hhhlv")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 4" unique_id=1060881426]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.91666675
-anchor_top = 0.9999999
-anchor_right = -0.9166565
-anchor_bottom = 1.0
-offset_left = 23.333336
-offset_top = 6.666668
-offset_right = 5015.099
-offset_bottom = 818.6667
-scale = Vector2(0.0088824, 0.0088824)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Orange Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 5" type="TextureButton" parent="Camera2D" unique_id=173111882]
-offset_left = -446.0
-offset_top = 69.0
-offset_right = -430.0
-offset_bottom = 85.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("8_avyj0")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 5" unique_id=1070316732]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.46875
-anchor_top = 0.54166603
-anchor_right = -0.46875
-anchor_bottom = 0.54166603
-offset_left = 7.6666646
-offset_top = 20.666687
-offset_right = 4999.432
-offset_bottom = 832.6667
-scale = Vector2(0.009269266, 0.009269266)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Yellow Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 6" type="TextureButton" parent="Camera2D" unique_id=1907883400]
-offset_left = -358.0
-offset_top = 69.0
-offset_right = -342.0
-offset_bottom = 85.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("9_afqte")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 6" unique_id=47913925]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.5
-anchor_top = 0.56249994
-anchor_right = -0.5
-anchor_bottom = 0.5625
-offset_left = 6.0
-offset_top = 18.666666
-offset_right = 4997.7656
-offset_bottom = 830.6667
-scale = Vector2(0.009954047, 0.009954047)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Green Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 7" type="TextureButton" parent="Camera2D" unique_id=952632871]
-offset_left = -537.0
-offset_top = 147.0
-offset_right = -521.0
-offset_bottom = 163.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("10_funh4")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 7" unique_id=620275207]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.32291663
-anchor_top = 0.58333206
-anchor_right = -0.3229065
-anchor_bottom = 0.58333206
-offset_left = 3.666665
-offset_top = 17.333334
-offset_right = 4995.4326
-offset_bottom = 829.3334
-scale = Vector2(0.009156878, 0.009156878)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Black Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 8" type="TextureButton" parent="Camera2D" unique_id=1423630347]
-offset_left = -446.0
-offset_top = 147.0
-offset_right = -430.0
-offset_bottom = 163.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("11_fbhn5")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 8" unique_id=1353746358]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.32292175
-anchor_top = 0.58333206
-anchor_right = -0.32292175
-anchor_bottom = 0.58333206
-offset_left = 2.333334
-offset_top = 16.666666
-offset_right = 4994.099
-offset_bottom = 828.6667
-scale = Vector2(0.009420114, 0.009420114)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "White Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 9" type="TextureButton" parent="Camera2D" unique_id=199992522]
-offset_left = -358.0
-offset_top = 147.0
-offset_right = -342.0
-offset_bottom = 163.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("12_3tg8v")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 9" unique_id=2120298560]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.30208337
-anchor_top = 0.52083206
-anchor_right = -0.30207825
-anchor_bottom = 0.52083206
-offset_left = 3.0
-offset_top = 18.666666
-offset_right = 4994.7656
-offset_bottom = 830.6667
-scale = Vector2(0.009586081, 0.009586081)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Grey Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 10" type="TextureButton" parent="Camera2D" unique_id=1889847881]
-offset_left = -537.0
-offset_top = 228.0
-offset_right = -521.0
-offset_bottom = 244.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("13_c1gde")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 10" unique_id=1523633030]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.32292175
-anchor_top = 0.56249994
-anchor_right = -0.32292175
-anchor_bottom = 0.5625
-offset_left = 5.000002
-offset_top = 17.999998
-offset_right = 4996.7656
-offset_bottom = 830.0
-scale = Vector2(0.008586097, 0.008586097)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Brown Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 11" type="TextureButton" parent="Camera2D" unique_id=810480818]
-offset_left = -446.0
-offset_top = 228.0
-offset_right = -430.0
-offset_bottom = 244.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("14_dmc5n")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 11" unique_id=628387691]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.8125
-anchor_top = 0.9999999
-anchor_right = -0.8125
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 4.0
-offset_right = 5011.7656
-offset_bottom = 816.0
-scale = Vector2(0.008669191, 0.008669191)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Magenta Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Flag 12" type="TextureButton" parent="Camera2D" unique_id=427382713]
-offset_left = -358.0
-offset_top = 228.0
-offset_right = -342.0
-offset_bottom = 244.0
-scale = Vector2(1.5, 1.5)
-pivot_offset = Vector2(8, 8)
-texture_normal = ExtResource("15_e0hk8")
-script = ExtResource("4_uhr3w")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/Flag 12" unique_id=244415719]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.30208325
-anchor_top = 0.49999994
-anchor_right = -0.302063
-anchor_bottom = 0.5
-offset_left = 3.666668
-offset_top = 19.999998
-offset_right = 4995.432
-offset_bottom = 832.0
-scale = Vector2(0.00887228, 0.00887228)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 676
-text = "Pink Flag"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=868486615]
+[node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=1567088534]
 visible = false
 offset_left = -460.99997
 offset_top = 239.0
@@ -491,7 +125,7 @@ scale = Vector2(3.8176887, 3.8176887)
 pivot_offset = Vector2(32, 8)
 script = ExtResource("4_uhr3w")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/TextureButton" unique_id=1718913614]
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/TextureButton" unique_id=2074093835]
 layout_mode = 0
 offset_left = 0.04348588
 offset_top = -0.12009764
@@ -503,7 +137,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
-[node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=2104123704]
+[node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=1457134019]
 layout_mode = 0
 offset_left = 19.165003
 offset_top = 5.3806124
@@ -515,11 +149,11 @@ theme_override_fonts/font = ExtResource("4_nftbj")
 theme_override_font_sizes/font_size = 265
 text = "Shop"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=143568104]
-offset_left = -528.0
-offset_top = -290.0
-offset_right = -497.0151
-offset_bottom = -261.98175
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=1952543472]
+offset_left = -558.0
+offset_top = -314.0
+offset_right = -527.01514
+offset_bottom = -285.98175
 scale = Vector2(3.0337365, 3.0337365)
 texture = ExtResource("17_lmekh")
 patch_margin_left = 3
@@ -528,12 +162,12 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Camera2D" unique_id=2106061186]
+[node name="Label" type="Label" parent="Camera2D" unique_id=1172554996]
 self_modulate = Color(1, 0, 0, 1)
-offset_left = -512.0
-offset_top = -287.00003
-offset_right = -216.0
-offset_bottom = 9.9999695
+offset_left = -542.0
+offset_top = -311.00003
+offset_right = -246.0
+offset_bottom = -14.0000305
 scale = Vector2(0.3209241, 0.3209241)
 theme_override_fonts/font = ExtResource("4_nftbj")
 theme_override_font_sizes/font_size = 247
@@ -542,7 +176,43 @@ visible_characters = 2
 visible_ratio = 0.4
 metadata/_edit_use_anchors_ = true
 
-[node name="Points" type="Label" parent="Camera2D" unique_id=330447580]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Camera2D" unique_id=525789701]
+anchors_preset = -1
+anchor_left = -0.73406714
+anchor_top = -0.2817504
+anchor_right = -0.73406714
+anchor_bottom = -0.2817504
+offset_left = -447.0
+offset_top = -292.00003
+offset_right = -377.01953
+offset_bottom = -275.262
+scale = Vector2(2.4759173, 2.4759173)
+texture = ExtResource("17_lmekh")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Camera2D/NinePatchRect2" unique_id=194410152]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.004038323
+anchor_top = 0.13445397
+anchor_right = 62.184776
+anchor_bottom = 7.721962
+offset_left = 1.6198089
+offset_top = 2.4297204
+offset_right = 2888.6199
+offset_bottom = 638.42975
+scale = Vector2(0.009216956, 0.009216956)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 635
+text = "Supa Money: 9999999"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Points" type="Label" parent="Camera2D" unique_id=97629221]
 visible = false
 offset_left = -604.0
 offset_top = 19.000011
@@ -559,45 +229,69 @@ Mult: 100
 5000000"
 horizontal_alignment = 1
 
-[node name="Point Requirement" type="Label" parent="Camera2D" unique_id=751526313]
-offset_left = -534.0
-offset_top = -192.0
-offset_right = 2121.0
-offset_bottom = 675.0
+[node name="Point Requirement" type="Label" parent="Camera2D" unique_id=396124519]
+offset_left = -574.99994
+offset_top = -173.0
+offset_right = 2080.0
+offset_bottom = 694.0
 scale = Vector2(0.06610039, 0.06610039)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.7833333, 0, 1)
 theme_override_fonts/font = ExtResource("4_nftbj")
 theme_override_font_sizes/font_size = 403
-text = "Quota:
-999999999"
+text = "999999999"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Mult" type="Label" parent="Camera2D" unique_id=1363321740]
-offset_left = -552.00006
-offset_top = -106.999985
-offset_right = 929.99994
-offset_bottom = 490.0
-scale = Vector2(0.14212684, 0.14212684)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Point Requirement2" type="Label" parent="Camera2D" unique_id=1786777151]
+offset_left = -574.99994
+offset_top = -204.0
+offset_right = 2080.0
+offset_bottom = 228.0
+scale = Vector2(0.06610039, 0.06610039)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 247
-text = "Mult:
-9999999999"
+theme_override_font_sizes/font_size = 403
+text = "Quota:"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Number Points" type="Button" parent="Camera2D" unique_id=1564799177]
-offset_left = -263.0
-offset_top = 195.0
-offset_right = -199.0
-offset_bottom = 259.0
-scale = Vector2(1.8282888, 1.8282888)
+[node name="Mult" type="Label" parent="Camera2D" unique_id=1575944819]
+offset_left = -430.0
+offset_top = -173.0
+offset_right = 2225.0
+offset_bottom = 694.0
+scale = Vector2(0.06610039, 0.06610039)
+theme_override_colors/font_color = Color(1, 0.7833333, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 403
+text = "999999999"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mult2" type="Label" parent="Camera2D" unique_id=407227434]
+offset_left = -430.0
+offset_top = -204.0
+offset_right = 2225.0
+offset_bottom = 228.0
+scale = Vector2(0.06610039, 0.06610039)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 403
+text = "Mult:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Number Points" type="Button" parent="Camera2D" unique_id=970311580]
+offset_left = -291.00003
+offset_top = 178.0
+offset_right = -227.00003
+offset_bottom = 242.0
+scale = Vector2(2.6651828, 2.6651828)
 pivot_offset = Vector2(32, 32)
 script = ExtResource("19_hhhlv")
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Number Points" unique_id=1689101411]
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Number Points" unique_id=546924361]
 layout_mode = 0
 offset_left = -0.27060127
 offset_top = 0.27635074
@@ -610,14 +304,14 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Camera2D/Number Points/NinePatchRect" unique_id=807450911]
+[node name="Label" type="Label" parent="Camera2D/Number Points/NinePatchRect" unique_id=1079729472]
 layout_mode = 0
 offset_left = 3.8287182
 offset_top = 8.204393
 offset_right = 1821.8287
 offset_bottom = 1494.5486
 scale = Vector2(0.030672757, 0.030672757)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("4_nftbj")
 theme_override_font_sizes/font_size = 505
 text = "Number
@@ -626,26 +320,157 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Camera2D" unique_id=342921187]
+[node name="Level Details" type="NinePatchRect" parent="Camera2D" unique_id=1637738072]
+offset_left = -555.0
+offset_top = -140.0
+offset_right = -424.3435
+offset_bottom = -102.6052
+scale = Vector2(2.2195601, 2.2195601)
+texture = ExtResource("17_lmekh")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Camera2D/Level Details" unique_id=1360471579]
+layout_mode = 0
+offset_left = 0.9010849
+offset_top = 0.901078
+offset_right = 5479.9185
+offset_bottom = 580.90106
+scale = Vector2(0.023517782, 0.023517782)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 541
+text = "WEALTHY FIELD"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Camera2D/Level Details" unique_id=378271925]
+layout_mode = 0
+offset_left = 0.9010849
+offset_top = 16.669973
+offset_right = 12576.112
+offset_bottom = 596.67
+scale = Vector2(0.010246694, 0.010246694)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 541
+text = "WEALTHY FIELD"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Camera2D/Level Details" unique_id=1536665395]
+layout_mode = 0
+offset_left = 0.9010849
+offset_top = 24.779682
+offset_right = 12276.881
+offset_bottom = 604.77966
+scale = Vector2(0.010459763, 0.010459763)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 541
+text = "WEALTHY FIELD"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Info" type="NinePatchRect" parent="Camera2D" unique_id=2110161962]
+offset_left = -557.0
+offset_top = -37.0
+offset_right = -439.92422
+offset_bottom = 3.5029907
+scale = Vector2(3.2812512, 3.2812512)
+texture = ExtResource("16_7kkxi")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Info" unique_id=1992386421]
+position = Vector2(46.548203, 12.090443)
+scale = Vector2(0.50424135, 0.50424135)
+texture = ExtResource("2_b6xh4")
+
+[node name="Label" type="Label" parent="Camera2D/Info/Sprite2D" unique_id=1794907402]
+offset_left = -83.5216
+offset_top = -15.185744
+offset_right = 1529.4784
+offset_bottom = 775.8143
+scale = Vector2(0.03820546, 0.03820546)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 367
+text = "Right Mouse 
+Button:"
+horizontal_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/Info" unique_id=1951913555]
+position = Vector2(46.548203, 29.017061)
+scale = Vector2(0.50424135, 0.50424135)
+texture = ExtResource("26_hhhlv")
+
+[node name="Label" type="Label" parent="Camera2D/Info/Sprite2D2" unique_id=1219915389]
+offset_left = -83.5216
+offset_top = -15.185744
+offset_right = 1529.4784
+offset_bottom = 775.8143
+scale = Vector2(0.03820546, 0.03820546)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 367
+text = "Left Mouse 
+Button:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Camera2D/Info" unique_id=43511420]
+layout_mode = 0
+offset_left = 56.82508
+offset_top = 2.8210971
+offset_right = 3026.8252
+offset_bottom = 1587.821
+scale = Vector2(0.01885029, 0.01885029)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 367
+text = "Middle Mouse  Camera
+     Button:       Panning"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Camera2D/Info" unique_id=749568815]
+layout_mode = 0
+offset_left = 51.787395
+offset_top = 21.15827
+offset_right = 3769.7874
+offset_bottom = 1606.1583
+scale = Vector2(0.015988957, 0.015988957)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nftbj")
+theme_override_font_sizes/font_size = 367
+text = "       Left and Right   Chording
+Click:            "
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Camera2D" unique_id=1867895716]
 offset_left = -3874.0
 offset_top = -3656.0
 offset_right = 3266.0
 offset_bottom = 4112.0
 
-[node name="Dialogue Box" type="NinePatchRect" parent="Camera2D" unique_id=1004221018]
+[node name="Dialogue Box" type="NinePatchRect" parent="Camera2D" unique_id=1291053750]
 visible = false
-offset_left = -141.0
-offset_top = 93.0
-offset_right = 185.00458
-offset_bottom = 194.22806
-scale = Vector2(2.167435, 2.167435)
+offset_left = -102.0
+offset_top = 104.0
+offset_right = 224.00458
+offset_bottom = 205.22806
+scale = Vector2(2.0012507, 2.0012507)
 texture = ExtResource("21_nftbj")
 patch_margin_left = 3
 patch_margin_top = 5
 patch_margin_right = 3
 patch_margin_bottom = 5
 
-[node name="NinePatchRect11" type="NinePatchRect" parent="Camera2D/Dialogue Box" unique_id=1469395301]
+[node name="NinePatchRect11" type="NinePatchRect" parent="Camera2D/Dialogue Box" unique_id=45578886]
 layout_mode = 0
 offset_left = 240.49522
 offset_top = 11.317408
@@ -658,7 +483,7 @@ patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="Dialogue Button" type="Button" parent="Camera2D/Dialogue Box/NinePatchRect11" unique_id=853136255]
+[node name="Dialogue Button" type="Button" parent="Camera2D/Dialogue Box/NinePatchRect11" unique_id=1218997329]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1.0264416
@@ -668,14 +493,14 @@ offset_bottom = 20.314857
 scale = Vector2(3.0721252, 2.1309643)
 script = ExtResource("19_hhhlv")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Camera2D/Dialogue Box/NinePatchRect11" unique_id=652291651]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Camera2D/Dialogue Box/NinePatchRect11" unique_id=1999383737]
 position = Vector2(21.42186, 21.384422)
 scale = Vector2(1.2836419, 1.2836419)
 sprite_frames = SubResource("SpriteFrames_hhhlv")
 animation = &"Idle"
 autoplay = "Talking"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Dialogue Box" unique_id=1404478203]
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Dialogue Box" unique_id=1963354486]
 layout_mode = 0
 offset_left = 6.9162025
 offset_top = 7.230566
@@ -688,7 +513,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
-[node name="Label" type="Label" parent="Camera2D/Dialogue Box/NinePatchRect" unique_id=928366009]
+[node name="Label" type="Label" parent="Camera2D/Dialogue Box/NinePatchRect" unique_id=945016545]
 layout_mode = 0
 offset_left = 4.953174
 offset_top = -0.28102684
@@ -703,96 +528,19 @@ mowl! Normally, when you dig up
 a mowl you'll lose all your money
 and have to leave the field."
 
-[node name="Button" type="Button" parent="Camera2D" unique_id=122581914]
-offset_left = -291.0
-offset_top = 19.000008
-offset_right = -260.0
-offset_bottom = 54.000008
-scale = Vector2(3.8512926, 3.8512926)
+[node name="Button" type="Button" parent="Camera2D" unique_id=228820349]
+offset_left = -543.0
+offset_top = 107.0
+offset_right = -512.0
+offset_bottom = 142.0
+scale = Vector2(5.734948, 5.734948)
 script = ExtResource("19_hhhlv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D/Button" unique_id=757736322]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D/Button" unique_id=1649483686]
 position = Vector2(15, 16)
 sprite_frames = SubResource("SpriteFrames_0rlat")
 animation = &"Waving"
 autoplay = "Waving"
-
-[node name="Info" type="NinePatchRect" parent="Camera2D" unique_id=1347686862]
-visible = false
-offset_left = -137.00002
-offset_top = -309.99997
-offset_right = -19.924232
-offset_bottom = -269.49698
-scale = Vector2(4.9625974, 4.9625974)
-texture = ExtResource("16_7kkxi")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Info" unique_id=13457592]
-position = Vector2(46.548203, 12.090443)
-scale = Vector2(0.50424135, 0.50424135)
-texture = ExtResource("2_b6xh4")
-
-[node name="Label" type="Label" parent="Camera2D/Info/Sprite2D" unique_id=1375757218]
-offset_left = -83.5216
-offset_top = -15.185744
-offset_right = 1529.4784
-offset_bottom = 775.8143
-scale = Vector2(0.03820546, 0.03820546)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 367
-text = "Right Mouse 
-Button:"
-horizontal_alignment = 1
-
-[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/Info" unique_id=1022031005]
-position = Vector2(46.548203, 29.017061)
-scale = Vector2(0.50424135, 0.50424135)
-texture = ExtResource("26_hhhlv")
-
-[node name="Label" type="Label" parent="Camera2D/Info/Sprite2D2" unique_id=2144097411]
-offset_left = -83.5216
-offset_top = -15.185744
-offset_right = 1529.4784
-offset_bottom = 775.8143
-scale = Vector2(0.03820546, 0.03820546)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 367
-text = "Left Mouse 
-Button:"
-horizontal_alignment = 1
-
-[node name="Label" type="Label" parent="Camera2D/Info" unique_id=994012582]
-layout_mode = 0
-offset_left = 56.82508
-offset_top = 2.8210971
-offset_right = 3026.8252
-offset_bottom = 1587.821
-scale = Vector2(0.01885029, 0.01885029)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 367
-text = "Middle Mouse  Camera
-     Button:       Panning"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Camera2D/Info" unique_id=582225616]
-layout_mode = 0
-offset_left = 51.787395
-offset_top = 21.15827
-offset_right = 3769.7874
-offset_bottom = 1606.1583
-scale = Vector2(0.015988957, 0.015988957)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_nftbj")
-theme_override_font_sizes/font_size = 367
-text = "       Left and Right   Chording
-Click:            "
-horizontal_alignment = 1
 
 [node name="Number Points UI" parent="Camera2D" unique_id=463320316 instance=ExtResource("19_wfyjm")]
 visible = false
@@ -812,48 +560,12 @@ offset_bottom = -324.0
 wait_time = 60.0
 one_shot = true
 
-[connection signal="button_down" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 1" to="." method="_on_flag_1_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 2" to="Camera2D/Flag 2" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 2" to="Camera2D/Flag 2" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 2" to="." method="_on_flag_2_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 3" to="Camera2D/Flag 3" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 3" to="Camera2D/Flag 3" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 3" to="." method="_on_flag_3_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 4" to="Camera2D/Flag 4" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 4" to="Camera2D/Flag 4" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 4" to="." method="_on_flag_4_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 5" to="Camera2D/Flag 5" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 5" to="Camera2D/Flag 5" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 5" to="." method="_on_flag_5_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 6" to="Camera2D/Flag 6" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 6" to="Camera2D/Flag 6" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 6" to="." method="_on_flag_6_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 7" to="Camera2D/Flag 7" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 7" to="Camera2D/Flag 7" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 7" to="." method="_on_flag_7_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 8" to="Camera2D/Flag 8" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 8" to="Camera2D/Flag 8" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 8" to="." method="_on_flag_8_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 9" to="Camera2D/Flag 9" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 9" to="Camera2D/Flag 9" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 9" to="." method="_on_flag_9_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 10" to="Camera2D/Flag 10" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 10" to="Camera2D/Flag 10" method="_on_button_up"]
-[connection signal="button_down" from="Camera2D/Flag 11" to="Camera2D/Flag 11" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 11" to="Camera2D/Flag 11" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 11" to="." method="_on_flag_11_pressed"]
-[connection signal="button_down" from="Camera2D/Flag 12" to="Camera2D/Flag 12" method="_on_button_down"]
-[connection signal="button_up" from="Camera2D/Flag 12" to="Camera2D/Flag 12" method="_on_button_up"]
-[connection signal="pressed" from="Camera2D/Flag 12" to="." method="_on_flag_12_pressed"]
 [connection signal="button_down" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_up"]
 [connection signal="button_down" from="Camera2D/Number Points" to="Camera2D/Number Points" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/Number Points" to="Camera2D/Number Points" method="_on_button_up"]
+[connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_number_points_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_dialogue_button_pressed"]
-[connection signal="mouse_entered" from="Camera2D/Button" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Camera2D/Button" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Button" to="." method="dialogue"]
+[connection signal="pressed" from="Camera2D/Button" to="." method="_on_dialogue_button_pressed"]

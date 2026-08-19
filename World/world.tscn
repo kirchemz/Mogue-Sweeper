@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://iywf25xycw1g" path="res://Scripts/world.gd" id="1_dqu5g"]
 [ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="2_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://dt4rekce8x0nn" path="res://Sprites/Hide Menu Button.png" id="3_xw5lg"]
+[ext_resource type="Texture2D" uid="uid://cmo4w24pouhkn" path="res://Sprites/Main Menu.png" id="2_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://cs64ym7wurfek" path="res://Sprites/Flag Box.png" id="3_o6lw0"]
 [ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
 [ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="4_dqu5g"]
+[ext_resource type="Texture2D" uid="uid://b28q4exb16d44" path="res://Sprites/Title Box.png" id="4_x0pyu"]
 [ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
 [ext_resource type="Texture2D" uid="uid://stv6h2wu727q" path="res://Sprites/Purple Flag.png" id="6_w47uh"]
 [ext_resource type="Texture2D" uid="uid://gb56b1t1vljf" path="res://Sprites/Orange Flag.png" id="7_kcyjf"]
@@ -24,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_x0pyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
-size = Vector2(6858, 8993)
+size = Vector2(6843, 8993)
 
 [node name="World" type="Node2D" unique_id=1230266813]
 script = ExtResource("1_dqu5g")
@@ -35,41 +37,57 @@ position = Vector2(576, 324)
 [node name="Area2D" type="Area2D" parent="Camera2D" unique_id=798329352]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1794008072]
-position = Vector2(-3530, 210.5)
+position = Vector2(-3537.5, 210.5)
 shape = SubResource("RectangleShape2D_0rlat")
 
 [node name="Main Menu" type="NinePatchRect" parent="Camera2D" unique_id=2080969595]
 offset_left = -7011.0
 offset_top = -4286.0
-offset_right = -4722.332
+offset_right = -4711.996
 offset_bottom = -1298.4617
 scale = Vector2(2.9991248, 2.9991248)
-texture = ExtResource("2_o6lw0")
-patch_margin_left = 3
-patch_margin_top = 5
-patch_margin_right = 3
-patch_margin_bottom = 5
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_x0pyu")
+patch_margin_right = 11
 
-[node name="Button" type="Button" parent="Camera2D" unique_id=39069645]
-offset_left = -149.0
-offset_top = -366.0
-offset_right = -100.0
-offset_bottom = 350.0
+[node name="Flag Box" type="NinePatchRect" parent="Camera2D" unique_id=709300388]
+offset_left = -545.0
+offset_top = -13.0
+offset_right = -284.0
+offset_bottom = 302.0
+texture = ExtResource("3_o6lw0")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Flag Box" unique_id=1731394470]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -32.0
+offset_right = 105.16133
+offset_bottom = -15.526207
+scale = Vector2(3.0351238, 3.0351238)
+texture = ExtResource("4_x0pyu")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Label" type="Label" parent="Camera2D/Flag Box/NinePatchRect" unique_id=645890693]
+layout_mode = 0
+offset_left = 9.5548
+offset_right = 1904.5548
+offset_bottom = 1150.0
+scale = Vector2(0.012570895, 0.012570895)
 theme_override_fonts/font = ExtResource("7_x0pyu")
-script = ExtResource("4_dqu5g")
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=1486716039]
-position = Vector2(-123, -6)
-scale = Vector2(2.5313663, 2.5313663)
-texture = ExtResource("3_xw5lg")
+theme_override_font_sizes/font_size = 1072
+text = "Flags"
 
 [node name="Flag 1" type="TextureButton" parent="Camera2D" unique_id=864618710]
-offset_left = -521.0
-offset_top = 4.0
-offset_right = -505.0
-offset_bottom = 20.0
+offset_left = -526.0
+offset_top = 16.0
+offset_right = -494.0
+offset_bottom = 48.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("3_yf0ba")
@@ -88,18 +106,17 @@ offset_top = 18.666706
 offset_right = 4993.4326
 offset_bottom = 830.6667
 scale = Vector2(0.010163431, 0.010163431)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Red Flag"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag 2" type="TextureButton" parent="Camera2D" unique_id=1551062251]
-offset_left = -454.0
-offset_top = 3.0
-offset_right = -422.0
-offset_bottom = 35.0
+offset_left = -435.0
+offset_top = 15.0
+offset_right = -403.0
+offset_bottom = 47.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("5_oe8m4")
@@ -118,18 +135,17 @@ offset_top = 17.999998
 offset_right = 4995.432
 offset_bottom = 830.0
 scale = Vector2(0.010142742, 0.010142742)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Blue Flag"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag 3" type="TextureButton" parent="Camera2D" unique_id=1684395051]
-offset_left = -358.0
-offset_top = 3.0
-offset_right = -342.0
-offset_bottom = 19.0
+offset_left = -347.0
+offset_top = 15.0
+offset_right = -315.0
+offset_bottom = 47.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("6_w47uh")
@@ -148,18 +164,17 @@ offset_top = 17.333351
 offset_right = 4992.0996
 offset_bottom = 829.3334
 scale = Vector2(0.01002961, 0.01002961)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Violet Flag"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag 4" type="TextureButton" parent="Camera2D" unique_id=2059032593]
-offset_left = -537.0
-offset_top = 68.0
-offset_right = -521.0
-offset_bottom = 84.0
+offset_left = -526.0
+offset_top = 80.0
+offset_right = -494.0
+offset_bottom = 112.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("7_kcyjf")
@@ -178,7 +193,7 @@ offset_top = 6.666668
 offset_right = 5015.099
 offset_bottom = 818.6667
 scale = Vector2(0.0088824, 0.0088824)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Orange Flag"
@@ -186,10 +201,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 5" type="TextureButton" parent="Camera2D" unique_id=1953755850]
-offset_left = -446.0
-offset_top = 69.0
-offset_right = -430.0
-offset_bottom = 85.0
+offset_left = -435.0
+offset_top = 81.0
+offset_right = -403.0
+offset_bottom = 113.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("8_xw5lg")
@@ -208,7 +223,7 @@ offset_top = 20.666687
 offset_right = 4999.432
 offset_bottom = 832.6667
 scale = Vector2(0.009269266, 0.009269266)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Yellow Flag"
@@ -216,10 +231,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 6" type="TextureButton" parent="Camera2D" unique_id=380903669]
-offset_left = -358.0
-offset_top = 69.0
-offset_right = -342.0
-offset_bottom = 85.0
+offset_left = -347.0
+offset_top = 81.0
+offset_right = -315.0
+offset_bottom = 113.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("9_0lysu")
@@ -238,18 +253,17 @@ offset_top = 18.666666
 offset_right = 4997.7656
 offset_bottom = 830.6667
 scale = Vector2(0.009954047, 0.009954047)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Green Flag"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag 7" type="TextureButton" parent="Camera2D" unique_id=94062139]
-offset_left = -537.0
-offset_top = 147.0
-offset_right = -521.0
-offset_bottom = 163.0
+offset_left = -526.0
+offset_top = 159.0
+offset_right = -494.0
+offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("10_26uyv")
@@ -268,7 +282,7 @@ offset_top = 17.333334
 offset_right = 4995.4326
 offset_bottom = 829.3334
 scale = Vector2(0.009156878, 0.009156878)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Black Flag"
@@ -276,10 +290,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 8" type="TextureButton" parent="Camera2D" unique_id=1962417059]
-offset_left = -446.0
-offset_top = 147.0
-offset_right = -430.0
-offset_bottom = 163.0
+offset_left = -435.0
+offset_top = 159.0
+offset_right = -403.0
+offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("11_dqu5g")
@@ -298,7 +312,7 @@ offset_top = 16.666666
 offset_right = 4994.099
 offset_bottom = 828.6667
 scale = Vector2(0.009420114, 0.009420114)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "White Flag"
@@ -306,10 +320,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 9" type="TextureButton" parent="Camera2D" unique_id=251214670]
-offset_left = -358.0
-offset_top = 147.0
-offset_right = -342.0
-offset_bottom = 163.0
+offset_left = -347.0
+offset_top = 159.0
+offset_right = -315.0
+offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("12_o6lw0")
@@ -328,7 +342,7 @@ offset_top = 18.666666
 offset_right = 4994.7656
 offset_bottom = 830.6667
 scale = Vector2(0.009586081, 0.009586081)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Grey Flag"
@@ -336,10 +350,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 10" type="TextureButton" parent="Camera2D" unique_id=1512744981]
-offset_left = -537.0
-offset_top = 228.0
-offset_right = -521.0
-offset_bottom = 244.0
+offset_left = -526.0
+offset_top = 240.0
+offset_right = -494.0
+offset_bottom = 272.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("13_x0pyu")
@@ -358,7 +372,7 @@ offset_top = 17.999998
 offset_right = 4996.7656
 offset_bottom = 830.0
 scale = Vector2(0.008586097, 0.008586097)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Brown Flag"
@@ -366,10 +380,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 11" type="TextureButton" parent="Camera2D" unique_id=795749589]
-offset_left = -446.0
-offset_top = 228.0
-offset_right = -430.0
-offset_bottom = 244.0
+offset_left = -435.0
+offset_top = 240.0
+offset_right = -403.0
+offset_bottom = 272.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("14_dg1ng")
@@ -388,7 +402,7 @@ offset_top = 4.0
 offset_right = 5011.7656
 offset_bottom = 816.0
 scale = Vector2(0.008669191, 0.008669191)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Magenta Flag"
@@ -396,10 +410,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag 12" type="TextureButton" parent="Camera2D" unique_id=1281441729]
-offset_left = -358.0
-offset_top = 228.0
-offset_right = -342.0
-offset_bottom = 244.0
+offset_left = -347.0
+offset_top = 240.0
+offset_right = -315.0
+offset_bottom = 272.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("15_yfuda")
@@ -418,7 +432,7 @@ offset_top = 19.999998
 offset_right = 4995.432
 offset_bottom = 832.0
 scale = Vector2(0.00887228, 0.00887228)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Pink Flag"
@@ -443,7 +457,7 @@ offset_top = 29.89159
 offset_right = 27872.23
 offset_bottom = 841.8916
 scale = Vector2(0.013739612, 0.013739612)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Ability 1"
@@ -468,7 +482,7 @@ offset_top = 29.89159
 offset_right = 25943.494
 offset_bottom = 841.8916
 scale = Vector2(0.014090464, 0.014090464)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Ability 2"
@@ -493,7 +507,7 @@ offset_top = 31.811893
 offset_right = 29769.412
 offset_bottom = 843.8119
 scale = Vector2(0.014240503, 0.014240503)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Ability 3"
@@ -518,7 +532,7 @@ offset_top = 29.89159
 offset_right = 21350.69
 offset_bottom = 841.8916
 scale = Vector2(0.013553606, 0.013553606)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Ability 4"
@@ -543,7 +557,7 @@ offset_top = 30.90889
 offset_right = 9325.676
 offset_bottom = 842.9089
 scale = Vector2(0.0140749775, 0.0140749775)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 676
 text = "Ability 5"
@@ -641,7 +655,6 @@ offset_top = 2.4297204
 offset_right = 2888.6199
 offset_bottom = 638.42975
 scale = Vector2(0.009216956, 0.009216956)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 635
 text = "Supa Money: 9999999"
@@ -667,38 +680,58 @@ horizontal_alignment = 1
 
 [node name="Point Requirement" type="Label" parent="Camera2D" unique_id=2091116381]
 offset_left = -574.99994
-offset_top = -204.0
+offset_top = -173.0
 offset_right = 2080.0
-offset_bottom = 663.0
+offset_bottom = 694.0
 scale = Vector2(0.06610039, 0.06610039)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.7833333, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 403
-text = "Quota:
-999999999"
+text = "999999999"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Mult" type="Label" parent="Camera2D" unique_id=932083504]
-offset_left = -441.0
-offset_top = -222.0
-offset_right = 1041.0
-offset_bottom = 375.0
-scale = Vector2(0.14212684, 0.14212684)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Point Requirement2" type="Label" parent="Camera2D" unique_id=483952223]
+offset_left = -574.99994
+offset_top = -204.0
+offset_right = 2080.0
+offset_bottom = 228.0
+scale = Vector2(0.06610039, 0.06610039)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
-theme_override_font_sizes/font_size = 247
-text = "Mult:
-9999999999"
+theme_override_font_sizes/font_size = 403
+text = "Quota:"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="Mult" type="Label" parent="Camera2D" unique_id=484923416]
+offset_left = -430.0
+offset_top = -173.0
+offset_right = 2225.0
+offset_bottom = 694.0
+scale = Vector2(0.06610039, 0.06610039)
+theme_override_colors/font_color = Color(1, 0.7833333, 0, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 403
+text = "999999999"
+horizontal_alignment = 1
+
+[node name="Mult2" type="Label" parent="Camera2D" unique_id=45453251]
+offset_left = -430.0
+offset_top = -204.0
+offset_right = 2225.0
+offset_bottom = 228.0
+scale = Vector2(0.06610039, 0.06610039)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 403
+text = "Mult:"
+horizontal_alignment = 1
 
 [node name="Number Points" type="Button" parent="Camera2D" unique_id=1484588879]
-offset_left = -263.0
-offset_top = 195.0
-offset_right = -199.0
-offset_bottom = 259.0
-scale = Vector2(1.8282888, 1.8282888)
+offset_left = -239.0
+offset_top = 227.0
+offset_right = -175.0
+offset_bottom = 291.0
+scale = Vector2(1.5278479, 1.5278479)
 pivot_offset = Vector2(32, 32)
 script = ExtResource("4_dqu5g")
 metadata/_edit_use_anchors_ = true
@@ -723,7 +756,7 @@ offset_top = 8.204393
 offset_right = 1821.8287
 offset_bottom = 1494.5486
 scale = Vector2(0.030672757, 0.030672757)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 505
 text = "Number
@@ -738,7 +771,7 @@ offset_top = -311.0
 offset_right = 350.7827
 offset_bottom = -231.01309
 scale = Vector2(2.5629194, 2.5629194)
-texture = ExtResource("20_x0pyu")
+texture = ExtResource("4_x0pyu")
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
@@ -757,7 +790,7 @@ offset_top = 1.886237
 offset_right = 7043.2305
 offset_bottom = 1281.8862
 scale = Vector2(0.0051072333, 0.0051072333)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 1066
 text = "Talk to one of Mista Mowl's relatives
@@ -775,7 +808,7 @@ anchor_bottom = 0.2284499
 offset_right = 2647.008
 offset_bottom = 1127.2463
 scale = Vector2(0.012681965, 0.012681965)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 1066
 text = "Quests:"
@@ -936,7 +969,7 @@ metadata/_edit_use_anchors_ = true
 offset_left = -555.0
 offset_top = -140.0
 offset_right = -424.3435
-offset_bottom = -86.38577
+offset_bottom = -102.6052
 scale = Vector2(2.2195601, 2.2195601)
 texture = ExtResource("20_x0pyu")
 patch_margin_left = 3
@@ -960,11 +993,11 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Camera2D/Level Details" unique_id=1509665839]
 layout_mode = 0
 offset_left = 0.9010849
-offset_top = 19.823751
-offset_right = 11087.72
-offset_bottom = 599.8237
-scale = Vector2(0.01166294, 0.01166294)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_top = 16.669973
+offset_right = 12576.112
+offset_bottom = 596.67
+scale = Vector2(0.010246694, 0.010246694)
+theme_override_colors/font_color = Color(1, 0.78431374, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 541
 text = "WEALTHY FIELD"
@@ -973,10 +1006,10 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="Camera2D/Level Details" unique_id=366332139]
 layout_mode = 0
 offset_left = 0.9010849
-offset_top = 35.592636
-offset_right = 11087.72
-offset_bottom = 615.59265
-scale = Vector2(0.01166294, 0.01166294)
+offset_top = 24.779682
+offset_right = 12276.881
+offset_bottom = 604.77966
+scale = Vector2(0.010459763, 0.010459763)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_x0pyu")
 theme_override_font_sizes/font_size = 541
@@ -1003,9 +1036,6 @@ one_shot = true
 
 [connection signal="mouse_entered" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Area2D" to="." method="_on_main_menu_mouse_exited"]
-[connection signal="mouse_entered" from="Camera2D/Button" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Camera2D/Button" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Button" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/Flag 1" to="Camera2D/Flag 1" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Flag 1" to="." method="_on_button_mouse_entered"]

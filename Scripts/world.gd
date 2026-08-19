@@ -35,7 +35,6 @@ func _ready() -> void:
 	$"Camera2D/Level Details/Label".text = Levels.chosen_level.name
 	$"Camera2D/Level Details/Label2".text = Levels.chosen_level.description
 	$"Camera2D/Level Details/Label3".text = Levels.chosen_level.plot_description
-
 	Abilities.casecade_count = 0
 	Abilities.special_flag_count = 0
 	Abilities.numbers_used.clear()
@@ -134,75 +133,13 @@ func _process(_delta: float) -> void:
 	$"Camera2D/Flag 11/Label".text = "Magenta FLag: " + str(Globals.magenta_flags)
 	$"Camera2D/Flag 12/Label".text = "Pink FLag: " + str(Globals.pink_flags)
 	
-	# Change the position and visibility for all UI elements in the menu when condencing it
-	if hide_menu:
-		$"Camera2D/Number Points".visible = false
-		$"Camera2D/Ability 1".visible = false
-		$"Camera2D/Ability 2".visible = false
-		$"Camera2D/Ability 3".visible = false
-		$"Camera2D/Ability 4".visible = false
-		$"Camera2D/Ability 5".visible = false
-		$"Camera2D/Point Requirement".visible = false
-		$Camera2D/Mult.visible = false
-		$"Camera2D/Flag 1".position = Vector2(-537 + 16, -12)
-		$"Camera2D/Flag 2".position = Vector2(-446 + 16, -12)
-		$"Camera2D/Flag 3".position = Vector2(-537 + 16, -91)
-		$"Camera2D/Flag 4".position = Vector2(-537 + 16, 69)
-		$"Camera2D/Flag 5".position = Vector2(-446 + 16, 69)
-		$"Camera2D/Flag 6".position = Vector2(-446 + 16, -91)
-		$"Camera2D/Flag 7".position = Vector2(-537 + 16, 147)
-		$"Camera2D/Flag 8".position = Vector2(-446 + 16, 147)
-		$"Camera2D/Flag 9".position = Vector2(-537 + 16, -170)
-		$"Camera2D/Flag 10".position = Vector2(-537 + 16, 228)
-		$"Camera2D/Flag 11".position = Vector2(-446 + 16, 228)
-		$"Camera2D/Flag 12".position = Vector2(-446 + 16, -170)
-		$"Camera2D/Sprite2D".flip_h = true
-		$"Camera2D/Main Menu".position.x = -7211.0
-		$"Camera2D/Button".position = Vector2(-347, -366)
-		$"Camera2D/Sprite2D".position = Vector2(-324, -6)
-		$Camera2D/Area2D/CollisionShape2D.scale.x = 0.5
-		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3628, 210.5)
-		$"Camera2D/Level Details".hide()
-	else:
-		$"Camera2D/Number Points".visible = true
-		$"Camera2D/Ability 1".visible = true
-		$"Camera2D/Ability 2".visible = true
-		$"Camera2D/Ability 3".visible = true
-		$"Camera2D/Ability 4".visible = true
-		$"Camera2D/Ability 5".visible = true
-		$"Camera2D/Point Requirement".visible = true
-		$Camera2D/Mult.visible = true
-		$"Camera2D/Flag 1".position = Vector2(-521, 5)
-		$"Camera2D/Flag 2".position = Vector2(-430, 5)
-		$"Camera2D/Flag 3".position = Vector2(-342, 5)
-		$"Camera2D/Flag 4".position = Vector2(-521, 85)
-		$"Camera2D/Flag 5".position = Vector2(-430, 85)
-		$"Camera2D/Flag 6".position = Vector2(-342, 85)
-		$"Camera2D/Flag 7".position = Vector2(-521, 163)
-		$"Camera2D/Flag 8".position = Vector2(-430, 163)
-		$"Camera2D/Flag 9".position = Vector2(-342, 163)
-		$"Camera2D/Flag 10".position = Vector2(-521, 244)
-		$"Camera2D/Flag 11".position = Vector2(-430, 244)
-		$"Camera2D/Flag 12".position = Vector2(-342, 244)
-		$"Camera2D/Main Menu".position.x = -7011.0
-		$"Camera2D/Button".position = Vector2(-149, -366)
-		$"Camera2D/Sprite2D".position = Vector2(-123, -6)
-		$"Camera2D/Sprite2D".flip_h = false
-		$"Camera2D/Level Details".show()
-		$Camera2D/Area2D/CollisionShape2D.scale.x = 1
-		$Camera2D/Area2D/CollisionShape2D.position = Vector2(-3530, 210.5)
-	
 	# Update other UI elements
-	$"Camera2D/Point Requirement".text = "Quota: " + "
-	" + str(Globals.level_requirement) + " Supa Moneys"
-	$Camera2D/Mult.text = "Mult: " + "
-	" + str(Globals.mult)
+	$"Camera2D/Point Requirement".text = str(Globals.level_requirement) + " Supa Moneys"
+	$Camera2D/Mult.text = str(Globals.mult)
 	
 	# Hide specific UI elements when the game ends
 	if level_over:
 		hide_menu = false
-		$"Camera2D/Button".visible = false
-		$"Camera2D/Sprite2D".visible = false
 		$Camera2D/Points.visible = true
 		$"Camera2D/Flag 1".visible = false
 		$"Camera2D/Flag 2".visible = false
@@ -216,6 +153,7 @@ func _process(_delta: float) -> void:
 		$"Camera2D/Flag 10".visible = false
 		$"Camera2D/Flag 11".visible = false
 		$"Camera2D/Flag 12".visible = false
+		$"Camera2D/Flag Box".hide()
 		for y in map:
 			for x in y:
 				if is_instance_valid(x):
@@ -236,7 +174,10 @@ func _process(_delta: float) -> void:
 	$"Camera2D/Ability 5".texture_normal = Abilities.ability_five.img
 	
 	# Update clock
-	$Camera2D/Label.text = str($Timer.time_left)
+	if $Timer.time_left < 10:
+		$Camera2D/Label.text = "0" + str($Timer.time_left)
+	else:
+		$Camera2D/Label.text = str($Timer.time_left)
 	$Camera2D/Label.visible_characters = 2
 	
 	# Zoom in and out
@@ -660,14 +601,6 @@ func _on_button_mouse_entered() -> void:
 
 func _on_button_mouse_exited() -> void:
 	mouse_over_menu = false
-
-func _on_button_pressed() -> void:
-	mouse_over_menu = true
-	if not hide_menu:
-		hide_menu = true
-		return
-	if hide_menu:
-		hide_menu = false
 
 # When the timer ends it counts up the points and figures out if you won or lost
 func _on_timer_timeout() -> void:

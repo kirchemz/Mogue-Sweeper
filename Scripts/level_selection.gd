@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	level = Levels.chosen_level
 	$Label.text = level.name
 	$Label2.text = level.description
-	$Label3.text = "Quota: " + str(Globals.level_requirement) + " Supa Moneys"
+	$Label3.text = "Quota: " + str(Globals.level_requirement)
 	$Label4.text = level.plot_description
 
 

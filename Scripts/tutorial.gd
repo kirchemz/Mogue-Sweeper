@@ -102,20 +102,6 @@ func _process(_delta: float) -> void:
 	if ui_shown:
 		mouse_over_menu = true
 	
-	# Update Flag Counts
-	$"Camera2D/Flag 1/Label".text = "Red FLag"
-	$"Camera2D/Flag 2/Label".text = "Blue FLag: " + str(Globals.blue_flags)
-	$"Camera2D/Flag 3/Label".text = "Violet FLag: " + str(Globals.violet_flags)
-	$"Camera2D/Flag 4/Label".text = "Orange FLag: " + str(Globals.orange_flags)
-	$"Camera2D/Flag 5/Label".text = "Yellow FLag: " + str(Globals.yellow_flags)
-	$"Camera2D/Flag 6/Label".text = "Green FLag: " + str(Globals.green_flags)
-	$"Camera2D/Flag 7/Label".text = "Black FLag: " + str(Globals.black_flags)
-	$"Camera2D/Flag 8/Label".text = "White FLag: " + str(Globals.white_flags)
-	$"Camera2D/Flag 9/Label".text = "Grey FLag: " + str(Globals.grey_flags)
-	$"Camera2D/Flag 10/Label".text = "Brown FLag: " + str(Globals.brown_flags)
-	$"Camera2D/Flag 11/Label".text = "Magenta FLag: " + str(Globals.magenta_flags)
-	$"Camera2D/Flag 12/Label".text = "Pink FLag: " + str(Globals.pink_flags)
-	
 	# Update other UI elements
 	$"Camera2D/Point Requirement".text = "Quota: " + "
 	" + str(Globals.level_requirement) + " Supa Moneys"
@@ -363,44 +349,6 @@ func _on_timer_timeout() -> void:
 # Takes you to the shop when pressing the shop button
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://World/shop.tscn")
-
-# Changes which flag you are currently using
-func _on_flag_1_pressed() -> void:
-	Globals.activate_red()
-
-func _on_flag_2_pressed() -> void:
-	if Globals.blue_flags > 0:
-		Globals.activate_blue()
-
-func _on_flag_3_pressed() -> void:
-	Globals.activate_violet()
-
-func _on_flag_12_pressed() -> void:
-	Globals.activate_pink()
-
-func _on_flag_6_pressed() -> void:
-	Globals.activate_green()
-
-func _on_flag_5_pressed() -> void:
-	Globals.activate_yellow()
-
-func _on_flag_4_pressed() -> void:
-	Globals.activate_orange()
-
-func _on_flag_11_pressed() -> void:
-	Globals.activate_magenta()
-
-func _on_flag_7_pressed() -> void:
-	Globals.activate_black()
-
-func _on_flag_8_pressed() -> void:
-	Globals.activate_white()
-
-func _on_flag_9_pressed() -> void:
-	Globals.activate_grey()
-
-func _on_flag_10_pressed() -> void:
-	Globals.activate_brown()
 
 func _on_number_points_pressed() -> void:
 	ui_shown = true

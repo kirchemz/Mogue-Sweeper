@@ -34,6 +34,7 @@ var completed_quest_1 : Dictionary
 var completed_quest_2 : Dictionary
 var completed_quest_3 : Dictionary
 var talked_to_mowl : bool = false
+var exclamation_small : bool = true
 
 # All rocks available for packs
 var rock_stock : Dictionary = {
@@ -223,9 +224,25 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Globals.level_requirement == 50:
 		if not talked_to_mowl:
-			$NinePatchRect6.show()
+			$Exclamation.show()
+			if not exclamation_small:
+				var exclamation_tween_shrink = create_tween()
+				exclamation_tween_shrink.set_ease(Tween.EASE_OUT)
+				exclamation_tween_shrink.set_trans(Tween.TRANS_CUBIC)
+				exclamation_tween_shrink.tween_property($Exclamation, "scale", Vector2(1.5, 1.5), 2)
+				exclamation_tween_shrink.play()
+				await exclamation_tween_shrink.finished
+				exclamation_small = true
+			else:
+				var exclamation_tween_grow = create_tween()
+				exclamation_tween_grow.set_ease(Tween.EASE_OUT)
+				exclamation_tween_grow.set_trans(Tween.TRANS_CUBIC)
+				exclamation_tween_grow.tween_property($Exclamation, "scale", Vector2(2, 2), 2)
+				exclamation_tween_grow.play()
+				await exclamation_tween_grow.finished
+				exclamation_small = false
 		else:
-			$NinePatchRect6.hide()
+			$Exclamation.hide()
 	if Quests.current_quests.size() > 0:
 		$"Quest Board/Quest 1".text = Quests.current_quests[0].quest_board_description
 		$"Quest Board/Quest 1 Details".text = "Reward: "  + str(Quests.current_quests[0].reward) + "    Time: " + str(Quests.current_quests[0].time) + " Rounds"

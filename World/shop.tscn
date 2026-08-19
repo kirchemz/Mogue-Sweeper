@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://62n41e7k5asm"]
 
 [ext_resource type="Script" uid="uid://bl1nqgyqfkrsw" path="res://Scripts/shop.gd" id="1_jq0fv"]
+[ext_resource type="Texture2D" uid="uid://b28q4exb16d44" path="res://Sprites/Title Box.png" id="3_vj47s"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_x8l2j"]
 [ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_vj47s"]
 [ext_resource type="Texture2D" uid="uid://cef44ro30d4b4" path="res://Sprites/Music Player.png" id="6_vj47s"]
 [ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="7_0m3j8"]
 [ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="7_7l6ll"]
 [ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
+[ext_resource type="Texture2D" uid="uid://cs64ym7wurfek" path="res://Sprites/Flag Box.png" id="8_rhmb0"]
+[ext_resource type="Texture2D" uid="uid://cv732ftdgl0ey" path="res://Sprites/Booth.png" id="9_7l6ll"]
 [ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="9_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
+[ext_resource type="Texture2D" uid="uid://x4u3omtm0j0g" path="res://Sprites/Dialogue Box.png" id="12_0m3j8"]
 [ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
 [ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
 [ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="15_0kkpg"]
@@ -16,27 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bko56ymvjeign" path="res://Sprites/Shop Desk.png" id="15_5yg78"]
 [ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="15_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="20_x40hv"]
+[ext_resource type="Texture2D" uid="uid://cjsxalg3gks8j" path="res://Sprites/Booth Bottom.png" id="21_erba8"]
 [ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="21_jq0fv"]
 [ext_resource type="Texture2D" uid="uid://cntpcmmgjgjb7" path="res://Sprites/Cousin_Derick_Talking.png" id="23_0m3j8"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_7l6ll"]
 [ext_resource type="Texture2D" uid="uid://dhfioyw5wp7fx" path="res://Sprites/Blue UI Box.png" id="24_erba8"]
 [ext_resource type="Texture2D" uid="uid://dfre77xp73ssb" path="res://Sprites/Yellow UI Box.png" id="25_7vwke"]
 [ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="26_7vwke"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
-atlas = ExtResource("14_5yg78")
-region = Rect2(0, 0, 32, 39)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x8l2j")
-}],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_atlk4"]
 animations = [{
@@ -70,6 +60,21 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Uncle Jimmy",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
+atlas = ExtResource("14_5yg78")
+region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8l2j")
+}],
+"loop": 1,
+"name": &"Idle",
 "speed": 5.0
 }]
 
@@ -177,6 +182,17 @@ offset_bottom = 648.0
 texture = ExtResource("9_ty2y0")
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=2111273035]
+offset_left = 54.0
+offset_top = 53.0
+offset_right = 1093.0
+offset_bottom = 201.0
+texture = ExtResource("3_vj47s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=509025097]
 offset_left = 1152.0
 offset_right = 2304.0
@@ -184,30 +200,17 @@ offset_bottom = 648.0
 texture = ExtResource("9_ty2y0")
 metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect8" type="NinePatchRect" parent="." unique_id=714572192]
-offset_left = 58.0
-offset_top = 57.0
-offset_right = 355.32632
-offset_bottom = 106.87828
-scale = Vector2(1.5437584, 1.5437584)
-texture = ExtResource("9_ty2y0")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1605726257]
-offset_left = 75.0
+offset_left = 63.0
 offset_top = 66.99999
-offset_right = 275.6216
+offset_right = 263.6216
 offset_bottom = 93.0
 scale = Vector2(2.1457918, 2.1457918)
-texture = ExtResource("26_7vwke")
+texture = ExtResource("7_0m3j8")
 patch_margin_left = 13
 patch_margin_top = 5
 patch_margin_right = 13
 patch_margin_bottom = 6
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect" unique_id=556533680]
 layout_mode = 1
@@ -227,30 +230,29 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=571123486]
-offset_left = 532.0
-offset_top = 146.0
-offset_right = 601.98047
-offset_bottom = 162.73804
-scale = Vector2(2.7873085, 2.7873085)
-texture = ExtResource("5_vj47s")
+offset_left = 727.00006
+offset_top = 67.0
+offset_right = 796.9805
+offset_bottom = 88.81802
+scale = Vector2(2.566685, 2.566685)
+texture = ExtResource("7_0m3j8")
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 4
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="NinePatchRect2" unique_id=707301438]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.004038323
-anchor_top = 0.13445397
-anchor_right = 62.184776
-anchor_bottom = 7.721962
+anchor_left = -0.11779232
+anchor_top = 0.22792278
+anchor_right = 62.07103
+anchor_bottom = 7.8154316
 offset_left = 1.6198089
 offset_top = 2.4297204
 offset_right = 2888.6199
 offset_bottom = 638.42975
-scale = Vector2(0.009216956, 0.009216956)
+scale = Vector2(0.011465437, 0.011465437)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 635
@@ -259,19 +261,20 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Music Player Box" type="NinePatchRect" parent="." unique_id=1622030449]
-offset_left = 532.0
-offset_top = 203.0
-offset_right = 601.98047
-offset_bottom = 256.09784
-scale = Vector2(2.7873085, 2.7873085)
-texture = ExtResource("5_vj47s")
+offset_left = 509.0
+offset_top = 67.0
+offset_right = 611.1507
+offset_bottom = 93.48352
+scale = Vector2(2.1145227, 2.1145227)
+texture = ExtResource("7_0m3j8")
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Music Player Box" unique_id=1738130363]
-position = Vector2(21.526144, 27.625217)
+position = Vector2(15.13344, 14.187599)
+scale = Vector2(0.660608, 0.660608)
 texture = ExtResource("6_vj47s")
 
 [node name="Label" type="Label" parent="Music Player Box/Sprite2D" unique_id=852228476]
@@ -287,10 +290,10 @@ text = "Music"
 
 [node name="Pause" type="Button" parent="Music Player Box" unique_id=504103145]
 layout_mode = 0
-offset_left = 41.97598
-offset_top = 4.663998
-offset_right = 567.97595
-offset_bottom = 279.664
+offset_left = 30.26688
+offset_top = 8.51256
+offset_right = 556.2669
+offset_bottom = 283.51257
 scale = Vector2(0.040963903, 0.040963903)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
@@ -300,10 +303,10 @@ script = ExtResource("7_7l6ll")
 
 [node name="Play" type="Button" parent="Music Player Box" unique_id=294784674]
 layout_mode = 0
-offset_left = 41.97598
-offset_top = 19.014761
-offset_right = 567.97595
-offset_bottom = 294.01477
+offset_left = 53.43996
+offset_top = 8.985482
+offset_right = 579.43994
+offset_bottom = 283.98547
 scale = Vector2(0.040963903, 0.040963903)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
@@ -313,10 +316,10 @@ script = ExtResource("7_7l6ll")
 
 [node name="Next" type="Button" parent="Music Player Box" unique_id=1630640571]
 layout_mode = 0
-offset_left = 41.97598
-offset_top = 33.006756
-offset_right = 567.97595
-offset_bottom = 308.00674
+offset_left = 76.140114
+offset_top = 9.458401
+offset_right = 602.14014
+offset_bottom = 284.4584
 scale = Vector2(0.040963903, 0.040963903)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
@@ -324,39 +327,13 @@ theme_override_font_sizes/font_size = 248
 text = "Next"
 script = ExtResource("7_7l6ll")
 
-[node name="NinePatchRect5" type="NinePatchRect" parent="." unique_id=1832679023]
-offset_left = 323.0
-offset_top = 146.0
-offset_right = 425.68622
-offset_bottom = 249.74493
-scale = Vector2(1.9760003, 1.9760003)
-texture = ExtResource("5_vj47s")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
-[node name="Label" type="Label" parent="NinePatchRect5" unique_id=1571024310]
-layout_mode = 0
-offset_left = 7.230571
-offset_top = 1.886237
-offset_right = 7043.2305
-offset_bottom = 1281.8862
-scale = Vector2(0.012426159, 0.012426159)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_x8l2j")
-theme_override_font_sizes/font_size = 1066
-text = "Packs: $500"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Quest Board" type="NinePatchRect" parent="." unique_id=1354622188]
-offset_left = 740.0
-offset_top = 146.0
-offset_right = 875.78265
-offset_bottom = 225.98691
-scale = Vector2(2.5629194, 2.5629194)
-texture = ExtResource("5_vj47s")
+offset_left = 62.000015
+offset_top = 134.00002
+offset_right = 596.08057
+offset_bottom = 165.57126
+scale = Vector2(1.9004625, 1.9004625)
+texture = ExtResource("8_rhmb0")
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
@@ -369,30 +346,31 @@ anchor_left = 0.3030707
 anchor_top = 0.015594678
 anchor_right = 54.640163
 anchor_bottom = 12.75444
-offset_left = 7.230571
-offset_top = 1.886237
-offset_right = 7043.2305
-offset_bottom = 1281.8862
+offset_left = -168.17842
+offset_top = 9.505217
+offset_right = 6867.824
+offset_bottom = 1896.324
 scale = Vector2(0.0051072333, 0.0051072333)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 text = "Talk to one of Mista Mowl's relatives
 to recieve a quest"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Quest Details2" type="Label" parent="Quest Board" unique_id=1142226523]
+[node name="Quesst" type="Label" parent="Quest Board" unique_id=1142226523]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.045977093
 anchor_top = 0.029556615
 anchor_right = 0.31841946
 anchor_bottom = 0.2284499
-offset_right = 2647.008
-offset_bottom = 1127.2463
+offset_left = -18.241226
+offset_top = 6.959671
+offset_right = 2628.7666
+offset_bottom = 1143.6804
 scale = Vector2(0.012681965, 0.012681965)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 text = "Quests:"
@@ -400,10 +378,10 @@ horizontal_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Quest Board" unique_id=821461077]
 layout_mode = 0
-offset_left = 2.7312603
-offset_top = 15.217022
-offset_right = 134.53818
-offset_bottom = 37.05251
+offset_left = 132.59929
+offset_top = 6.271823
+offset_right = 264.4062
+offset_bottom = 28.107311
 scale = Vector2(0.9827996, 0.9827996)
 texture = ExtResource("7_0m3j8")
 patch_margin_left = 3
@@ -414,45 +392,43 @@ patch_margin_bottom = 3
 [node name="Quest 1" type="Label" parent="Quest Board" unique_id=991371540]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.021641895
-anchor_top = 0.19293456
-anchor_right = 84.19854
-anchor_bottom = 0.1929353
-offset_left = 7.2305555
-offset_top = 1.8862457
-offset_right = 7043.2285
-offset_bottom = 1281.8862
+anchor_left = 0.007881747
+anchor_top = 0.5833334
+anchor_right = 0.2453202
+anchor_bottom = 0.863377
+offset_left = 129.86804
+offset_top = -8.945199
+offset_right = 18362.115
+offset_bottom = 1262.2134
 scale = Vector2(0.006907285, 0.006907285)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Quest 1 Details" type="Label" parent="Quest Board" unique_id=240325180]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.021641895
-anchor_top = 0.30130845
-anchor_right = 84.19854
-anchor_bottom = 0.30130845
-offset_left = 7.230571
-offset_top = 1.8862362
-offset_right = 7043.2285
-offset_bottom = 1281.8864
+anchor_left = 0.007881758
+anchor_top = 0.8000002
+anchor_right = 0.2453202
+anchor_bottom = 1.0800439
+offset_left = 129.86804
+offset_top = -8.945198
+offset_right = 18362.117
+offset_bottom = 1262.2136
 scale = Vector2(0.006907285, 0.006907285)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Quest Board" unique_id=264229694]
 layout_mode = 0
-offset_left = 2.7312622
-offset_top = 36.286743
-offset_right = 134.53818
-offset_bottom = 58.12223
+offset_left = 266.2422
+offset_top = 5.7880564
+offset_right = 398.04907
+offset_bottom = 27.623543
 scale = Vector2(0.9827996, 0.9827996)
 texture = ExtResource("7_0m3j8")
 patch_margin_left = 3
@@ -463,45 +439,43 @@ patch_margin_bottom = 3
 [node name="Quest 2" type="Label" parent="Quest Board" unique_id=1735556823]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.021641895
-anchor_top = 0.45401782
-anchor_right = 84.19854
-anchor_bottom = 0.45401782
-offset_left = 7.230571
-offset_top = 1.886237
-offset_right = 7043.2305
-offset_bottom = 1281.8862
+anchor_left = 0.25517237
+anchor_top = 0.5833335
+anchor_right = 0.4965517
+anchor_bottom = 0.8633771
+offset_left = 129.86806
+offset_top = -8.945199
+offset_right = 18664.723
+offset_bottom = 1262.2135
 scale = Vector2(0.006907285, 0.006907285)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Quest 2 Details" type="Label" parent="Quest Board" unique_id=1889769518]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.021641895
-anchor_top = 0.56731886
-anchor_right = 84.19854
-anchor_bottom = 0.56731963
-offset_left = 7.230571
-offset_top = 1.886237
-offset_right = 7043.2305
-offset_bottom = 1281.8862
+anchor_left = 0.25418717
+anchor_top = 0.83333355
+anchor_right = 0.4955665
+anchor_bottom = 1.1133772
+offset_left = 129.86806
+offset_top = -8.945198
+offset_right = 18664.725
+offset_bottom = 1262.2135
 scale = Vector2(0.006907285, 0.006907285)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="Quest Board" unique_id=371053503]
 layout_mode = 0
-offset_left = 2.7312622
-offset_top = 57.356464
-offset_right = 134.53818
-offset_bottom = 79.191956
+offset_left = 399.36768
+offset_top = 5.7880545
+offset_right = 531.17456
+offset_bottom = 27.623547
 scale = Vector2(0.9827996, 0.9827996)
 texture = ExtResource("7_0m3j8")
 patch_margin_left = 3
@@ -512,84 +486,58 @@ patch_margin_bottom = 3
 [node name="Quest 3" type="Label" parent="Quest Board" unique_id=1564451031]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.021641895
-anchor_top = 0.72275925
-anchor_right = 84.19854
-anchor_bottom = 0.72275925
-offset_left = 7.230571
-offset_top = 1.886237
-offset_right = 7043.2305
-offset_bottom = 1281.8862
+anchor_left = 0.5073891
+anchor_top = 0.5666669
+anchor_right = 0.7438423
+anchor_bottom = 0.84671056
+offset_left = 129.86804
+offset_top = -8.945199
+offset_right = 18286.463
+offset_bottom = 1262.2135
 scale = Vector2(0.006907285, 0.006907285)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Quest 3 Details" type="Label" parent="Quest Board" unique_id=722858532]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.021641895
-anchor_top = 0.8360598
-anchor_right = 84.19854
-anchor_bottom = 0.8360606
-offset_left = 7.230571
-offset_top = 1.886237
-offset_right = 7043.2305
-offset_bottom = 1281.8862
+anchor_left = 0.5064039
+anchor_top = 0.80000013
+anchor_right = 0.746798
+anchor_bottom = 1.0800437
+offset_left = 129.86804
+offset_top = -8.9452
+offset_right = 18589.072
+offset_bottom = 1262.2134
 scale = Vector2(0.006907285, 0.006907285)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1066
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=521339773]
-offset_left = 56.0
-offset_top = 251.0
-offset_right = 188.74797
-offset_bottom = 300.40845
-scale = Vector2(1.9760003, 1.9760003)
-texture = ExtResource("5_vj47s")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-metadata/_edit_use_anchors_ = true
+[node name="Flag booth" type="NinePatchRect" parent="." unique_id=1767505114]
+offset_left = 420.0
+offset_top = 204.0
+offset_right = 571.3158
+offset_bottom = 302.6842
+scale = Vector2(1.4374654, 1.4374654)
+texture = ExtResource("9_7l6ll")
+patch_margin_left = 53
+patch_margin_top = 23
+patch_margin_right = 54
+patch_margin_bottom = 20
 
-[node name="Label" type="Label" parent="NinePatchRect4" unique_id=1965026485]
-layout_mode = 0
-offset_left = 0.5952835
-offset_right = 957.82794
-offset_bottom = 115.0
-scale = Vector2(0.13805702, 0.13805702)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_x8l2j")
-theme_override_font_sizes/font_size = 114
-text = "Abilities"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1767505114]
-offset_left = 56.0
-offset_top = 146.0
-offset_right = 188.74797
-offset_bottom = 195.40845
-scale = Vector2(1.9760003, 1.9760003)
-texture = ExtResource("5_vj47s")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="NinePatchRect3" unique_id=279259037]
-layout_mode = 0
-offset_left = 0.5952835
-offset_top = 0.5952797
-offset_right = 1053.106
-offset_bottom = 115.595276
+[node name="Label" type="Label" parent="Flag booth" unique_id=279259037]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010033348
+anchor_top = 0.8205132
+anchor_right = 0.9966554
+anchor_bottom = 0.9752483
+offset_right = 1053.2605
+offset_bottom = 107.73011
 scale = Vector2(0.124145545, 0.124145545)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
@@ -598,12 +546,70 @@ text = "Flags"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Pack booth" type="NinePatchRect" parent="." unique_id=1392258659]
+offset_left = 81.99997
+offset_top = 403.0
+offset_right = 233.31577
+offset_bottom = 535.08496
+scale = Vector2(1.363746, 1.363746)
+texture = ExtResource("9_7l6ll")
+patch_margin_left = 53
+patch_margin_top = 23
+patch_margin_right = 54
+patch_margin_bottom = 20
+
+[node name="Label" type="Label" parent="Pack booth" unique_id=814132049]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010033348
+anchor_top = 0.8582376
+anchor_right = 0.99665534
+anchor_bottom = 1.0129727
+offset_right = 1053.2605
+offset_bottom = 107.73011
+scale = Vector2(0.124145545, 0.124145545)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 114
+text = "Packs: $500"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Abilitiy booth" type="NinePatchRect" parent="." unique_id=31290228]
+offset_left = 73.0
+offset_top = 203.0
+offset_right = 227.35223
+offset_bottom = 301.68417
+scale = Vector2(1.4398171, 1.4398171)
+texture = ExtResource("9_7l6ll")
+patch_margin_left = 53
+patch_margin_top = 23
+patch_margin_right = 54
+patch_margin_bottom = 20
+
+[node name="Label" type="Label" parent="Abilitiy booth" unique_id=735079989]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010033348
+anchor_top = 0.8205132
+anchor_right = 0.9966554
+anchor_bottom = 0.9752483
+offset_right = 1053.2605
+offset_bottom = 107.73011
+scale = Vector2(0.124145545, 0.124145545)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x8l2j")
+theme_override_font_sizes/font_size = 114
+text = "Abilities"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Label8" type="Label" parent="." unique_id=482590177]
-offset_left = 262.0
-offset_top = 303.0
-offset_right = 3593.0
-offset_bottom = 1473.0
-scale = Vector2(0.012422107, 0.012422107)
+offset_left = 238.0
+offset_top = 272.0
+offset_right = 3569.0
+offset_bottom = 1442.0
+scale = Vector2(0.00920942, 0.00920942)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1091
@@ -611,11 +617,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label9" type="Label" parent="." unique_id=774353489]
-offset_left = 166.00002
-offset_top = 302.0
-offset_right = 3497.0
-offset_bottom = 1472.0
-scale = Vector2(0.012422107, 0.012422107)
+offset_left = 170.0
+offset_top = 272.0
+offset_right = 3501.0
+offset_bottom = 1442.0
+scale = Vector2(0.00920942, 0.00920942)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1091
@@ -623,11 +629,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label10" type="Label" parent="." unique_id=806698197]
-offset_left = 69.0
-offset_top = 304.0
-offset_right = 3400.0
-offset_bottom = 1474.0
-scale = Vector2(0.012422107, 0.012422107)
+offset_left = 98.0
+offset_top = 271.0
+offset_right = 3429.0
+offset_bottom = 1441.0
+scale = Vector2(0.00920942, 0.00920942)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 1091
@@ -635,11 +641,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability One" type="TextureButton" parent="." unique_id=853133183]
-offset_left = 65.0
-offset_top = 280.00003
-offset_right = 97.0
-offset_bottom = 312.00003
-scale = Vector2(1.567471, 1.567471)
+offset_left = 95.0
+offset_top = 257.0
+offset_right = 127.00001
+offset_bottom = 289.0
+scale = Vector2(1.1421412, 1.1421412)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
@@ -654,17 +660,18 @@ offset_top = 34.0
 offset_right = 3154.8762
 offset_bottom = 645.0
 scale = Vector2(0.01124798, 0.01124798)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Ability 1"
 horizontal_alignment = 1
 
 [node name="Ability Two" type="TextureButton" parent="." unique_id=652905932]
-offset_left = 162.0
-offset_top = 280.0
-offset_right = 194.0
-offset_bottom = 312.0
-scale = Vector2(1.567471, 1.567471)
+offset_left = 167.0
+offset_top = 257.0
+offset_right = 199.0
+offset_bottom = 289.0
+scale = Vector2(1.1421412, 1.1421412)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
@@ -679,18 +686,18 @@ offset_top = 34.0
 offset_right = 3154.8762
 offset_bottom = 645.0
 scale = Vector2(0.01114553, 0.01114553)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Ability 2"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Ability Three" type="TextureButton" parent="." unique_id=2028428542]
-offset_left = 257.0
-offset_top = 280.0
-offset_right = 289.0
-offset_bottom = 312.0
-scale = Vector2(1.567471, 1.567471)
+offset_left = 235.0
+offset_top = 257.0
+offset_right = 267.0
+offset_bottom = 289.0
+scale = Vector2(1.1421412, 1.1421412)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
 metadata/_edit_use_anchors_ = true
@@ -705,18 +712,18 @@ offset_top = 34.0
 offset_right = 3154.8762
 offset_bottom = 645.0
 scale = Vector2(0.011000444, 0.011000444)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Ability 3"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Flag One" type="TextureButton" parent="." unique_id=878077255]
-offset_left = 65.0
-offset_top = 175.0
-offset_right = 97.0
-offset_bottom = 207.0
-scale = Vector2(1.567471, 1.567471)
+offset_left = 444.0
+offset_top = 261.0
+offset_right = 476.0
+offset_bottom = 293.0
+scale = Vector2(1.1402758, 1.1402758)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
@@ -733,6 +740,7 @@ offset_top = 34.0
 offset_right = 4825.816
 offset_bottom = 645.0
 scale = Vector2(0.010489374, 0.010489374)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Flag 1"
@@ -740,11 +748,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag Two" type="TextureButton" parent="." unique_id=501843390]
-offset_left = 162.0
-offset_top = 175.0
-offset_right = 194.00002
-offset_bottom = 207.0
-scale = Vector2(1.567471, 1.567471)
+offset_left = 510.0
+offset_top = 261.0
+offset_right = 542.0
+offset_bottom = 293.0
+scale = Vector2(1.1402758, 1.1402758)
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("9_jq0fv")
@@ -760,6 +768,7 @@ offset_top = 34.0
 offset_right = 4825.817
 offset_bottom = 645.0
 scale = Vector2(0.009781468, 0.009781468)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Flag 2"
@@ -767,11 +776,11 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Flag Three" type="TextureButton" parent="." unique_id=593985820]
-offset_left = 257.0
-offset_top = 175.0
-offset_right = 289.0
-offset_bottom = 207.0
-scale = Vector2(1.5674711, 1.5674711)
+offset_left = 576.0
+offset_top = 261.00003
+offset_right = 608.0
+offset_bottom = 293.00003
+scale = Vector2(1.140276, 1.140276)
 texture_normal = ExtResource("5_vj47s")
 stretch_mode = 0
 script = ExtResource("9_jq0fv")
@@ -787,6 +796,7 @@ offset_top = 34.0
 offset_right = 5227.8877
 offset_bottom = 645.0
 scale = Vector2(0.009690697, 0.009690697)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 610
 text = "Flag 3"
@@ -921,6 +931,18 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=1209705933]
+offset_left = 717.0
+offset_top = 204.0
+offset_right = 825.69714
+offset_bottom = 232.83214
+scale = Vector2(3.4683518, 3.4683518)
+texture = ExtResource("3_vj47s")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
 [node name="Label3" type="Label" parent="." unique_id=2018391308]
 offset_left = -922.0
 offset_top = 66.0
@@ -1018,10 +1040,10 @@ text = "FLAGS"
 horizontal_alignment = 1
 
 [node name="Ability 1" type="TextureButton" parent="." unique_id=149004265]
-offset_left = 534.0
-offset_top = 70.00003
-offset_right = 566.0
-offset_bottom = 102.00006
+offset_left = 734.0
+offset_top = 220.00003
+offset_right = 766.0
+offset_bottom = 252.00006
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
@@ -1046,10 +1068,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 2" type="TextureButton" parent="." unique_id=2138932469]
-offset_left = 605.0
-offset_top = 70.0
-offset_right = 637.00006
-offset_bottom = 102.0
+offset_left = 805.0
+offset_top = 220.0
+offset_right = 837.00006
+offset_bottom = 252.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
@@ -1074,10 +1096,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 3" type="TextureButton" parent="." unique_id=1940929645]
-offset_left = 679.0
-offset_top = 70.0
-offset_right = 711.0
-offset_bottom = 102.0
+offset_left = 879.0
+offset_top = 220.0
+offset_right = 911.0
+offset_bottom = 252.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
@@ -1102,10 +1124,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 4" type="TextureButton" parent="." unique_id=567917125]
-offset_left = 754.0
-offset_top = 70.0
-offset_right = 786.00006
-offset_bottom = 102.0
+offset_left = 954.0
+offset_top = 220.0
+offset_right = 986.00006
+offset_bottom = 252.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
@@ -1130,14 +1152,13 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ability 5" type="TextureButton" parent="." unique_id=543151954]
-offset_left = 830.0
-offset_top = 70.0
-offset_right = 862.0
-offset_bottom = 102.0
+offset_left = 1030.0
+offset_top = 220.0
+offset_right = 1062.0
+offset_bottom = 252.0
 scale = Vector2(1.5312849, 1.5312849)
 texture_normal = ExtResource("5_vj47s")
 script = ExtResource("9_jq0fv")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Ability 5" unique_id=1344563823]
 layout_mode = 1
@@ -1158,10 +1179,10 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=818081273]
-offset_left = 347.0
-offset_top = 233.0
-offset_right = 5583.0
-offset_bottom = 1543.0
+offset_left = 110.0
+offset_top = 476.0
+offset_right = 5346.0
+offset_bottom = 1786.0
 scale = Vector2(0.014004522, 0.014004522)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
@@ -1170,10 +1191,10 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="." unique_id=1463668229]
-offset_left = 443.99997
-offset_top = 225.99997
-offset_right = 5680.0
-offset_bottom = 1536.0
+offset_left = 211.99991
+offset_top = 479.99997
+offset_right = 5448.0
+offset_bottom = 1790.0
 scale = Vector2(0.01415397, 0.01415397)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
@@ -1182,11 +1203,11 @@ text = "SOLD OUT"
 metadata/_edit_use_anchors_ = true
 
 [node name="Rock Pack" type="TextureButton" parent="." unique_id=1673046791]
-offset_left = 450.0
-offset_top = 210.0
-offset_right = 498.0
-offset_bottom = 274.0
-scale = Vector2(1.8557684, 1.8557684)
+offset_left = 213.0
+offset_top = 455.99997
+offset_right = 261.0
+offset_bottom = 520.0
+scale = Vector2(1.2807674, 1.2807674)
 pivot_offset = Vector2(24, 32)
 offset_transform_enabled = true
 texture_normal = ExtResource("8_ghprd")
@@ -1222,11 +1243,11 @@ text = "OPEN"
 metadata/_edit_use_anchors_ = true
 
 [node name="Extra Pack" type="TextureButton" parent="." unique_id=410524825]
-offset_left = 354.0
-offset_top = 209.99997
-offset_right = 402.0
-offset_bottom = 274.0
-scale = Vector2(1.8557684, 1.8557684)
+offset_left = 111.0
+offset_top = 454.99997
+offset_right = 159.0
+offset_bottom = 519.0
+scale = Vector2(1.2807673, 1.2807673)
 pivot_offset = Vector2(24, 32)
 offset_transform_enabled = true
 texture_normal = ExtResource("12_5coi5")
@@ -1265,72 +1286,75 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(576, 332)
 scale = Vector2(0.588139, 0.588139)
 
-[node name="Mista Mowl" type="Button" parent="." unique_id=1423249159]
-modulate = Color(1, 1, 1, 0)
-offset_left = 882.0
-offset_top = 353.0
-offset_right = 905.03845
-offset_bottom = 387.19998
-scale = Vector2(7.1472907, 7.1472907)
-script = ExtResource("7_7l6ll")
-metadata/_edit_use_anchors_ = true
-
 [node name="Mowl Relative" type="Button" parent="." unique_id=1210683976]
 modulate = Color(1, 1, 1, 0)
-offset_left = 82.0
-offset_top = 353.0
-offset_right = 105.03845
-offset_bottom = 387.19998
-scale = Vector2(7.1472907, 7.1472907)
+offset_left = 785.99994
+offset_top = 424.99997
+offset_right = 809.0384
+offset_bottom = 458.24844
+scale = Vector2(5.2548833, 5.2548833)
 script = ExtResource("7_7l6ll")
-metadata/_edit_use_anchors_ = true
 
-[node name="NinePatchRect6" type="NinePatchRect" parent="." unique_id=2113621004]
-visible = false
-offset_left = 878.0
-offset_top = 355.0
-offset_right = 918.0
-offset_bottom = 395.0
-scale = Vector2(1.9629337, 1.9629337)
-texture = ExtResource("25_7vwke")
-patch_margin_left = 3
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1354400583]
+position = Vector2(455.52124, 474.08545)
+scale = Vector2(3.3151705, 3.3151705)
+texture = ExtResource("9_7l6ll")
+
+[node name="Exclamation" type="NinePatchRect" parent="." unique_id=2113621004]
+offset_left = 389.00006
+offset_top = 429.0
+offset_right = 429.00006
+offset_bottom = 469.0
+scale = Vector2(1.4704546, 1.4704546)
+pivot_offset = Vector2(40, 25)
+texture = ExtResource("12_0m3j8")
+patch_margin_left = 10
 patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+patch_margin_right = 9
+patch_margin_bottom = 17
 
-[node name="Label" type="Label" parent="NinePatchRect6" unique_id=2089533932]
+[node name="Label" type="Label" parent="Exclamation" unique_id=2089533932]
 layout_mode = 0
-offset_left = 17.0
-offset_top = -9.0
-offset_right = 131.0
-offset_bottom = 750.0
-scale = Vector2(0.07779585, 0.07779585)
+offset_left = 18.5
+offset_top = -2.4999847
+offset_right = 132.5
+offset_bottom = 756.5
+scale = Vector2(0.03996398, 0.03996398)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 707
 text = "!"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624735375]
-position = Vector2(991.16144, 460.82672)
-scale = Vector2(4.965473, 4.965473)
-sprite_frames = SubResource("SpriteFrames_0rlat")
-animation = &"Idle"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1354400583]
-position = Vector2(993.16144, 501.8267)
-scale = Vector2(6.072592, 6.072592)
-texture = ExtResource("15_5yg78")
-
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2028974315]
-position = Vector2(148.16147, 468)
-scale = Vector2(4.965473, 4.965473)
+position = Vector2(844.4358, 503)
+scale = Vector2(3.6507514, 3.6507514)
 sprite_frames = SubResource("SpriteFrames_atlk4")
 animation = &"Anckle Biter"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1278737492]
-position = Vector2(150.16147, 501.8267)
-scale = Vector2(6.072592, 6.072592)
+position = Vector2(846.4358, 528.82666)
+scale = Vector2(4.4647355, 4.4647355)
 texture = ExtResource("15_5yg78")
+
+[node name="Mista Mowl" type="Button" parent="." unique_id=1423249159]
+modulate = Color(1, 1, 1, 0)
+offset_left = 392.08545
+offset_top = 387.08545
+offset_right = 415.1239
+offset_bottom = 421.28543
+scale = Vector2(5.2548833, 5.2548833)
+script = ExtResource("7_7l6ll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624735375]
+position = Vector2(453.52124, 494.08545)
+scale = Vector2(3.6507516, 3.6507516)
+sprite_frames = SubResource("SpriteFrames_0rlat")
+animation = &"Idle"
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1871251890]
+position = Vector2(455.08545, 547.08545)
+scale = Vector2(3.3151705, 3.3151705)
+texture = ExtResource("21_erba8")
 
 [node name="Quest Giver" type="Button" parent="." unique_id=1804844671]
 visible = false
@@ -1473,6 +1497,8 @@ text = "There's flags you can buy too.
 They do different things to get
 you more money but you only have
 a limited stock so use them wisley"
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Mowl Relative Dialogue Box" type="NinePatchRect" parent="." unique_id=1546830359]
 visible = false
@@ -1598,12 +1624,12 @@ theme_override_font_sizes/font_size = 537
 text = "No"
 
 [node name="NinePatchRect11" type="NinePatchRect" parent="." unique_id=152745047]
-offset_left = 909.00006
-offset_top = 63.0
-offset_right = 955.18
-offset_bottom = 81.05919
-scale = Vector2(3.876143, 3.876143)
-texture = ExtResource("5_vj47s")
+offset_left = 909.0
+offset_top = 67.0
+offset_right = 976.1426
+offset_bottom = 88.86036
+scale = Vector2(2.5617144, 2.5617144)
+texture = ExtResource("7_0m3j8")
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
@@ -1611,11 +1637,11 @@ patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="NinePatchRect11" unique_id=1119293270]
 layout_mode = 0
-offset_left = 4.385787
+offset_left = 10.149464
 offset_top = 2.0639071
-offset_right = 1393.3857
+offset_right = 1399.1494
 offset_bottom = 490.0639
-scale = Vector2(0.027136147, 0.027136147)
+scale = Vector2(0.036085103, 0.036085103)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_x8l2j")
 theme_override_font_sizes/font_size = 455
@@ -1680,8 +1706,8 @@ visible = false
 [connection signal="pressed" from="Extra Pack" to="." method="_on_extra_pack_pressed"]
 [connection signal="button_down" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_down"]
 [connection signal="button_up" from="Extra Pack/Button" to="Extra Pack/Button" method="_on_button_up"]
-[connection signal="pressed" from="Mista Mowl" to="." method="_on_mista_mowl_pressed"]
 [connection signal="pressed" from="Mowl Relative" to="." method="_on_mowl_relative_pressed"]
+[connection signal="pressed" from="Mista Mowl" to="." method="_on_mista_mowl_pressed"]
 [connection signal="pressed" from="Quest Giver" to="." method="_on_quest_giver_pressed"]
 [connection signal="pressed" from="Quest Giver2" to="." method="_on_quest_giver_2_pressed"]
 [connection signal="pressed" from="Quest Giver3" to="." method="_on_quest_giver_3_pressed"]
