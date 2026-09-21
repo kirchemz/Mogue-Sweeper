@@ -12,7 +12,7 @@ func _on_save_and_quit_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	if get_parent() is Camera2D:
-		get_parent().get_parent().mouse_over_menu = true
+		get_parent().get_parent().mouse_over_menu = false
 		get_parent().get_parent().get_node("Timer").paused = false
 	hide()
 
@@ -43,3 +43,43 @@ func _on_button_pressed() -> void:
 func _on_title_screen_pressed() -> void:
 	SaveLoad._save()
 	get_tree().change_scene_to_file("res://World/title_screen.tscn")
+
+
+func _on_save_and_quit_mouse_entered() -> void:
+	$"NinePatchRect/Save and Quit/NinePatchRect".show()
+
+
+func _on_save_and_quit_mouse_exited() -> void:
+	$"NinePatchRect/Save and Quit/NinePatchRect".hide()
+
+
+func _on_title_screen_mouse_entered() -> void:
+	$"NinePatchRect/Title Screen/NinePatchRect".show()
+
+
+func _on_title_screen_mouse_exited() -> void:
+	$"NinePatchRect/Title Screen/NinePatchRect".hide()
+
+
+func _on_continue_mouse_entered() -> void:
+	$"NinePatchRect/Continue/NinePatchRect".show()
+
+
+func _on_continue_mouse_exited() -> void:
+	$"NinePatchRect/Continue/NinePatchRect".hide()
+
+
+func _on_settings_mouse_entered() -> void:
+	$"NinePatchRect/Settings/NinePatchRect".show()
+
+
+func _on_settings_mouse_exited() -> void:
+	$"NinePatchRect/Settings/NinePatchRect".hide()
+
+
+func _on_button_mouse_entered() -> void:
+	$NinePatchRect3/NinePatchRect/NinePatchRect.show()
+
+
+func _on_button_mouse_exited() -> void:
+	$NinePatchRect3/NinePatchRect/NinePatchRect.hide()

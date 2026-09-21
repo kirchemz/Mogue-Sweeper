@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jqboab1t2xdp"]
 
-[ext_resource type="AudioStream" uid="uid://bror2dfc0xutd" path="res://Cozy Tunes v1.5.4/Cozy Tunes/Audio/ogg/Wanderer's Tale.ogg" id="1_b8n73"]
+[ext_resource type="AudioStream" uid="uid://bror2dfc0xutd" path="res://Music/Cozy Tunes v1.5.4/Cozy Tunes/Audio/ogg/Wanderer's Tale.ogg" id="1_b8n73"]
 [ext_resource type="Script" uid="uid://b50k4ucjl75tr" path="res://Scripts/music_player.gd" id="2_b8n73"]
 
 [node name="Music Player" type="AudioStreamPlayer" unique_id=1543795239]

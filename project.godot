@@ -14,7 +14,7 @@ config/name="Mogue Sweeper"
 config/description="A Minesweeper rogue-lite"
 run/main_scene="uid://c6k7anaruwjh2"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="uid://cv212jr5mr5b2"
+config/icon="uid://cdwtsyw7ic4n8"
 
 [autoload]
 
@@ -35,6 +35,18 @@ mouse_cursor/custom_image="uid://bf3a52rehof0r"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/PaletteSwapShader/plugin.cfg", "res://addons/cheatsheet_viewer/plugin.cfg", "res://addons/project_statistics/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Cell/": "orange",
+"res://Misc/": "red",
+"res://Music/": "pink",
+"res://Scripts/": "gray",
+"res://Sprites/": "teal",
+"res://UI/": "blue",
+"res://World/": "purple"
+}
 
 [input]
 
@@ -87,4 +99,5 @@ Pause={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.56078434, 0.5921569, 0.2901961, 1)

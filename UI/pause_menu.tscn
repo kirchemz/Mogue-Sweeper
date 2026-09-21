@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://edujyr7u7bce" path="res://UI/pause_menu.gd" id="1_0b5ob"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_jfm1e"]
-[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="3_pqlge"]
-[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_pqlge"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/UI/White UI Box.png" id="3_pqlge"]
+[ext_resource type="Texture2D" uid="uid://cx2n2q0q4bqwr" path="res://Sprites/UI/Selection Box.png" id="5_nben2"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI/UI Box.png" id="5_pqlge"]
+[ext_resource type="Texture2D" uid="uid://ey10oucbu83g" path="res://Sprites/UI/UI Box Selection.png" id="6_nben2"]
 
 [node name="Pause Menu" type="Control" unique_id=403710505]
 layout_mode = 3
@@ -61,6 +63,19 @@ theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Save & Quit"
 
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/Save and Quit" unique_id=859781432]
+visible = false
+layout_mode = 0
+offset_left = 0.00022807434
+offset_right = 118.093506
+offset_bottom = 29.000784
+scale = Vector2(28.604845, 28.604845)
+texture = ExtResource("5_nben2")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="Title Screen" type="Button" parent="NinePatchRect" unique_id=1397882826]
 layout_mode = 0
 offset_left = 10.1400175
@@ -71,6 +86,19 @@ scale = Vector2(0.026603714, 0.026603714)
 theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Title Screen"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/Title Screen" unique_id=88285274]
+visible = false
+layout_mode = 0
+offset_left = 0.00022807434
+offset_right = 118.093506
+offset_bottom = 29.000784
+scale = Vector2(28.604845, 28.604845)
+texture = ExtResource("5_nben2")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
 [node name="Continue" type="Button" parent="NinePatchRect" unique_id=1675256697]
 layout_mode = 0
@@ -83,6 +111,19 @@ theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Continue"
 
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/Continue" unique_id=200528396]
+visible = false
+layout_mode = 0
+offset_left = 0.00022807434
+offset_right = 118.093506
+offset_bottom = 29.000784
+scale = Vector2(28.604845, 28.604845)
+texture = ExtResource("5_nben2")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="Settings" type="Button" parent="NinePatchRect" unique_id=1557225326]
 layout_mode = 0
 offset_left = 10.140014
@@ -94,8 +135,20 @@ theme_override_fonts/font = ExtResource("2_jfm1e")
 theme_override_font_sizes/font_size = 754
 text = "Settings"
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=506708549]
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/Settings" unique_id=1371544801]
 visible = false
+layout_mode = 0
+offset_left = 0.00022807434
+offset_right = 118.093506
+offset_bottom = 29.000784
+scale = Vector2(28.604845, 28.604845)
+texture = ExtResource("5_nben2")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=506708549]
 layout_mode = 0
 offset_left = 299.0
 offset_top = 9.0
@@ -220,11 +273,34 @@ layout_mode = 0
 offset_right = 21.465237
 offset_bottom = 15.783262
 
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect3/NinePatchRect" unique_id=1348067898]
+visible = false
+layout_mode = 0
+offset_left = 0.00022807434
+offset_top = 0.15783262
+offset_right = 21.380228
+offset_bottom = 16.297832
+texture = ExtResource("6_nben2")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[connection signal="mouse_entered" from="NinePatchRect/Save and Quit" to="." method="_on_save_and_quit_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/Save and Quit" to="." method="_on_save_and_quit_mouse_exited"]
 [connection signal="pressed" from="NinePatchRect/Save and Quit" to="." method="_on_save_and_quit_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/Title Screen" to="." method="_on_title_screen_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/Title Screen" to="." method="_on_title_screen_mouse_exited"]
 [connection signal="pressed" from="NinePatchRect/Title Screen" to="." method="_on_title_screen_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/Continue" to="." method="_on_continue_mouse_exited"]
 [connection signal="pressed" from="NinePatchRect/Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/Settings" to="." method="_on_settings_mouse_exited"]
 [connection signal="pressed" from="NinePatchRect/Settings" to="." method="_on_settings_pressed"]
 [connection signal="value_changed" from="NinePatchRect3/Master" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="NinePatchRect3/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="NinePatchRect3/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="mouse_entered" from="NinePatchRect3/NinePatchRect/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect3/NinePatchRect/Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="NinePatchRect3/NinePatchRect/Button" to="." method="_on_button_pressed"]

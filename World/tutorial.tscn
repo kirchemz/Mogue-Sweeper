@@ -1,41 +1,43 @@
 [gd_scene format=3 uid="uid://bgo477hl5syd"]
 
 [ext_resource type="Script" uid="uid://qhdr8fg0nr7m" path="res://Scripts/tutorial.gd" id="1_uhr3w"]
-[ext_resource type="Texture2D" uid="uid://cmo4w24pouhkn" path="res://Sprites/Main Menu.png" id="2_0udkt"]
-[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="2_b6xh4"]
+[ext_resource type="Texture2D" uid="uid://cmo4w24pouhkn" path="res://Sprites/UI/Main Menu.png" id="2_0udkt"]
+[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Flags/Red Flag.png" id="2_b6xh4"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_nftbj"]
 [ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="4_uhr3w"]
-[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="16_7kkxi"]
-[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="17_lmekh"]
+[ext_resource type="Texture2D" uid="uid://vrsx3gbmdkps" path="res://Sprites/Supa Not Evil Company/Supa Evil Man Talking.png" id="12_cig0i"]
+[ext_resource type="Texture2D" uid="uid://j2y1uugr3xch" path="res://Sprites/Supa Not Evil Company/Supa Evil Man Small.png" id="13_cig0i"]
+[ext_resource type="Texture2D" uid="uid://datsvl0og8swl" path="res://Sprites/Supa Not Evil Company/Supa Evil Man Small Waving.png" id="14_0udkt"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/UI/White UI Box.png" id="16_7kkxi"]
+[ext_resource type="Texture2D" uid="uid://dxpa5n3sh1818" path="res://Sprites/UI/Loading Scene.png" id="16_cig0i"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI/UI Box.png" id="17_lmekh"]
 [ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="19_hhhlv"]
 [ext_resource type="PackedScene" uid="uid://6nk83vdjmefb" path="res://UI/number_points_ui.tscn" id="19_wfyjm"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="20_20typ"]
-[ext_resource type="Texture2D" uid="uid://dhfioyw5wp7fx" path="res://Sprites/Blue UI Box.png" id="21_nftbj"]
-[ext_resource type="Texture2D" uid="uid://dfre77xp73ssb" path="res://Sprites/Yellow UI Box.png" id="22_r6pgm"]
-[ext_resource type="Texture2D" uid="uid://ch0hoha5utnjp" path="res://Sprites/Employee.png" id="23_uhr3w"]
-[ext_resource type="Texture2D" uid="uid://ca0bro2pk2iq6" path="res://Sprites/Employee Waving.png" id="25_uhr3w"]
-[ext_resource type="Texture2D" uid="uid://c8n6dxk3c1dci" path="res://Sprites/Shovel.png" id="26_hhhlv"]
+[ext_resource type="Texture2D" uid="uid://dhfioyw5wp7fx" path="res://Sprites/UI/Blue UI Box.png" id="21_nftbj"]
+[ext_resource type="Texture2D" uid="uid://dfre77xp73ssb" path="res://Sprites/UI/Yellow UI Box.png" id="22_r6pgm"]
+[ext_resource type="Texture2D" uid="uid://c8n6dxk3c1dci" path="res://Sprites/Flags/Shovel.png" id="26_hhhlv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5qk7"]
 size = Vector2(6843, 8993)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jf64p"]
-atlas = ExtResource("23_uhr3w")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0udkt"]
+atlas = ExtResource("12_cig0i")
+region = Rect2(0, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rw02v"]
-atlas = ExtResource("23_uhr3w")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvgnp"]
+atlas = ExtResource("12_cig0i")
+region = Rect2(0, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sd22"]
-atlas = ExtResource("23_uhr3w")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cig0i"]
+atlas = ExtResource("12_cig0i")
+region = Rect2(96, 0, 96, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhhlv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jf64p")
+"texture": SubResource("AtlasTexture_0udkt")
 }],
 "loop": 1,
 "name": &"Idle",
@@ -43,37 +45,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rw02v")
+"texture": SubResource("AtlasTexture_fvgnp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3sd22")
+"texture": SubResource("AtlasTexture_cig0i")
 }],
 "loop": 1,
 "name": &"Talking",
 "speed": 7.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hhhlv"]
-atlas = ExtResource("23_uhr3w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5qk7"]
+atlas = ExtResource("14_0udkt")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_avyj0"]
-atlas = ExtResource("25_uhr3w")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_afqte"]
-atlas = ExtResource("25_uhr3w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_td7pr"]
+atlas = ExtResource("14_0udkt")
 region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_funh4"]
-atlas = ExtResource("25_uhr3w")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hhhlv")
+"texture": ExtResource("13_cig0i")
 }],
 "loop": 1,
 "name": &"Idle",
@@ -81,17 +75,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_avyj0")
+"texture": SubResource("AtlasTexture_t5qk7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_afqte")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_funh4")
+"texture": SubResource("AtlasTexture_td7pr")
 }],
 "loop": 2,
 "name": &"Waving",
-"speed": 7.0
+"speed": 3.0
 }]
 
 [node name="Tutorial" type="Node2D" unique_id=1021033824]
@@ -117,11 +108,11 @@ patch_margin_right = 11
 
 [node name="TextureButton" type="TextureButton" parent="Camera2D" unique_id=1567088534]
 visible = false
-offset_left = -460.99997
+offset_left = -487.00003
 offset_top = 239.0
-offset_right = -400.7106
+offset_right = -426.71066
 offset_bottom = 264.54987
-scale = Vector2(3.8176887, 3.8176887)
+scale = Vector2(3.244573, 3.244573)
 pivot_offset = Vector2(32, 8)
 script = ExtResource("4_uhr3w")
 
@@ -139,15 +130,15 @@ patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=1457134019]
 layout_mode = 0
-offset_left = 19.165003
+offset_left = 9.809104
 offset_top = 5.3806124
-offset_right = 655.165
+offset_right = 818.8091
 offset_bottom = 324.3806
 scale = Vector2(0.049403228, 0.049403228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_nftbj")
 theme_override_font_sizes/font_size = 265
-text = "Shop"
+text = "Continue"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" unique_id=1952543472]
 offset_left = -558.0
@@ -214,12 +205,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Points" type="Label" parent="Camera2D" unique_id=97629221]
 visible = false
-offset_left = -604.0
-offset_top = 19.000011
-offset_right = 2135.0
-offset_bottom = 1516.0
+offset_left = -643.0
+offset_top = -7.9999886
+offset_right = 2096.0
+offset_bottom = 1489.0
 scale = Vector2(0.13634178, 0.13634178)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_nftbj")
 theme_override_font_sizes/font_size = 247
 text = "Points: 100
@@ -494,10 +485,10 @@ scale = Vector2(3.0721252, 2.1309643)
 script = ExtResource("19_hhhlv")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Camera2D/Dialogue Box/NinePatchRect11" unique_id=1999383737]
-position = Vector2(21.42186, 21.384422)
-scale = Vector2(1.2836419, 1.2836419)
+position = Vector2(19.499035, 15.594887)
+scale = Vector2(0.5062694, 0.5062694)
 sprite_frames = SubResource("SpriteFrames_hhhlv")
-animation = &"Idle"
+animation = &"Talking"
 autoplay = "Talking"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Camera2D/Dialogue Box" unique_id=1963354486]
@@ -541,6 +532,8 @@ position = Vector2(15, 16)
 sprite_frames = SubResource("SpriteFrames_0rlat")
 animation = &"Waving"
 autoplay = "Waving"
+frame = 1
+frame_progress = 0.4793321
 
 [node name="Number Points UI" parent="Camera2D" unique_id=463320316 instance=ExtResource("19_wfyjm")]
 visible = false
@@ -556,12 +549,30 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 
+[node name="Loading" type="Node2D" parent="Camera2D" unique_id=1107243739]
+position = Vector2(-576, -324)
+
+[node name="Panel" type="Panel" parent="Camera2D/Loading" unique_id=1409872019]
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Loading" unique_id=958895302]
+position = Vector2(576, 324)
+texture = ExtResource("16_cig0i")
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Loading" unique_id=398185410]
+offset_left = 407.0
+offset_top = 423.0
+offset_right = 753.0
+offset_bottom = 453.0
+
 [node name="Timer" type="Timer" parent="." unique_id=470242831]
 wait_time = 60.0
 one_shot = true
 
 [connection signal="button_down" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/TextureButton" to="Camera2D/TextureButton" method="_on_button_up"]
+[connection signal="pressed" from="Camera2D/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="button_down" from="Camera2D/Number Points" to="Camera2D/Number Points" method="_on_button_down"]
 [connection signal="button_up" from="Camera2D/Number Points" to="Camera2D/Number Points" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Number Points" to="." method="_on_button_mouse_entered"]
@@ -571,3 +582,4 @@ one_shot = true
 [connection signal="mouse_exited" from="Camera2D/Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Camera2D/Dialogue Box/NinePatchRect11/Dialogue Button" to="." method="_on_dialogue_button_pressed"]
 [connection signal="pressed" from="Camera2D/Button" to="." method="_on_dialogue_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

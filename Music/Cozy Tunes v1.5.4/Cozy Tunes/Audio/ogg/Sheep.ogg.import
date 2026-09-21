@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tqr22hf03dew"
+path="res://.godot/imported/Sheep.ogg-26e7c1cf58c20cee2361bf89196bd9bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Cozy Tunes v1.5.4/Cozy Tunes/Audio/ogg/Sheep.ogg"
+dest_files=["res://.godot/imported/Sheep.ogg-26e7c1cf58c20cee2361bf89196bd9bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bn5w0g2ofxivq"
+path="res://.godot/imported/Pineapple Under The Sea.ogg-f6036338223cf5bf9cb6e7e0e01f0c37.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Cozy Tunes v1.5.4/Cozy Tunes/Audio/ogg/Pineapple Under The Sea.ogg"
+dest_files=["res://.godot/imported/Pineapple Under The Sea.ogg-f6036338223cf5bf9cb6e7e0e01f0c37.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

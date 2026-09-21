@@ -1,18 +1,516 @@
 [gd_scene format=3 uid="uid://c6k7anaruwjh2"]
 
 [ext_resource type="Script" uid="uid://bikn5rvph0r2e" path="res://Scripts/title_screen.gd" id="1_h4hme"]
-[ext_resource type="Texture2D" uid="uid://os4eli6fd3ip" path="res://Sprites/MowlFamily.Png" id="2_h4hme"]
-[ext_resource type="Texture2D" uid="uid://dqnx3g6e6hrhe" path="res://Sprites/LOGO.png" id="2_nm8xh"]
-[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_hwc51"]
+[ext_resource type="Texture2D" uid="uid://dqnx3g6e6hrhe" path="res://Sprites/UI/LOGO.png" id="2_nm8xh"]
+[ext_resource type="Texture2D" uid="uid://b26ukbjmwvu3s" path="res://Sprites/Mowls/Mista_Mowl_Idle.png" id="3_qismu"]
+[ext_resource type="Texture2D" uid="uid://ca8m5326l3nbn" path="res://Sprites/Mowls/Ms_Mowl_Idle.png" id="4_3wu4v"]
+[ext_resource type="Texture2D" uid="uid://c2724q2lm2r76" path="res://Sprites/UI/UI_Font_B.png" id="4_e01e3"]
+[ext_resource type="Texture2D" uid="uid://cx2n2q0q4bqwr" path="res://Sprites/UI/Selection Box.png" id="5_e01e3"]
+[ext_resource type="Texture2D" uid="uid://c0yem7lvklvds" path="res://Sprites/Mowls/Only_Son_Idle.png" id="5_fpj3x"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI/UI Box.png" id="5_hwc51"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="5_nm8xh"]
+[ext_resource type="Texture2D" uid="uid://bchw2qsy2610s" path="res://Sprites/Mowls/Cousin_Derick_Idle.png" id="6_fpj3x"]
+[ext_resource type="Texture2D" uid="uid://hm27k51jaql1" path="res://Sprites/Mowls/Cousin_Daisy_Idle.png" id="7_ewpkh"]
+[ext_resource type="Texture2D" uid="uid://ci7h1oxbbb5q2" path="res://Sprites/Mowls/Anckle Biter Idle.png" id="8_wj4q2"]
+[ext_resource type="Texture2D" uid="uid://cbwmls87ek00e" path="res://Sprites/Mowls/Bramble_Idle.png" id="9_u42d5"]
+[ext_resource type="Texture2D" uid="uid://6bs8n2uwvc5o" path="res://Sprites/Mowls/Angrylookinmowl Idle.png" id="10_uhy3g"]
+[ext_resource type="Texture2D" uid="uid://ceyqpw3po76bt" path="res://Sprites/Mowls/Remy_Idle.png" id="11_w2177"]
+[ext_resource type="Texture2D" uid="uid://c1hst85ciyqrn" path="res://Sprites/Mowls/Uncle Jimmy Idle.png" id="12_w2177"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
+size = Vector2(91, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhy3g"]
+size = Vector2(48, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2177"]
+size = Vector2(76, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6y0n"]
+size = Vector2(98, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww2ox"]
+size = Vector2(115, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostyf"]
+size = Vector2(94, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weygq"]
+size = Vector2(100, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy6s8"]
+size = Vector2(113, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewpkh"]
+atlas = ExtResource("3_qismu")
+region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj4q2"]
+atlas = ExtResource("3_qismu")
+region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u42d5"]
+atlas = ExtResource("3_qismu")
+region = Rect2(32, 0, 32, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewpkh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj4q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u42d5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5vsh"]
+atlas = ExtResource("4_3wu4v")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhy3g"]
+atlas = ExtResource("4_3wu4v")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2177"]
+atlas = ExtResource("4_3wu4v")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6y0n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5vsh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhy3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2177")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww2ox"]
+atlas = ExtResource("5_fpj3x")
+region = Rect2(0, 0, 16, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostyf"]
+atlas = ExtResource("5_fpj3x")
+region = Rect2(0, 0, 16, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weygq"]
+atlas = ExtResource("5_fpj3x")
+region = Rect2(16, 0, 16, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qy6s8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww2ox")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ostyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weygq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6y0n"]
+atlas = ExtResource("6_fpj3x")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy6s8"]
+atlas = ExtResource("6_fpj3x")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e7cb"]
+atlas = ExtResource("6_fpj3x")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dppnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6y0n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy6s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e7cb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkndd"]
+atlas = ExtResource("7_ewpkh")
+region = Rect2(0, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep4ns"]
+atlas = ExtResource("7_ewpkh")
+region = Rect2(0, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i6g8"]
+atlas = ExtResource("7_ewpkh")
+region = Rect2(32, 0, 32, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t663h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkndd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep4ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i6g8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dppnr"]
+atlas = ExtResource("8_wj4q2")
+region = Rect2(0, 0, 27, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t663h"]
+atlas = ExtResource("8_wj4q2")
+region = Rect2(0, 0, 27, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt01d"]
+atlas = ExtResource("8_wj4q2")
+region = Rect2(27, 0, 27, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gt01d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dppnr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t663h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt01d")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3dr6"]
+atlas = ExtResource("9_u42d5")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agu57"]
+atlas = ExtResource("9_u42d5")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yqdh"]
+atlas = ExtResource("9_u42d5")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3dr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3dr6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agu57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqdh")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6v2u"]
+atlas = ExtResource("10_uhy3g")
+region = Rect2(0, 0, 28, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka2fo"]
+atlas = ExtResource("10_uhy3g")
+region = Rect2(0, 0, 28, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qendm"]
+atlas = ExtResource("10_uhy3g")
+region = Rect2(28, 0, 28, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agu57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6v2u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka2fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qendm")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn1v5"]
+atlas = ExtResource("11_w2177")
+region = Rect2(0, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgdlx"]
+atlas = ExtResource("11_w2177")
+region = Rect2(0, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl6p5"]
+atlas = ExtResource("11_w2177")
+region = Rect2(31, 0, 31, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yqdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn1v5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgdlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl6p5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21mjd"]
+atlas = ExtResource("12_w2177")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxmvq"]
+atlas = ExtResource("12_w2177")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imu1q"]
+atlas = ExtResource("12_w2177")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6v2u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21mjd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxmvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imu1q")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
 
 [node name="Title Screen" type="Node2D" unique_id=295365305]
 script = ExtResource("1_h4hme")
 
-[node name="MowlFamily" type="Sprite2D" parent="." unique_id=1046619764]
-position = Vector2(661, 581)
-scale = Vector2(2.8300517, 2.8300517)
-texture = ExtResource("2_h4hme")
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1749025339]
+offset_left = 376.0
+offset_top = 35.0
+offset_right = 1119.0
+offset_bottom = 482.0
+
+[node name="Mista Mowl2" type="Area2D" parent="." unique_id=665641485]
+position = Vector2(253, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mista Mowl2" unique_id=637795867]
+position = Vector2(0.5, -22)
+shape = SubResource("RectangleShape2D_0rlat")
+
+[node name="Ms Mowl2" type="Area2D" parent="." unique_id=340648257]
+position = Vector2(345, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ms Mowl2" unique_id=144041245]
+position = Vector2(0.5, -22)
+shape = SubResource("RectangleShape2D_0rlat")
+
+[node name="Only Son2" type="Area2D" parent="." unique_id=1361162996]
+position = Vector2(437, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Only Son2" unique_id=1774103319]
+position = Vector2(-21, -22)
+shape = SubResource("RectangleShape2D_uhy3g")
+
+[node name="Cousin Derick2" type="Area2D" parent="." unique_id=1091286406]
+position = Vector2(494, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cousin Derick2" unique_id=1685969864]
+position = Vector2(-3, -22)
+shape = SubResource("RectangleShape2D_w2177")
+
+[node name="Cousin Daisy2" type="Area2D" parent="." unique_id=1028277937]
+position = Vector2(574, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cousin Daisy2" unique_id=1720470575]
+position = Vector2(4, -22)
+shape = SubResource("RectangleShape2D_f6y0n")
+
+[node name="Ancklebiter2" type="Area2D" parent="." unique_id=1974520687]
+position = Vector2(673, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ancklebiter2" unique_id=27000782]
+position = Vector2(4, -22)
+shape = SubResource("RectangleShape2D_f6y0n")
+
+[node name="Bramble2" type="Area2D" parent="." unique_id=1189860145]
+position = Vector2(771, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bramble2" unique_id=2108102505]
+position = Vector2(12.5, -22)
+shape = SubResource("RectangleShape2D_ww2ox")
+
+[node name="Angrylookinmowl2" type="Area2D" parent="." unique_id=159753224]
+position = Vector2(887, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Angrylookinmowl2" unique_id=453531778]
+position = Vector2(2, -22)
+shape = SubResource("RectangleShape2D_ostyf")
+
+[node name="Remy2" type="Area2D" parent="." unique_id=1943750576]
+position = Vector2(982, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Remy2" unique_id=1424890219]
+position = Vector2(5, -22)
+shape = SubResource("RectangleShape2D_weygq")
+
+[node name="Uncle Jimmy2" type="Area2D" parent="." unique_id=322928362]
+position = Vector2(1083, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Uncle Jimmy2" unique_id=761296089]
+position = Vector2(11.5, -22)
+shape = SubResource("RectangleShape2D_qy6s8")
+
+[node name="Mista Mowl" type="AnimatedSprite2D" parent="." unique_id=1717829181]
+position = Vector2(254.00002, 594)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_0rlat")
+
+[node name="Ms Mowl" type="AnimatedSprite2D" parent="." unique_id=1346339698]
+position = Vector2(345, 581)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_f6y0n")
+
+[node name="Only Son" type="AnimatedSprite2D" parent="." unique_id=1196260769]
+position = Vector2(417.00003, 636)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_qy6s8")
+animation = &"idle"
+
+[node name="Cousin Derick" type="AnimatedSprite2D" parent="." unique_id=639524930]
+position = Vector2(491.4868, 580)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_dppnr")
+animation = &"idle"
+
+[node name="Cousin Daisy" type="AnimatedSprite2D" parent="." unique_id=2052903514]
+position = Vector2(578.4868, 613)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_t663h")
+
+[node name="Ancklebiter" type="AnimatedSprite2D" parent="." unique_id=1225195194]
+position = Vector2(677.4868, 627.00006)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_gt01d")
+
+[node name="Bramble" type="AnimatedSprite2D" parent="." unique_id=1501871922]
+position = Vector2(784.4868, 581.00006)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_p3dr6")
+
+[node name="Angrylookinmowl" type="AnimatedSprite2D" parent="." unique_id=811598139]
+position = Vector2(890.4868, 605)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_agu57")
+
+[node name="Remy" type="AnimatedSprite2D" parent="." unique_id=456810700]
+position = Vector2(986.4868, 580.00006)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_3yqdh")
+
+[node name="Uncle Jimmy" type="AnimatedSprite2D" parent="." unique_id=1979050222]
+position = Vector2(1093, 601)
+scale = Vector2(2.842924, 2.842924)
+sprite_frames = SubResource("SpriteFrames_b6v2u")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2133820711]
 offset_left = -61.999992
@@ -31,6 +529,19 @@ offset_right = 176.0
 offset_bottom = 415.0
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="Normal" unique_id=1418459547]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 35.192818
+offset_bottom = 16.703506
+scale = Vector2(3.8315306, 3.8315306)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Label" type="Label" parent="Normal" unique_id=204673554]
 layout_mode = 0
 offset_left = 3.0
@@ -44,15 +555,45 @@ text = "Normal"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Normal" unique_id=1443147178]
+visible = false
+layout_mode = 0
+offset_left = -6.000001
+offset_top = -1.0000024
+offset_right = 50.13259
+offset_bottom = 23.108229
+scale = Vector2(2.7791343, 2.7791343)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="Continue" type="Button" parent="." unique_id=2084163688]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
 offset_top = 276.0
-offset_right = 198.0
+offset_right = 207.0
 offset_bottom = 338.0
 
-[node name="Label" type="Label" parent="Continue" unique_id=814765162]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Continue" unique_id=30220177]
 layout_mode = 0
+offset_left = -5.0
+offset_right = 43.022587
+offset_bottom = 16.703506
+scale = Vector2(3.8315306, 3.8315306)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="Continue" unique_id=814765162]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029761905
+anchor_right = 1.7723069
 offset_left = 3.0
 offset_right = 2049.2524
 offset_bottom = 822.0
@@ -64,6 +605,20 @@ text = "Continue"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Continue" unique_id=1459076073]
+visible = false
+layout_mode = 0
+offset_left = -6.000001
+offset_top = -1.0000024
+offset_right = 61.28714
+offset_bottom = 23.108221
+scale = Vector2(2.7791343, 2.7791343)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="Story" type="Button" parent="." unique_id=257205582]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
@@ -71,6 +626,19 @@ offset_top = 428.0
 offset_right = 253.0
 offset_bottom = 490.0
 metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Story" unique_id=53773759]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 55.289227
+offset_bottom = 16.703506
+scale = Vector2(3.8315306, 3.8315306)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Label" type="Label" parent="Story" unique_id=602558185]
 layout_mode = 0
@@ -85,6 +653,35 @@ text = "Story Mode"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Panel" type="Panel" parent="Story" unique_id=804307765]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 3.0
+offset_right = 223.0
+offset_bottom = 61.0
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Story" unique_id=1165106031]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 12.0
+offset_right = 131.0
+offset_bottom = 52.0
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(298, 487, 12, 15)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Story" unique_id=1841240651]
+visible = false
+layout_mode = 0
+offset_left = -6.000001
+offset_right = 77.83905
+offset_bottom = 23.38858
+scale = Vector2(2.7791343, 2.7791343)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="Tutorial" type="Button" parent="." unique_id=1513679465]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
@@ -92,6 +689,19 @@ offset_top = 504.0
 offset_right = 166.0
 offset_bottom = 566.0
 metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Tutorial" unique_id=283064535]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 32.321903
+offset_bottom = 16.703506
+scale = Vector2(3.8315306, 3.8315306)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Label" type="Label" parent="Tutorial" unique_id=1787497591]
 layout_mode = 0
@@ -107,6 +717,20 @@ text = "Tutorial"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Tutorial" unique_id=630384229]
+visible = false
+layout_mode = 0
+offset_left = -6.000001
+offset_top = -0.99998116
+offset_right = 46.174522
+offset_bottom = 22.748417
+scale = Vector2(2.7791343, 2.7791343)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="Quit" type="Button" parent="." unique_id=2034018236]
 self_modulate = Color(1, 1, 1, 0.2)
 offset_left = 30.0
@@ -114,6 +738,19 @@ offset_top = 576.0
 offset_right = 119.0
 offset_bottom = 638.0
 metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Quit" unique_id=1004610164]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 19.272285
+offset_bottom = 16.703506
+scale = Vector2(3.8315306, 3.8315306)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Label" type="Label" parent="Quit" unique_id=1271167266]
 layout_mode = 0
@@ -128,6 +765,20 @@ theme_override_font_sizes/font_size = 766
 text = "Quit"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Quit" unique_id=368784190]
+visible = false
+layout_mode = 0
+offset_left = -7.0000005
+offset_top = -0.99998116
+offset_right = 27.543129
+offset_bottom = 23.10825
+scale = Vector2(2.7791343, 2.7791343)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
 [node name="Warning" type="Control" parent="." unique_id=814843932]
 visible = false
@@ -186,12 +837,57 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 13.145369
 offset_top = 88.73124
-offset_right = 866.1454
+offset_right = 963.7921
 offset_bottom = 800.73126
 scale = Vector2(0.03860265, 0.03860265)
 theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 657
 text = "Yes"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Warning/NinePatchRect/Yes" unique_id=227994022]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 34.099106
+offset_bottom = 29.529152
+scale = Vector2(24.985994, 24.985994)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="Warning/NinePatchRect/Yes" unique_id=192869402]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.33151403
+anchor_top = 0.04982008
+anchor_right = -0.331514
+anchor_bottom = 0.049820118
+offset_left = 3.0
+offset_right = 2049.2524
+offset_bottom = 822.0
+scale = Vector2(0.80288523, 0.80288523)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 766
+text = "Yes"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Warning/NinePatchRect/Yes" unique_id=94571290]
+visible = false
+layout_mode = 0
+offset_left = -14.188732
+offset_top = -7.094229
+offset_right = 46.190968
+offset_bottom = 38.62182
+scale = Vector2(16.449455, 16.449455)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
 
 [node name="No" type="Button" parent="Warning/NinePatchRect" unique_id=1926296392]
 layout_mode = 0
@@ -204,9 +900,91 @@ theme_override_fonts/font = ExtResource("5_nm8xh")
 theme_override_font_sizes/font_size = 657
 text = "No"
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="Warning/NinePatchRect/No" unique_id=1183870086]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 34.099106
+offset_bottom = 29.529152
+scale = Vector2(24.985994, 24.985994)
+texture = ExtResource("4_e01e3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="Warning/NinePatchRect/No" unique_id=742337152]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.38609782
+anchor_top = 0.04982008
+anchor_right = -0.38609782
+anchor_bottom = 0.049820118
+offset_left = 2.9997253
+offset_top = 2.670288e-05
+offset_right = 2049.2522
+offset_bottom = 822.0
+scale = Vector2(0.80288523, 0.80288523)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_nm8xh")
+theme_override_font_sizes/font_size = 766
+text = "No"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Warning/NinePatchRect/No" unique_id=1268486002]
+visible = false
+layout_mode = 0
+offset_left = -7.0945034
+offset_top = -7.094229
+offset_right = 52.85392
+offset_bottom = 38.62182
+scale = Vector2(16.449455, 16.449455)
+texture = ExtResource("5_e01e3")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[connection signal="mouse_entered" from="Mista Mowl2" to="." method="_on_mista_mowl_2_mouse_entered"]
+[connection signal="mouse_exited" from="Mista Mowl2" to="." method="_on_mista_mowl_2_mouse_exited"]
+[connection signal="mouse_entered" from="Ms Mowl2" to="." method="_on_ms_mowl_2_mouse_entered"]
+[connection signal="mouse_exited" from="Ms Mowl2" to="." method="_on_ms_mowl_2_mouse_exited"]
+[connection signal="mouse_entered" from="Only Son2" to="." method="_on_only_son_2_mouse_entered"]
+[connection signal="mouse_exited" from="Only Son2" to="." method="_on_only_son_2_mouse_exited"]
+[connection signal="mouse_entered" from="Cousin Derick2" to="." method="_on_cousin_derick_2_mouse_entered"]
+[connection signal="mouse_exited" from="Cousin Derick2" to="." method="_on_cousin_derick_2_mouse_exited"]
+[connection signal="mouse_entered" from="Cousin Daisy2" to="." method="_on_cousin_daisy_2_mouse_entered"]
+[connection signal="mouse_exited" from="Cousin Daisy2" to="." method="_on_cousin_daisy_2_mouse_exited"]
+[connection signal="mouse_entered" from="Ancklebiter2" to="." method="_on_ancklebiter_2_mouse_entered"]
+[connection signal="mouse_exited" from="Ancklebiter2" to="." method="_on_ancklebiter_2_mouse_exited"]
+[connection signal="mouse_entered" from="Bramble2" to="." method="_on_bramble_2_mouse_entered"]
+[connection signal="mouse_exited" from="Bramble2" to="." method="_on_bramble_2_mouse_exited"]
+[connection signal="mouse_entered" from="Angrylookinmowl2" to="." method="_on_angrylookinmowl_2_mouse_entered"]
+[connection signal="mouse_exited" from="Angrylookinmowl2" to="." method="_on_angrylookinmowl_2_mouse_exited"]
+[connection signal="mouse_entered" from="Remy2" to="." method="_on_remy_2_mouse_entered"]
+[connection signal="mouse_exited" from="Remy2" to="." method="_on_remy_2_mouse_exited"]
+[connection signal="mouse_entered" from="Uncle Jimmy2" to="." method="_on_uncle_jimmy_2_mouse_entered"]
+[connection signal="mouse_exited" from="Uncle Jimmy2" to="." method="_on_uncle_jimmy_2_mouse_exited"]
+[connection signal="mouse_entered" from="Normal" to="." method="_on_normal_mouse_entered"]
+[connection signal="mouse_exited" from="Normal" to="." method="_on_normal_mouse_exited"]
 [connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="mouse_entered" from="Continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="Continue" to="." method="_on_continue_mouse_exited"]
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="Story" to="." method="_on_story_mouse_entered"]
+[connection signal="mouse_exited" from="Story" to="." method="_on_story_mouse_exited"]
+[connection signal="mouse_entered" from="Story/Panel" to="." method="_on_story_mouse_entered"]
+[connection signal="mouse_exited" from="Story/Panel" to="." method="_on_story_mouse_exited"]
+[connection signal="mouse_entered" from="Tutorial" to="." method="_on_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="Tutorial" to="." method="_on_tutorial_mouse_exited"]
 [connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Warning/NinePatchRect/Yes" to="." method="_on_yes_mouse_entered"]
+[connection signal="mouse_exited" from="Warning/NinePatchRect/Yes" to="." method="_on_yes_mouse_exited"]
 [connection signal="pressed" from="Warning/NinePatchRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Warning/NinePatchRect/No" to="." method="_on_no_mouse_entered"]
+[connection signal="mouse_exited" from="Warning/NinePatchRect/No" to="." method="_on_no_mouse_exited"]
 [connection signal="pressed" from="Warning/NinePatchRect/No" to="." method="_on_no_pressed"]

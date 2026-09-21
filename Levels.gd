@@ -17,7 +17,8 @@ var level_options : Array
 var tutorial_level : Dictionary = {
 	"name" : "Tutorial",
 	"description" : "Employee Training",
-	"plot_description" : "A training field for new employees to learn the basics of Mowling"
+	"plot_description" : "A training field for new employees to learn the
+	basics of Mowling"
 }
 
 var levels : Dictionary = {

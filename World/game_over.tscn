@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1aq6vsxv8in6" path="res://Scripts/game_over.gd" id="1_sad6x"]
 [ext_resource type="Texture2D" uid="uid://k0knum0xe5y2" path="res://Pixel Life - Desk Essentials/spritesheet.png" id="2_ln3nh"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_sad6x"]
+[ext_resource type="Texture2D" uid="uid://cj8jwy8urtjpf" path="res://Sprites/Supa Not Evil Company/Computer.png" id="3_ulgnn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulgnn"]
 texture = ExtResource("2_ln3nh")
@@ -82,7 +83,16 @@ texture = ExtResource("2_ln3nh")
 [sub_resource type="TileSet" id="TileSet_x0bup"]
 sources/0 = SubResource("TileSetAtlasSource_ulgnn")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_oxf57"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0bup"]
+texture = ExtResource("3_ulgnn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oxf57"]
+sources/1 = SubResource("TileSetAtlasSource_x0bup")
 
 [node name="Game Over" type="Node2D" unique_id=841727645]
 script = ExtResource("1_sad6x")
@@ -99,16 +109,11 @@ scale = Vector2(15, 15)
 tile_map_data = PackedByteArray("AAADAAIAAAAAAAAAAAADAAMAAAAAAAEAAAAEAAIAAAABAAAAAAAEAAMAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_x0bup")
 
-[node name="Computer" type="TileMapLayer" parent="." unique_id=51517515]
-position = Vector2(-400, -329)
-scale = Vector2(15, 15)
-tile_map_data = PackedByteArray("AAADAAEAAAAGAAIAAAADAAIAAAAGAAMAAAAEAAEAAAAHAAIAAAAEAAIAAAAHAAMAAAA=")
-tile_set = SubResource("TileSet_x0bup")
-
-[node name="Sprite2D" type="Sprite2D" parent="Computer" unique_id=1076114262]
-position = Vector2(64.975, 31.95)
-scale = Vector2(16.05, 9.899993)
-texture = SubResource("CanvasTexture_oxf57")
+[node name="Computer" type="TileMapLayer" parent="." unique_id=1560620635]
+position = Vector2(-277.00003, -273)
+scale = Vector2(11.802139, 11.802139)
+tile_map_data = PackedByteArray("AAAEAAIAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_oxf57")
 
 [node name="Label" type="Label" parent="." unique_id=461885291]
 offset_left = 360.00003

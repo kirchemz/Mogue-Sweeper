@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://h1om7kwtt7s3" path="res://Scripts/level_selection.gd" id="1_rrkg4"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="2_rrkg4"]
 [ext_resource type="Texture2D" uid="uid://k0knum0xe5y2" path="res://Pixel Life - Desk Essentials/spritesheet.png" id="2_us5go"]
-[ext_resource type="Texture2D" uid="uid://cj8jwy8urtjpf" path="res://Sprites/Computer.png" id="3_f3kv7"]
+[ext_resource type="Texture2D" uid="uid://cj8jwy8urtjpf" path="res://Sprites/Supa Not Evil Company/Computer.png" id="3_f3kv7"]
+[ext_resource type="Texture2D" uid="uid://cx2n2q0q4bqwr" path="res://Sprites/UI/Selection Box.png" id="5_j51kt"]
+[ext_resource type="Texture2D" uid="uid://c2724q2lm2r76" path="res://Sprites/UI/UI_Font_B.png" id="5_vovw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3kv7"]
 texture = ExtResource("2_us5go")
@@ -98,7 +100,6 @@ sources/1 = SubResource("TileSetAtlasSource_j51kt")
 script = ExtResource("1_rrkg4")
 
 [node name="BG" type="TileMapLayer" parent="." unique_id=1104777023]
-visible = false
 position = Vector2(-190.99998, -119.99999)
 scale = Vector2(10, 10)
 tile_map_data = PackedByteArray("AAAAAAAAAAAMAAIAAAAAAAEAAAAMAAMAAAABAAAAAAANAAIAAAABAAEAAAANAAMAAAAAAAIAAAAMAAIAAAAAAAMAAAAMAAMAAAABAAIAAAANAAIAAAABAAMAAAANAAMAAAAAAAQAAAAMAAIAAAAAAAUAAAAMAAMAAAABAAQAAAANAAIAAAABAAUAAAANAAMAAAAAAAYAAAAMAAIAAAABAAYAAAANAAIAAAACAAAAAAAMAAIAAAACAAEAAAAMAAMAAAADAAAAAAANAAIAAAADAAEAAAANAAMAAAACAAIAAAAMAAIAAAACAAMAAAAMAAMAAAADAAIAAAANAAIAAAADAAMAAAANAAMAAAACAAQAAAAMAAIAAAACAAUAAAAMAAMAAAADAAQAAAANAAIAAAADAAUAAAANAAMAAAACAAYAAAAMAAIAAAADAAYAAAANAAIAAAAEAAAAAAAMAAIAAAAEAAEAAAAMAAMAAAAFAAAAAAANAAIAAAAFAAEAAAANAAMAAAAEAAIAAAAMAAIAAAAEAAMAAAAMAAMAAAAFAAIAAAANAAIAAAAFAAMAAAANAAMAAAAEAAQAAAAMAAIAAAAEAAUAAAAMAAMAAAAFAAQAAAANAAIAAAAFAAUAAAANAAMAAAAEAAYAAAAMAAIAAAAFAAYAAAANAAIAAAAGAAAAAAAMAAIAAAAGAAEAAAAMAAMAAAAHAAAAAAANAAIAAAAHAAEAAAANAAMAAAAGAAIAAAAMAAIAAAAGAAMAAAAMAAMAAAAHAAIAAAANAAIAAAAHAAMAAAANAAMAAAAGAAQAAAAMAAIAAAAGAAUAAAAMAAMAAAAHAAQAAAANAAIAAAAHAAUAAAANAAMAAAAGAAYAAAAMAAIAAAAHAAYAAAANAAIAAAAIAAAAAAAMAAIAAAAIAAEAAAAMAAMAAAAJAAAAAAANAAIAAAAJAAEAAAANAAMAAAAIAAIAAAAMAAIAAAAIAAMAAAAMAAMAAAAJAAIAAAANAAIAAAAJAAMAAAANAAMAAAAIAAQAAAAMAAIAAAAIAAUAAAAMAAMAAAAJAAQAAAANAAIAAAAJAAUAAAANAAMAAAAIAAYAAAAMAAIAAAAJAAYAAAANAAIAAAA=")
@@ -130,9 +131,9 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1255276944]
 offset_left = 278.0
-offset_top = 119.0
+offset_top = 126.0
 offset_right = 22543.21
-offset_bottom = 835.0
+offset_bottom = 842.0
 scale = Vector2(0.026459739, 0.026343942)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_rrkg4")
@@ -149,7 +150,6 @@ scale = Vector2(0.028603178, 0.028478002)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_rrkg4")
 theme_override_font_sizes/font_size = 596
-text = "jdafks;df"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="." unique_id=1007748860]
@@ -176,4 +176,46 @@ theme_override_font_sizes/font_size = 769
 text = "Start"
 metadata/_edit_use_anchors_ = true
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="Button" unique_id=333267323]
+layout_mode = 0
+offset_left = -22.987537
+offset_top = -45.978752
+offset_right = 15.596676
+offset_bottom = -25.308647
+scale = Vector2(50.049187, 50.049187)
+texture = ExtResource("5_vovw3")
+region_rect = Rect2(137, 265, 14, 14)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Label" type="Label" parent="Button" unique_id=1736859666]
+layout_mode = 0
+offset_left = 160.92702
+offset_top = 22.989372
+offset_right = 1814.927
+offset_bottom = 968.9894
+scale = Vector2(0.9938395, 0.9938395)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rrkg4")
+theme_override_font_sizes/font_size = 882
+text = "Start"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Button" unique_id=1052914643]
+visible = false
+layout_mode = 0
+offset_left = -22.987556
+offset_top = -45.978634
+offset_right = 27.211845
+offset_bottom = -19.086094
+scale = Vector2(38.46873, 38.46873)
+texture = ExtResource("5_j51kt")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

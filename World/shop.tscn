@@ -1,81 +1,131 @@
 [gd_scene format=3 uid="uid://62n41e7k5asm"]
 
 [ext_resource type="Script" uid="uid://bl1nqgyqfkrsw" path="res://Scripts/shop.gd" id="1_jq0fv"]
-[ext_resource type="Texture2D" uid="uid://b28q4exb16d44" path="res://Sprites/Title Box.png" id="3_vj47s"]
+[ext_resource type="Texture2D" uid="uid://b28q4exb16d44" path="res://Sprites/UI/Title Box.png" id="3_vj47s"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="4_x8l2j"]
-[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="5_vj47s"]
-[ext_resource type="Texture2D" uid="uid://cef44ro30d4b4" path="res://Sprites/Music Player.png" id="6_vj47s"]
-[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="7_0m3j8"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI/UI Box.png" id="5_vj47s"]
+[ext_resource type="Texture2D" uid="uid://cef44ro30d4b4" path="res://Sprites/UI/Music Player.png" id="6_vj47s"]
+[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/UI/Brown UI Box.png" id="7_0m3j8"]
 [ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="7_7l6ll"]
-[ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Rock Pack.png" id="8_ghprd"]
-[ext_resource type="Texture2D" uid="uid://cs64ym7wurfek" path="res://Sprites/Flag Box.png" id="8_rhmb0"]
-[ext_resource type="Texture2D" uid="uid://cv732ftdgl0ey" path="res://Sprites/Booth.png" id="9_7l6ll"]
+[ext_resource type="Texture2D" uid="uid://ce43jigj56xun" path="res://Sprites/Shop Sprites/Rock Pack.png" id="8_ghprd"]
+[ext_resource type="Texture2D" uid="uid://cs64ym7wurfek" path="res://Sprites/UI/Flag Box.png" id="8_rhmb0"]
+[ext_resource type="Texture2D" uid="uid://cv732ftdgl0ey" path="res://Sprites/Shop Sprites/Booth.png" id="9_7l6ll"]
 [ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="9_jq0fv"]
-[ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/Shop BG.png" id="9_ty2y0"]
-[ext_resource type="Texture2D" uid="uid://x4u3omtm0j0g" path="res://Sprites/Dialogue Box.png" id="12_0m3j8"]
-[ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Flag Pack.png" id="12_5coi5"]
-[ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="14_5yg78"]
-[ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="15_0kkpg"]
-[ext_resource type="Texture2D" uid="uid://bfggduciqjkoa" path="res://Sprites/Mista_Mowl_Talking.png" id="15_2u4ug"]
-[ext_resource type="Texture2D" uid="uid://bko56ymvjeign" path="res://Sprites/Shop Desk.png" id="15_5yg78"]
-[ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="15_jq0fv"]
-[ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="20_x40hv"]
-[ext_resource type="Texture2D" uid="uid://cjsxalg3gks8j" path="res://Sprites/Booth Bottom.png" id="21_erba8"]
-[ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="21_jq0fv"]
-[ext_resource type="Texture2D" uid="uid://cntpcmmgjgjb7" path="res://Sprites/Cousin_Derick_Talking.png" id="23_0m3j8"]
+[ext_resource type="Texture2D" uid="uid://bul6ucntq0wlk" path="res://Sprites/UI/Shop BG.png" id="9_ty2y0"]
+[ext_resource type="Texture2D" uid="uid://x4u3omtm0j0g" path="res://Sprites/Shop Sprites/Dialogue Box.png" id="12_0m3j8"]
+[ext_resource type="Texture2D" uid="uid://by24gwtxapw6i" path="res://Sprites/Shop Sprites/Flag Pack.png" id="12_5coi5"]
+[ext_resource type="Texture2D" uid="uid://bfggduciqjkoa" path="res://Sprites/Mowls/Mista_Mowl_Talking.png" id="15_2u4ug"]
+[ext_resource type="Texture2D" uid="uid://bko56ymvjeign" path="res://Sprites/Shop Sprites/Shop Desk.png" id="15_5yg78"]
+[ext_resource type="Texture2D" uid="uid://ci7h1oxbbb5q2" path="res://Sprites/Mowls/Anckle Biter Idle.png" id="15_kgnag"]
+[ext_resource type="Texture2D" uid="uid://hm27k51jaql1" path="res://Sprites/Mowls/Cousin_Daisy_Idle.png" id="16_yopn3"]
+[ext_resource type="Texture2D" uid="uid://bchw2qsy2610s" path="res://Sprites/Mowls/Cousin_Derick_Idle.png" id="17_0nkyo"]
+[ext_resource type="Texture2D" uid="uid://c1hst85ciyqrn" path="res://Sprites/Mowls/Uncle Jimmy Idle.png" id="18_fqvdm"]
+[ext_resource type="Texture2D" uid="uid://b26ukbjmwvu3s" path="res://Sprites/Mowls/Mista_Mowl_Idle.png" id="20_kgnag"]
+[ext_resource type="Texture2D" uid="uid://cjsxalg3gks8j" path="res://Sprites/Shop Sprites/Booth Bottom.png" id="21_erba8"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_7l6ll"]
-[ext_resource type="Texture2D" uid="uid://dhfioyw5wp7fx" path="res://Sprites/Blue UI Box.png" id="24_erba8"]
-[ext_resource type="Texture2D" uid="uid://dfre77xp73ssb" path="res://Sprites/Yellow UI Box.png" id="25_7vwke"]
-[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="26_7vwke"]
+[ext_resource type="Texture2D" uid="uid://dhfioyw5wp7fx" path="res://Sprites/UI/Blue UI Box.png" id="24_erba8"]
+[ext_resource type="Texture2D" uid="uid://dfre77xp73ssb" path="res://Sprites/UI/Yellow UI Box.png" id="25_7vwke"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/UI/White UI Box.png" id="26_7vwke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3h6d"]
+atlas = ExtResource("15_kgnag")
+region = Rect2(0, 0, 27, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrgu2"]
+atlas = ExtResource("15_kgnag")
+region = Rect2(27, 0, 27, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl3tg"]
+atlas = ExtResource("16_yopn3")
+region = Rect2(0, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeg2y"]
+atlas = ExtResource("16_yopn3")
+region = Rect2(32, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wdpn"]
+atlas = ExtResource("17_0nkyo")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk7mn"]
+atlas = ExtResource("17_0nkyo")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcgi4"]
+atlas = ExtResource("18_fqvdm")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeaka"]
+atlas = ExtResource("18_fqvdm")
+region = Rect2(32, 0, 32, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_atlk4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_jq0fv")
+"texture": SubResource("AtlasTexture_g3h6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrgu2")
 }],
 "loop": 1,
 "name": &"Anckle Biter",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_x40hv")
+"texture": SubResource("AtlasTexture_xl3tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeg2y")
 }],
 "loop": 1,
 "name": &"Cousin Daisy",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_0kkpg")
+"texture": SubResource("AtlasTexture_2wdpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk7mn")
 }],
 "loop": 1,
 "name": &"Cousin Derick",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_jq0fv")
+"texture": SubResource("AtlasTexture_vcgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeaka")
 }],
 "loop": 1,
 "name": &"Uncle Jimmy",
-"speed": 5.0
+"speed": 3.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x8l2j"]
-atlas = ExtResource("14_5yg78")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yopn3"]
+atlas = ExtResource("20_kgnag")
 region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nkyo"]
+atlas = ExtResource("20_kgnag")
+region = Rect2(32, 0, 32, 39)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rlat"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x8l2j")
+"texture": SubResource("AtlasTexture_yopn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nkyo")
 }],
 "loop": 1,
 "name": &"Idle",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kkpg"]
@@ -126,15 +176,46 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7l6ll"]
-atlas = ExtResource("23_0m3j8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhmb0"]
+atlas = ExtResource("15_kgnag")
+region = Rect2(0, 0, 27, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgnag"]
+atlas = ExtResource("15_kgnag")
+region = Rect2(27, 0, 27, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqvdm"]
+atlas = ExtResource("16_yopn3")
+region = Rect2(0, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npyli"]
+atlas = ExtResource("16_yopn3")
+region = Rect2(32, 0, 32, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be75t"]
+atlas = ExtResource("17_0nkyo")
 region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw75v"]
+atlas = ExtResource("17_0nkyo")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnm0y"]
+atlas = ExtResource("18_fqvdm")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl45x"]
+atlas = ExtResource("18_fqvdm")
+region = Rect2(32, 0, 32, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0m3j8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_jq0fv")
+"texture": SubResource("AtlasTexture_rhmb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgnag")
 }],
 "loop": 1,
 "name": &"Anckle Biter",
@@ -142,7 +223,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_x40hv")
+"texture": SubResource("AtlasTexture_fqvdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npyli")
 }],
 "loop": 1,
 "name": &"Cousin Daisy",
@@ -150,7 +234,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_0kkpg")
+"texture": SubResource("AtlasTexture_be75t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw75v")
 }],
 "loop": 1,
 "name": &"Cousin Derick",
@@ -158,15 +245,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7l6ll")
-}],
-"loop": 1,
-"name": &"Cousin Derick Talking",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_cnm0y")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_jq0fv")
+"texture": SubResource("AtlasTexture_pl45x")
 }],
 "loop": 1,
 "name": &"Uncle Jimmy",
@@ -1329,7 +1411,8 @@ text = "!"
 position = Vector2(844.4358, 503)
 scale = Vector2(3.6507514, 3.6507514)
 sprite_frames = SubResource("SpriteFrames_atlk4")
-animation = &"Anckle Biter"
+animation = &"Uncle Jimmy"
+frame_progress = 0.40814653
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1278737492]
 position = Vector2(846.4358, 528.82666)
@@ -1350,6 +1433,7 @@ position = Vector2(453.52124, 494.08545)
 scale = Vector2(3.6507516, 3.6507516)
 sprite_frames = SubResource("SpriteFrames_0rlat")
 animation = &"Idle"
+frame_progress = 0.58629644
 
 [node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1871251890]
 position = Vector2(455.08545, 547.08545)
@@ -1566,7 +1650,7 @@ scale = Vector2(3.0721252, 2.1309643)
 position = Vector2(21.42186, 21.213352)
 scale = Vector2(1.0868931, 1.0868931)
 sprite_frames = SubResource("SpriteFrames_0m3j8")
-animation = &"Cousin Derick Talking"
+animation = &"Uncle Jimmy"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Mowl Relative Dialogue Box" unique_id=1887620685]
 layout_mode = 0

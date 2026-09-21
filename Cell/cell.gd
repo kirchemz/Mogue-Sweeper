@@ -13,7 +13,7 @@ extends Area2D
 @onready var magenta_mat = PaletteMaterial.new()
 @onready var pink_mat = PaletteMaterial.new()
 
-var mowl_options : Array = ["Uncle Jimmy", "Cousin Daisy", "Cousin Derick", "Anckle Biter"]
+var mowl_options : Array = ["Uncle Jimmy", "Cousin Daisy", "Cousin Derick", "Anckle Biter", "Bramble"]
 var chosen_mowl
 
 var is_bomb : bool = false
@@ -40,6 +40,7 @@ var sabatoge_timer : float = 0.0
 var cell : String = "Cell"
 var money_given : bool = false
 var clicked : bool = false
+var points_given : int = 0
 
 # Funtion to set the cell as a bomb
 func bomb():
@@ -47,17 +48,17 @@ func bomb():
 	chosen_mowl = mowl_options[randi() % mowl_options.size()]
 
 func _ready() -> void:
-	blue_mat.palette = preload("res://Sprites/Blue Flag Palette.png")
-	violet_mat.palette = preload("res://Sprites/Purple Flag Palette.png")
-	green_mat.palette = preload("res://Sprites/Green Flag Palette.png")
-	magenta_mat.palette = preload("res://Sprites/Magenta Flag Palette.png")
-	orange_mat.palette = preload("res://Sprites/Orange Flag Palette.png")
-	pink_mat.palette = preload("res://Sprites/Pink Flag Palette.png")
-	yellow_mat.palette = preload("res://Sprites/Yellow Flag Palette.png")
-	black_mat.palette = preload("res://Sprites/Black Flag Palette.png")
-	white_mat.palette = preload("res://Sprites/White Flag Palette.png")
-	grey_mat.palette = preload("res://Sprites/Grey Flag Palette.png")
-	brown_mat.palette = preload("res://Sprites/Brown Flag Palette.png")
+	blue_mat.palette = preload("res://Sprites/Palettes/Blue Flag Palette.png")
+	violet_mat.palette = preload("res://Sprites/Palettes/Purple Flag Palette.png")
+	green_mat.palette = preload("res://Sprites/Palettes/Green Flag Palette.png")
+	magenta_mat.palette = preload("res://Sprites/Palettes/Magenta Flag Palette.png")
+	orange_mat.palette = preload("res://Sprites/Palettes/Orange Flag Palette.png")
+	pink_mat.palette = preload("res://Sprites/Palettes/Pink Flag Palette.png")
+	yellow_mat.palette = preload("res://Sprites/Palettes/Yellow Flag Palette.png")
+	black_mat.palette = preload("res://Sprites/Palettes/Black Flag Palette.png")
+	white_mat.palette = preload("res://Sprites/Palettes/White Flag Palette.png")
+	grey_mat.palette = preload("res://Sprites/Palettes/Grey Flag Palette.png")
+	brown_mat.palette = preload("res://Sprites/Palettes/Brown Flag Palette.png")
 
 # Runs every frame
 func _process(delta: float) -> void:
@@ -198,10 +199,12 @@ func _process(delta: float) -> void:
 func _on_mouse_entered() -> void:
 	if is_instance_valid(world):
 		if not world.mouse_over_menu:
+			$Sprite2D.show()
 			mouse_in = true
 
 func _on_mouse_exited() -> void:
 	mouse_in = false
+	$Sprite2D.hide()
 
 # Funtion to find out if there is a bomb around the cell that wasn't flagged - used when chording
 func unflagged_bomb_around():
@@ -287,29 +290,11 @@ func flagged_bombs_around():
 				var neighbor = world.map[check_x][check_y]
 				if is_instance_valid(neighbor):
 					if neighbor.is_bomb and neighbor.flagged:
-						if neighbor.flag_type == "Blue":
-							self_mult += 1
-						if neighbor.flag_type == "Purple":
-							Globals.point_mult += 1
-						if Abilities.mowl_flags_again:
-							if neighbor.flag_type == "Blue":
-								self_mult += 1
-							if neighbor.flag_type == "Purple":
-								Globals.point_mult += 1
-						if Abilities.supa_flags:
-							if not flag_type == "Red" and not flag_type == "Blue":
-								Abilities.special_flag_count += 1
-						if Abilities.even_pi:
-							if acting_number == 2 or acting_number == 4 or acting_number == 6 or acting_number == 8:
-								Globals.points += 3.14
-						if Abilities.threes:
-							if acting_number == 3:
-								Abilities.three_mult += 1
-						Globals.points += (point_bonus * self_mult)
-						Globals.mult += mult
-						got_points = true
-						if not acting_number in Abilities.numbers_used:
-							Abilities.numbers_used.append(acting_number)
+						point_count(neighbor)
+						Globals.points += points_given
+					elif not neighbor.is_bomb and neighbor.flagged:
+						point_count(neighbor)
+						Globals.points -= points_given
 	if not unflagged_bomb_around() and flag_around() == bombs_around:
 		world.money_gained += acting_number * Levels.money_mult
 		if Abilities.mowl_flags:
@@ -438,3 +423,28 @@ func bury():
 	await anim.animation_finished
 	anim.play("Idle")
 	flagged = false
+
+func point_count(neighbor):
+	if neighbor.flag_type == "Blue":
+		self_mult += 1
+	if neighbor.flag_type == "Purple":
+		Globals.point_mult += 1
+	if Abilities.mowl_flags_again:
+		if neighbor.flag_type == "Blue":
+			self_mult += 1
+		if neighbor.flag_type == "Purple":
+			Globals.point_mult += 1
+	if Abilities.supa_flags:
+		if not flag_type == "Red" and not flag_type == "Blue":
+			Abilities.special_flag_count += 1
+	if Abilities.even_pi:
+		if acting_number == 2 or acting_number == 4 or acting_number == 6 or acting_number == 8:
+			points_given += 3.14
+	if Abilities.threes:
+		if acting_number == 3:
+			Abilities.three_mult += 1
+	points_given += (point_bonus * self_mult)
+	points_given += mult
+	got_points = true
+	if not acting_number in Abilities.numbers_used:
+		Abilities.numbers_used.append(acting_number)

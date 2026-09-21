@@ -10,7 +10,10 @@ var map_width : int = 40
 var map_height : int = 40
 var bombs : int = 120
 var bombs_made : int = 0
+var total_cells : int
+var cells_made : int = 0
 var map_made : bool = false
+var making_map : bool = false
 var cells_set : bool = false
 var target_cell
 var flags_remaining : int = bombs
@@ -24,6 +27,9 @@ var mine_scanner_clicked : bool = false
 var mine_scanner_instance
 var money_gained : int = 0
 var added_mult : bool = false
+var flagging : bool = false
+var unflagging : bool = false
+var chording : bool = false
 
 var timer_color : float = 0
 var last_cam_pos = Vector2.ZERO
@@ -32,6 +38,7 @@ var time_bonus : int = 0
 
 # Runs once as soon as the scene starts
 func _ready() -> void:
+	total_cells = map_width * map_height
 	$"Camera2D/Level Details/Label".text = Levels.chosen_level.name
 	$"Camera2D/Level Details/Label2".text = Levels.chosen_level.description
 	$"Camera2D/Level Details/Label3".text = Levels.chosen_level.plot_description
@@ -53,12 +60,11 @@ func _ready() -> void:
 	if Abilities.mowl_time:
 		time_bonus += Abilities.ability_stock.mowl_time.time
 	$Timer.start($Timer.wait_time + time_bonus)
-	
-	# Creates the map
-	start_map()
+	$Timer.paused = true
 
 # Makes the map and puts a cell in each cordinate of the map
 func start_map():
+	var cell_number : int = 0
 	for x in map_width:
 		var row : Array = []
 		for y in map_height:
@@ -66,11 +72,17 @@ func start_map():
 		map.append(row)
 	for x in map_width:
 		for y in map_height:
+			cells_made += 1
+			cell_number += 1
 			var cell_instance = cell.instantiate()
 			cell_instance.global_position.y = y * 32
 			cell_instance.global_position.x = x * 32
 			cell_box.add_child(cell_instance)
 			map[x][y] = cell_instance
+			if cell_number == 100:
+				cell_number = 0
+				$Camera2D/Loading/ProgressBar.value = cells_made / total_cells * 100
+				await get_tree().create_timer(0.1).timeout
 	add_child(cell_box)
 	move_child(cell_box, 0)
 	map_made = true
@@ -95,6 +107,7 @@ func _process(_delta: float) -> void:
 		$"Camera2D/Quest Board/Quest 3 Details".text = "Reward: "  + str(Quests.current_quests[2].reward) + "    Time: " + str(Quests.current_quests[2].time) + " Rounds"
 	if Input.is_action_just_pressed("Pause"):
 		$"Camera2D/Pause Menu".show()
+		mouse_over_menu = true
 		$Timer.paused = true
 	if Abilities.slow_mowl:
 		slow_mode()
@@ -205,11 +218,20 @@ func _process(_delta: float) -> void:
 	
 	# Setting up the cells and bombs
 	if map_made:
+		$Timer.paused = false
+		$Camera2D/Loading.hide()
 		if bombs_made < bombs:
 			set_bombs()
 		else:
 			if not cells_set:
 				set_cells()
+	else:
+		if not making_map:
+			making_map = true
+			
+			# Creates the map
+			start_map()
+	
 	# Mine Scanner Input
 	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Mine Scanner") and Abilities.owl:
 		mine_scanner_clicked = true
@@ -217,6 +239,7 @@ func _process(_delta: float) -> void:
 	
 	# Digging, Flagging, and Chording Inputs
 	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and Input.is_action_pressed("Flag") and not mouse_over_menu:
+		chording = true
 		if not target_cell.is_hidden:
 			if target_cell.flag_around() == target_cell.bombs_around:
 				if target_cell.unflagged_bomb_around():
@@ -224,7 +247,9 @@ func _process(_delta: float) -> void:
 				target_cell.unhide_neighbors = false
 				unhide_cells(target_cell)
 				target_cell.unhide_neighbors = false
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu:
+	elif not Input.is_action_pressed("Dig") and not Input.is_action_pressed("Flag"):
+		chording = false
+	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and not Input.is_action_pressed("Flag") and not mouse_over_menu and not chording:
 		if target_cell.bombs_around == 0 and not target_cell.is_bomb:
 			unhide_cells(target_cell)
 		if target_cell.bombs_around != 0 or target_cell.is_bomb:
@@ -233,8 +258,9 @@ func _process(_delta: float) -> void:
 				target_cell.is_hidden = false
 				if target_cell.is_bomb:
 					game_over()
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig") and not mouse_over_menu:
-		if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
+	if is_instance_valid(target_cell) and Input.is_action_pressed("Flag") and not Input.is_action_pressed("Dig") and not mouse_over_menu and not chording:
+		if not unflagging and target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
+			flagging = true
 			if Levels.flags_active:
 				if Globals.red_flag_active:
 					target_cell.flag_type = "Red"
@@ -278,10 +304,14 @@ func _process(_delta: float) -> void:
 			if Abilities.auto_chord_active:
 				auto_chord(target_cell)
 			return
-		if target_cell.is_hidden and target_cell.flagged:
+		if not flagging and target_cell.is_hidden and target_cell.flagged:
+			unflagging = true
 			target_cell.dug_up = false
 			flags_remaining += 1
 			target_cell.flagged = false
+	else:
+		flagging = false
+		unflagging = false
 	
 	# Making the clock change colors as it goes down
 	$Camera2D/Label.self_modulate.h = $Timer.time_left * 0.01666
@@ -435,7 +465,7 @@ func mine_scan(cell_instance):
 					neighbor.scanned = true
 					if neighbor.is_bomb:
 						neighbor.flag_type = "Red"
-						neighbor.flag_tex = preload("res://Sprites/Red Flag.png")
+						neighbor.flag_tex = preload("res://Sprites/Flags/Red Flag.png")
 						neighbor.is_hidden = true
 						neighbor.flagged = true
 					if repeats > 0:
@@ -470,7 +500,7 @@ func unhide_scan_neighbors(cell_instance, repeats):
 					neighbor.scanned = true
 					if neighbor.is_bomb:
 						neighbor.flag_type = "Red"
-						neighbor.flag_tex = preload("res://Sprites/Red Flag.png")
+						neighbor.flag_tex = preload("res://Sprites/Flags/Red Flag.png")
 						neighbor.is_hidden = true
 						neighbor.flagged = true
 					if repeats > 0:

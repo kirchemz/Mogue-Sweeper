@@ -9,7 +9,7 @@ var ability_stock : Dictionary = {
 	"auto_chord" : {
 		"name" : "Auto Chord",
 		"price" : 100,
-		"img" : preload("res://Sprites/Auto Chord.png"),
+		"img" : preload("res://Sprites/Abilities/Auto Chord.png"),
 		"rarity" : 1,
 		"description" : "Automatically chords whenevery you flag a cell",
 		"type" : "MOWL"
@@ -18,7 +18,7 @@ var ability_stock : Dictionary = {
 		"name" : "Mowl Time",
 		"price" : 100,
 		"time" : 10,
-		"img" : preload("res://Sprites/Time Bonus.png"),
+		"img" : preload("res://Sprites/Abilities/Time Bonus.png"),
 		"rarity" : 100,
 		"description" : "Adds 10 seconds to the clock at the start",
 		"type" : "MOWL"
@@ -26,15 +26,15 @@ var ability_stock : Dictionary = {
 	"slow_mowl" : {
 		"name" : "SLow Mowl",
 		"price" : 100,
-		"img" : preload("res://Sprites/Snail.png"),
-		"rarity" : 10000000,
+		"img" : preload("res://Sprites/Abilities/Snail.png"),
+		"rarity" : 100,
 		"description" : "Makes EVERYTHING go half as fast for 5 seconds",
 		"type" : "MOWL"
 	},
 	"fast_mowl" : {
 		"name" : "Fast Mowl",
 		"price" : 100,
-		"img" : preload("res://Sprites/Fast Snail.png"),
+		"img" : preload("res://Sprites/Abilities/Fast Snail.png"),
 		"rarity" : 100,
 		"description" : "Makes EVERYTHING go twice as fast for 5 seconds",
 		"type" : "MOWL"
@@ -42,7 +42,7 @@ var ability_stock : Dictionary = {
 	"mowl_flags" : {
 		"name" : "Mowl Flags",
 		"price" : 100,
-		"img" : preload("res://Sprites/Flag Generator.png"),
+		"img" : preload("res://Sprites/Abilities/Flag Generator.png"),
 		"rarity" : 100,
 		"description" : "Every 2 you get you get a blue flag, every three a yellow flag, every four a violet flag, every five a green flag, and every six a black flag",
 		"type" : "MOWL"
@@ -50,7 +50,7 @@ var ability_stock : Dictionary = {
 	"the_mowl_the_merrier" : {
 		"name" : "The Mowl the Marrier",
 		"price" : 100,
-		"img" : preload("res://Sprites/Number Upgrader.png"),
+		"img" : preload("res://Sprites/Abilities/Number Upgrader.png"),
 		"rarity" : 100,
 		"description" : "Every 100 ones, 80 twos, 10 threes, 5 fours, or 1 five through 8 you get an upgrade for that number",
 		"type" : "MOWL"
@@ -58,7 +58,7 @@ var ability_stock : Dictionary = {
 	"owl" : {
 		"name" : "Owl",
 		"price" : 100,
-		"img" : preload("res://Sprites/Mine Scanner.png"),
+		"img" : preload("res://Sprites/Abilities/Mine Scanner.png"),
 		"rarity" : 30,
 		"description" : "Reveals every cell within a 5 by 5 radius of where you put it. Press space or drag to place",
 		"type" : "MOWL"
@@ -66,7 +66,7 @@ var ability_stock : Dictionary = {
 	"greedy_mowl" : {
 		"name" : "Greedy Mowl",
 		"price" : 100,
-		"img" : preload("res://Sprites/Double Trouble.png"),
+		"img" : preload("res://Sprites/Abilities/Double Trouble.png"),
 		"rarity" : 100,
 		"description" : "Retriggers twos",
 		"type" : "MOWL"
@@ -74,7 +74,7 @@ var ability_stock : Dictionary = {
 	"mowl_cascade" : {
 		"name" : "Mowl Cascade",
 		"price" : 100,
-		"img" : preload("res://Sprites/Ability Base.png"),
+		"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 		"rarity" : 30,
 		"description" : "For every 4 cells revealed by the cascade earn 1 supa money",
 		"type" : "MOWL"
@@ -82,7 +82,7 @@ var ability_stock : Dictionary = {
 	"supa_flags" : {
 		"name" : "Supa Flags",
 		"price" : 100,
-		"img" : preload("res://Sprites/Ability Base.png"),
+		"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 		"rarity" : 30,
 		"description" : "Destroys all other abilities and gives 1X mult for every flag placed other then blue and red. Given to you by Supa Evil Man",
 		"type" : "SUPA"
@@ -90,7 +90,7 @@ var ability_stock : Dictionary = {
 	"mowl_flags_again" : {
 		"name" : "Mowl Flags, Again",
 		"price" : 100,
-		"img" : preload("res://Sprites/Flag Retriggers.png"),
+		"img" : preload("res://Sprites/Abilities/Flag Retriggers.png"),
 		"rarity" : 1,
 		"description" : "Retriggers all flags",
 		"type" : "MOWL"
@@ -98,7 +98,7 @@ var ability_stock : Dictionary = {
 	"even_pi" : {
 		"name" : "Even Pi",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 100,
 		"description" : "Every even number gets plus 3.14 points",
 		"type" : "BAKERY"
@@ -106,7 +106,7 @@ var ability_stock : Dictionary = {
 	"one_mowl" : {
 		"name" : "One Mowl",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 10,
 		"description" : "Every number acts like the number 1 greater than what it is currently acting as",
 		"type" : "MOWL"
@@ -114,7 +114,7 @@ var ability_stock : Dictionary = {
 	"double_trouble" : {
 		"name" : "Double Trouble",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 100,
 		"description" : "Every number gets a 1 in 8 chance to get double points. Chance multiplies by the number.",
 		"type" : "MOWL"
@@ -122,7 +122,7 @@ var ability_stock : Dictionary = {
 	"low_scorer" : {
 		"name" : "Low Scorer",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 10,
 		"description" : "If the only numbers that scored are twos and below get 2X mult.",
 		"type" : "MOWL"
@@ -130,7 +130,7 @@ var ability_stock : Dictionary = {
 	"high_scorer" : {
 		"name" : "High Scorer",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 30,
 		"description" : "If the only numbers that scored are threes and above, get 4X total score.",
 		"type" : "MOWL"
@@ -138,7 +138,7 @@ var ability_stock : Dictionary = {
 	"first_try" : {
 		"name" : "First Try",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 30,
 		"description" : "If the fist click is a cascade earn 100 supa money.",
 		"type" : "MOWL"
@@ -146,7 +146,7 @@ var ability_stock : Dictionary = {
 	"active_bomb" : {
 		"name" : "Active Bomb",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 30,
 		"description" : "Gives 5X mult but after every round it has a 1 in 5 chance to self-destruct and destroy the two abilities to its sides.",
 		"type" : "MOWL"
@@ -154,7 +154,7 @@ var ability_stock : Dictionary = {
 	"double_odds" : {
 		"name" : "Double Odds",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 30,
 		"description" : "All probabilities are doubled.",
 		"type" : "MOWL"
@@ -162,7 +162,7 @@ var ability_stock : Dictionary = {
 	"halved_odds" : {
 		"name" : "Halved Odds",
 		"price" : 100,
-		"img" : preload("res://Sprites/Even Numbers.png"),
+		"img" : preload("res://Sprites/Abilities/Even Numbers.png"),
 		"rarity" : 30,
 		"description" : "All probabilities are Halved.",
 		"type" : "MOWL"
@@ -170,7 +170,7 @@ var ability_stock : Dictionary = {
 	"threes" : {
 		"name" : "Threes",
 		"price" : 100,
-		"img" : preload("res://Sprites/Threes.png"),
+		"img" : preload("res://Sprites/Abilities/Threes.png"),
 		"rarity" : 1,
 		"description" : "All threes give 2X mult.",
 		"type" : "MOWL"
@@ -178,7 +178,7 @@ var ability_stock : Dictionary = {
 	"one_two_three_four_five" : {
 		"name" : "One Two Three Four Five",
 		"price" : 100,
-		"img" : preload("res://Sprites/Threes.png"),
+		"img" : preload("res://Sprites/Abilities/Threes.png"),
 		"rarity" : 10,
 		"description" : "Gives 4X mult if there was a 1, 2, 3, 4, and 5 all scored.",
 		"type" : "MOWL"
@@ -186,7 +186,7 @@ var ability_stock : Dictionary = {
 	"mowl_abilities" : {
 		"name" : "Mowl Abilities",
 		"price" : 100,
-		"img" : preload("res://Sprites/Threes.png"),
+		"img" : preload("res://Sprites/Abilities/Threes.png"),
 		"rarity" : 1,
 		"description" : "Every mowl ability gives 1.5X mult. Unlocked by Mista Mowl for helping him get his son back",
 		"type" : "MOWL"
@@ -194,45 +194,45 @@ var ability_stock : Dictionary = {
 }
 
 var empty_ability_one : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability One"
 }
 var empty_ability_two : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Two"
 }
 var empty_ability_three : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Three"
 }
 var empty_ability_four : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Four"
 }
 var empty_ability_five : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Five"
 }
 
 # Holds all data about current abilities
 var ability_one : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability One"
 }
 var ability_two : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Two"
 }
 var ability_three : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Three"
 }
 var ability_four : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Four"
 }
 var ability_five : Dictionary = {
-	"img" : preload("res://Sprites/Ability Base.png"),
+	"img" : preload("res://Sprites/Abilities/Ability Base.png"),
 	"name" : "Ability Five"
 }
 

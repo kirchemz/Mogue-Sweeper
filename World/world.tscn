@@ -1,35 +1,55 @@
 [gd_scene format=3 uid="uid://dbbgr6bb8ak3h"]
 
 [ext_resource type="Script" uid="uid://iywf25xycw1g" path="res://Scripts/world.gd" id="1_dqu5g"]
-[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/Brown UI Box.png" id="2_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://cmo4w24pouhkn" path="res://Sprites/Main Menu.png" id="2_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://cs64ym7wurfek" path="res://Sprites/Flag Box.png" id="3_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="3_yf0ba"]
+[ext_resource type="Shader" uid="uid://c8ppkbaopktgh" path="res://Shaders/scrolling_bg.gdshader" id="2_i8dl0"]
+[ext_resource type="Texture2D" uid="uid://dlceu6aj6pvn1" path="res://Sprites/UI/Brown UI Box.png" id="2_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://cmo4w24pouhkn" path="res://Sprites/UI/Main Menu.png" id="2_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://br3yp2vvalajt" path="res://Sprites/UI/Brown.png" id="3_i8dl0"]
+[ext_resource type="Texture2D" uid="uid://cs64ym7wurfek" path="res://Sprites/UI/Flag Box.png" id="3_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Flags/Red Flag.png" id="3_yf0ba"]
 [ext_resource type="Script" uid="uid://bfhn12ke8pjh2" path="res://Scripts/button.gd" id="4_dqu5g"]
-[ext_resource type="Texture2D" uid="uid://b28q4exb16d44" path="res://Sprites/Title Box.png" id="4_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Blue Flag.png" id="5_oe8m4"]
-[ext_resource type="Texture2D" uid="uid://stv6h2wu727q" path="res://Sprites/Purple Flag.png" id="6_w47uh"]
-[ext_resource type="Texture2D" uid="uid://gb56b1t1vljf" path="res://Sprites/Orange Flag.png" id="7_kcyjf"]
+[ext_resource type="Texture2D" uid="uid://b28q4exb16d44" path="res://Sprites/UI/Title Box.png" id="4_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://cte7i6hseyohr" path="res://Sprites/Flags/Blue Flag.png" id="5_oe8m4"]
+[ext_resource type="Texture2D" uid="uid://stv6h2wu727q" path="res://Sprites/Flags/Purple Flag.png" id="6_w47uh"]
+[ext_resource type="Texture2D" uid="uid://gb56b1t1vljf" path="res://Sprites/Flags/Orange Flag.png" id="7_kcyjf"]
 [ext_resource type="Script" uid="uid://d3gfmm1sp2yd1" path="res://Scripts/tex_button.gd" id="7_o6lw0"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="7_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://3s6iiuig2ju6" path="res://Sprites/Yellow Flag.png" id="8_xw5lg"]
-[ext_resource type="Texture2D" uid="uid://uhea4ig2c4p8" path="res://Sprites/Green Flag.png" id="9_0lysu"]
-[ext_resource type="Texture2D" uid="uid://dt5w67yafqsso" path="res://Sprites/Black Flag.png" id="10_26uyv"]
-[ext_resource type="Texture2D" uid="uid://byw17cnwvg5li" path="res://Sprites/White Flag.png" id="11_dqu5g"]
-[ext_resource type="Texture2D" uid="uid://ccb003ljk7pr3" path="res://Sprites/Grey Flag.png" id="12_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://bs8cji5cpcejr" path="res://Sprites/Brown Flag.png" id="13_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://c0lm77tkj8ygj" path="res://Sprites/Magenta Flag.png" id="14_dg1ng"]
-[ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Pink Flag.png" id="15_yfuda"]
-[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI Box.png" id="20_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/White UI Box.png" id="21_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://3s6iiuig2ju6" path="res://Sprites/Flags/Yellow Flag.png" id="8_xw5lg"]
+[ext_resource type="Texture2D" uid="uid://uhea4ig2c4p8" path="res://Sprites/Flags/Green Flag.png" id="9_0lysu"]
+[ext_resource type="Texture2D" uid="uid://dt5w67yafqsso" path="res://Sprites/Flags/Black Flag.png" id="10_26uyv"]
+[ext_resource type="Texture2D" uid="uid://byw17cnwvg5li" path="res://Sprites/Flags/White Flag.png" id="11_dqu5g"]
+[ext_resource type="Texture2D" uid="uid://ccb003ljk7pr3" path="res://Sprites/Flags/Grey Flag.png" id="12_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://bs8cji5cpcejr" path="res://Sprites/Flags/Brown Flag.png" id="13_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://c0lm77tkj8ygj" path="res://Sprites/Flags/Magenta Flag.png" id="14_dg1ng"]
+[ext_resource type="Texture2D" uid="uid://dcswbrushj2ct" path="res://Sprites/Flags/Pink Flag.png" id="15_yfuda"]
+[ext_resource type="Texture2D" uid="uid://blwvoacxbaefu" path="res://Sprites/UI/UI Box.png" id="20_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://d27k5b6ouecs0" path="res://Sprites/UI/White UI Box.png" id="21_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://6nk83vdjmefb" path="res://UI/number_points_ui.tscn" id="23_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://dt25yw7ynr4uq" path="res://UI/pause_menu.tscn" id="24_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://dxpa5n3sh1818" path="res://Sprites/UI/Loading Scene.png" id="25_dg1ng"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfuda"]
+shader = ExtResource("2_i8dl0")
+shader_parameter/offset = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(6843, 8993)
 
 [node name="World" type="Node2D" unique_id=1230266813]
 script = ExtResource("1_dqu5g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=530804647]
+layer = -852
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=723187098]
+z_index = -100
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yfuda")
+position = Vector2(579, 313)
+scale = Vector2(3.696, 3.696)
+texture = ExtResource("3_i8dl0")
+region_enabled = true
+region_rect = Rect2(0, 0, 310, 190)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=369080081]
 position = Vector2(576, 324)
@@ -588,9 +608,9 @@ patch_margin_bottom = 3
 
 [node name="Label" type="Label" parent="Camera2D/TextureButton" unique_id=634878893]
 layout_mode = 0
-offset_left = 19.165003
-offset_top = 5.3806124
-offset_right = 655.165
+offset_left = 8.687622
+offset_top = 5.380615
+offset_right = 817.6876
 offset_bottom = 324.3806
 scale = Vector2(0.049403228, 0.049403228)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1030,6 +1050,26 @@ offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
 
+[node name="Loading" type="Node2D" parent="Camera2D" unique_id=405674003]
+visible = false
+position = Vector2(-576, -324)
+
+[node name="Panel" type="Panel" parent="Camera2D/Loading" unique_id=171173399]
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Loading" unique_id=1488631038]
+position = Vector2(576, 324)
+texture = ExtResource("25_dg1ng")
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Loading" unique_id=1105178596]
+offset_left = 407.0
+offset_top = 423.0
+offset_right = 753.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("7_x0pyu")
+theme_override_font_sizes/font_size = 23
+
 [node name="Timer" type="Timer" parent="." unique_id=1810617686]
 wait_time = 60.0
 one_shot = true
@@ -1130,6 +1170,6 @@ one_shot = true
 [connection signal="button_up" from="Camera2D/Number Points" to="Camera2D/Number Points" method="_on_button_up"]
 [connection signal="mouse_entered" from="Camera2D/Number Points" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Number Points" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_number_points_pressed"]
 [connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Camera2D/Number Points" to="." method="_on_number_points_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

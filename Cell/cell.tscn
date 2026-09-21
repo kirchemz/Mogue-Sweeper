@@ -1,26 +1,28 @@
 [gd_scene format=3 uid="uid://bltv1s14g2yab"]
 
-[ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Cell.png" id="1_37gha"]
+[ext_resource type="Texture2D" uid="uid://b23fm07p45j6g" path="res://Sprites/Field Tiles/Cell.png" id="1_37gha"]
 [ext_resource type="Script" uid="uid://bd2nticlmei8x" path="res://Cell/cell.gd" id="1_pf11k"]
-[ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Anckle Biter.png" id="2_0g23a"]
-[ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/MistaMowl-spin.png" id="2_f1fy1"]
-[ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Tile#1-plant.png" id="3_pyb8k"]
-[ext_resource type="Texture2D" uid="uid://bua7c7tk66oq7" path="res://Sprites/Red Flag Dig.png" id="3_u2y83"]
-[ext_resource type="Texture2D" uid="uid://drc8jkurv7s8u" path="res://Sprites/Flag Burried.png" id="4_1sibk"]
-[ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Cousin_Daisy.png" id="4_2otml"]
-[ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/White Out Cell.png" id="4_wh31u"]
-[ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Cousin_Derick.Png" id="5_0g23a"]
-[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Red Flag.png" id="5_u2y83"]
-[ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Uncle Jimmy.Png" id="8_1sibk"]
-[ext_resource type="Texture2D" uid="uid://cyi7hyvwsg0km" path="res://Sprites/Grass Cell.png" id="9_5udsl"]
-[ext_resource type="Texture2D" uid="uid://b1xornd6qp4dy" path="res://Sprites/Poor Field.png" id="10_abcbo"]
-[ext_resource type="Texture2D" uid="uid://c7nugxw6ckxdg" path="res://Sprites/Wealthy Field.png" id="11_abcbo"]
-[ext_resource type="Texture2D" uid="uid://cnmfjsbqvqdrj" path="res://Sprites/Tile#2-plant.png" id="15_gd1nb"]
+[ext_resource type="Texture2D" uid="uid://dc5gtdgi618ks" path="res://Sprites/Mowls/Anckle Biter.png" id="2_0g23a"]
+[ext_resource type="Texture2D" uid="uid://1rnd8eqt07ff" path="res://Sprites/Mowls/MistaMowl-spin.png" id="2_f1fy1"]
+[ext_resource type="Texture2D" uid="uid://hm2d85p8qsix" path="res://Sprites/Flower Tiles/Tile#1-plant.png" id="3_pyb8k"]
+[ext_resource type="Texture2D" uid="uid://bua7c7tk66oq7" path="res://Sprites/Flags/Red Flag Dig.png" id="3_u2y83"]
+[ext_resource type="Texture2D" uid="uid://drc8jkurv7s8u" path="res://Sprites/Flags/Flag Burried.png" id="4_1sibk"]
+[ext_resource type="Texture2D" uid="uid://bv3i7sri5vv0b" path="res://Sprites/Mowls/Cousin_Daisy.png" id="4_2otml"]
+[ext_resource type="Texture2D" uid="uid://cbwmls87ek00e" path="res://Sprites/Mowls/Bramble_Idle.png" id="4_8xpuo"]
+[ext_resource type="Texture2D" uid="uid://drhfi6fb32wn6" path="res://Sprites/Field Tiles/White Out Cell.png" id="4_wh31u"]
+[ext_resource type="Texture2D" uid="uid://fpj8f4llsb6f" path="res://Sprites/Mowls/Cousin_Derick.Png" id="5_0g23a"]
+[ext_resource type="Texture2D" uid="uid://b20l6kpa3ovpy" path="res://Sprites/Flags/Red Flag.png" id="5_u2y83"]
+[ext_resource type="Texture2D" uid="uid://dqxshnoddlljw" path="res://Sprites/Mowls/Uncle Jimmy.Png" id="8_1sibk"]
+[ext_resource type="Texture2D" uid="uid://cyi7hyvwsg0km" path="res://Sprites/Field Tiles/Grass Cell.png" id="9_5udsl"]
+[ext_resource type="Texture2D" uid="uid://b1xornd6qp4dy" path="res://Sprites/Field Tiles/Poor Field.png" id="10_abcbo"]
+[ext_resource type="Texture2D" uid="uid://c7nugxw6ckxdg" path="res://Sprites/Field Tiles/Wealthy Field.png" id="11_abcbo"]
+[ext_resource type="Texture2D" uid="uid://cnmfjsbqvqdrj" path="res://Sprites/Flower Tiles/Tile#2-plant.png" id="15_gd1nb"]
 [ext_resource type="FontFile" uid="uid://cofhr06unweey" path="res://Misc/Jersey_10/Jersey10-Regular.ttf" id="16_p4vkr"]
-[ext_resource type="Texture2D" uid="uid://cth002jbp6ejk" path="res://Sprites/Tile#3-plant.png" id="16_u85dn"]
-[ext_resource type="Texture2D" uid="uid://dgfvfiv52hk8a" path="res://Sprites/Tile#4-plant.png" id="17_35pr0"]
-[ext_resource type="Texture2D" uid="uid://cg8kwcwfff4uu" path="res://Sprites/Tile#5-plant.png" id="18_lgtde"]
-[ext_resource type="Texture2D" uid="uid://7ch76vcub82q" path="res://Sprites/Tile#6-plant.png" id="19_qmyyp"]
+[ext_resource type="Texture2D" uid="uid://cth002jbp6ejk" path="res://Sprites/Flower Tiles/Tile#3-plant.png" id="16_u85dn"]
+[ext_resource type="Texture2D" uid="uid://dgfvfiv52hk8a" path="res://Sprites/Flower Tiles/Tile#4-plant.png" id="17_35pr0"]
+[ext_resource type="Texture2D" uid="uid://cg8kwcwfff4uu" path="res://Sprites/Flower Tiles/Tile#5-plant.png" id="18_lgtde"]
+[ext_resource type="Texture2D" uid="uid://7ch76vcub82q" path="res://Sprites/Flower Tiles/Tile#6-plant.png" id="19_qmyyp"]
+[ext_resource type="Texture2D" uid="uid://cx2n2q0q4bqwr" path="res://Sprites/UI/Selection Box.png" id="22_x0jyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlat"]
 size = Vector2(32, 32)
@@ -28,6 +30,10 @@ size = Vector2(32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2otml"]
 atlas = ExtResource("2_f1fy1")
 region = Rect2(0, 0, 32, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gf00"]
+atlas = ExtResource("4_8xpuo")
+region = Rect2(0, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abcbo"]
 atlas = ExtResource("4_1sibk")
@@ -85,6 +91,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gf00")
+}],
+"loop": 1,
+"name": &"Bramble",
 "speed": 5.0
 }, {
 "frames": [{
@@ -244,6 +258,10 @@ theme_override_fonts/font = ExtResource("16_p4vkr")
 theme_override_font_sizes/font_size = 576
 text = "$"
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=776759971]
+visible = false
+texture = ExtResource("22_x0jyg")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

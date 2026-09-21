@@ -10,7 +10,10 @@ var map_width : int = 40
 var map_height : int = 40
 var bombs : int = 120
 var bombs_made : int = 0
+var total_cells : int
+var cells_made : int = 0
 var map_made : bool = false
+var making_map : bool = false
 var cells_set : bool = false
 var target_cell
 var flags_remaining : int = bombs
@@ -25,6 +28,9 @@ var mine_scanner_instance
 var money_gained : int = 0
 var added_mult : bool = false
 var dug_up_mowl : bool = false
+var flagging : bool = false
+var unflagging : bool = false
+var chording : bool = false
 
 var timer_started : bool = false
 var dialogue_section : int = 1
@@ -49,12 +55,10 @@ func _ready() -> void:
 	# Keep the timer paused until the dialogue finishes
 	$Timer.stop()
 	$Timer.paused = true
-	
-	# Creates the map
-	start_map()
 
 # Makes the map and puts a cell in each cordinate of the map
 func start_map():
+	var cell_number : int = 0
 	for x in map_width:
 		var row : Array = []
 		for y in map_height:
@@ -67,6 +71,10 @@ func start_map():
 			cell_instance.global_position.x = x * 32
 			cell_box.add_child(cell_instance)
 			map[x][y] = cell_instance
+			if cell_number == 100:
+				cell_number = 0
+				$Camera2D/Loading/ProgressBar.value = cells_made / total_cells * 100
+				await get_tree().create_timer(0.1).timeout
 	add_child(cell_box)
 	move_child(cell_box, 0)
 	map_made = true
@@ -112,20 +120,8 @@ func _process(_delta: float) -> void:
 	if level_over:
 		hide_menu = false
 		$"Camera2D/Button".visible = false
-		$"Camera2D/Sprite2D".visible = false
-		$Camera2D/Points.visible = true
-		$"Camera2D/Flag 1".visible = false
-		$"Camera2D/Flag 2".visible = false
-		$"Camera2D/Flag 3".visible = false
-		$"Camera2D/Flag 4".visible = false
-		$"Camera2D/Flag 5".visible = false
-		$"Camera2D/Flag 6".visible = false
-		$"Camera2D/Flag 7".visible = false
-		$"Camera2D/Flag 8".visible = false
-		$"Camera2D/Flag 9".visible = false
-		$"Camera2D/Flag 10".visible = false
-		$"Camera2D/Flag 11".visible = false
-		$"Camera2D/Flag 12".visible = false
+		$Camera2D/Button.hide()
+		$"Camera2D/Info".hide()
 		for y in map:
 			for x in y:
 				if is_instance_valid(x):
@@ -168,14 +164,22 @@ func _process(_delta: float) -> void:
 	
 	# Setting up the cells and bombs
 	if map_made:
+		$Camera2D/Loading.hide()
 		if bombs_made < bombs:
 			set_bombs()
 		else:
 			if not cells_set:
 				set_cells()
+	else:
+		if not making_map:
+			making_map = true
+			
+			# Creates the map
+			start_map()
 	
 	# Digging, Flagging, and Chording Inputs
 	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and Input.is_action_pressed("Flag") and not mouse_over_menu:
+		chording = true
 		if not target_cell.is_hidden:
 			if target_cell.flag_around() == target_cell.bombs_around:
 				if target_cell.unflagged_bomb_around():
@@ -183,59 +187,31 @@ func _process(_delta: float) -> void:
 				target_cell.unhide_neighbors = false
 				unhide_cells(target_cell)
 				target_cell.unhide_neighbors = false
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Dig") and not Input.is_action_just_pressed("Flag") and not mouse_over_menu:
+	elif not Input.is_action_pressed("Dig") and not Input.is_action_pressed("Flag"):
+		chording = false
+	if is_instance_valid(target_cell) and Input.is_action_pressed("Dig") and not Input.is_action_pressed("Flag") and not mouse_over_menu and not chording:
 		if target_cell.bombs_around == 0 and not target_cell.is_bomb:
 			unhide_cells(target_cell)
 		if target_cell.bombs_around != 0 or target_cell.is_bomb:
 			if not target_cell.flagged:
+				target_cell.clicked = true
 				target_cell.is_hidden = false
 				if target_cell.is_bomb:
 					game_over()
-	if is_instance_valid(target_cell) and Input.is_action_just_pressed("Flag") and not Input.is_action_just_pressed("Dig") and not mouse_over_menu:
-		if target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
-			if Levels.flags_active:
-				if Globals.red_flag_active:
-					target_cell.flag_type = "Red"
-				if Globals.blue_flag_active:
-					if Globals.blue_flags > 0:
-						target_cell.flag_type = "Blue"
-						Globals.blue_flags -= 1
-					else:
-						Globals.activate_red()
-				if Globals.violet_flag_active:
-					target_cell.flag_type = "Purple"
-					Globals.violet_flags -= 1
-				if Globals.pink_flag_active:
-					target_cell.flag_type = "Pink"
-				if Globals.green_flag_active: 
-					target_cell.flag_type = "Green"
-				if Globals.yellow_flag_active:
-					if Globals.yellow_flags > 0:
-						Globals.mult += 1
-						added_mult = true
-						target_cell.flag_type = "Yellow"
-						Globals.yellow_flags -= 1
-					else:
-						Globals.activate_red()
-				if Globals.orange_flag_active:
-					target_cell.flag_type = "Orange"
-				if Globals.magenta_flag_active:
-					target_cell.flag_type = "Magenta"
-				if Globals.black_flag_active:
-					target_cell.flag_type = "Black"
-				if Globals.white_flag_active:
-					target_cell.flag_type = "White"
-				if Globals.grey_flag_active:
-					target_cell.flag_type = "Grey"
-				if Globals.brown_flag_active:
-					target_cell.flag_type = "Brown"
+	if is_instance_valid(target_cell) and Input.is_action_pressed("Flag") and not Input.is_action_pressed("Dig") and not mouse_over_menu and not chording:
+		if not unflagging and target_cell.is_hidden and not target_cell.flagged and flags_remaining > 0:
+			flagging = true
 			target_cell.flagged = true
 			flags_remaining -= 1
 			return
-		if target_cell.is_hidden and target_cell.flagged:
+		if not flagging and target_cell.is_hidden and target_cell.flagged:
+			unflagging = true
 			target_cell.dug_up = false
 			flags_remaining += 1
 			target_cell.flagged = false
+	else:
+		flagging = false
+		unflagging = false
 	
 	# Making the clock change colors as it goes down
 	$Camera2D/Label.self_modulate.h = $Timer.time_left * 0.01666
@@ -306,6 +282,7 @@ func unhide_cells(cell_instance):
 
 # Funtion to end the game and change the current scene to the game over scene
 func game_over():
+	$Camera2D/Panel.show()
 	game_over_dialogue()
 
 # Function to tally up all of the points and updates the total points and the UI elements accordingly
@@ -316,6 +293,7 @@ func point_count():
 				x.flagged_bombs_around()
 	Globals.points *= Globals.point_mult
 	Globals.total_points = Globals.points * (Globals.mult)
+	$Camera2D/Points.show()
 	$Camera2D/Points.text = "Points: " + str(Globals.points) + "
 	" + "X" + "
 	" + "Mult:" + str(Globals.mult) + "
@@ -339,16 +317,12 @@ func _on_button_mouse_exited() -> void:
 func _on_timer_timeout() -> void:
 	point_count()
 	level_over = true
-	if Globals.total_points < Globals.level_requirement:
-		await get_tree().create_timer(4).timeout
-		game_over()
-	else:
-		$Camera2D/TextureButton.visible = true
-		Globals.points = 0
+	$Camera2D/TextureButton.visible = true
+	Globals.points = 0
 
 # Takes you to the shop when pressing the shop button
 func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://World/shop.tscn")
+	get_tree().change_scene_to_file("res://World/title_screen.tscn")
 
 func _on_number_points_pressed() -> void:
 	ui_shown = true
@@ -384,6 +358,7 @@ more scrapes to heal."
 			dialogue_section = 1
 			dialogue_open = false
 			$Camera2D/Button.show()
+			$Camera2D/Panel.hide()
 			$Timer.paused = false
 			$"Camera2D/Dialogue Box".visible = false
 			dug_up_mowl = false

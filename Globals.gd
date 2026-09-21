@@ -58,6 +58,7 @@ var total_points : float = 0.0
 var level_requirement : int = 50
 var currency : int = 500
 var cascade_click : bool = false
+var talked_to_mowl : bool = false
 
 # All flag variables
 var red_flag_active: bool = true
@@ -313,7 +314,6 @@ func upgrade_nines():
 	var two_level_float : float = two_level
 	if two_level_float / 5 == round(two_level_float / 5):
 		twos_points.mult += 1
-
 
 func _process(delta: float) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

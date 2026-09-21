@@ -22,7 +22,7 @@ var extra_pack_opened : bool = false
 var extra_pack_option_chosen : bool = false
 var dialogue_section : int = 1
 var dialogue_open : bool = false
-var mowl_relatives : Array = ["Uncle Jimmy", "Cousin Daisy", "Cousin Derick", "Anckle Biter"]
+var mowl_relatives : Array = ["Uncle Jimmy", "Cousin Daisy", "Cousin Derick", "Anckle Biter", "Bramble"]
 var mowl_relative : String
 var relative_dialogue_section : int = 1
 var relative_dialogue_open : bool = false
@@ -33,54 +33,53 @@ var quest_3_completed : bool = false
 var completed_quest_1 : Dictionary
 var completed_quest_2 : Dictionary
 var completed_quest_3 : Dictionary
-var talked_to_mowl : bool = false
 var exclamation_small : bool = true
 
 # All rocks available for packs
 var rock_stock : Dictionary = {
 	"granite" : {
 		"name" : "Granite",
-		"img" : preload("res://Sprites/Granite.png"),
+		"img" : preload("res://Sprites/Rocks/Granite.png"),
 		"rarity" : 30
 	},
 	"quartz" : {
 		"name" : "Quartz",
-		"img" : preload("res://Sprites/Quartz.png"),
+		"img" : preload("res://Sprites/Rocks/Quartz.png"),
 		"rarity" : 3000
 	},
 	"basalt" : {
 		"name" : "Basalt",
-		"img" : preload("res://Sprites/Basalt.png"),
+		"img" : preload("res://Sprites/Rocks/Basalt.png"),
 		"rarity" : 20
 	},
 	"obsidian" : {
 		"name" : "Obsidian",
-		"img" : preload("res://Sprites/Cell.png"),
+		"img" : preload("res://Sprites/Field Tiles/Cell.png"),
 		"rarity" : 10
 	},
 	"fluorite" : {
 		"name" : "Fluorite",
-		"img" : preload("res://Sprites/Cell.png"),
+		"img" : preload("res://Sprites/Field Tiles/Cell.png"),
 		"rarity" : 10
 	},
 	"diamond" : {
 		"name" : "Diamond",
-		"img" : preload("res://Sprites/Cell.png"),
+		"img" : preload("res://Sprites/Field Tiles/Cell.png"),
 		"rarity" : 5
 	},
 	"emerald" : {
 		"name" : "Emerald",
-		"img" : preload("res://Sprites/Cell.png"),
+		"img" : preload("res://Sprites/Field Tiles/Cell.png"),
 		"rarity" : 5
 	},
 	"black_opal" : {
 		"name" : "Black Opal",
-		"img" : preload("res://Sprites/Cell.png"),
+		"img" : preload("res://Sprites/Field Tiles/Cell.png"),
 		"rarity" : 1
 	},
 	"red_diamond" : {
 		"name" : "Red Diamond",
-		"img" : preload("res://Sprites/Cell.png"),
+		"img" : preload("res://Sprites/Field Tiles/Cell.png"),
 		"rarity" : 1
 	}
 }
@@ -90,67 +89,67 @@ var flag_stock : Dictionary = {
 	"blue_flag" : {
 		"name" : "Blue Flag",
 		"price" : 10,
-		"img" : preload("res://Sprites/Blue Flag.png"),
+		"img" : preload("res://Sprites/Flags/Blue Flag.png"),
 		"rarity" : 50
 	},
 	"violet_flag" : {
 		"name" : "Violet Flag",
 		"price" : 1000,
-		"img" : preload("res://Sprites/Purple Flag.png"),
+		"img" : preload("res://Sprites/Flags/Purple Flag.png"),
 		"rarity" : 15
 	},
 	"orange_flag" : {
 		"name" : "Orange Flag",
 		"price" : 100,
-		"img" : preload("res://Sprites/Orange Flag.png"),
+		"img" : preload("res://Sprites/Flags/Orange Flag.png"),
 		"rarity" : 1
 	},
 	"green_flag" : {
 		"name" : "Green Flag",
 		"price" : 1000,
-		"img" : preload("res://Sprites/Green Flag.png"),
+		"img" : preload("res://Sprites/Flags/Green Flag.png"),
 		"rarity" : 2
 	},
 	"yellow_flag" : {
 		"name" : "Yellow Flag",
 		"price" : 100,
-		"img" : preload("res://Sprites/Yellow Flag.png"),
+		"img" : preload("res://Sprites/Flags/Yellow Flag.png"),
 		"rarity" : 25
 	},
 	"pink_flag" : {
 		"name" : "Pink Flag",
 		"price" : 1000,
-		"img" : preload("res://Sprites/Pink Flag.png"),
+		"img" : preload("res://Sprites/Flags/Pink Flag.png"),
 		"rarity" : 1
 	},
 	"magenta_flag" : {
 		"name" : "Magenta Flag",
 		"price" : 100,
-		"img" : preload("res://Sprites/Magenta Flag.png"),
+		"img" : preload("res://Sprites/Flags/Magenta Flag.png"),
 		"rarity" : 1
 	},
 	"black_flag" : {
 		"name" : "Black Flag",
 		"price" : 1000,
-		"img" : preload("res://Sprites/Black Flag.png"),
+		"img" : preload("res://Sprites/Flags/Black Flag.png"),
 		"rarity" : 1
 	},
 	"white_flag" : {
 		"name" : "White Flag",
 		"price" : 100,
-		"img" : preload("res://Sprites/White Flag.png"),
+		"img" : preload("res://Sprites/Flags/White Flag.png"),
 		"rarity" : 1
 	},
 	"grey_flag" : {
 		"name" : "Grey Flag",
 		"price" : 1000,
-		"img" : preload("res://Sprites/Grey Flag.png"),
+		"img" : preload("res://Sprites/Flags/Grey Flag.png"),
 		"rarity" : 1
 	},
 	"brown_flag" : {
 		"name" : "Brown Flag",
 		"price" : 100,
-		"img" : preload("res://Sprites/Brown Flag.png"),
+		"img" : preload("res://Sprites/Flags/Brown Flag.png"),
 		"rarity" : 1
 	}
 }
@@ -223,7 +222,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Globals.level_requirement == 50:
-		if not talked_to_mowl:
+		if not Globals.talked_to_mowl:
 			$Exclamation.show()
 			if not exclamation_small:
 				var exclamation_tween_shrink = create_tween()
@@ -625,7 +624,7 @@ func choose_item(pack: Array):
 func _on_texture_button_2_pressed() -> void:
 	if Globals.currency >= 500:
 		opening_pack = true
-		$"Rock Pack".texture_normal = preload("res://Sprites/Rock Pack Opened.png")
+		$"Rock Pack".texture_normal = preload("res://Sprites/Shop Sprites/Rock Pack Opened.png")
 		$"Rock Pack".offset_transform_position.x = -48
 		$"Rock Pack"/Button.offset_transform_position.x = 48
 		await get_tree().create_timer(0.25).timeout
@@ -638,7 +637,7 @@ func _on_texture_button_2_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	opening_pack = true
-	$"Rock Pack".texture_normal = preload("res://Sprites/Rock Pack Opened.png")
+	$"Rock Pack".texture_normal = preload("res://Sprites/Shop Sprites/Rock Pack Opened.png")
 	$"Rock Pack".offset_transform_position.x = -48
 	$"Rock Pack"/Button.offset_transform_position.x = 48
 	await get_tree().create_timer(0.25).timeout
@@ -714,7 +713,7 @@ func _on_rock_three_pressed() -> void:
 func _on_extra_pack_pressed() -> void:
 	if Globals.currency >= 500:
 		opening_pack = true
-		$"Extra Pack".texture_normal = preload("res://Sprites/Flag Pack Opened.png")
+		$"Extra Pack".texture_normal = preload("res://Sprites/Shop Sprites/Flag Pack Opened.png")
 		$"Extra Pack".offset_transform_position.x = -48
 		$"Extra Pack"/Button.offset_transform_position.x = 48
 		await get_tree().create_timer(0.25).timeout
@@ -803,7 +802,7 @@ func _on_extra_three_pressed() -> void:
 
 func _on_mista_mowl_pressed() -> void:
 	mista_mowl_diaglogue()
-	talked_to_mowl = true
+	Globals.talked_to_mowl = true
 
 func mista_mowl_diaglogue():
 	if dialogue_section == 1:
